@@ -194,11 +194,17 @@
                                                 <rect key="frame" x="0.0" y="50" width="343" height="30"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="J'ai perdu mon mot de passe"/>
+                                                <connections>
+                                                    <segue destination="YYG-da-Aeb" kind="presentation" identifier="Login_NoPass__AccountRecovery" id="JqX-Hp-97H"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t22-YP-AZo">
                                                 <rect key="frame" x="0.0" y="100" width="343" height="30"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Je n'ai pas encore de compte"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="Login_NoAccount__Rregistration" id="eCB-HF-fhh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -238,7 +244,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="96" translatesAutoresizingMaskIntoConstraints="NO" id="IcY-ID-CXJ">
-                                <rect key="frame" x="16" y="40" width="343" height="232.5"/>
+                                <rect key="frame" x="16" y="40" width="343" height="286.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Récupération de compte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSR-ps-Lyj">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
@@ -247,7 +253,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ehx-sS-tsI">
-                                        <rect key="frame" x="0.0" y="120" width="343" height="112.5"/>
+                                        <rect key="frame" x="0.0" y="120" width="343" height="166.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rx3-tO-Vwx">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="58.5"/>
@@ -270,18 +276,28 @@
                                                     <constraint firstAttribute="trailing" secondItem="eBA-EG-rV2" secondAttribute="trailing" id="fPU-E0-vvi"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rx-6v-czm">
-                                                <rect key="frame" x="0.0" y="82.5" width="343" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Récupérer mon compte"/>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Fyt-MA-RiD">
+                                                <rect key="frame" x="0.0" y="82.5" width="343" height="84"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rx-6v-czm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="Récupérer mon compte"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG8-H6-g6I">
+                                                        <rect key="frame" x="0.0" y="54" width="343" height="30"/>
+                                                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="Annuler"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="rx3-tO-Vwx" firstAttribute="leading" secondItem="Ehx-sS-tsI" secondAttribute="leading" id="22f-jv-8iC"/>
-                                            <constraint firstItem="9rx-6v-czm" firstAttribute="leading" secondItem="Ehx-sS-tsI" secondAttribute="leading" id="Agu-BV-9NX"/>
+                                            <constraint firstItem="Fyt-MA-RiD" firstAttribute="leading" secondItem="Ehx-sS-tsI" secondAttribute="leading" id="f5f-1o-cg5"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fyt-MA-RiD" secondAttribute="trailing" id="hB7-vg-SBm"/>
                                             <constraint firstAttribute="trailing" secondItem="rx3-tO-Vwx" secondAttribute="trailing" id="oNf-mx-Mez"/>
-                                            <constraint firstAttribute="trailing" secondItem="9rx-6v-czm" secondAttribute="trailing" id="rdR-gl-e0O"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -318,7 +334,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="96" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-ww-CWL">
-                                <rect key="frame" x="16" y="40" width="338" height="231.5"/>
+                                <rect key="frame" x="16" y="40" width="338" height="285.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmation de compte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8u-Gl-FLH">
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="24"/>
@@ -327,7 +343,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Sw0-fl-3rX">
-                                        <rect key="frame" x="0.0" y="120" width="338" height="111.5"/>
+                                        <rect key="frame" x="0.0" y="120" width="338" height="165.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j1w-MH-uHD">
                                                 <rect key="frame" x="0.0" y="0.0" width="338" height="57.5"/>
@@ -350,16 +366,32 @@
                                                     <constraint firstItem="Z9z-9x-0Ml" firstAttribute="leading" secondItem="j1w-MH-uHD" secondAttribute="leading" id="vmC-Kg-ejc"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhV-Od-2Z7">
-                                                <rect key="frame" x="0.0" y="81.5" width="338" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Confirmer mon compte"/>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="EWl-J7-4xL">
+                                                <rect key="frame" x="0.0" y="81.5" width="338" height="84"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhV-Od-2Z7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="Confirmer mon compte"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezZ-hk-cUJ">
+                                                        <rect key="frame" x="0.0" y="54" width="338" height="30"/>
+                                                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="Recommencer la vérification"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ezZ-hk-cUJ" firstAttribute="leading" secondItem="EWl-J7-4xL" secondAttribute="leading" id="GlP-YK-OQp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ezZ-hk-cUJ" secondAttribute="trailing" id="XGD-lU-2hs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="HhV-Od-2Z7" secondAttribute="trailing" id="dJT-Xu-3Zp"/>
+                                                    <constraint firstItem="HhV-Od-2Z7" firstAttribute="leading" secondItem="EWl-J7-4xL" secondAttribute="leading" id="kys-Ty-oRO"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="HhV-Od-2Z7" secondAttribute="trailing" id="7Bx-7T-iW6"/>
-                                            <constraint firstItem="HhV-Od-2Z7" firstAttribute="leading" secondItem="Sw0-fl-3rX" secondAttribute="leading" id="OCQ-A0-Rc8"/>
+                                            <constraint firstAttribute="trailing" secondItem="EWl-J7-4xL" secondAttribute="trailing" id="KyN-0x-C3z"/>
+                                            <constraint firstItem="EWl-J7-4xL" firstAttribute="leading" secondItem="Sw0-fl-3rX" secondAttribute="leading" id="deQ-qp-ygD"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -378,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60b-di-Mgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29.600000000000001" y="848.72563718140941"/>
+            <point key="canvasLocation" x="30" y="849"/>
         </scene>
     </scenes>
 </document>
