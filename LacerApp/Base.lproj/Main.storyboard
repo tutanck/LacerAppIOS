@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RegistrationViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -99,6 +99,9 @@
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Je crée mon compte"/>
+                                                <connections>
+                                                    <action selector="register:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9D5-qy-XuU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jw-qd-aWc">
                                                 <rect key="frame" x="0.0" y="66" width="343" height="30"/>
@@ -117,15 +120,20 @@
                             <constraint firstItem="i6O-Ix-dtw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="oIs-ev-Zwn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="checkPasswordTextField" destination="tGX-m5-zx7" id="NdJ-Uq-md0"/>
+                        <outlet property="emailTextField" destination="uNE-h8-IRg" id="XSV-33-Ghr"/>
+                        <outlet property="passwordTextField" destination="Lxr-fv-96h" id="Ts7-7e-kCH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="AqY-BI-MsN">
             <objects>
-                <viewController id="4hV-Nw-6Rr" sceneMemberID="viewController">
+                <viewController id="4hV-Nw-6Rr" customClass="LoginViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pFN-8E-LWx"/>
                         <viewControllerLayoutGuide type="bottom" id="SAT-Th-Jo0"/>
@@ -189,6 +197,9 @@
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Connexion"/>
+                                                <connections>
+                                                    <action selector="login:" destination="4hV-Nw-6Rr" eventType="touchUpInside" id="2qF-DT-I1E"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOl-cD-eqz">
                                                 <rect key="frame" x="0.0" y="50" width="343" height="30"/>
@@ -226,15 +237,19 @@
                             <constraint firstItem="aHu-ZR-auX" firstAttribute="leading" secondItem="0WF-jz-jYE" secondAttribute="leadingMargin" id="a8m-wO-yNf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="s7p-nH-NHd" id="TVp-KL-M3V"/>
+                        <outlet property="passwordTextField" destination="lQK-wY-FW4" id="X9m-xL-6N9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M2O-4h-rHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-794.39999999999998" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Account Recovery View Controller-->
         <scene sceneID="UI4-rC-WLy">
             <objects>
-                <viewController id="YYG-da-Aeb" sceneMemberID="viewController">
+                <viewController id="YYG-da-Aeb" customClass="AccountRecoveryViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I9o-9d-Pdg"/>
                         <viewControllerLayoutGuide type="bottom" id="sP9-he-BnR"/>
@@ -284,6 +299,9 @@
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Récupérer mon compte"/>
+                                                        <connections>
+                                                            <action selector="recover:" destination="YYG-da-Aeb" eventType="touchUpInside" id="9Zc-Wq-a46"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG8-H6-g6I">
                                                         <rect key="frame" x="0.0" y="54" width="343" height="30"/>
@@ -316,15 +334,18 @@
                             <constraint firstItem="IcY-ID-CXJ" firstAttribute="top" secondItem="I9o-9d-Pdg" secondAttribute="bottom" constant="20" id="wgz-6z-9ft"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="eBA-EG-rV2" id="Vjn-lR-uMa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8sw-xh-pc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-794.39999999999998" y="848.72563718140941"/>
         </scene>
-        <!--View Controller-->
+        <!--Account Confirmation View Controller-->
         <scene sceneID="Ond-Sl-zOa">
             <objects>
-                <viewController id="dw4-wI-wK9" sceneMemberID="viewController">
+                <viewController id="dw4-wI-wK9" customClass="AccountConfirmationViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S9B-sq-Zcf"/>
                         <viewControllerLayoutGuide type="bottom" id="pnY-60-Wzp"/>
@@ -374,6 +395,9 @@
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Confirmer mon compte"/>
+                                                        <connections>
+                                                            <action selector="confirm:" destination="dw4-wI-wK9" eventType="touchUpInside" id="E48-JH-oor"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezZ-hk-cUJ">
                                                         <rect key="frame" x="0.0" y="54" width="338" height="30"/>
@@ -407,6 +431,9 @@
                             <constraint firstItem="Rda-ww-CWL" firstAttribute="top" secondItem="S9B-sq-Zcf" secondAttribute="bottom" constant="20" id="j69-oa-pDv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="Z9z-9x-0Ml" id="ZC6-Tj-iiI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60b-di-Mgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,6 +14,11 @@
 		4EB2040A1F18BC400096CC60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204081F18BC400096CC60 /* LaunchScreen.storyboard */; };
 		4EB204151F18BC400096CC60 /* LacerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204141F18BC400096CC60 /* LacerAppTests.swift */; };
 		4EB204201F18BC400096CC60 /* LacerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2041F1F18BC400096CC60 /* LacerAppUITests.swift */; };
+		4EB2042E1F19327B0096CC60 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2042D1F19327B0096CC60 /* RegistrationViewController.swift */; };
+		4EB204301F19333D0096CC60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2042F1F19333D0096CC60 /* LoginViewController.swift */; };
+		4EB204321F1933540096CC60 /* AccountRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204311F1933540096CC60 /* AccountRecoveryViewController.swift */; };
+		4EB204341F1933710096CC60 /* AccountConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */; };
+		4EB204361F1972090096CC60 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204351F1972090096CC60 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		4EB2041B1F18BC400096CC60 /* LacerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LacerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB2041F1F18BC400096CC60 /* LacerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacerAppUITests.swift; sourceTree = "<group>"; };
 		4EB204211F18BC400096CC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EB2042D1F19327B0096CC60 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		4EB2042F1F19333D0096CC60 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4EB204311F1933540096CC60 /* AccountRecoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountRecoveryViewController.swift; sourceTree = "<group>"; };
+		4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountConfirmationViewController.swift; sourceTree = "<group>"; };
+		4EB204351F1972090096CC60 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,11 @@
 				4EB203FF1F18BC400096CC60 /* AppDelegate.swift */,
 				4EB204011F18BC400096CC60 /* ViewController.swift */,
 				4EB204031F18BC400096CC60 /* Main.storyboard */,
+				4EB2042F1F19333D0096CC60 /* LoginViewController.swift */,
+				4EB204311F1933540096CC60 /* AccountRecoveryViewController.swift */,
+				4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */,
+				4EB2042D1F19327B0096CC60 /* RegistrationViewController.swift */,
+				4EB204351F1972090096CC60 /* Alert.swift */,
 				4EB204061F18BC400096CC60 /* Assets.xcassets */,
 				4EB204081F18BC400096CC60 /* LaunchScreen.storyboard */,
 				4EB2040B1F18BC400096CC60 /* Info.plist */,
@@ -262,8 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB204301F19333D0096CC60 /* LoginViewController.swift in Sources */,
+				4EB2042E1F19327B0096CC60 /* RegistrationViewController.swift in Sources */,
+				4EB204321F1933540096CC60 /* AccountRecoveryViewController.swift in Sources */,
 				4EB204021F18BC400096CC60 /* ViewController.swift in Sources */,
 				4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */,
+				4EB204341F1933710096CC60 /* AccountConfirmationViewController.swift in Sources */,
+				4EB204361F1972090096CC60 /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
