@@ -20,6 +20,9 @@
 		4EB204341F1933710096CC60 /* AccountConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */; };
 		4EB204361F1972090096CC60 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204351F1972090096CC60 /* Alert.swift */; };
 		4EB204381F1A060C0096CC60 /* Lace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204371F1A060C0096CC60 /* Lace.storyboard */; };
+		4EB2043A1F1A21B00096CC60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204391F1A21B00096CC60 /* ProfileViewController.swift */; };
+		4EB2043C1F1A21C80096CC60 /* NeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043B1F1A21C80096CC60 /* NeedsTableViewController.swift */; };
+		4EB2043E1F1A21E30096CC60 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043D1F1A21E30096CC60 /* ContactsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountConfirmationViewController.swift; sourceTree = "<group>"; };
 		4EB204351F1972090096CC60 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4EB204371F1A060C0096CC60 /* Lace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lace.storyboard; sourceTree = "<group>"; };
+		4EB204391F1A21B00096CC60 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4EB2043B1F1A21C80096CC60 /* NeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedsTableViewController.swift; sourceTree = "<group>"; };
+		4EB2043D1F1A21E30096CC60 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,9 @@
 				4EB204011F18BC400096CC60 /* ViewController.swift */,
 				4EB204031F18BC400096CC60 /* Main.storyboard */,
 				4EB204371F1A060C0096CC60 /* Lace.storyboard */,
+				4EB204391F1A21B00096CC60 /* ProfileViewController.swift */,
+				4EB2043B1F1A21C80096CC60 /* NeedsTableViewController.swift */,
+				4EB2043D1F1A21E30096CC60 /* ContactsTableViewController.swift */,
 				4EB2042F1F19333D0096CC60 /* LoginViewController.swift */,
 				4EB204311F1933540096CC60 /* AccountRecoveryViewController.swift */,
 				4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */,
@@ -283,11 +292,14 @@
 			files = (
 				4EB204301F19333D0096CC60 /* LoginViewController.swift in Sources */,
 				4EB2042E1F19327B0096CC60 /* RegistrationViewController.swift in Sources */,
+				4EB2043E1F1A21E30096CC60 /* ContactsTableViewController.swift in Sources */,
 				4EB204321F1933540096CC60 /* AccountRecoveryViewController.swift in Sources */,
 				4EB204021F18BC400096CC60 /* ViewController.swift in Sources */,
 				4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */,
 				4EB204341F1933710096CC60 /* AccountConfirmationViewController.swift in Sources */,
+				4EB2043A1F1A21B00096CC60 /* ProfileViewController.swift in Sources */,
 				4EB204361F1972090096CC60 /* Alert.swift in Sources */,
+				4EB2043C1F1A21C80096CC60 /* NeedsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
