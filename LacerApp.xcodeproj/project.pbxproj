@@ -19,6 +19,7 @@
 		4EB204321F1933540096CC60 /* AccountRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204311F1933540096CC60 /* AccountRecoveryViewController.swift */; };
 		4EB204341F1933710096CC60 /* AccountConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */; };
 		4EB204361F1972090096CC60 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204351F1972090096CC60 /* Alert.swift */; };
+		4EB204381F1A060C0096CC60 /* Lace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204371F1A060C0096CC60 /* Lace.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		4EB204311F1933540096CC60 /* AccountRecoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountRecoveryViewController.swift; sourceTree = "<group>"; };
 		4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountConfirmationViewController.swift; sourceTree = "<group>"; };
 		4EB204351F1972090096CC60 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		4EB204371F1A060C0096CC60 /* Lace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lace.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				4EB203FF1F18BC400096CC60 /* AppDelegate.swift */,
 				4EB204011F18BC400096CC60 /* ViewController.swift */,
 				4EB204031F18BC400096CC60 /* Main.storyboard */,
+				4EB204371F1A060C0096CC60 /* Lace.storyboard */,
 				4EB2042F1F19333D0096CC60 /* LoginViewController.swift */,
 				4EB204311F1933540096CC60 /* AccountRecoveryViewController.swift */,
 				4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */,
@@ -253,6 +256,7 @@
 				4EB2040A1F18BC400096CC60 /* LaunchScreen.storyboard in Resources */,
 				4EB204071F18BC400096CC60 /* Assets.xcassets in Resources */,
 				4EB204051F18BC400096CC60 /* Main.storyboard in Resources */,
+				4EB204381F1A060C0096CC60 /* Lace.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
