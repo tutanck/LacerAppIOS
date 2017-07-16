@@ -29,6 +29,7 @@
 		4EB2044C1F1AF04D0096CC60 /* CustomersNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044B1F1AF04D0096CC60 /* CustomersNeedsTableViewController.swift */; };
 		4EB2044E1F1BBD120096CC60 /* NeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044D1F1BBD120096CC60 /* NeedTableViewCell.swift */; };
 		4EB204501F1BBDCA0096CC60 /* CustomerNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044F1F1BBDCA0096CC60 /* CustomerNeedTableViewCell.swift */; };
+		4EB204541F1BD6670096CC60 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204531F1BD6670096CC60 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		4EB2044B1F1AF04D0096CC60 /* CustomersNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomersNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4EB2044D1F1BBD120096CC60 /* NeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedTableViewCell.swift; sourceTree = "<group>"; };
 		4EB2044F1F1BBDCA0096CC60 /* CustomerNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerNeedTableViewCell.swift; sourceTree = "<group>"; };
+		4EB204531F1BD6670096CC60 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		4EB203F31F18BC3F0096CC60 = {
 			isa = PBXGroup;
 			children = (
+				4EB204531F1BD6670096CC60 /* Contact.swift */,
 				4EB203FE1F18BC400096CC60 /* LacerApp */,
 				4EB204131F18BC400096CC60 /* LacerAppTests */,
 				4EB2041E1F18BC400096CC60 /* LacerAppUITests */,
@@ -310,6 +313,7 @@
 			files = (
 				4EB204301F19333D0096CC60 /* LoginViewController.swift in Sources */,
 				4EB2042E1F19327B0096CC60 /* RegistrationViewController.swift in Sources */,
+				4EB204541F1BD6670096CC60 /* Contact.swift in Sources */,
 				4EB2044E1F1BBD120096CC60 /* NeedTableViewCell.swift in Sources */,
 				4EB204401F1A80F80096CC60 /* ContactTableViewCell.swift in Sources */,
 				4EB2044C1F1AF04D0096CC60 /* CustomersNeedsTableViewController.swift in Sources */,

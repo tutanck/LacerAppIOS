@@ -9,6 +9,14 @@
 import UIKit
 
 class ContactTableViewCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var photoImageView: UIImageView!
+    
+    @IBOutlet weak var userstatusLabel: Spot!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
