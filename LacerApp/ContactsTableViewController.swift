@@ -14,7 +14,6 @@ class ContactsTableViewController: UITableViewController {
     var contacts : [Contact] = []
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

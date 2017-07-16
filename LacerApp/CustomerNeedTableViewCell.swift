@@ -9,6 +9,16 @@
 import UIKit
 
 class CustomerNeedTableViewCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var photoImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var customerNameLabel: UILabel!
+     
+    @IBOutlet weak var distanceLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
