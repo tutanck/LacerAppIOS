@@ -23,6 +23,10 @@
 		4EB2043A1F1A21B00096CC60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204391F1A21B00096CC60 /* ProfileViewController.swift */; };
 		4EB2043C1F1A21C80096CC60 /* NeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043B1F1A21C80096CC60 /* NeedsTableViewController.swift */; };
 		4EB2043E1F1A21E30096CC60 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043D1F1A21E30096CC60 /* ContactsTableViewController.swift */; };
+		4EB204401F1A80F80096CC60 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */; };
+		4EB204421F1A89E20096CC60 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204411F1A89E20096CC60 /* Spot.swift */; };
+		4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */; };
+		4EB2044C1F1AF04D0096CC60 /* CustomersNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044B1F1AF04D0096CC60 /* CustomersNeedsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		4EB204391F1A21B00096CC60 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4EB2043B1F1A21C80096CC60 /* NeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedsTableViewController.swift; sourceTree = "<group>"; };
 		4EB2043D1F1A21E30096CC60 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		4EB204411F1A89E20096CC60 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchableColorButton.swift; sourceTree = "<group>"; };
+		4EB2044B1F1AF04D0096CC60 /* CustomersNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomersNeedsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,10 @@
 				4EB204011F18BC400096CC60 /* ViewController.swift */,
 				4EB204031F18BC400096CC60 /* Main.storyboard */,
 				4EB204371F1A060C0096CC60 /* Lace.storyboard */,
+				4EB2044B1F1AF04D0096CC60 /* CustomersNeedsTableViewController.swift */,
+				4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */,
+				4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */,
+				4EB204411F1A89E20096CC60 /* Spot.swift */,
 				4EB204391F1A21B00096CC60 /* ProfileViewController.swift */,
 				4EB2043B1F1A21C80096CC60 /* NeedsTableViewController.swift */,
 				4EB2043D1F1A21E30096CC60 /* ContactsTableViewController.swift */,
@@ -292,10 +304,14 @@
 			files = (
 				4EB204301F19333D0096CC60 /* LoginViewController.swift in Sources */,
 				4EB2042E1F19327B0096CC60 /* RegistrationViewController.swift in Sources */,
+				4EB204401F1A80F80096CC60 /* ContactTableViewCell.swift in Sources */,
+				4EB2044C1F1AF04D0096CC60 /* CustomersNeedsTableViewController.swift in Sources */,
 				4EB2043E1F1A21E30096CC60 /* ContactsTableViewController.swift in Sources */,
+				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
 				4EB204321F1933540096CC60 /* AccountRecoveryViewController.swift in Sources */,
 				4EB204021F18BC400096CC60 /* ViewController.swift in Sources */,
 				4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */,
+				4EB204421F1A89E20096CC60 /* Spot.swift in Sources */,
 				4EB204341F1933710096CC60 /* AccountConfirmationViewController.swift in Sources */,
 				4EB2043A1F1A21B00096CC60 /* ProfileViewController.swift in Sources */,
 				4EB204361F1972090096CC60 /* Alert.swift in Sources */,
