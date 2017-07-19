@@ -121,4 +121,11 @@ class CustomersNeedsTableViewController: UITableViewController {
         ]
     }
     
+    
+    @IBAction func cancelFromShowCustomerNeed(segue:UIStoryboardSegue) {}
+    
+    @IBAction func applyFromShowCustomerNeed(segue:UIStoryboardSegue) {}
+    
+    
+    
 }

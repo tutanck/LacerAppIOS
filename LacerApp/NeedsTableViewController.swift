@@ -112,11 +112,9 @@ class NeedsTableViewController: UITableViewController {
     }
     
     
-    @IBAction func cancelFromBesoin(segue:UIStoryboardSegue) {
-    }
+    @IBAction func cancelFromNeed(segue:UIStoryboardSegue) {}
     
-    @IBAction func saveFromBesoin(segue:UIStoryboardSegue) {
-    }
+    @IBAction func saveFromNeed(segue:UIStoryboardSegue) {}
 
     
 
