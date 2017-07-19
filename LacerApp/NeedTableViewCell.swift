@@ -10,13 +10,8 @@ import UIKit
 
 class NeedTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var tagsLabel: UILabel!
-    
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

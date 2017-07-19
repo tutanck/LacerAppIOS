@@ -13,9 +13,22 @@ class Service {
     var title : String
     var activ : Bool
     
-    init(title : String,activ : Bool) {
+    var make : Bool
+    var teach : Bool
+    var advise : Bool
+    
+    var skills : [Skill] = []
+    
+    init(title : String,activ : Bool, make : Bool, teach : Bool, advise: Bool, skills: [Skill]) {
         self.title = title
         self.activ = activ
+        
+        self.make = make
+        self.teach = teach
+        self.advise = advise
+
+        self.skills = skills
+
     }
     
     

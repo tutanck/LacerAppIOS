@@ -40,8 +40,7 @@ class ServicesTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceTableViewCell", for: indexPath) as? ServiceTableViewCell else {
             fatalError("The dequeued cell is not an instance of ServiceTableViewCell.")
         }
-        cell.serviceLabel.text = "#"+services[indexPath.row].title
-        cell.serviceSwitch.isOn = services[indexPath.row].activ
+        cell.titleLabel.text = services[indexPath.row].title
         
         return cell
     }
@@ -97,10 +96,18 @@ class ServicesTableViewController: UITableViewController {
     
     private func loadSample() {
         services+=[
-            Service(title: "java",activ:true),
-            Service(title: "javascript",activ:false),
-            Service(title: "scrum",activ:true),
+            Service(title: "java", activ:true, make : true, teach : true, advise : true, skills : []),
+            Service(title: "javascript", activ:false, make : true, teach : true, advise : true, skills : []),
+            Service(title: "scrum", activ:true, make : true, teach : true, advise : true, skills : []),
         ]
+    }
+    
+    //MARK : Unwind
+    
+    @IBAction func cancelFromServiceDetails(segue:UIStoryboardSegue) {
+    }
+    
+    @IBAction func saveFromServiceDetails(segue:UIStoryboardSegue) {
     }
     
     

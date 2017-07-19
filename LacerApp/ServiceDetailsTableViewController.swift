@@ -1,54 +1,52 @@
 //
-//  NeedsTableViewController.swift
+//  ServiceDetailsTableViewController.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 15/07/2017.
+//  Created by Joan Angb on 19/07/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
 
-class NeedsTableViewController: UITableViewController {
+class ServiceDetailsTableViewController: UITableViewController {
+
     
-    var needs : [Need] = []
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSample()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return needs.count
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NeedTableViewCell", for: indexPath) as? NeedTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of NeedTableViewCell.")
-        }
-        
-        // Fetches the appropriate meal for the data source layout.
-        let need = needs[indexPath.row]
-        
-        cell.titleLabel.text = need.title
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -94,17 +92,5 @@ class NeedsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
-    //MARK: Private Methods
-    
-    private func loadSample() {
-         needs+=[
-            Need(title: "Besoin Inedis", tags : "#java #mongo",activ:true),
-            Need(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false),
-            Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true),
-        ]
-    }
-    
 
 }

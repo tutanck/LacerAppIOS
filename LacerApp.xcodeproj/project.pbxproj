@@ -20,7 +20,6 @@
 		4EB204341F1933710096CC60 /* AccountConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */; };
 		4EB204361F1972090096CC60 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204351F1972090096CC60 /* Alert.swift */; };
 		4EB204381F1A060C0096CC60 /* Lace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204371F1A060C0096CC60 /* Lace.storyboard */; };
-		4EB2043A1F1A21B00096CC60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204391F1A21B00096CC60 /* ProfileViewController.swift */; };
 		4EB2043C1F1A21C80096CC60 /* NeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043B1F1A21C80096CC60 /* NeedsTableViewController.swift */; };
 		4EB2043E1F1A21E30096CC60 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043D1F1A21E30096CC60 /* ContactsTableViewController.swift */; };
 		4EB204401F1A80F80096CC60 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */; };
@@ -35,6 +34,9 @@
 		4EB2045A1F1EC7CF0096CC60 /* ServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204591F1EC7CF0096CC60 /* ServicesTableViewController.swift */; };
 		4EB2045C1F1EC81C0096CC60 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2045B1F1EC81C0096CC60 /* ServiceTableViewCell.swift */; };
 		4EB2045E1F1EC8EC0096CC60 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2045D1F1EC8EC0096CC60 /* Service.swift */; };
+		4EB204601F1ED4070096CC60 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2045F1F1ED4070096CC60 /* Skill.swift */; };
+		4EB204621F1F4EBE0096CC60 /* ServiceDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204611F1F4EBE0096CC60 /* ServiceDetailsTableViewController.swift */; };
+		4EB204641F1F60C40096CC60 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204631F1F60C40096CC60 /* ProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +76,6 @@
 		4EB204331F1933710096CC60 /* AccountConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountConfirmationViewController.swift; sourceTree = "<group>"; };
 		4EB204351F1972090096CC60 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4EB204371F1A060C0096CC60 /* Lace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lace.storyboard; sourceTree = "<group>"; };
-		4EB204391F1A21B00096CC60 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4EB2043B1F1A21C80096CC60 /* NeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedsTableViewController.swift; sourceTree = "<group>"; };
 		4EB2043D1F1A21E30096CC60 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -89,6 +90,9 @@
 		4EB204591F1EC7CF0096CC60 /* ServicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesTableViewController.swift; sourceTree = "<group>"; };
 		4EB2045B1F1EC81C0096CC60 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
 		4EB2045D1F1EC8EC0096CC60 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		4EB2045F1F1ED4070096CC60 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		4EB204611F1F4EBE0096CC60 /* ServiceDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailsTableViewController.swift; sourceTree = "<group>"; };
+		4EB204631F1F60C40096CC60 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = ../ProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 				4EB204011F18BC400096CC60 /* ViewController.swift */,
 				4EB204031F18BC400096CC60 /* Main.storyboard */,
 				4EB204371F1A060C0096CC60 /* Lace.storyboard */,
+				4EB204611F1F4EBE0096CC60 /* ServiceDetailsTableViewController.swift */,
+				4EB2045F1F1ED4070096CC60 /* Skill.swift */,
 				4EB2045D1F1EC8EC0096CC60 /* Service.swift */,
 				4EB2045B1F1EC81C0096CC60 /* ServiceTableViewCell.swift */,
 				4EB204591F1EC7CF0096CC60 /* ServicesTableViewController.swift */,
@@ -155,7 +161,7 @@
 				4EB204531F1BD6670096CC60 /* Contact.swift */,
 				4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */,
 				4EB2043D1F1A21E30096CC60 /* ContactsTableViewController.swift */,
-				4EB204391F1A21B00096CC60 /* ProfileViewController.swift */,
+				4EB204631F1F60C40096CC60 /* ProfileTableViewController.swift */,
 				4EB2042F1F19333D0096CC60 /* LoginViewController.swift */,
 				4EB2042D1F19327B0096CC60 /* RegistrationViewController.swift */,
 				4EB204311F1933540096CC60 /* AccountRecoveryViewController.swift */,
@@ -332,6 +338,7 @@
 				4EB2044E1F1BBD120096CC60 /* NeedTableViewCell.swift in Sources */,
 				4EB204401F1A80F80096CC60 /* ContactTableViewCell.swift in Sources */,
 				4EB2044C1F1AF04D0096CC60 /* CustomersNeedsTableViewController.swift in Sources */,
+				4EB204641F1F60C40096CC60 /* ProfileTableViewController.swift in Sources */,
 				4EB2043E1F1A21E30096CC60 /* ContactsTableViewController.swift in Sources */,
 				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
 				4EB204321F1933540096CC60 /* AccountRecoveryViewController.swift in Sources */,
@@ -342,9 +349,10 @@
 				4EB2045C1F1EC81C0096CC60 /* ServiceTableViewCell.swift in Sources */,
 				4EB204561F1BEE520096CC60 /* Need.swift in Sources */,
 				4EB204581F1BF6210096CC60 /* CustomerNeed.swift in Sources */,
+				4EB204621F1F4EBE0096CC60 /* ServiceDetailsTableViewController.swift in Sources */,
 				4EB204501F1BBDCA0096CC60 /* CustomerNeedTableViewCell.swift in Sources */,
 				4EB204341F1933710096CC60 /* AccountConfirmationViewController.swift in Sources */,
-				4EB2043A1F1A21B00096CC60 /* ProfileViewController.swift in Sources */,
+				4EB204601F1ED4070096CC60 /* Skill.swift in Sources */,
 				4EB2045E1F1EC8EC0096CC60 /* Service.swift in Sources */,
 				4EB204361F1972090096CC60 /* Alert.swift in Sources */,
 				4EB2043C1F1A21C80096CC60 /* NeedsTableViewController.swift in Sources */,
