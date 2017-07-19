@@ -85,6 +85,9 @@ class NeedsTableViewController: UITableViewController {
     }
     */
 
+    
+    
+    
     /*
     // MARK: - Navigation
 
@@ -96,6 +99,8 @@ class NeedsTableViewController: UITableViewController {
     */
     
     
+    
+    
     //MARK: Private Methods
     
     private func loadSample() {
@@ -105,6 +110,14 @@ class NeedsTableViewController: UITableViewController {
             Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true),
         ]
     }
+    
+    
+    @IBAction func cancelFromBesoin(segue:UIStoryboardSegue) {
+    }
+    
+    @IBAction func saveFromBesoin(segue:UIStoryboardSegue) {
+    }
+
     
 
 }
