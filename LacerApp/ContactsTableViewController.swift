@@ -45,12 +45,11 @@ class ContactsTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of ContactTableViewCell.")
         }
         
-        // Fetches the appropriate meal for the data source layout.
         let contact = contacts[indexPath.row]
         
         cell.usernameLabel.text = contact.name
         cell.photoImageView.image = contact.photo
-        cell.userstatusLabel.backgroundColor = statusColor(status : contact.status)
+        cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
         
         return cell
     }
@@ -117,23 +116,12 @@ class ContactsTableViewController: UITableViewController {
         ]
     }
     
-    private func statusColor(status : Int) -> UIColor {
-        switch status {
-            
-        case 0 :
-            return UIColor.red
-        case 1 :
-            return UIColor.green
-        case 2 :
-            return UIColor.orange
-        case 3 :
-            return UIColor.blue
-        
-        default:
-            return UIColor.green
-        }
-        
-    }
     
+    
+    
+    //Mark : unwinds
+    
+    @IBAction func cancelFromSearchUser(segue:UIStoryboardSegue) {}
+
     
 }

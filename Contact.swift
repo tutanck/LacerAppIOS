@@ -8,21 +8,6 @@
 
 import UIKit
 
-class Contact {
-    
-    var name : String
-    
-    var photo : UIImage?
-    
-    var status : Int
-    
-    
-    init(name : String, photo : UIImage? , status : Int) {
-        self.name = name
-        self.photo=photo
-        self.status=status
-        
-    }
-    
+class Contact : User{
     
 }

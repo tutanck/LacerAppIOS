@@ -1,16 +1,16 @@
 //
-//  ServicesTableViewController.swift
+//  ServiceSkillsTableViewController.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 19/07/2017.
+//  Created by Joan Angb on 20/07/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
 
-class ServicesTableViewController: UITableViewController {
-    
-    var services : [Service] = []
+class ServiceSkillsTableViewController: UITableViewController {
+
+    var skills : [Skill] = []
     
     
     override func viewDidLoad() {
@@ -32,15 +32,19 @@ class ServicesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return services.count
+        return skills.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceTableViewCell", for: indexPath) as? ServiceTableViewCell else {
-            fatalError("The dequeued cell is not an instance of ServiceTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceSkillTableViewCell", for: indexPath) as? ServiceSkillTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of ServiceSkillTableViewCell.")
         }
-        cell.titleLabel.text = services[indexPath.row].title
+        
+        // Fetches the appropriate meal for the data source layout.
+        let skill = skills[indexPath.row]
+        
+        cell.titleLabel.text = skill.title
         
         return cell
     }
@@ -81,6 +85,9 @@ class ServicesTableViewController: UITableViewController {
      }
      */
     
+    
+    
+    
     /*
      // MARK: - Navigation
      
@@ -92,23 +99,17 @@ class ServicesTableViewController: UITableViewController {
      */
     
     
+    
+    
     //MARK: Private Methods
     
     private func loadSample() {
-        services+=[
-            Service(title: "java", activ:true, make : true, teach : true, advise : true, skills : []),
-            Service(title: "javascript", activ:false, make : true, teach : true, advise : true, skills : []),
-            Service(title: "scrum", activ:true, make : true, teach : true, advise : true, skills : []),
+        skills+=[
+            Skill(title: "Java", activ:true),
+            Skill(title: "Mongo ", activ:true),
+            Skill(title: "Scrum",activ:true),
         ]
     }
     
-    //MARK : Unwind
-    
-    @IBAction func cancelFromServiceDetails(segue:UIStoryboardSegue) {
-    }
-    
-    @IBAction func saveFromServiceDetails(segue:UIStoryboardSegue) {
-    }
-    
-    
+
 }

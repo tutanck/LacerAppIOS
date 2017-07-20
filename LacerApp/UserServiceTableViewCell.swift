@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ServiceTableViewCell: UITableViewCell {
+class UserServiceTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var titleLabel: UILabel!

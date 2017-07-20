@@ -11,11 +11,11 @@ import UIKit
 
 class Skill {
     
-    var name : String
+    var title : String
     var activ : Bool
     
-    init(name : String,activ : Bool) {
-        self.name = name
+    init(title : String,activ : Bool) {
+        self.title = title
         self.activ = activ
     }
     

@@ -1,29 +1,28 @@
 //
-//  NeedsTableViewController.swift
+//  SearchUserTableViewController.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 15/07/2017.
+//  Created by Joan Angb on 20/07/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
 
-class NeedsTableViewController: UITableViewController {
+class SearchUserTableViewController: UITableViewController {
+
+    var users : [User] = []
     
-    var needs : [Need] = []
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSample()
     }
 
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 
     // MARK: - Table view data source
 
@@ -32,23 +31,26 @@ class NeedsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return needs.count
+        return users.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NeedTableViewCell", for: indexPath) as? NeedTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of NeedTableViewCell.")
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FoundUserTableViewCell", for: indexPath) as? FoundUserTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of FoundUserTableViewCell.")
         }
         
-        // Fetches the appropriate meal for the data source layout.
-        let need = needs[indexPath.row]
+        let user = users[indexPath.row]
         
-        cell.titleLabel.text = need.title
+        cell.usernameLabel.text = user.name
+        cell.photoImageView.image = user.photo
+        cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : user.status)
         
         return cell
     }
 
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -84,10 +86,10 @@ class NeedsTableViewController: UITableViewController {
         return true
     }
     */
+    
+    
+    
 
-    
-    
-    
     /*
     // MARK: - Navigation
 
@@ -99,25 +101,16 @@ class NeedsTableViewController: UITableViewController {
     */
     
     
-    
-    
     //MARK: Private Methods
     
     private func loadSample() {
-         needs+=[
-            Need(title: "Besoin Inedis", tags : "#java #mongo",activ:true),
-            Need(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false),
-            Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true),
+        let photo = UIImage(named: "userPhoto")
+        users+=[
+            User(name: "Angb joan", photo: photo, status: 1),
+            User(name: "Diogo Justino", photo: photo, status: 0),
+            User(name: "Tesla", photo: photo, status: 2)
         ]
     }
-    
-    
-    //Mark : unwinds
-    
-    @IBAction func cancelFromNeed(segue:UIStoryboardSegue) {}
-    
-    @IBAction func saveFromNeed(segue:UIStoryboardSegue) {}
-
     
 
 }

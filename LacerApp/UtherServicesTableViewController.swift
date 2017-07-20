@@ -1,19 +1,16 @@
 //
-//  CustomersNeedsTableViewController.swift
+//  UtherServicesTableViewController.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 16/07/2017.
+//  Created by Joan Angb on 20/07/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
 
-class CustomersNeedsTableViewController: UITableViewController {
-    
-    
-    
-    var customerNeeds : [CustomerNeed] = []
-    
+class UtherServicesTableViewController: UITableViewController {
+
+    var services : [Service] = []
     
     
     override func viewDidLoad() {
@@ -28,8 +25,6 @@ class CustomersNeedsTableViewController: UITableViewController {
     
     
     
-    
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,28 +32,18 @@ class CustomersNeedsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return customerNeeds.count
+        return services.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerNeedTableViewCell", for: indexPath) as? CustomerNeedTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of CustomerNeedTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UtherServiceTableViewCell", for: indexPath) as? UtherServiceTableViewCell else {
+            fatalError("The dequeued cell is not an instance of UtherServiceTableViewCell.")
         }
-        
-        let customerNeed = customerNeeds[indexPath.row]
-        
-        cell.photoImageView.image = customerNeed.photo
-        cell.titleLabel.text = customerNeed.title
-        
-        cell.customerNameLabel.text = customerNeed.customerName
-        
-        cell.distanceLabel.text = String(Int(customerNeed.distance))+" m"
+        cell.titleLabel.text = services[indexPath.row].title
         
         return cell
     }
-    
-    
     
     
     /*
@@ -96,9 +81,6 @@ class CustomersNeedsTableViewController: UITableViewController {
      }
      */
     
-    
-    
-    
     /*
      // MARK: - Navigation
      
@@ -110,19 +92,20 @@ class CustomersNeedsTableViewController: UITableViewController {
      */
     
     
+    //MARK: Private Methods
     
     private func loadSample() {
-        let photo = UIImage(named: "userPhoto")
-        
-        customerNeeds+=[
-            CustomerNeed(title: "Besoin Inedis", tags : "#java #mongo",activ:true, customerName : "Inedis", distance: 1230, description : "Bla bla bla", photo : photo),
-            CustomerNeed(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false, customerName : "BNP", distance: 450, description : "Bla bla bla", photo : photo),
-            CustomerNeed(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true, customerName : "Google", distance: 204, description : "Bla bla bla", photo : photo),
+        services+=[
+            Service(title: "Plombier", activ:true, make : true, teach : true, advise : true, skills : []),
+            Service(title: "Ingenieur Mathematicien", activ:false, make : true, teach : true, advise : true, skills : []),
+            Service(title: "CHAUFFEUR UBER", activ:true, make : true, teach : true, advise : true, skills : []),
         ]
     }
     
+    //MARK : Unwind
     
-    @IBAction func cancelFromShowCustomerNeed(segue:UIStoryboardSegue) {}
+    @IBAction func cancelFromUtherServiceDetails(segue:UIStoryboardSegue) {}
     
     
+
 }
