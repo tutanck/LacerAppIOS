@@ -77,8 +77,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="5R1-aU-qOz">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="5R1-aU-qOz">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="jmW-3i-F6k" appends="YES" id="kY0-AB-BGO"/>
+                                                    </connections>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -262,6 +266,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yn-mb-Tln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jmW-3i-F6k">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="RAv-vo-bBC" id="sgm-XA-3bX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1470" y="2866"/>
         </scene>
