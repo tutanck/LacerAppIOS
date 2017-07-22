@@ -1,5 +1,5 @@
 //
-//  SearchUserTableViewController.swift
+//  SearchUthersTableViewController.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 20/07/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchUserTableViewController: UITableViewController {
+class SearchUthersTableViewController: UITableViewController {
 
     var users : [User] = []
     

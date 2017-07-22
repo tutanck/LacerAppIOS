@@ -1,5 +1,5 @@
 //
-//  ProfileTableViewController.swift
+//  UserProfileTableViewController.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 19/07/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UserProfileTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - ImageView
     

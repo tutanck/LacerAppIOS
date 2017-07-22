@@ -1,5 +1,5 @@
 //
-//  UserNeedTableViewController.swift
+//  UserNeedDetailsTableViewController.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 22/07/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserNeedTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
+class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
     
     
     // MARK: - TextField

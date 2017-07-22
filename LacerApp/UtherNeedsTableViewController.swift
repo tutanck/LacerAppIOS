@@ -1,19 +1,16 @@
 //
-//  CustomersNeedsTableViewController.swift
+//  UtherNeedsTableViewController.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 16/07/2017.
+//  Created by Joan Angb on 22/07/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
 
-class CustomersNeedsTableViewController: UITableViewController {
+class UtherNeedsTableViewController: UITableViewController {
     
-    
-    
-    var customerNeeds : [CustomerNeed] = []
-    
+    var needs : [Need] = []
     
     
     override func viewDidLoad() {
@@ -28,8 +25,6 @@ class CustomersNeedsTableViewController: UITableViewController {
     
     
     
-    
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,28 +32,22 @@ class CustomersNeedsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return customerNeeds.count
+        return needs.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerNeedTableViewCell", for: indexPath) as? CustomerNeedTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of CustomerNeedTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UtherNeedTableViewCell", for: indexPath) as? UtherNeedTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of UtherNeedTableViewCell.")
         }
         
-        let customerNeed = customerNeeds[indexPath.row]
+        // Fetches the appropriate meal for the data source layout.
+        let need = needs[indexPath.row]
         
-        cell.photoImageView.image = customerNeed.photo
-        cell.titleLabel.text = customerNeed.title
-        
-        cell.customerNameLabel.text = customerNeed.customerName
-        
-        cell.distanceLabel.text = String(Int(customerNeed.distance))+" m"
+        cell.titleLabel.text = need.title
         
         return cell
     }
-    
-    
     
     
     /*
@@ -95,34 +84,36 @@ class CustomersNeedsTableViewController: UITableViewController {
      return true
      }
      */
-    
+
     
     
     
     /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
     
     
+    
+    //MARK: Private Methods
     
     private func loadSample() {
-        let photo = UIImage(named: "userPhoto")
-        
-        customerNeeds+=[
-            CustomerNeed(title: "Besoin Inedis", tags : "#java #mongo",activ:true, customerName : "Inedis", distance: 1230, description : "Bla bla bla", photo : photo),
-            CustomerNeed(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false, customerName : "BNP", distance: 450, description : "Bla bla bla", photo : photo),
-            CustomerNeed(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true, customerName : "Google", distance: 204, description : "Bla bla bla", photo : photo),
+        needs+=[
+            Need(title: "Besoin Inedis", tags : "#java #mongo",activ:true),
+            Need(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false),
+            Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true),
         ]
     }
     
     
-    @IBAction func cancelFromShowCustomerNeed(segue:UIStoryboardSegue) {}
+    //Mark : unwinds
     
-    
+    @IBAction func returnFromUtherNeed(segue:UIStoryboardSegue) {}
+
 }

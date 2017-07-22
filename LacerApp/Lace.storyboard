@@ -11,24 +11,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Needs Table View Controller-->
+        <!--User Needs Table View Controller-->
         <scene sceneID="RYk-v5-X82">
             <objects>
-                <tableViewController id="IRH-IB-TLF" customClass="NeedsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="IRH-IB-TLF" customClass="UserNeedsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="EUP-sj-qcd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NeedTableViewCell" textLabel="PdP-IW-tw0" rowHeight="64" style="IBUITableViewCellStyleDefault" id="Nnh-l8-eUG" customClass="NeedTableViewCell" customModule="LacerApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserNeedTableViewCell" textLabel="PdP-IW-tw0" rowHeight="64" style="IBUITableViewCellStyleDefault" id="Nnh-l8-eUG" customClass="UserNeedTableViewCell" customModule="LacerApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nnh-l8-eUG" id="DUT-2P-3kC">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PdP-IW-tw0">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="63"/>
+                                            <rect key="frame" x="15" y="0.0" width="325" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="1470" y="376"/>
         </scene>
-        <!--Profile Table View Controller-->
+        <!--User Profile Table View Controller-->
         <scene sceneID="g3v-kU-nym">
             <objects>
-                <tableViewController id="RAv-vo-bBC" customClass="ProfileTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="RAv-vo-bBC" customClass="UserProfileTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hPU-gB-8Yr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,10 +314,10 @@
             </objects>
             <point key="canvasLocation" x="534" y="376"/>
         </scene>
-        <!--Contacts Table View Controller-->
+        <!--User Contacts Table View Controller-->
         <scene sceneID="n98-g6-MVc">
             <objects>
-                <tableViewController id="Yxr-eQ-2J3" customClass="ContactsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Yxr-eQ-2J3" customClass="UserContactsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="p53-Ev-4O1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -445,7 +445,7 @@
         <!--Besoin-->
         <scene sceneID="xKz-0A-XUA">
             <objects>
-                <tableViewController id="TtA-g1-Qk5" customClass="UserNeedTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="TtA-g1-Qk5" customClass="UserNeedDetailsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="orb-Tb-5cz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -784,10 +784,10 @@
             </objects>
             <point key="canvasLocation" x="3590" y="376"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Uther Profile Table View Controller-->
         <scene sceneID="etm-2N-lb1">
             <objects>
-                <tableViewController id="eKH-z8-okw" sceneMemberID="viewController">
+                <tableViewController id="eKH-z8-okw" customClass="UtherProfileTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="8Nh-P2-w1K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -999,7 +999,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0T-vv-h81">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                                    <state key="normal" title="Voirs les besoins actuels"/>
+                                                    <state key="normal" title="Voir les besoins actuels"/>
                                                     <connections>
                                                         <segue destination="ddn-To-b5V" kind="presentation" id="LLY-La-GTx"/>
                                                     </connections>
@@ -1079,17 +1079,22 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Services" id="EXC-hE-LFL">
-                        <barButtonItem key="leftBarButtonItem" title="Retour" id="uyD-0s-bEg"/>
+                        <barButtonItem key="leftBarButtonItem" title="Retour" id="uyD-0s-bEg">
+                            <connections>
+                                <segue destination="lkf-oH-obD" kind="unwind" unwindAction="returnFromUtherServicesWithSegue:" id="kxm-v0-kMG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cec-k8-ncV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lkf-oH-obD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7948" y="376"/>
         </scene>
         <!--Service-->
         <scene sceneID="uUZ-k0-sA1">
             <objects>
-                <tableViewController id="61L-tl-cmH" sceneMemberID="viewController">
+                <tableViewController id="61L-tl-cmH" customClass="UtherServiceDetailsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="2cv-Vs-Irv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1288,7 +1293,7 @@
         <!--Service offert-->
         <scene sceneID="XEx-Tc-QMs">
             <objects>
-                <tableViewController id="wFb-jw-G0k" customClass="ServiceDetailsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="wFb-jw-G0k" customClass="UserServiceDetailsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="gae-Ot-wkt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1544,7 +1549,7 @@
         <!--compétences associées-->
         <scene sceneID="2aV-KI-9wU">
             <objects>
-                <tableViewController id="Zsq-rF-X5U" customClass="ServiceSkillsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Zsq-rF-X5U" customClass="UserServiceSkillsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="O5q-1r-86x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1592,13 +1597,13 @@
         <!--Besoins-->
         <scene sceneID="zZX-Kj-pOl">
             <objects>
-                <tableViewController id="Cek-EQ-CTu" sceneMemberID="viewController">
+                <tableViewController id="Cek-EQ-CTu" customClass="UtherNeedsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JvO-qV-gX8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="z6R-fn-C5i" style="IBUITableViewCellStyleDefault" id="TP1-mm-qfs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UtherNeedTableViewCell" textLabel="z6R-fn-C5i" style="IBUITableViewCellStyleDefault" id="TP1-mm-qfs" customClass="UtherNeedTableViewCell" customModule="LacerApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TP1-mm-qfs" id="eAH-Z0-Ynt">
@@ -1615,6 +1620,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="titleLabel" destination="z6R-fn-C5i" id="6Gf-md-Unb"/>
                                     <segue destination="uPe-16-QLn" kind="presentation" id="QS3-ph-OWO"/>
                                 </connections>
                             </tableViewCell>
@@ -1625,12 +1631,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Besoins" id="GUZ-jV-cMh">
-                        <barButtonItem key="leftBarButtonItem" title="Retour" id="cOG-Rr-cgH"/>
+                        <barButtonItem key="leftBarButtonItem" title="Retour" id="cOG-Rr-cgH">
+                            <connections>
+                                <segue destination="Zxc-My-2Hw" kind="unwind" unwindAction="returnFromUtherNeedsWithSegue:" id="O1t-N1-mvc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFz-AW-VQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Zxc-My-2Hw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4886" y="1209"/>
+            <point key="canvasLocation" x="4886" y="1157"/>
         </scene>
         <!--Mes compétences-->
         <scene sceneID="psC-YM-P9S">
@@ -1752,10 +1763,10 @@
             </objects>
             <point key="canvasLocation" x="534" y="1157"/>
         </scene>
-        <!--Customers Needs Table View Controller-->
+        <!--Search Uthers Needs Table View Controller-->
         <scene sceneID="c0g-qj-l6S">
             <objects>
-                <tableViewController id="2N5-Qo-AIH" customClass="CustomersNeedsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2N5-Qo-AIH" customClass="SearchUthersNeedsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="r0o-Pz-mxB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1818,7 +1829,7 @@
         <!--Besoin Client-->
         <scene sceneID="dTb-pa-skl">
             <objects>
-                <tableViewController id="uPe-16-QLn" sceneMemberID="viewController">
+                <tableViewController id="uPe-16-QLn" customClass="UtherNeedDetailsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="kgn-9z-uPm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1877,11 +1888,11 @@
                                         <rect key="frame" x="0.0" y="336" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2M-UH-agy" id="xwB-7j-0Z2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oED-Bx-c6m">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -2135,7 +2146,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMe-eu-rl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8x0-WG-A8f" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3589.5999999999999" y="1156.3718140929536"/>
+            <point key="canvasLocation" x="3590" y="1157"/>
         </scene>
         <!--Mes Services-->
         <scene sceneID="hE6-Lf-aiU">
@@ -2249,7 +2260,7 @@
         <!--Trouver des contacts-->
         <scene sceneID="VMJ-QK-lWu">
             <objects>
-                <tableViewController id="13v-dW-9WO" customClass="SearchUserTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="13v-dW-9WO" customClass="SearchUthersTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="DYE-iE-lYG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2382,7 +2393,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNC-ZL-Kdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5825" y="1210"/>
+            <point key="canvasLocation" x="5825" y="1157"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WTI-Cz-SO7">
@@ -2426,9 +2437,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bUk-Md-L64"/>
-        <segue reference="MeX-dp-gTk"/>
-        <segue reference="2Hx-LY-VpV"/>
+        <segue reference="hhy-oI-44H"/>
         <segue reference="TOc-Ab-wad"/>
-        <segue reference="QS3-ph-OWO"/>
+        <segue reference="OLq-KJ-wwx"/>
+        <segue reference="MeX-dp-gTk"/>
     </inferredMetricsTieBreakers>
 </document>

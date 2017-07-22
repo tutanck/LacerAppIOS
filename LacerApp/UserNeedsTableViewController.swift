@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NeedsTableViewController: UITableViewController {
+class UserNeedsTableViewController: UITableViewController {
     
     var needs : [Need] = []
 
@@ -37,8 +37,8 @@ class NeedsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NeedTableViewCell", for: indexPath) as? NeedTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of NeedTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserNeedTableViewCell", for: indexPath) as? UserNeedTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of UserNeedTableViewCell.")
         }
         
         // Fetches the appropriate meal for the data source layout.

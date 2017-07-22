@@ -1,20 +1,22 @@
 //
-//  UserServicesTableViewController.swift
+//  UserContactsTableViewController.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 19/07/2017.
+//  Created by Joan Angb on 15/07/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
 
-class UserServicesTableViewController: UITableViewController {
+class UserContactsTableViewController: UITableViewController {
     
-    var services : [Service] = []
+    
+    var contacts : [Contact] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadSample()
     }
     
@@ -25,6 +27,7 @@ class UserServicesTableViewController: UITableViewController {
     
     
     
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,15 +35,21 @@ class UserServicesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return services.count
+        return contacts.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserServiceTableViewCell", for: indexPath) as? UserServiceTableViewCell else {
-            fatalError("The dequeued cell is not an instance of ServiceTableViewCell.")
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as? ContactTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of ContactTableViewCell.")
         }
-        cell.titleLabel.text = services[indexPath.row].title
+        
+        let contact = contacts[indexPath.row]
+        
+        cell.usernameLabel.text = contact.name
+        cell.photoImageView.image = contact.photo
+        cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
         
         return cell
     }
@@ -92,23 +101,27 @@ class UserServicesTableViewController: UITableViewController {
      */
     
     
+    
+    
+    
+    
     //MARK: Private Methods
     
     private func loadSample() {
-        services+=[
-            Service(title: "DEVELOPMENT WEB ET MOBILE", activ:true, make : true, teach : true, advise : true, skills : []),
-            Service(title: "ASSASSINAT FACON ASSASIN SCREED ", activ:false, make : true, teach : true, advise : true, skills : []),
-            Service(title: "CHAUFFEUR UBER", activ:true, make : true, teach : true, advise : true, skills : []),
+        let photo = UIImage(named: "userPhoto")
+        contacts+=[
+            Contact(name: "Angb joan", photo: photo, status: 1),
+            Contact(name: "Diogo Justino", photo: photo, status: 0),
+            Contact(name: "Tesla", photo: photo, status: 2)
         ]
     }
     
-    //MARK : Unwind
     
-    @IBAction func cancelFromServiceDetails(segue:UIStoryboardSegue) {
-    }
     
-    @IBAction func saveFromServiceDetails(segue:UIStoryboardSegue) {
-    }
     
+    //Mark : unwinds
+    
+    @IBAction func cancelFromSearchUser(segue:UIStoryboardSegue) {}
+
     
 }

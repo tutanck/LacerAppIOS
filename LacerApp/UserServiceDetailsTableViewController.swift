@@ -1,5 +1,5 @@
 //
-//  ServiceDetailsTableViewController.swift
+//  UserServiceDetailsTableViewController.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 19/07/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ServiceDetailsTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate{
+class UserServiceDetailsTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate{
     
     // MARK: - TextField
     

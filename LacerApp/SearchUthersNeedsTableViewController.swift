@@ -1,22 +1,23 @@
 //
-//  ContactsTableViewController.swift
+//  SearchUthersNeedsTableViewController.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 15/07/2017.
+//  Created by Joan Angb on 16/07/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
 
-class ContactsTableViewController: UITableViewController {
+class SearchUthersNeedsTableViewController: UITableViewController {
     
     
-    var contacts : [Contact] = []
+    
+    var customerNeeds : [CustomerNeed] = []
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadSample()
     }
     
@@ -28,6 +29,7 @@ class ContactsTableViewController: UITableViewController {
     
     
     
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,24 +37,28 @@ class ContactsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return customerNeeds.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as? ContactTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of ContactTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerNeedTableViewCell", for: indexPath) as? CustomerNeedTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of CustomerNeedTableViewCell.")
         }
         
-        let contact = contacts[indexPath.row]
+        let customerNeed = customerNeeds[indexPath.row]
         
-        cell.usernameLabel.text = contact.name
-        cell.photoImageView.image = contact.photo
-        cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
+        cell.photoImageView.image = customerNeed.photo
+        cell.titleLabel.text = customerNeed.title
+        
+        cell.customerNameLabel.text = customerNeed.customerName
+        
+        cell.distanceLabel.text = String(Int(customerNeed.distance))+" m"
         
         return cell
     }
+    
+    
     
     
     /*
@@ -90,6 +96,9 @@ class ContactsTableViewController: UITableViewController {
      }
      */
     
+    
+    
+    
     /*
      // MARK: - Navigation
      
@@ -102,26 +111,18 @@ class ContactsTableViewController: UITableViewController {
     
     
     
-    
-    
-    
-    //MARK: Private Methods
-    
     private func loadSample() {
         let photo = UIImage(named: "userPhoto")
-        contacts+=[
-            Contact(name: "Angb joan", photo: photo, status: 1),
-            Contact(name: "Diogo Justino", photo: photo, status: 0),
-            Contact(name: "Tesla", photo: photo, status: 2)
+        
+        customerNeeds+=[
+            CustomerNeed(title: "Besoin Inedis", tags : "#java #mongo",activ:true, customerName : "Inedis", distance: 1230, description : "Bla bla bla", photo : photo),
+            CustomerNeed(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false, customerName : "BNP", distance: 450, description : "Bla bla bla", photo : photo),
+            CustomerNeed(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true, customerName : "Google", distance: 204, description : "Bla bla bla", photo : photo),
         ]
     }
     
     
+    @IBAction func cancelFromShowCustomerNeed(segue:UIStoryboardSegue) {}
     
-    
-    //Mark : unwinds
-    
-    @IBAction func cancelFromSearchUser(segue:UIStoryboardSegue) {}
-
     
 }
