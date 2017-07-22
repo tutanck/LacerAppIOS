@@ -2296,7 +2296,7 @@
                                     <outlet property="photoImageView" destination="CVd-sq-njb" id="vVn-tD-to4"/>
                                     <outlet property="usernameLabel" destination="v0Z-UX-ozE" id="mgG-9z-dRd"/>
                                     <outlet property="userstatusLabel" destination="GHe-K5-HtD" id="Op4-o5-Jtx"/>
-                                    <segue destination="eKH-z8-okw" kind="presentation" id="OLq-KJ-wwx"/>
+                                    <segue destination="T3Z-fc-hiU" kind="presentation" id="ALm-42-ju1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -2433,8 +2433,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="wht-F2-V7w"/>
         <segue reference="bUk-Md-L64"/>
+        <segue reference="ALm-42-ju1"/>
         <segue reference="MeX-dp-gTk"/>
-        <segue reference="TOc-Ab-wad"/>
-        <segue reference="2Hx-LY-VpV"/>
     </inferredMetricsTieBreakers>
 </document>
