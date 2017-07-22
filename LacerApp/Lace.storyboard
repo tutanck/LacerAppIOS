@@ -106,6 +106,9 @@
                                                         <segment title="Particulier"/>
                                                         <segment title="Entreprise"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="typeSegmentedControlChanged:" destination="RAv-vo-bBC" eventType="valueChanged" id="Aeg-t0-C49"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -180,24 +183,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eH6-HC-bFL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peu ou pas qualifiés" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcu-3Y-nNt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="318" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="302" height="43.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AIz-ZC-sm9">
-                                                            <rect key="frame" x="326" y="0.0" width="51" height="43.5"/>
+                                                            <rect key="frame" x="310" y="0.0" width="51" height="43.5"/>
+                                                            <connections>
+                                                                <action selector="unqualifiedSwitchChanged:" destination="RAv-vo-bBC" eventType="valueChanged" id="fzb-yk-Tyw"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="eH6-HC-bFL" secondAttribute="bottom" id="KOe-Ke-yOZ"/>
-                                                <constraint firstItem="eH6-HC-bFL" firstAttribute="leading" secondItem="bFl-Wq-RHv" secondAttribute="leading" id="Zlv-Gp-pAS"/>
-                                                <constraint firstAttribute="trailing" secondItem="eH6-HC-bFL" secondAttribute="trailing" id="cPN-dt-hWS"/>
+                                                <constraint firstItem="eH6-HC-bFL" firstAttribute="leading" secondItem="bFl-Wq-RHv" secondAttribute="leading" constant="8" id="Zlv-Gp-pAS"/>
+                                                <constraint firstAttribute="trailing" secondItem="eH6-HC-bFL" secondAttribute="trailing" constant="8" id="cPN-dt-hWS"/>
                                                 <constraint firstItem="eH6-HC-bFL" firstAttribute="top" secondItem="bFl-Wq-RHv" secondAttribute="top" id="gib-5K-Fvp"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -210,25 +216,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7Sw-qM-g2x">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A temps partiel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmA-48-YFf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="318" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="302" height="43.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vCv-S3-PdO">
-                                                            <rect key="frame" x="326" y="0.0" width="51" height="43.5"/>
+                                                            <rect key="frame" x="310" y="0.0" width="51" height="43.5"/>
+                                                            <connections>
+                                                                <action selector="partTimeSwitchChanged:" destination="RAv-vo-bBC" eventType="valueChanged" id="Bjc-Dg-KlA"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7Sw-qM-g2x" firstAttribute="top" secondItem="a1p-7s-Wf0" secondAttribute="top" id="3Ov-zf-KUy"/>
-                                                <constraint firstItem="7Sw-qM-g2x" firstAttribute="leading" secondItem="a1p-7s-Wf0" secondAttribute="leading" id="Gk1-Mp-Cpt"/>
+                                                <constraint firstItem="7Sw-qM-g2x" firstAttribute="leading" secondItem="a1p-7s-Wf0" secondAttribute="leading" constant="8" id="Gk1-Mp-Cpt"/>
                                                 <constraint firstAttribute="bottom" secondItem="7Sw-qM-g2x" secondAttribute="bottom" id="xjD-oh-9s0"/>
-                                                <constraint firstAttribute="trailing" secondItem="7Sw-qM-g2x" secondAttribute="trailing" id="z7B-LI-dM3"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Sw-qM-g2x" secondAttribute="trailing" constant="8" id="z7B-LI-dM3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -249,7 +258,7 @@
                         <outlet property="photoImageView" destination="5R1-aU-qOz" id="rtJ-M1-PJi"/>
                         <outlet property="typeSegmentedControl" destination="XNg-q4-UiZ" id="icK-7O-AQW"/>
                         <outlet property="unqualifiedSwitch" destination="AIz-ZC-sm9" id="sdO-Al-zOg"/>
-                        <outlet property="usernameLabel" destination="8Fb-ub-tF5" id="eOz-8X-qoL"/>
+                        <outlet property="usernameTextField" destination="8Fb-ub-tF5" id="J0y-q3-XvH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yn-mb-Tln" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1273,7 +1282,7 @@
                                         <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aHE-nT-p1M" id="R0X-N0-3Km">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  ex : Dévelopement web et mobile" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="E7N-hb-BMt">
