@@ -132,19 +132,10 @@ class ProfileTableViewController: UITableViewController, UITextFieldDelegate, UI
     
     private func begin(){
         hideRightBarButtonItem()
-
-        //photoImageView
         
         usernameTextField.delegate = self
-
-        //typeSegmentedControl
-        
         interestTextView.delegate = self
-        
-        //unqualifiedSwitch
-        
-        //partTimeSwitch
-    }
+     }
     
     private func hideRightBarButtonItem(){
         if let rightBarButton = self.navigationItem.rightBarButtonItem {

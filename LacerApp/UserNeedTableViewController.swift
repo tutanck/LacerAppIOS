@@ -1,18 +1,29 @@
 //
-//  ServiceDetailsTableViewController.swift
+//  UserNeedTableViewController.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 19/07/2017.
+//  Created by Joan Angb on 22/07/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
 
-class ServiceDetailsTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate{
+class UserNeedTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
+    
     
     // MARK: - TextField
     
     @IBOutlet weak var titleTextField: UITextField!
+    
+    @IBOutlet weak var searchKeyWordsTextField: UITextField!
+    
+    @IBOutlet weak var gratificationTextField: UITextField!
+    
+    @IBOutlet weak var placeTextField: UITextField!
+    
+    @IBOutlet weak var startDateTextField: UITextField!
+    
+    @IBOutlet weak var endDateTextField: UITextField!
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()         // Hide the keyboard
@@ -21,10 +32,11 @@ class ServiceDetailsTableViewController: UITableViewController, UITextFieldDeleg
     
     func textFieldDidEndEditing(_ textField: UITextField) { showRightBarButtonItem() }
     
+
     
     // MARK: - TextView
     
-     
+    
     @IBOutlet weak var descriptionTextView: UITextView!
     
     func textViewShouldReturn(_ textView: UITextView) -> Bool {
@@ -36,24 +48,11 @@ class ServiceDetailsTableViewController: UITableViewController, UITextFieldDeleg
 
     
     
-    
-    // MARK: - Switchs
-    
-    @IBOutlet weak var makeSwitch: UISwitch!
-    @IBAction func makeSwitchChanged(_ sender: UISwitch) { showRightBarButtonItem() }
-    
-    @IBOutlet weak var teachSwitch: UISwitch!
-    @IBAction func teachSwitchChanged(_ sender: UISwitch) { showRightBarButtonItem() }
-    
-    @IBOutlet weak var adviseSwitch: UISwitch!
-    @IBAction func adviseSwitchChanged(_ sender: UISwitch) { showRightBarButtonItem() }
-    
-    
     // MARK: - System Events
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         begin()
     }
 
@@ -61,9 +60,7 @@ class ServiceDetailsTableViewController: UITableViewController, UITextFieldDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
+
     
     
     /*
@@ -78,25 +75,25 @@ class ServiceDetailsTableViewController: UITableViewController, UITextFieldDeleg
     
     
     
-    
-    //MARK : Unwind
-    
-    @IBAction func saveFromManageSkills(segue:UIStoryboardSegue) {}
-    
-    @IBAction func saveFromSelectRelatedSkills(segue:UIStoryboardSegue) {}
-
-    
-    
-    
-    
-    
     // MARK: - private methods
     
     private func begin(){
         hideRightBarButtonItem()
         
         titleTextField.delegate = self
+        
         descriptionTextView.delegate = self
+        
+        searchKeyWordsTextField.delegate = self
+        
+        gratificationTextField.delegate = self
+        
+        placeTextField.delegate = self
+        
+        startDateTextField.delegate = self
+        
+        endDateTextField.delegate = self
+    
     }
     
     private func hideRightBarButtonItem(){
