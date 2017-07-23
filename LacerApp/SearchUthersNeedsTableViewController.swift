@@ -121,8 +121,4 @@ class SearchUthersNeedsTableViewController: UITableViewController {
         ]
     }
     
-    
-    @IBAction func cancelFromShowCustomerNeed(segue:UIStoryboardSegue) {}
-    
-    
 }

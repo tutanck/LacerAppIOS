@@ -101,11 +101,5 @@ class UtherServicesTableViewController: UITableViewController {
             Service(title: "CHAUFFEUR UBER", activ:true, make : true, teach : true, advise : true, skills : []),
         ]
     }
-    
-    //MARK : Unwind
-    
-    @IBAction func cancelFromUtherServiceDetails(segue:UIStoryboardSegue) {}
-    
-    
 
 }

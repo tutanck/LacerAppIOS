@@ -34,15 +34,5 @@ class UtherProfileTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
-    
-    
-    
-    //MARK : Unwind
-    
-    @IBAction func returnFromUtherServices(segue:UIStoryboardSegue) {}
-
-    @IBAction func returnFromUtherNeeds(segue:UIStoryboardSegue) {}
 
 }
