@@ -38,7 +38,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="titleLabel" destination="PdP-IW-tw0" id="H3V-64-4Nk"/>
-                                    <segue destination="yPy-uB-o7k" kind="presentation" id="48P-5d-Zva"/>
+                                    <segue destination="yPy-uB-o7k" kind="presentation" identifier="modalUpdateUserNeed" id="48P-5d-Zva"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -50,7 +50,7 @@
                     <navigationItem key="navigationItem" title="Mes Besoins" id="kff-zR-wl0">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="c9f-0W-gwK">
                             <connections>
-                                <segue destination="yPy-uB-o7k" kind="presentation" id="bUk-Md-L64"/>
+                                <segue destination="yPy-uB-o7k" kind="presentation" identifier="modalAddUserNeed" id="bUk-Md-L64"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -385,7 +385,7 @@
                     <navigationItem key="navigationItem" title="Mes contacts" id="xot-ug-4pq">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="search" id="2gm-0j-Td3">
                             <connections>
-                                <segue destination="sQg-V5-vkN" kind="presentation" id="GSZ-MG-cyq"/>
+                                <segue destination="sQg-V5-vkN" kind="presentation" identifier="modalSearchUthers" id="GSZ-MG-cyq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -421,7 +421,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="titleLabel" destination="5uI-Ge-UL3" id="zbr-kq-k0o"/>
-                                    <segue destination="AyA-0j-LXI" kind="presentation" id="MeX-dp-gTk"/>
+                                    <segue destination="AyA-0j-LXI" kind="presentation" identifier="modalUpdateUserService" id="MeX-dp-gTk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -433,7 +433,7 @@
                     <navigationItem key="navigationItem" title="Mes services" id="d2s-80-eU4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="w8u-lm-VY3">
                             <connections>
-                                <segue destination="AyA-0j-LXI" kind="presentation" id="1XX-uy-uaB"/>
+                                <segue destination="AyA-0j-LXI" kind="presentation" identifier="modalAddUserService" id="1XX-uy-uaB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1451,7 +1451,7 @@
                                                     <rect key="frame" x="8" y="324.5" width="359" height="30"/>
                                                     <state key="normal" title="Associer des compétences à ce service"/>
                                                     <connections>
-                                                        <segue destination="4KP-x4-oQK" kind="presentation" id="Wtn-pp-kp2"/>
+                                                        <segue destination="4KP-x4-oQK" kind="presentation" identifier="modalSelectUserServiceSkills" id="Wtn-pp-kp2"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1481,7 +1481,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <state key="normal" title="Gérer mes compétences"/>
                                                     <connections>
-                                                        <segue destination="vCd-lm-uot" kind="presentation" id="Iyd-1f-qpM"/>
+                                                        <segue destination="vCd-lm-uot" kind="presentation" identifier="modalManageUserSkills" id="Iyd-1f-qpM"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2313,7 +2313,7 @@
         <image name="userPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="48P-5d-Zva"/>
+        <segue reference="bUk-Md-L64"/>
         <segue reference="s1t-9O-FGt"/>
         <segue reference="XpB-pj-EDP"/>
         <segue reference="MeX-dp-gTk"/>
