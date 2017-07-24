@@ -57,16 +57,16 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         if(isDeviceVerifiedForThisUserID){
             Alert.displayMessage(context: self, message: "Connect")
         }else{
-            Alert.displayMessage(context: self, message: "Un code de vérification sera envoyé à "+userid)
-            
-            self.performSegue(withIdentifier: "segueFromWelcomeToAccountChecking", sender: self)
-            
-            Alert.displayMessage(context: self, message: "YOOOOO")
-            
+            Alert.displayMessage(context: self, message: "Un code de vérification sera envoyé à "+userid, handler : { action in self.performSegue(withIdentifier: "segueFromWelcomeToAccountChecking", sender: self)
+            })
         }
     }
     
     
+    //Mark : unwinds
+
+    @IBAction func returnFromAccountChecking(segue:UIStoryboardSegue) {}
+
     
     
     

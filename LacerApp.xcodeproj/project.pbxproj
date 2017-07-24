@@ -14,7 +14,6 @@
 		4EB2040A1F18BC400096CC60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204081F18BC400096CC60 /* LaunchScreen.storyboard */; };
 		4EB204151F18BC400096CC60 /* LacerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204141F18BC400096CC60 /* LacerAppTests.swift */; };
 		4EB204201F18BC400096CC60 /* LacerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2041F1F18BC400096CC60 /* LacerAppUITests.swift */; };
-		4EB204341F1933710096CC60 /* AccountCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204331F1933710096CC60 /* AccountCheckingViewController.swift */; };
 		4EB204361F1972090096CC60 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204351F1972090096CC60 /* Alert.swift */; };
 		4EB204381F1A060C0096CC60 /* Lace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204371F1A060C0096CC60 /* Lace.storyboard */; };
 		4EB2043C1F1A21C80096CC60 /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043B1F1A21C80096CC60 /* UserNeedsTableViewController.swift */; };
@@ -50,6 +49,8 @@
 		4EB204861F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */; };
 		4EB204881F23D18F0096CC60 /* UtherServiceDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204871F23D18F0096CC60 /* UtherServiceDetailsTableViewController.swift */; };
 		4ED2B0B51F2639D10072BAEA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */; };
+		4ED2B0B71F265AC10072BAEA /* AccountCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */; };
+		4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */; };
 		4EF9727D1F23E28B005CC2B2 /* UtherNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9727C1F23E28B005CC2B2 /* UtherNeedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +85,6 @@
 		4EB2041B1F18BC400096CC60 /* LacerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LacerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB2041F1F18BC400096CC60 /* LacerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacerAppUITests.swift; sourceTree = "<group>"; };
 		4EB204211F18BC400096CC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EB204331F1933710096CC60 /* AccountCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCheckingViewController.swift; sourceTree = "<group>"; };
 		4EB204351F1972090096CC60 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4EB204371F1A060C0096CC60 /* Lace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lace.storyboard; sourceTree = "<group>"; };
 		4EB2043B1F1A21C80096CC60 /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +120,8 @@
 		4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedDetailsTableViewController.swift; sourceTree = "<group>"; };
 		4EB204871F23D18F0096CC60 /* UtherServiceDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherServiceDetailsTableViewController.swift; sourceTree = "<group>"; };
 		4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../WelcomeViewController.swift; sourceTree = "<group>"; };
+		4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountCheckingViewController.swift; path = ../AccountCheckingViewController.swift; sourceTree = "<group>"; };
+		4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gatekeeper.swift; sourceTree = "<group>"; };
 		4EF9727C1F23E28B005CC2B2 /* UtherNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				4EB203FF1F18BC400096CC60 /* AppDelegate.swift */,
+				4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */,
 				4EB204011F18BC400096CC60 /* ViewController.swift */,
 				4EB204031F18BC400096CC60 /* Main.storyboard */,
 				4EB204371F1A060C0096CC60 /* Lace.storyboard */,
@@ -205,7 +208,7 @@
 				4EB204531F1BD6670096CC60 /* Contact.swift */,
 				4EB204671F2147950096CC60 /* User.swift */,
 				4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */,
-				4EB204331F1933710096CC60 /* AccountCheckingViewController.swift */,
+				4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */,
 				4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */,
 				4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */,
 				4EB204411F1A89E20096CC60 /* Spot.swift */,
@@ -402,11 +405,12 @@
 				4EB204421F1A89E20096CC60 /* Spot.swift in Sources */,
 				4EB2045C1F1EC81C0096CC60 /* UserServiceTableViewCell.swift in Sources */,
 				4EB204561F1BEE520096CC60 /* Need.swift in Sources */,
+				4ED2B0B71F265AC10072BAEA /* AccountCheckingViewController.swift in Sources */,
 				4EB204581F1BF6210096CC60 /* CustomerNeed.swift in Sources */,
 				4EB204741F2157540096CC60 /* UserSkillTableViewCell.swift in Sources */,
 				4EB204621F1F4EBE0096CC60 /* UserServiceDetailsTableViewController.swift in Sources */,
 				4EB204501F1BBDCA0096CC60 /* CustomerNeedTableViewCell.swift in Sources */,
-				4EB204341F1933710096CC60 /* AccountCheckingViewController.swift in Sources */,
+				4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */,
 				4EB204601F1ED4070096CC60 /* Skill.swift in Sources */,
 				4EB2045E1F1EC8EC0096CC60 /* Service.swift in Sources */,
 				4EB204361F1972090096CC60 /* Alert.swift in Sources */,

@@ -44,7 +44,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yin-Fc-FRH">
                                                 <rect key="frame" x="0.0" y="54" width="343" height="33"/>
@@ -97,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="yWE-DH-ySd">
-                                <rect key="frame" x="16" y="80" width="343" height="223.5"/>
+                                <rect key="frame" x="16" y="80" width="343" height="277.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vérification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8u-Gl-FLH">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
@@ -112,21 +112,36 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-sN-8qj">
-                                        <rect key="frame" x="0.0" y="139.5" width="343" height="84"/>
+                                        <rect key="frame" x="0.0" y="139.5" width="343" height="138"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrez le code de vérification" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z9z-9x-0Ml">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WxX-yD-DUb">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrez le code de vérification" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z9z-9x-0Ml">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezZ-hk-cUJ">
                                                 <rect key="frame" x="0.0" y="54" width="343" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Redemander un code">
+                                                <state key="normal" title="GO !">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="connect:" destination="dw4-wI-wK9" eventType="touchUpInside" id="QEV-il-RZB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vg0-9d-BPG">
+                                                <rect key="frame" x="0.0" y="108" width="343" height="30"/>
+                                                <state key="normal" title="Modifier le numéro"/>
+                                                <connections>
+                                                    <segue destination="dR0-0q-R0y" kind="unwind" unwindAction="returnFromAccountCheckingWithSegue:" id="Jqx-O9-4CA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -146,10 +161,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="codeTextField" destination="Z9z-9x-0Ml" id="ZC6-Tj-iiI"/>
+                        <outlet property="codeTextField" destination="Z9z-9x-0Ml" id="Nqx-J3-Gbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60b-di-Mgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dR0-0q-R0y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="305" y="500"/>
         </scene>
