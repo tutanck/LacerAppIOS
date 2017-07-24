@@ -111,46 +111,67 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-sN-8qj">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sDJ-5U-IM6">
                                         <rect key="frame" x="0.0" y="139.5" width="343" height="138"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WxX-yD-DUb">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-sN-8qj">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="138"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrez le code de vérification" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z9z-9x-0Ml">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxX-yD-DUb">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" enablesReturnKeyAutomatically="YES"/>
-                                                    </textField>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtk-0c-ixk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="31.5" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrez le code de vérification" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z9z-9x-0Ml">
+                                                                <rect key="frame" x="31.5" y="0.0" width="311.5" height="30"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" enablesReturnKeyAutomatically="YES"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Z9z-9x-0Ml" firstAttribute="leading" secondItem="mtk-0c-ixk" secondAttribute="trailing" id="25t-RF-8my"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Z9z-9x-0Ml" secondAttribute="bottom" id="5gh-Y6-qsu"/>
+                                                            <constraint firstItem="mtk-0c-ixk" firstAttribute="leading" secondItem="WxX-yD-DUb" secondAttribute="leading" id="8cv-rN-fSQ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="mtk-0c-ixk" secondAttribute="bottom" id="Kzc-AA-CHH"/>
+                                                            <constraint firstItem="Z9z-9x-0Ml" firstAttribute="leading" secondItem="mtk-0c-ixk" secondAttribute="trailing" id="fpz-N5-0ir"/>
+                                                            <constraint firstItem="mtk-0c-ixk" firstAttribute="top" secondItem="WxX-yD-DUb" secondAttribute="top" id="ig4-6O-7CM"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Z9z-9x-0Ml" secondAttribute="trailing" id="tBo-9M-F4k"/>
+                                                            <constraint firstItem="Z9z-9x-0Ml" firstAttribute="top" secondItem="WxX-yD-DUb" secondAttribute="top" id="zBE-QA-H7f"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezZ-hk-cUJ">
+                                                        <rect key="frame" x="0.0" y="54" width="343" height="30"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <state key="normal" title="GO !">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="connect:" destination="dw4-wI-wK9" eventType="touchUpInside" id="QEV-il-RZB"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vg0-9d-BPG">
+                                                        <rect key="frame" x="0.0" y="108" width="343" height="30"/>
+                                                        <state key="normal" title="Modifier le numéro"/>
+                                                        <connections>
+                                                            <segue destination="dR0-0q-R0y" kind="unwind" unwindAction="returnFromAccountCheckingWithSegue:" id="Jqx-O9-4CA"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="WxX-yD-DUb" firstAttribute="top" secondItem="uwA-sN-8qj" secondAttribute="top" id="50d-B6-xgi"/>
+                                                    <constraint firstItem="WxX-yD-DUb" firstAttribute="leading" secondItem="uwA-sN-8qj" secondAttribute="leading" id="BB9-j2-BJ4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WxX-yD-DUb" secondAttribute="trailing" id="s8Z-un-wXq"/>
+                                                </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezZ-hk-cUJ">
-                                                <rect key="frame" x="0.0" y="54" width="343" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="GO !">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="connect:" destination="dw4-wI-wK9" eventType="touchUpInside" id="QEV-il-RZB"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vg0-9d-BPG">
-                                                <rect key="frame" x="0.0" y="108" width="343" height="30"/>
-                                                <state key="normal" title="Modifier le numéro"/>
-                                                <connections>
-                                                    <segue destination="dR0-0q-R0y" kind="unwind" unwindAction="returnFromAccountCheckingWithSegue:" id="Jqx-O9-4CA"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="uwA-sN-8qj" secondAttribute="bottom" id="76Z-dq-REH"/>
-                                    <constraint firstAttribute="trailing" secondItem="uwA-sN-8qj" secondAttribute="trailing" id="fD0-O3-nnr"/>
-                                    <constraint firstItem="uwA-sN-8qj" firstAttribute="leading" secondItem="yWE-DH-ySd" secondAttribute="leading" id="i9X-LY-U3b"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
