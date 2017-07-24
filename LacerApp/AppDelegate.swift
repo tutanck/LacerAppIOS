@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if window != nil{
+        if window == nil{
             let laceStoryboard : UIStoryboard = UIStoryboard(name : "Lace", bundle: nil)
     
             let tabViewController = laceStoryboard.instantiateInitialViewController() as UIViewController?

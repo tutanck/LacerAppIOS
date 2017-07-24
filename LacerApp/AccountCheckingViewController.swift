@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  AccountCheckingViewController.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 14/07/2017.
@@ -8,14 +8,11 @@
 
 import UIKit
 
-class LoginViewController: UIViewController , UITextFieldDelegate{
+class AccountCheckingViewController : UIViewController, UITextFieldDelegate {
     
     //MARK: - Properties
     
-    @IBOutlet weak var emailTextField: UITextField!
-    
-    @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBOutlet weak var codeTextField: UITextField!
     
 
     // MARK: - System events
@@ -24,37 +21,22 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
         super.viewDidLoad()
 
         // Handle the text fields user input through delegate callbacks.
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+        codeTextField.delegate = self
     }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-    
-    
     // MARK: - Actions
     
-    @IBAction func login(_ sender: UIButton) {
-        
-        let email = emailTextField.text;
-        let pass = passwordTextField.text;
-        
-        if email!.isEmpty || pass!.isEmpty {
-            Alert.displayMessage(context: self, message: "Tous les champs sont requis")
-        }
-        
+    @IBAction func connect(_ sender: UIButton) {
         
     }
     
-    
-    
-    
-    
+
     //MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -64,9 +46,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate{
     }
     
     
-    
-    
-    
+
     /*
     // MARK: - Navigation
 
