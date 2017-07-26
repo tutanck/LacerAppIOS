@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */; };
+		4E4406CD1F2956BC0041668B /* UserNeedDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4406CC1F2956BC0041668B /* UserNeedDetailsTableViewController.swift */; };
 		4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB203FF1F18BC400096CC60 /* AppDelegate.swift */; };
 		4EB204021F18BC400096CC60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204011F18BC400096CC60 /* ViewController.swift */; };
 		4EB204051F18BC400096CC60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204031F18BC400096CC60 /* Main.storyboard */; };
@@ -16,7 +18,6 @@
 		4EB204201F18BC400096CC60 /* LacerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2041F1F18BC400096CC60 /* LacerAppUITests.swift */; };
 		4EB204361F1972090096CC60 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204351F1972090096CC60 /* Alert.swift */; };
 		4EB204381F1A060C0096CC60 /* Lace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204371F1A060C0096CC60 /* Lace.storyboard */; };
-		4EB2043C1F1A21C80096CC60 /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043B1F1A21C80096CC60 /* UserNeedsTableViewController.swift */; };
 		4EB2043E1F1A21E30096CC60 /* UserContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043D1F1A21E30096CC60 /* UserContactsTableViewController.swift */; };
 		4EB204401F1A80F80096CC60 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */; };
 		4EB204421F1A89E20096CC60 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204411F1A89E20096CC60 /* Spot.swift */; };
@@ -43,7 +44,6 @@
 		4EB204741F2157540096CC60 /* UserSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204731F2157540096CC60 /* UserSkillTableViewCell.swift */; };
 		4EB204761F215B7D0096CC60 /* ServiceSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204751F215B7D0096CC60 /* ServiceSkillTableViewCell.swift */; };
 		4EB204781F215B980096CC60 /* UserServiceSkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204771F215B980096CC60 /* UserServiceSkillsTableViewController.swift */; };
-		4EB204801F23C3CF0096CC60 /* UserNeedDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2047F1F23C3CE0096CC60 /* UserNeedDetailsTableViewController.swift */; };
 		4EB204821F23CE520096CC60 /* UtherProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */; };
 		4EB204841F23CF990096CC60 /* UtherNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204831F23CF990096CC60 /* UtherNeedsTableViewController.swift */; };
 		4EB204861F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */; };
@@ -72,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
+		4E4406CC1F2956BC0041668B /* UserNeedDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedDetailsTableViewController.swift; sourceTree = "<group>"; };
 		4EB203FC1F18BC400096CC60 /* LacerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LacerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB203FF1F18BC400096CC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB204011F18BC400096CC60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +89,6 @@
 		4EB204211F18BC400096CC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EB204351F1972090096CC60 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4EB204371F1A060C0096CC60 /* Lace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lace.storyboard; sourceTree = "<group>"; };
-		4EB2043B1F1A21C80096CC60 /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4EB2043D1F1A21E30096CC60 /* UserContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserContactsTableViewController.swift; sourceTree = "<group>"; };
 		4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		4EB204411F1A89E20096CC60 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		4EB204731F2157540096CC60 /* UserSkillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSkillTableViewCell.swift; sourceTree = "<group>"; };
 		4EB204751F215B7D0096CC60 /* ServiceSkillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSkillTableViewCell.swift; sourceTree = "<group>"; };
 		4EB204771F215B980096CC60 /* UserServiceSkillsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServiceSkillsTableViewController.swift; sourceTree = "<group>"; };
-		4EB2047F1F23C3CE0096CC60 /* UserNeedDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedDetailsTableViewController.swift; sourceTree = "<group>"; };
 		4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherProfileTableViewController.swift; sourceTree = "<group>"; };
 		4EB204831F23CF990096CC60 /* UtherNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedDetailsTableViewController.swift; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 				4EB204711F2157290096CC60 /* UserSkillsTableViewController.swift */,
 				4EB204731F2157540096CC60 /* UserSkillTableViewCell.swift */,
 				4EB204611F1F4EBE0096CC60 /* UserServiceDetailsTableViewController.swift */,
-				4EB2047F1F23C3CE0096CC60 /* UserNeedDetailsTableViewController.swift */,
-				4EB2043B1F1A21C80096CC60 /* UserNeedsTableViewController.swift */,
+				4E4406CC1F2956BC0041668B /* UserNeedDetailsTableViewController.swift */,
+				4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */,
 				4EB2044D1F1BBD120096CC60 /* UserNeedTableViewCell.swift */,
 				4EB204551F1BEE520096CC60 /* Need.swift */,
 				4EB204571F1BF6210096CC60 /* CustomerNeed.swift */,
@@ -378,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EB2046A1F214B2E0096CC60 /* FoundUserTableViewCell.swift in Sources */,
+				4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */,
 				4EB204681F2147950096CC60 /* User.swift in Sources */,
 				4EB204841F23CF990096CC60 /* UtherNeedsTableViewController.swift in Sources */,
 				4EB204701F21515F0096CC60 /* UtherServicesTableViewController.swift in Sources */,
@@ -388,7 +389,7 @@
 				4EB2044E1F1BBD120096CC60 /* UserNeedTableViewCell.swift in Sources */,
 				4EB204401F1A80F80096CC60 /* ContactTableViewCell.swift in Sources */,
 				4EB2044C1F1AF04D0096CC60 /* SearchUthersNeedsTableViewController.swift in Sources */,
-				4EB204801F23C3CF0096CC60 /* UserNeedDetailsTableViewController.swift in Sources */,
+				4E4406CD1F2956BC0041668B /* UserNeedDetailsTableViewController.swift in Sources */,
 				4EF9727D1F23E28B005CC2B2 /* UtherNeedTableViewCell.swift in Sources */,
 				4EB204881F23D18F0096CC60 /* UtherServiceDetailsTableViewController.swift in Sources */,
 				4EB204641F1F60C40096CC60 /* UserProfileTableViewController.swift in Sources */,
@@ -414,7 +415,6 @@
 				4EB204601F1ED4070096CC60 /* Skill.swift in Sources */,
 				4EB2045E1F1EC8EC0096CC60 /* Service.swift in Sources */,
 				4EB204361F1972090096CC60 /* Alert.swift in Sources */,
-				4EB2043C1F1A21C80096CC60 /* UserNeedsTableViewController.swift in Sources */,
 				4ED2B0B51F2639D10072BAEA /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
