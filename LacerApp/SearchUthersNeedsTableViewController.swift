@@ -9,17 +9,38 @@
 import UIKit
 
 class SearchUthersNeedsTableViewController: UITableViewController {
+   
     
-    
+    // MARK: - Properties
     
     var customerNeeds : [CustomerNeed] = []
+
+    var filteredCustomerNeeds = [CustomerNeed]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     
+    
+    
+    // MARK: - System events
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //SearchController parameters
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+        //SearchController's search bar parameters
+        searchController.searchBar.scopeButtonTitles = ["Non qualifié", "Vos compétences"]
+        searchController.searchBar.delegate = self
+        
         loadSample()
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,7 +58,10 @@ class SearchUthersNeedsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return customerNeeds.count
+        if (searchController.isActive && searchController.searchBar.text != "") {
+            return filteredCustomerNeeds.count
+        }
+         return customerNeeds.count
     }
     
     
@@ -46,13 +70,17 @@ class SearchUthersNeedsTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of CustomerNeedTableViewCell.")
         }
         
-        let customerNeed = customerNeeds[indexPath.row]
+        let customerNeed : CustomerNeed
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            customerNeed = filteredCustomerNeeds[indexPath.row]
+        } else {
+            customerNeed = customerNeeds[indexPath.row]
+        }
         
         cell.photoImageView.image = customerNeed.photo
         cell.titleLabel.text = customerNeed.title
-        
         cell.customerNameLabel.text = customerNeed.customerName
-        
         cell.distanceLabel.text = String(Int(customerNeed.distance))+" m"
         
         return cell
@@ -99,15 +127,44 @@ class SearchUthersNeedsTableViewController: UITableViewController {
     
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //model 4 later
+        /* if segue.identifier == "segueFromSearchUthersToUtherProfil" {
+         if let indexPath = tableView.indexPathForSelectedRow {
+         
+         let user : User
+         
+         if (searchController.isActive && searchController.searchBar.text != "") {
+         user = filteredUsers[indexPath.row]
+         } else {
+         user = users[indexPath.row]
+         }
+         }
+         }
+         
+         guard let utherProfileController = segue.destination as? UtherProfileTableViewController else {
+         fatalError("The segue.destination is not an instance of UtherProfileTableViewController.")
+         }
+         
+         utherProfileController.user = user*/
+        
+    }
+    
+    
+    //MARK: Search Logic
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
+        filteredCustomerNeeds = customerNeeds.filter { customerNeed in
+            let categoryMatch = (scope == "Tout") //|| (user.category == scope)
+            return  categoryMatch && customerNeed.customerName.lowercased().contains(searchText.lowercased())
+        }
+        
+        tableView.reloadData()
+    }
+
     
     
     
@@ -122,3 +179,22 @@ class SearchUthersNeedsTableViewController: UITableViewController {
     }
     
 }
+
+
+
+//SearchDelegate
+extension SearchUthersNeedsTableViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+}
+
+//SearchBar's Scope Bar delegate
+extension SearchUthersNeedsTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
+

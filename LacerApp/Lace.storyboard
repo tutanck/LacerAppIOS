@@ -383,7 +383,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mes contacts" id="xot-ug-4pq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="search" id="2gm-0j-Td3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="2gm-0j-Td3">
                             <connections>
                                 <segue destination="sQg-V5-vkN" kind="presentation" identifier="modalSearchUthers" id="GSZ-MG-cyq"/>
                             </connections>
@@ -2268,7 +2268,7 @@
                                     <outlet property="photoImageView" destination="CVd-sq-njb" id="vVn-tD-to4"/>
                                     <outlet property="usernameLabel" destination="v0Z-UX-ozE" id="mgG-9z-dRd"/>
                                     <outlet property="userstatusLabel" destination="GHe-K5-HtD" id="Op4-o5-Jtx"/>
-                                    <segue destination="eKH-z8-okw" kind="show" id="Qar-OH-LWm"/>
+                                    <segue destination="eKH-z8-okw" kind="show" identifier="segueFromSearchUthersToUtherProfil" id="Qar-OH-LWm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -2313,9 +2313,9 @@
         <image name="userPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bUk-Md-L64"/>
-        <segue reference="s1t-9O-FGt"/>
-        <segue reference="XpB-pj-EDP"/>
         <segue reference="MeX-dp-gTk"/>
+        <segue reference="bUk-Md-L64"/>
+        <segue reference="Qar-OH-LWm"/>
+        <segue reference="s1t-9O-FGt"/>
     </inferredMetricsTieBreakers>
 </document>

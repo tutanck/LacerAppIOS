@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if window == nil{
+        if window != nil{
             self.window!.rootViewController = Gatekeeper.getGate()
             self.window!.makeKeyAndVisible()
         }
