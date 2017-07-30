@@ -48,10 +48,21 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
     
     
     
+    // MARK: - Inner Users Results TableView
+    
+    @IBOutlet weak var matchingProfilesTableView: UITableView!
+    
+    var matchingProfilesTableViewDelegate : InnerTableViewDelegate!
+
+    
     // MARK: - System Events
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        matchingProfilesTableViewDelegate = InnerTableViewDelegate()
+        matchingProfilesTableView.delegate = matchingProfilesTableViewDelegate
+        matchingProfilesTableView.dataSource = matchingProfilesTableViewDelegate
         
         begin()
     }
@@ -106,6 +117,45 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
         if let rightBarButton = self.navigationItem.rightBarButtonItem {
             rightBarButton.isEnabled = true
         }
+    }
+    
+}
+
+
+
+class InnerTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSource{
+    
+    let matchingProfiles : [User] = [
+        User(name: "Angb joan", photo:UIImage(named: "userPhoto"), status: 1),
+        User(name: "Diogo Justino", photo: UIImage(named: "userPhoto"), status: 0),
+        User(name: "Tesla", photo: UIImage(named: "userPhoto"), status: 2)
+    ]
+    
+    
+    // MARK: - Table view data source
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    // number of rows in table view
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.matchingProfiles.count
+    }
+    
+    // create a cell for each table view row
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // create a new cell if needed or reuse an old one
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MatchingProfileTableViewCell") as! MatchingProfileTableViewCell
+        
+        // set the text from the data model
+        cell.photoImageView.image = self.matchingProfiles[indexPath.row].photo
+        cell.usernameLabel.text = self.matchingProfiles[indexPath.row].name
+        cell.userstatusSpot.backgroundColor = StatusColor.getColor(status : self.matchingProfiles[indexPath.row].status)
+        
+        return cell
     }
     
 }
