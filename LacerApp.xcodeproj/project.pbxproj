@@ -171,49 +171,17 @@
 		4EB203FE1F18BC400096CC60 /* LacerApp */ = {
 			isa = PBXGroup;
 			children = (
-				4EB203FF1F18BC400096CC60 /* AppDelegate.swift */,
-				4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */,
 				4EB204011F18BC400096CC60 /* ViewController.swift */,
-				4EB204031F18BC400096CC60 /* Main.storyboard */,
-				4EB204371F1A060C0096CC60 /* Lace.storyboard */,
-				4EB204871F23D18F0096CC60 /* UtherServiceDetailsTableViewController.swift */,
-				4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */,
-				4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */,
-				4EB2046D1F2151250096CC60 /* UtherServiceTableViewCell.swift */,
-				4EB2046F1F21515F0096CC60 /* UtherServicesTableViewController.swift */,
-				4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */,
-				4EB2044B1F1AF04D0096CC60 /* SearchUthersNeedsTableViewController.swift */,
-				4EB204751F215B7D0096CC60 /* ServiceSkillTableViewCell.swift */,
-				4EB204691F214B2E0096CC60 /* FoundUserTableViewCell.swift */,
-				4EB2045F1F1ED4070096CC60 /* Skill.swift */,
-				4EB2045D1F1EC8EC0096CC60 /* Service.swift */,
-				4EB2043D1F1A21E30096CC60 /* UserContactsTableViewController.swift */,
-				4EB204771F215B980096CC60 /* UserServiceSkillsTableViewController.swift */,
-				4EB2045B1F1EC81C0096CC60 /* UserServiceTableViewCell.swift */,
-				4EB204591F1EC7CF0096CC60 /* UserServicesTableViewController.swift */,
-				4EB204631F1F60C40096CC60 /* UserProfileTableViewController.swift */,
-				4EB204711F2157290096CC60 /* UserSkillsTableViewController.swift */,
-				4EB204731F2157540096CC60 /* UserSkillTableViewCell.swift */,
-				4EDAA93F1F2D5EED00F1A5A2 /* UserNeedDetailsTableViewController.swift */,
-				4EB204611F1F4EBE0096CC60 /* UserServiceDetailsTableViewController.swift */,
-				4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */,
-				4EB2044D1F1BBD120096CC60 /* UserNeedTableViewCell.swift */,
-				4EB204551F1BEE520096CC60 /* Need.swift */,
-				4EB204571F1BF6210096CC60 /* CustomerNeed.swift */,
-				4EB2044F1F1BBDCA0096CC60 /* CustomerNeedTableViewCell.swift */,
-				4EB204531F1BD6670096CC60 /* Contact.swift */,
-				4EB204671F2147950096CC60 /* User.swift */,
-				4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */,
-				4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */,
-				4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */,
-				4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */,
-				4EB204411F1A89E20096CC60 /* Spot.swift */,
-				4EB204351F1972090096CC60 /* Alert.swift */,
-				4EB2046B1F214C5F0096CC60 /* StatusColor.swift */,
+				4EDAA9471F2D6C1A00F1A5A2 /* Storyboards */,
+				4EDAA9461F2D6BF800F1A5A2 /* Launch */,
+				4EDAA9441F2D6B7000F1A5A2 /* Uther */,
+				4EDAA9431F2D6B4100F1A5A2 /* User */,
+				4EDAA9491F2D6C7C00F1A5A2 /* BusinessModel */,
+				4EDAA94B1F2D6CF000F1A5A2 /* Custom */,
+				4EDAA94A1F2D6CCD00F1A5A2 /* Welcome */,
+				4EDAA9481F2D6C4900F1A5A2 /* Utils */,
 				4EB204061F18BC400096CC60 /* Assets.xcassets */,
-				4EB204081F18BC400096CC60 /* LaunchScreen.storyboard */,
 				4EB2040B1F18BC400096CC60 /* Info.plist */,
-				4EDAA9411F2D61D500F1A5A2 /* MatchingProfileTableViewCell.swift */,
 			);
 			path = LacerApp;
 			sourceTree = "<group>";
@@ -234,6 +202,118 @@
 				4EB204211F18BC400096CC60 /* Info.plist */,
 			);
 			path = LacerAppUITests;
+			sourceTree = "<group>";
+		};
+		4EDAA9431F2D6B4100F1A5A2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				4EB2043D1F1A21E30096CC60 /* UserContactsTableViewController.swift */,
+				4EB204771F215B980096CC60 /* UserServiceSkillsTableViewController.swift */,
+				4EB2045B1F1EC81C0096CC60 /* UserServiceTableViewCell.swift */,
+				4EB204591F1EC7CF0096CC60 /* UserServicesTableViewController.swift */,
+				4EB204631F1F60C40096CC60 /* UserProfileTableViewController.swift */,
+				4EB204711F2157290096CC60 /* UserSkillsTableViewController.swift */,
+				4EB204731F2157540096CC60 /* UserSkillTableViewCell.swift */,
+				4EDAA93F1F2D5EED00F1A5A2 /* UserNeedDetailsTableViewController.swift */,
+				4EB204611F1F4EBE0096CC60 /* UserServiceDetailsTableViewController.swift */,
+				4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */,
+				4EB2044D1F1BBD120096CC60 /* UserNeedTableViewCell.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		4EDAA9441F2D6B7000F1A5A2 /* Uther */ = {
+			isa = PBXGroup;
+			children = (
+				4EDAA9451F2D6BC500F1A5A2 /* Search */,
+				4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */,
+				4EB204871F23D18F0096CC60 /* UtherServiceDetailsTableViewController.swift */,
+				4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */,
+				4EB2046D1F2151250096CC60 /* UtherServiceTableViewCell.swift */,
+				4EB2046F1F21515F0096CC60 /* UtherServicesTableViewController.swift */,
+			);
+			name = Uther;
+			sourceTree = "<group>";
+		};
+		4EDAA9451F2D6BC500F1A5A2 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */,
+				4EB2044B1F1AF04D0096CC60 /* SearchUthersNeedsTableViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		4EDAA9461F2D6BF800F1A5A2 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				4EB203FF1F18BC400096CC60 /* AppDelegate.swift */,
+				4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
+		4EDAA9471F2D6C1A00F1A5A2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4EB204081F18BC400096CC60 /* LaunchScreen.storyboard */,
+				4EB204031F18BC400096CC60 /* Main.storyboard */,
+				4EB204371F1A060C0096CC60 /* Lace.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4EDAA9481F2D6C4900F1A5A2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4EB204351F1972090096CC60 /* Alert.swift */,
+				4EB2046B1F214C5F0096CC60 /* StatusColor.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		4EDAA9491F2D6C7C00F1A5A2 /* BusinessModel */ = {
+			isa = PBXGroup;
+			children = (
+				4EB2045F1F1ED4070096CC60 /* Skill.swift */,
+				4EB2045D1F1EC8EC0096CC60 /* Service.swift */,
+				4EB204551F1BEE520096CC60 /* Need.swift */,
+				4EB204571F1BF6210096CC60 /* CustomerNeed.swift */,
+				4EB204531F1BD6670096CC60 /* Contact.swift */,
+				4EB204671F2147950096CC60 /* User.swift */,
+			);
+			name = BusinessModel;
+			sourceTree = "<group>";
+		};
+		4EDAA94A1F2D6CCD00F1A5A2 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */,
+				4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		4EDAA94B1F2D6CF000F1A5A2 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4EDAA94C1F2D6D0900F1A5A2 /* Cell */,
+				4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */,
+				4EB204411F1A89E20096CC60 /* Spot.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		4EDAA94C1F2D6D0900F1A5A2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4EB204691F214B2E0096CC60 /* FoundUserTableViewCell.swift */,
+				4EB204751F215B7D0096CC60 /* ServiceSkillTableViewCell.swift */,
+				4EB2044F1F1BBDCA0096CC60 /* CustomerNeedTableViewCell.swift */,
+				4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */,
+				4EDAA9411F2D61D500F1A5A2 /* MatchingProfileTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
