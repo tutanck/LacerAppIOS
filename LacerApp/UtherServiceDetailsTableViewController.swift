@@ -10,18 +10,30 @@ import UIKit
 
 class UtherServiceDetailsTableViewController: UITableViewController {
 
+       // MARK: - Properties
+    
+    @IBOutlet weak var relatedSkillsTableView: UITableView!
+    
+    var relatedSkillsTableViewDelegate : RelatedSkillsTableViewDelegate!
+    
+    
+    
+    // MARK: - System Events
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        relatedSkillsTableViewDelegate = RelatedSkillsTableViewDelegate()
+        relatedSkillsTableView.delegate = relatedSkillsTableViewDelegate
+        relatedSkillsTableView.dataSource = relatedSkillsTableViewDelegate
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    
-    
     
     
     /*

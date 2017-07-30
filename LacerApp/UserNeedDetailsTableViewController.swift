@@ -52,7 +52,7 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
     
     @IBOutlet weak var matchingProfilesTableView: UITableView!
     
-    var matchingProfilesTableViewDelegate : InnerTableViewDelegate!
+    var matchingProfilesTableViewDelegate : MatchingProfilesTableViewDelegate!
 
     
     // MARK: - System Events
@@ -60,7 +60,7 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        matchingProfilesTableViewDelegate = InnerTableViewDelegate()
+        matchingProfilesTableViewDelegate = MatchingProfilesTableViewDelegate()
         matchingProfilesTableView.delegate = matchingProfilesTableViewDelegate
         matchingProfilesTableView.dataSource = matchingProfilesTableViewDelegate
         
@@ -123,7 +123,7 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
 
 
 
-class InnerTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSource{
+class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSource{
     
     let matchingProfiles : [User] = [
         User(name: "Angb joan", photo:UIImage(named: "userPhoto"), status: 1),

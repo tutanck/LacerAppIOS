@@ -49,10 +49,23 @@ class UserServiceDetailsTableViewController: UITableViewController, UITextFieldD
     @IBAction func adviseSwitchChanged(_ sender: UISwitch) { showRightBarButtonItem() }
     
     
+    
+    // MARK: - related skills tableView
+    
+    @IBOutlet weak var relatedSkillsTableView: UITableView!
+    
+    var relatedSkillsTableViewDelegate : RelatedSkillsTableViewDelegate!
+
+    
+    
     // MARK: - System Events
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        relatedSkillsTableViewDelegate = RelatedSkillsTableViewDelegate()
+        relatedSkillsTableView.delegate = relatedSkillsTableViewDelegate
+        relatedSkillsTableView.dataSource = relatedSkillsTableViewDelegate
         
         begin()
     }
@@ -109,6 +122,34 @@ class UserServiceDetailsTableViewController: UITableViewController, UITextFieldD
         if let rightBarButton = self.navigationItem.rightBarButtonItem {
             rightBarButton.isEnabled = true
         }
+    }
+
+}
+
+
+class RelatedSkillsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSource{
+    
+    let relatedSkills : [String] = ["Java", "Ada", "Node", "Scrum", "Ruby"]
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // number of rows in table view
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.relatedSkills.count
+    }
+    
+    // create a cell for each table view row
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // create a new cell if needed or reuse an old one
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell")!
+        
+        // set the text from the data model
+        cell.textLabel?.text = self.relatedSkills[indexPath.row]
+        
+        return cell
     }
 
 }
