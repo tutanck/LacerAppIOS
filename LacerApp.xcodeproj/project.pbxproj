@@ -50,7 +50,6 @@
 		4ED2B0B51F2639D10072BAEA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */; };
 		4ED2B0B71F265AC10072BAEA /* AccountCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */; };
 		4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */; };
-		4EF9727D1F23E28B005CC2B2 /* UtherNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9727C1F23E28B005CC2B2 /* UtherNeedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +119,6 @@
 		4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../WelcomeViewController.swift; sourceTree = "<group>"; };
 		4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountCheckingViewController.swift; path = ../AccountCheckingViewController.swift; sourceTree = "<group>"; };
 		4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gatekeeper.swift; sourceTree = "<group>"; };
-		4EF9727C1F23E28B005CC2B2 /* UtherNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +179,6 @@
 				4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */,
 				4EB2046D1F2151250096CC60 /* UtherServiceTableViewCell.swift */,
 				4EB2046F1F21515F0096CC60 /* UtherServicesTableViewController.swift */,
-				4EF9727C1F23E28B005CC2B2 /* UtherNeedTableViewCell.swift */,
 				4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */,
 				4EB2044B1F1AF04D0096CC60 /* SearchUthersNeedsTableViewController.swift */,
 				4EB204751F215B7D0096CC60 /* ServiceSkillTableViewCell.swift */,
@@ -386,7 +383,6 @@
 				4EB204401F1A80F80096CC60 /* ContactTableViewCell.swift in Sources */,
 				4EB2044C1F1AF04D0096CC60 /* SearchUthersNeedsTableViewController.swift in Sources */,
 				4E4406CD1F2956BC0041668B /* UserNeedDetailsTableViewController.swift in Sources */,
-				4EF9727D1F23E28B005CC2B2 /* UtherNeedTableViewCell.swift in Sources */,
 				4EB204881F23D18F0096CC60 /* UtherServiceDetailsTableViewController.swift in Sources */,
 				4EB204641F1F60C40096CC60 /* UserProfileTableViewController.swift in Sources */,
 				4EB2046C1F214C5F0096CC60 /* StatusColor.swift in Sources */,
