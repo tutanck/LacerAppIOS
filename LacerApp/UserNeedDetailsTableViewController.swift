@@ -15,16 +15,6 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
     
     @IBOutlet weak var titleTextField: UITextField!
     
-    @IBOutlet weak var searchKeyWordsTextField: UITextField!
-    
-    @IBOutlet weak var gratificationTextField: UITextField!
-    
-    @IBOutlet weak var placeTextField: UITextField!
-    
-    @IBOutlet weak var startDateTextField: UITextField!
-    
-    @IBOutlet weak var endDateTextField: UITextField!
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()         // Hide the keyboard
         return true
@@ -94,16 +84,6 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
         titleTextField.delegate = self
         
         descriptionTextView.delegate = self
-        
-        searchKeyWordsTextField.delegate = self
-        
-        gratificationTextField.delegate = self
-        
-        placeTextField.delegate = self
-        
-        startDateTextField.delegate = self
-        
-        endDateTextField.delegate = self
         
     }
     

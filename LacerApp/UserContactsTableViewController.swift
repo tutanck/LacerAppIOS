@@ -11,7 +11,7 @@ import UIKit
 class UserContactsTableViewController: UITableViewController {
     
     
-    var contacts : [Contact] = []
+    var contacts : [User] = []
     
     
     override func viewDidLoad() {
@@ -110,9 +110,9 @@ class UserContactsTableViewController: UITableViewController {
     private func loadSample() {
         let photo = UIImage(named: "userPhoto")
         contacts+=[
-            Contact(name: "Angb joan", photo: photo, status: 1),
-            Contact(name: "Diogo Justino", photo: photo, status: 0),
-            Contact(name: "Tesla", photo: photo, status: 2)
+            User(name: "Angb joan", photo: photo, status: 1),
+            User(name: "Diogo Justino", photo: photo, status: 0),
+            User(name: "Tesla", photo: photo, status: 2)
         ]
     }
     

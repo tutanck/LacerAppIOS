@@ -24,7 +24,6 @@
 		4EB2044C1F1AF04D0096CC60 /* SearchUthersNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044B1F1AF04D0096CC60 /* SearchUthersNeedsTableViewController.swift */; };
 		4EB2044E1F1BBD120096CC60 /* UserNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044D1F1BBD120096CC60 /* UserNeedTableViewCell.swift */; };
 		4EB204501F1BBDCA0096CC60 /* CustomerNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044F1F1BBDCA0096CC60 /* CustomerNeedTableViewCell.swift */; };
-		4EB204541F1BD6670096CC60 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204531F1BD6670096CC60 /* Contact.swift */; };
 		4EB204561F1BEE520096CC60 /* Need.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204551F1BEE520096CC60 /* Need.swift */; };
 		4EB204581F1BF6210096CC60 /* CustomerNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204571F1BF6210096CC60 /* CustomerNeed.swift */; };
 		4EB2045A1F1EC7CF0096CC60 /* UserServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204591F1EC7CF0096CC60 /* UserServicesTableViewController.swift */; };
@@ -94,7 +93,6 @@
 		4EB2044B1F1AF04D0096CC60 /* SearchUthersNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUthersNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4EB2044D1F1BBD120096CC60 /* UserNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedTableViewCell.swift; sourceTree = "<group>"; };
 		4EB2044F1F1BBDCA0096CC60 /* CustomerNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerNeedTableViewCell.swift; sourceTree = "<group>"; };
-		4EB204531F1BD6670096CC60 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = ../Contact.swift; sourceTree = "<group>"; };
 		4EB204551F1BEE520096CC60 /* Need.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Need.swift; sourceTree = "<group>"; };
 		4EB204571F1BF6210096CC60 /* CustomerNeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerNeed.swift; sourceTree = "<group>"; };
 		4EB204591F1EC7CF0096CC60 /* UserServicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServicesTableViewController.swift; sourceTree = "<group>"; };
@@ -279,7 +277,6 @@
 				4EB2045D1F1EC8EC0096CC60 /* Service.swift */,
 				4EB204551F1BEE520096CC60 /* Need.swift */,
 				4EB204571F1BF6210096CC60 /* CustomerNeed.swift */,
-				4EB204531F1BD6670096CC60 /* Contact.swift */,
 				4EB204671F2147950096CC60 /* User.swift */,
 			);
 			name = BusinessModel;
@@ -459,7 +456,6 @@
 				4EB204681F2147950096CC60 /* User.swift in Sources */,
 				4EB204701F21515F0096CC60 /* UtherServicesTableViewController.swift in Sources */,
 				4EB204821F23CE520096CC60 /* UtherProfileTableViewController.swift in Sources */,
-				4EB204541F1BD6670096CC60 /* Contact.swift in Sources */,
 				4EB2046E1F2151250096CC60 /* UtherServiceTableViewCell.swift in Sources */,
 				4EB204781F215B980096CC60 /* UserServiceSkillsTableViewController.swift in Sources */,
 				4EB2044E1F1BBD120096CC60 /* UserNeedTableViewCell.swift in Sources */,
