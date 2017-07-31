@@ -88,16 +88,6 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
     
     
     
-    // MARK: - Switchs
-    
-    @IBOutlet weak var unqualifiedSwitch: UISwitch!
-    @IBAction func unqualifiedSwitchChanged(_ sender: UISwitch) { showRightBarButtonItem() }
-
-    @IBOutlet weak var partTimeSwitch: UISwitch!
-    @IBAction func partTimeSwitchChanged(_ sender: UISwitch) { showRightBarButtonItem() }
-    
-    
-    
     
     // MARK: - System Events
     
