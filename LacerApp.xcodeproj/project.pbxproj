@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */; };
 		4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB203FF1F18BC400096CC60 /* AppDelegate.swift */; };
-		4EB204021F18BC400096CC60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204011F18BC400096CC60 /* ViewController.swift */; };
 		4EB204051F18BC400096CC60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204031F18BC400096CC60 /* Main.storyboard */; };
 		4EB204071F18BC400096CC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204061F18BC400096CC60 /* Assets.xcassets */; };
 		4EB2040A1F18BC400096CC60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204081F18BC400096CC60 /* LaunchScreen.storyboard */; };
@@ -64,7 +63,6 @@
 		4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4EB203FC1F18BC400096CC60 /* LacerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LacerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB203FF1F18BC400096CC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EB204011F18BC400096CC60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4EB204041F18BC400096CC60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4EB204061F18BC400096CC60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EB204091F18BC400096CC60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 		4EB203FE1F18BC400096CC60 /* LacerApp */ = {
 			isa = PBXGroup;
 			children = (
-				4EB204011F18BC400096CC60 /* ViewController.swift */,
 				4EDAA9471F2D6C1A00F1A5A2 /* Storyboards */,
 				4EDAA9461F2D6BF800F1A5A2 /* Launch */,
 				4EDAA9441F2D6B7000F1A5A2 /* Uther */,
@@ -486,7 +483,6 @@
 				4EB204721F2157290096CC60 /* UserSkillsTableViewController.swift in Sources */,
 				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
 				4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */,
-				4EB204021F18BC400096CC60 /* ViewController.swift in Sources */,
 				4EB204861F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift in Sources */,
 				4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */,
 				4EB204421F1A89E20096CC60 /* Spot.swift in Sources */,
