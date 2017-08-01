@@ -10,7 +10,7 @@ import UIKit
 
 class UserSkillsTableViewController: UITableViewController {
 
-    var skills : [Skill] = []
+    var keywords : [Keyword] = []
     
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class UserSkillsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return skills.count
+        return keywords.count
     }
     
     
@@ -42,7 +42,7 @@ class UserSkillsTableViewController: UITableViewController {
         }
         
         // Fetches the appropriate meal for the data source layout.
-        let skill = skills[indexPath.row]
+        let skill = keywords[indexPath.row]
         
         cell.titleLabel.text = skill.title
         cell.statusSwitch.isOn = skill.activ
@@ -105,10 +105,10 @@ class UserSkillsTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSample() {
-        skills+=[
-            Skill(title: "Java", activ:true),
-            Skill(title: "Mongo ", activ:false),
-            Skill(title: "Scrum",activ:true),
+        keywords+=[
+            Keyword(title: "Java", activ:true),
+            Keyword(title: "Mongo ", activ:false),
+            Keyword(title: "Scrum",activ:true),
         ]
     }
     

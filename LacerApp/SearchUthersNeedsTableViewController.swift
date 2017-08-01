@@ -13,9 +13,9 @@ class SearchUthersNeedsTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var customerNeeds : [CustomerNeed] = []
+    var needs : [Need] = []
 
-    var filteredCustomerNeeds = [CustomerNeed]()
+    var filteredNeeds = [Need]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -59,9 +59,9 @@ class SearchUthersNeedsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (searchController.isActive && searchController.searchBar.text != "") {
-            return filteredCustomerNeeds.count
+            return filteredNeeds.count
         }
-         return customerNeeds.count
+         return needs.count
     }
     
     
@@ -70,18 +70,18 @@ class SearchUthersNeedsTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of CustomerNeedTableViewCell.")
         }
         
-        let customerNeed : CustomerNeed
+        let need : Need
         
         if searchController.isActive && searchController.searchBar.text != "" {
-            customerNeed = filteredCustomerNeeds[indexPath.row]
+            need = filteredNeeds[indexPath.row]
         } else {
-            customerNeed = customerNeeds[indexPath.row]
+            need = needs[indexPath.row]
         }
         
-        cell.photoImageView.image = customerNeed.photo
-        cell.titleLabel.text = customerNeed.title
-        cell.customerNameLabel.text = customerNeed.customerName
-        cell.distanceLabel.text = String(Int(customerNeed.distance))+" m"
+        cell.photoImageView.image = need.photo
+        cell.titleLabel.text = need.title
+        cell.customerNameLabel.text = need.customerName
+        cell.distanceLabel.text = String(Int(need.distance))+" m"
         
         return cell
     }
@@ -157,7 +157,7 @@ class SearchUthersNeedsTableViewController: UITableViewController {
     //MARK: Search Logic
     
     func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
-        filteredCustomerNeeds = customerNeeds.filter { customerNeed in
+        filteredNeeds = needs.filter { customerNeed in
             let categoryMatch = (scope == "Tout") //|| (user.category == scope)
             return  categoryMatch && customerNeed.customerName.lowercased().contains(searchText.lowercased())
         }
@@ -171,10 +171,10 @@ class SearchUthersNeedsTableViewController: UITableViewController {
     private func loadSample() {
         let photo = UIImage(named: "userPhoto")
         
-        customerNeeds+=[
-            CustomerNeed(title: "Besoin Inedis", tags : "#java #mongo",activ:true, customerName : "Inedis", distance: 1230, description : "Bla bla bla", photo : photo),
-            CustomerNeed(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false, customerName : "BNP", distance: 450, description : "Bla bla bla", photo : photo),
-            CustomerNeed(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true, customerName : "Google", distance: 204, description : "Bla bla bla", photo : photo),
+        needs+=[
+            Need(title: "Besoin Inedis", tags : "#java #mongo",activ:true, customerName : "Inedis", distance: 1230, description : "Bla bla bla", photo : photo),
+            Need(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false, customerName : "BNP", distance: 450, description : "Bla bla bla", photo : photo),
+            Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true, customerName : "Google", distance: 204, description : "Bla bla bla", photo : photo),
         ]
     }
     

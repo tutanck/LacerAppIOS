@@ -1,5 +1,5 @@
 //
-//  Skill.swift
+//  Keyword.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 19/07/2017.
@@ -9,7 +9,7 @@
 
 import UIKit
 
-class Skill {
+class Keyword {
     
     var title : String
     var activ : Bool
