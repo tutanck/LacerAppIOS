@@ -26,7 +26,6 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
     
     // MARK: - TextView
     
-    
     @IBOutlet weak var descriptionTextView: UITextView!
     
     func textViewShouldReturn(_ textView: UITextView) -> Bool {
@@ -37,12 +36,20 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
     func textViewDidEndEditing(_ textView: UITextView) { showRightBarButtonItem() }
     
     
+    // MARK: - Switch
+
+    @IBOutlet weak var needStatusSwitch: UISwitch!
+    @IBAction func needStatusSwitchChanged(_ sender: UISegmentedControl) { showRightBarButtonItem() }
+
+    
+    
     
     // MARK: - Inner Users Results TableView
     
     @IBOutlet weak var matchingProfilesTableView: UITableView!
     
     var matchingProfilesTableViewDelegate : MatchingProfilesTableViewDelegate!
+    
 
     
     // MARK: - System Events
@@ -84,7 +91,7 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
         titleTextField.delegate = self
         
         descriptionTextView.delegate = self
-        
+                
     }
     
     private func hideRightBarButtonItem(){
