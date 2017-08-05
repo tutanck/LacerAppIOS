@@ -118,7 +118,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7gH-gw-Owv" customClass="RatingControl" customModule="LacerApp" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7gH-gw-Owv" customClass="RatingControl" customModule="LacerApp" customModuleProvider="target">
                                                     <rect key="frame" x="62" y="0.5" width="252" height="44"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="starSize">
@@ -273,6 +273,7 @@
                     <connections>
                         <outlet property="interestTextView" destination="6fz-V1-pq2" id="2Yi-1q-6Mb"/>
                         <outlet property="photoImageView" destination="5R1-aU-qOz" id="rtJ-M1-PJi"/>
+                        <outlet property="ratingControl" destination="7gH-gw-Owv" id="Se7-RM-7I6"/>
                         <outlet property="typeSegmentedControl" destination="XNg-q4-UiZ" id="icK-7O-AQW"/>
                         <outlet property="usernameTextField" destination="8Fb-ub-tF5" id="J0y-q3-XvH"/>
                     </connections>
@@ -708,10 +709,34 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="JAz-xX-pXC">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="f3O-bw-Vjg">
+                                        <rect key="frame" x="0.0" y="271" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f3O-bw-Vjg" id="iQN-Ji-dXm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-aN-MKn" customClass="RatingControl" customModule="LacerApp" customModuleProvider="target">
+                                                    <rect key="frame" x="77" y="0.0" width="220" height="44"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isEditable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YTX-aN-MKn" firstAttribute="centerY" secondItem="iQN-Ji-dXm" secondAttribute="centerY" id="0Sf-Nu-7Kc"/>
+                                                <constraint firstItem="YTX-aN-MKn" firstAttribute="centerX" secondItem="iQN-Ji-dXm" secondAttribute="centerX" id="eHr-T1-zcW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Activité" id="5bu-jn-EsW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="204" id="QT1-Ax-MbN">
-                                        <rect key="frame" x="0.0" y="291" width="375" height="204"/>
+                                        <rect key="frame" x="0.0" y="371" width="375" height="204"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QT1-Ax-MbN" id="moM-xj-Njf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
@@ -737,7 +762,7 @@
                             <tableViewSection headerTitle="Services Offerts" id="mTj-X0-jkk">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OLx-fY-Us5">
-                                        <rect key="frame" x="0.0" y="551" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="631" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OLx-fY-Us5" id="L8v-xn-vCN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -777,10 +802,13 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ratingControl" destination="YTX-aN-MKn" id="kbr-ZS-hba"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LyF-Gs-nGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4884" y="412"/>
+            <point key="canvasLocation" x="4884" y="411.544227886057"/>
         </scene>
         <!--Mots-clés-->
         <scene sceneID="U80-9l-pMj">

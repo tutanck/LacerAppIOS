@@ -18,7 +18,7 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
         // Hide the keyboard : This code ensures that if the user taps the image view while typing in the text field, the keyboard is dismissed properly
         usernameTextField.resignFirstResponder()
         interestTextView.resignFirstResponder()
-
+        
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
         
@@ -53,11 +53,15 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
         showRightBarButtonItem()
     }
     
+    
+    // MARK: - RatingControl
 
+    
+    @IBOutlet weak var ratingControl: RatingControl!
     
     
     // MARK: - SegmentedControl
-
+    
     @IBOutlet weak var typeSegmentedControl: UISegmentedControl!
     @IBAction func typeSegmentedControlChanged(_ sender: UISegmentedControl) { showRightBarButtonItem() }
     
@@ -77,7 +81,7 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
     // MARK: - TextView
     
     @IBOutlet weak var interestTextView: UITextView!
-
+    
     
     func textViewShouldReturn(_ textView: UITextView) -> Bool {
         textView.resignFirstResponder()         // Hide the keyboard
@@ -102,7 +106,7 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     
     
     /*
@@ -130,7 +134,7 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
         
         usernameTextField.delegate = self
         interestTextView.delegate = self
-     }
+    }
     
     private func hideRightBarButtonItem(){
         if let rightBarButton = self.navigationItem.rightBarButtonItem {

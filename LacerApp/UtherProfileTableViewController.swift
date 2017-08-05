@@ -11,6 +11,9 @@ import UIKit
 class UtherProfileTableViewController: UITableViewController {
 
     
+    // MARK: - Properties
+    
+    @IBOutlet weak var ratingControl: RatingControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()

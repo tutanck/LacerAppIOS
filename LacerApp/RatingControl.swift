@@ -25,13 +25,13 @@ import UIKit
         }
     }
     
+    @IBInspectable var isEditable: Bool = false
+    
     
     
     //MARK: Properties
     
     private var ratingButtons = [UIButton]()
-    
-    
     
     var rating = 0 {
         didSet {
@@ -61,15 +61,19 @@ import UIKit
     func ratingButtonTapped(button: UIButton) {
         guard let index = ratingButtons.index(of: button) else {return}
         
-        // Calculate the rating of the selected button
-        let selectedRating = index + 1
+        if isEditable {
+            
+            // Calculate the rating of the selected button
+            let selectedRating = index + 1
+            
+            if index == 0 && selectedRating == rating {
+                // If the selected star represents the current rating, reset the rating to 0.
+                rating = 0
+            } else {
+                // Otherwise set the rating to the selected star
+                rating = selectedRating
+            }
         
-        if index == 0 && selectedRating == rating {
-            // If the selected star represents the current rating, reset the rating to 0.
-            rating = 0
-        } else {
-            // Otherwise set the rating to the selected star
-            rating = selectedRating
         }
     }
     
@@ -132,6 +136,6 @@ import UIKit
         }
     }
     
-
+    
     
 }

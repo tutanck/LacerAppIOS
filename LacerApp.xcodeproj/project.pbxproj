@@ -25,7 +25,6 @@
 		4EB204501F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044F1F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift */; };
 		4EB204581F1BF6210096CC60 /* Need.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204571F1BF6210096CC60 /* Need.swift */; };
 		4EB204601F1ED4070096CC60 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2045F1F1ED4070096CC60 /* Keyword.swift */; };
-		4EB204641F1F60C40096CC60 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204631F1F60C40096CC60 /* UserProfileTableViewController.swift */; };
 		4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */; };
 		4EB204681F2147950096CC60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204671F2147950096CC60 /* User.swift */; };
 		4EB2046A1F214B2E0096CC60 /* FoundUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204691F214B2E0096CC60 /* FoundUserTableViewCell.swift */; };
@@ -40,6 +39,7 @@
 		4EDAA9421F2D61D500F1A5A2 /* MatchingProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9411F2D61D500F1A5A2 /* MatchingProfileTableViewCell.swift */; };
 		4EDAA95C1F36186600F1A5A2 /* UserKeywordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */; };
 		4EDAA95E1F362A5F00F1A5A2 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */; };
+		4EDAA9601F36473200F1A5A2 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,6 @@
 		4EB2044F1F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedTableViewCell.swift; sourceTree = "<group>"; };
 		4EB204571F1BF6210096CC60 /* Need.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Need.swift; sourceTree = "<group>"; };
 		4EB2045F1F1ED4070096CC60 /* Keyword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
-		4EB204631F1F60C40096CC60 /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileTableViewController.swift; path = ../UserProfileTableViewController.swift; sourceTree = "<group>"; };
 		4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUthersTableViewController.swift; sourceTree = "<group>"; };
 		4EB204671F2147950096CC60 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4EB204691F214B2E0096CC60 /* FoundUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundUserTableViewCell.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		4EDAA9411F2D61D500F1A5A2 /* MatchingProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingProfileTableViewCell.swift; sourceTree = "<group>"; };
 		4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordsTableViewController.swift; sourceTree = "<group>"; };
 		4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,7 +298,7 @@
 		4EDAA9581F2FFDAB00F1A5A2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				4EB204631F1F60C40096CC60 /* UserProfileTableViewController.swift */,
+				4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -464,12 +464,12 @@
 				4EB2046A1F214B2E0096CC60 /* FoundUserTableViewCell.swift in Sources */,
 				4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */,
 				4EB204681F2147950096CC60 /* User.swift in Sources */,
+				4EDAA9601F36473200F1A5A2 /* UserProfileTableViewController.swift in Sources */,
 				4EB204821F23CE520096CC60 /* UtherProfileTableViewController.swift in Sources */,
 				4EDAA95E1F362A5F00F1A5A2 /* RatingControl.swift in Sources */,
 				4EB2044E1F1BBD120096CC60 /* UserNeedTableViewCell.swift in Sources */,
 				4EB204401F1A80F80096CC60 /* ContactTableViewCell.swift in Sources */,
 				4EB2044C1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift in Sources */,
-				4EB204641F1F60C40096CC60 /* UserProfileTableViewController.swift in Sources */,
 				4EB2046C1F214C5F0096CC60 /* StatusColor.swift in Sources */,
 				4EB2043E1F1A21E30096CC60 /* UserContactsTableViewController.swift in Sources */,
 				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
