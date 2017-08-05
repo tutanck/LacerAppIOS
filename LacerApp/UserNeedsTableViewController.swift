@@ -27,10 +27,6 @@ class UserNeedsTableViewController: UITableViewController {
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
-        //SearchController's search bar parameters
-        searchController.searchBar.scopeButtonTitles = ["Publique", "Privé"]
-        searchController.searchBar.delegate = self
-        
         loadSample()
     }
     
@@ -117,10 +113,9 @@ class UserNeedsTableViewController: UITableViewController {
     
     //MARK: Search Logic
     
-    func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
+    func filterContentForSearchText(_ searchText: String) {
         filteredNeeds = needs.filter { need in
-            let categoryMatch = (scope == "Tout") //|| (user.category == scope)
-            return  categoryMatch && need.username.lowercased().contains(searchText.lowercased())
+             return need.username.lowercased().contains(searchText.lowercased())
         }
         
         tableView.reloadData()
@@ -153,16 +148,6 @@ class UserNeedsTableViewController: UITableViewController {
 //SearchDelegate
 extension UserNeedsTableViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }
-
-//SearchBar's Scope Bar delegate
-extension UserNeedsTableViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
-    }
-}
-

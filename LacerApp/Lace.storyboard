@@ -249,11 +249,11 @@
             </objects>
             <point key="canvasLocation" x="-2137" y="1158"/>
         </scene>
-        <!--Mes Besoins-->
+        <!--Besoins-->
         <scene sceneID="XAG-CS-Y4U">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NIM-CZ-nAa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mes Besoins" id="rdh-C0-3fS"/>
+                    <tabBarItem key="tabBarItem" title="Besoins" id="rdh-C0-3fS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BFo-ld-YpM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -784,7 +784,11 @@
                                 <segue destination="rT8-A8-Gn6" kind="unwind" unwindAction="returnFromUserKeywordsWithSegue:" id="2fm-uD-Con"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="BeK-RH-fAw"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="BeK-RH-fAw">
+                            <connections>
+                                <action selector="addKeywordAction:" destination="vIU-j4-9zO" id="sf5-VS-kBi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8J-Ju-gp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -792,11 +796,11 @@
             </objects>
             <point key="canvasLocation" x="3590" y="2006"/>
         </scene>
-        <!--Mon profil-->
+        <!--Profil-->
         <scene sceneID="8Nd-kM-Ej9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tff-BJ-QIG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mon profil" id="YjB-pX-tyZ"/>
+                    <tabBarItem key="tabBarItem" title="Profil" id="YjB-pX-tyZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FTN-KX-ygF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -811,11 +815,11 @@
             </objects>
             <point key="canvasLocation" x="534" y="2007"/>
         </scene>
-        <!--Mes Contacts-->
+        <!--Contacts-->
         <scene sceneID="Tcc-KP-Zul">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kjT-7V-UCa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mes Contacts" id="1tx-9N-njF"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" id="1tx-9N-njF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K3A-fk-IXC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

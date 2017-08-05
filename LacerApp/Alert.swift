@@ -30,7 +30,7 @@ class Alert {
         handler : ((UIAlertAction) -> Swift.Void)? = nil,
         completion : (() -> Swift.Void)? = nil,
         headerTitle : String? = "Message",
-        footerTitle : String? = "OK",
+        confirmButtonTitle : String? = "OK",
         alertControllerPreferredStyle : UIAlertControllerStyle = .alert,
         alertActionStyle : UIAlertActionStyle = .default,
         animated : Bool = true
@@ -38,10 +38,39 @@ class Alert {
         
         let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : .alert)
         
-        alert.addAction( UIAlertAction(title: footerTitle , style: .default, handler: handler) )
+        //Confirm action
+        alert.addAction( UIAlertAction(title: confirmButtonTitle , style: .default, handler: handler) )
         
         context.present(alert, animated: animated, completion: nil)
+    }
+    
+    
+    
+    static func displayTextBox(
+        context : UIViewController,
+        message : String,
+        handler : ((UIAlertAction) -> Swift.Void)? = nil,
+        completion : (() -> Swift.Void)? = nil,
+        headerTitle : String? = "Message",
+        confirmButtonTitle : String? = "OK",
+        cancelButtonTitle : String? = "Annuler",
+        alertControllerPreferredStyle : UIAlertControllerStyle = .alert,
+        alertActionStyle : UIAlertActionStyle = .default,
+        animated : Bool = true
+        ){
         
+        let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : .alert)
+       
+        //TextField
+        alert.addTextField()
+
+        //Cancel action
+        alert.addAction( UIAlertAction(title: cancelButtonTitle, style: .default) )
+        
+        //Confirm action
+        alert.addAction( UIAlertAction(title: confirmButtonTitle , style: .default, handler: handler) )
+        
+        context.present(alert, animated: animated, completion: nil)
     }
     
 }

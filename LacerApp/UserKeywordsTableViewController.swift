@@ -9,7 +9,7 @@
 import UIKit
 
 class UserKeywordsTableViewController: UITableViewController {
-
+    
     var keywords : [Keyword] = []
     
     
@@ -101,6 +101,12 @@ class UserKeywordsTableViewController: UITableViewController {
     
     
     
+    @IBAction func addKeywordAction(_ sender: UIBarButtonItem) {
+        
+        Alert.displayTextBox(context: self, message: "Ajoutez un mot-clé à votre activité", headerTitle : "Nouveau mot-clé", confirmButtonTitle : "Ajouter")
+    }
+    
+    
     
     //MARK: Private Methods
     
@@ -114,5 +120,5 @@ class UserKeywordsTableViewController: UITableViewController {
     
     
     
-
+    
 }
