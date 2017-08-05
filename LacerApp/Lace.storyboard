@@ -157,7 +157,7 @@
                                         <rect key="frame" x="0.0" y="483" width="375" height="204"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nu5-Bg-eVm" id="RgV-K2-Pyc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6fz-V1-pq2">
@@ -183,7 +183,7 @@
                                         <rect key="frame" x="0.0" y="723" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cRK-F6-0gg" id="l13-CG-Afg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ug-QR-sOG">
@@ -764,13 +764,13 @@
         <!--Mot-clés-->
         <scene sceneID="psC-YM-P9S">
             <objects>
-                <tableViewController id="vIU-j4-9zO" customClass="UserSkillsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="vIU-j4-9zO" customClass="UserKeywordsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="wzF-Kb-rZp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserSkillTableViewCell" id="b31-fl-9T7" customClass="UserSkillTableViewCell" customModule="LacerApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserKeywordTableViewCell" id="b31-fl-9T7" customClass="UserKeywordTableViewCell" customModule="LacerApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b31-fl-9T7" id="moa-bP-kvg">
@@ -890,7 +890,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomerNeedTableViewCell" rowHeight="90" id="Fp8-A7-dsi" customClass="CustomerNeedTableViewCell" customModule="LacerApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UtherNeedTableViewCell" rowHeight="90" id="Fp8-A7-dsi" customClass="UtherNeedTableViewCell" customModule="LacerApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fp8-A7-dsi" id="Y5O-5W-dqq">
@@ -915,7 +915,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Potential Cunstomer Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYw-GN-r8Z">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYw-GN-r8Z">
                                             <rect key="frame" x="98" y="35" width="269" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -925,10 +925,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="customerNameLabel" destination="ZYw-GN-r8Z" id="Ima-8j-2SD"/>
                                     <outlet property="distanceLabel" destination="dcT-BL-6wd" id="luQ-Qj-gez"/>
                                     <outlet property="photoImageView" destination="3pj-2f-gby" id="8Rh-BD-VW6"/>
                                     <outlet property="titleLabel" destination="yDe-PX-AZr" id="iyY-f5-ls0"/>
+                                    <outlet property="usernameLabel" destination="ZYw-GN-r8Z" id="VWu-Vk-IXU"/>
                                     <segue destination="uPe-16-QLn" kind="show" id="s1t-9O-FGt"/>
                                 </connections>
                             </tableViewCell>
@@ -1226,6 +1226,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bUk-Md-L64"/>
-        <segue reference="9HT-7a-uwT"/>
+        <segue reference="ePn-YT-EbS"/>
     </inferredMetricsTieBreakers>
 </document>

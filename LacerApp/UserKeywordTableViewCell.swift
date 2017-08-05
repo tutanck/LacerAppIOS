@@ -1,5 +1,5 @@
 //
-//  UserSkillTableViewCell.swift
+//  UserKeywordTableViewCell.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 20/07/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserSkillTableViewCell: UITableViewCell {
+class UserKeywordTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var titleLabel: UILabel!

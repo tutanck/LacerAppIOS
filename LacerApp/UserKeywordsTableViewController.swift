@@ -1,5 +1,5 @@
 //
-//  UserSkillsTableViewController.swift
+//  UserKeywordsTableViewController.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 20/07/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserSkillsTableViewController: UITableViewController {
+class UserKeywordsTableViewController: UITableViewController {
 
     var keywords : [Keyword] = []
     
@@ -37,15 +37,15 @@ class UserSkillsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserSkillTableViewCell", for: indexPath) as? UserSkillTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of UserSkillTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserKeywordTableViewCell", for: indexPath) as? UserKeywordTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of UserKeywordTableViewCell.")
         }
         
         // Fetches the appropriate meal for the data source layout.
-        let skill = keywords[indexPath.row]
+        let keyword = keywords[indexPath.row]
         
-        cell.titleLabel.text = skill.title
-        cell.statusSwitch.isOn = skill.activ
+        cell.titleLabel.text = keyword.title
+        cell.statusSwitch.isOn = keyword.activ
         
         return cell
     }

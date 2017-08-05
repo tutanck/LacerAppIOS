@@ -66,8 +66,8 @@ class SearchUthersNeedsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerNeedTableViewCell", for: indexPath) as? CustomerNeedTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of CustomerNeedTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UtherNeedTableViewCell", for: indexPath) as? UtherNeedTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of UtherNeedTableViewCell.")
         }
         
         let need : Need
@@ -80,7 +80,7 @@ class SearchUthersNeedsTableViewController: UITableViewController {
         
         cell.photoImageView.image = need.photo
         cell.titleLabel.text = need.title
-        cell.customerNameLabel.text = need.customerName
+        cell.usernameLabel.text = need.username
         cell.distanceLabel.text = String(Int(need.distance))+" m"
         
         return cell
@@ -157,9 +157,9 @@ class SearchUthersNeedsTableViewController: UITableViewController {
     //MARK: Search Logic
     
     func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
-        filteredNeeds = needs.filter { customerNeed in
+        filteredNeeds = needs.filter { need in
             let categoryMatch = (scope == "Tout") //|| (user.category == scope)
-            return  categoryMatch && customerNeed.customerName.lowercased().contains(searchText.lowercased())
+            return  categoryMatch && need.username.lowercased().contains(searchText.lowercased())
         }
         
         tableView.reloadData()
@@ -172,9 +172,9 @@ class SearchUthersNeedsTableViewController: UITableViewController {
         let photo = UIImage(named: "userPhoto")
         
         needs+=[
-            Need(title: "Besoin Inedis", tags : "#java #mongo",activ:true, customerName : "Inedis", distance: 1230, description : "Bla bla bla", photo : photo),
-            Need(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false, customerName : "BNP", distance: 450, description : "Bla bla bla", photo : photo),
-            Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true, customerName : "Google", distance: 204, description : "Bla bla bla", photo : photo),
+            Need(title: "Besoin Inedis", tags : "#java #mongo",activ:true, username : "Inedis", distance: 1230, description : "Bla bla bla", photo : photo),
+            Need(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false, username : "BNP", distance: 450, description : "Bla bla bla", photo : photo),
+            Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true, username : "Google", distance: 204, description : "Bla bla bla", photo : photo),
         ]
     }
     

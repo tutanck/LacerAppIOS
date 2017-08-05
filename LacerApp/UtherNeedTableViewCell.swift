@@ -1,5 +1,5 @@
 //
-//  CustomerNeedTableViewCell.swift
+//  UtherNeedTableViewCell.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 16/07/2017.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class CustomerNeedTableViewCell: UITableViewCell {
+class UtherNeedTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var photoImageView: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var customerNameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
      
     @IBOutlet weak var distanceLabel: UILabel!
     

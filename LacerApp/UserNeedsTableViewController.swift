@@ -105,9 +105,9 @@ class UserNeedsTableViewController: UITableViewController {
     
     private func loadSample() {
         needs+=[
-            Need(title: "Besoin Inedis", tags : "#java #mongo",activ:true, customerName: "Lol", distance: 20, description: "desc", photo: UIImage()),
-            Need(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false,customerName: "Lol", distance: 20, description: "desc", photo: UIImage()),
-            Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true,customerName: "Lol", distance: 20, description: "desc", photo: UIImage())
+            Need(title: "Besoin Inedis", tags : "#java #mongo",activ:true, username: "Lol", distance: 20, description: "desc", photo: UIImage()),
+            Need(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false,username: "Lol", distance: 20, description: "desc", photo: UIImage()),
+            Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true,username: "Lol", distance: 20, description: "desc", photo: UIImage())
         ]
     }
     
