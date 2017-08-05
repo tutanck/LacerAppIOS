@@ -12,6 +12,8 @@ import UIKit
 @IBDesignable
 class SwitchableColorButton: UIButton {
     
+    //MARK: Interfacce Builder settings
+    
     @IBInspectable var cornerRadius : CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
@@ -32,6 +34,8 @@ class SwitchableColorButton: UIButton {
     
     
     
+    //MARK: Initialization
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSwitchButton()
@@ -44,20 +48,10 @@ class SwitchableColorButton: UIButton {
     
     
     
-    
-    
-    private func setupSwitchButton() {
-        
-        // Set the button appearence
-        self.backgroundColor = UIColor.red
-        
-        // Setup the button action
-        self.addTarget(self, action: #selector(SwitchableColorButton.switchColor(button:)), for: .touchUpInside)
-    }
-    
-    
+    //MARK: Button Action
     
     func switchColor(button: UIButton) {
+        
         switch button.backgroundColor! {
             
         case UIColor.blue :
@@ -74,5 +68,17 @@ class SwitchableColorButton: UIButton {
         
     }
     
+    
+    
+    //MARK: Private Methods
+    
+    private func setupSwitchButton() {
+        
+        // Set the button appearence
+        self.backgroundColor = UIColor.green
+        
+        // Setup the button action
+        self.addTarget(self, action: #selector(SwitchableColorButton.switchColor(button:)), for: .touchUpInside)
+    }
 
 }

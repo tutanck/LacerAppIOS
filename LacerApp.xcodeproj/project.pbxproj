@@ -39,6 +39,7 @@
 		4EDAA9401F2D5EED00F1A5A2 /* UserNeedDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA93F1F2D5EED00F1A5A2 /* UserNeedDetailsTableViewController.swift */; };
 		4EDAA9421F2D61D500F1A5A2 /* MatchingProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9411F2D61D500F1A5A2 /* MatchingProfileTableViewCell.swift */; };
 		4EDAA95C1F36186600F1A5A2 /* UserKeywordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */; };
+		4EDAA95E1F362A5F00F1A5A2 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		4EDAA93F1F2D5EED00F1A5A2 /* UserNeedDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedDetailsTableViewController.swift; sourceTree = "<group>"; };
 		4EDAA9411F2D61D500F1A5A2 /* MatchingProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingProfileTableViewCell.swift; sourceTree = "<group>"; };
 		4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordsTableViewController.swift; sourceTree = "<group>"; };
+		4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */,
+				4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */,
 				4EB204411F1A89E20096CC60 /* Spot.swift */,
 			);
 			name = CustomControl;
@@ -462,6 +465,7 @@
 				4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */,
 				4EB204681F2147950096CC60 /* User.swift in Sources */,
 				4EB204821F23CE520096CC60 /* UtherProfileTableViewController.swift in Sources */,
+				4EDAA95E1F362A5F00F1A5A2 /* RatingControl.swift in Sources */,
 				4EB2044E1F1BBD120096CC60 /* UserNeedTableViewCell.swift in Sources */,
 				4EB204401F1A80F80096CC60 /* ContactTableViewCell.swift in Sources */,
 				4EB2044C1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift in Sources */,
