@@ -33,7 +33,7 @@ class SearchUthersTableViewController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         
         //SearchController's search bar parameters
-        searchController.searchBar.scopeButtonTitles = ["Tout", "Entreprises", "Particuliers"]
+        searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
         searchController.searchBar.delegate = self
         
         loadSample()

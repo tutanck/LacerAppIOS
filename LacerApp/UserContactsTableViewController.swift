@@ -13,9 +13,24 @@ class UserContactsTableViewController: UITableViewController {
     
     var contacts : [User] = []
     
+    var filteredContacts = [User]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //SearchController parameters
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+        //SearchController's search bar parameters
+        searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
+        searchController.searchBar.delegate = self
         
         loadSample()
     }
@@ -101,8 +116,16 @@ class UserContactsTableViewController: UITableViewController {
      */
     
     
+    //MARK: Search Logic
     
-    
+    func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
+        filteredContacts = contacts.filter { contact in
+            let categoryMatch = (scope == "Tout") //|| (user.category == scope)
+            return  categoryMatch && contact.name.lowercased().contains(searchText.lowercased())
+        }
+        
+        tableView.reloadData()
+    }
     
     
     //MARK: Private Methods
@@ -125,3 +148,22 @@ class UserContactsTableViewController: UITableViewController {
 
     
 }
+
+
+
+//SearchDelegate
+extension UserContactsTableViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+}
+
+//SearchBar's Scope Bar delegate
+extension UserContactsTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
+

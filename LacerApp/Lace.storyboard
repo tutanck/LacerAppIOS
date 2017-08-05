@@ -157,7 +157,7 @@
                                         <rect key="frame" x="0.0" y="483" width="375" height="204"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nu5-Bg-eVm" id="RgV-K2-Pyc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6fz-V1-pq2">
@@ -183,7 +183,7 @@
                                         <rect key="frame" x="0.0" y="723" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cRK-F6-0gg" id="l13-CG-Afg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ug-QR-sOG">
@@ -337,7 +337,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mes contacts" id="xot-ug-4pq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="2gm-0j-Td3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2gm-0j-Td3">
                             <connections>
                                 <segue destination="sQg-V5-vkN" kind="presentation" identifier="modalSearchUthers" id="GSZ-MG-cyq"/>
                             </connections>
@@ -447,7 +447,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Profils trouvés" id="RpR-sQ-4AJ">
+                            <tableViewSection headerTitle="Trouvez les profils pour ce besoin" id="RpR-sQ-4AJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="445" id="rTg-bN-E9W">
                                         <rect key="frame" x="0.0" y="502" width="375" height="445"/>
@@ -884,7 +884,7 @@
         <!--MarketPlace-->
         <scene sceneID="c0g-qj-l6S">
             <objects>
-                <tableViewController id="2N5-Qo-AIH" customClass="SearchUthersNeedsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2N5-Qo-AIH" customClass="UthersNeedsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="r0o-Pz-mxB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1226,6 +1226,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bUk-Md-L64"/>
-        <segue reference="ePn-YT-EbS"/>
+        <segue reference="9HT-7a-uwT"/>
     </inferredMetricsTieBreakers>
 </document>

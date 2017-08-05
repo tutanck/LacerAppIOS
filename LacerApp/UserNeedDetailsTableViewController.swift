@@ -37,10 +37,10 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
     
     
     // MARK: - Switch
-
+    
     @IBOutlet weak var needStatusSwitch: UISwitch!
     @IBAction func needStatusSwitchChanged(_ sender: UISegmentedControl) { showRightBarButtonItem() }
-
+    
     
     
     
@@ -50,7 +50,8 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
     
     var matchingProfilesTableViewDelegate : MatchingProfilesTableViewDelegate!
     
-
+    let searchController = UISearchController(searchResultsController: nil)
+    
     
     // MARK: - System Events
     
@@ -60,6 +61,17 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
         matchingProfilesTableViewDelegate = MatchingProfilesTableViewDelegate()
         matchingProfilesTableView.delegate = matchingProfilesTableViewDelegate
         matchingProfilesTableView.dataSource = matchingProfilesTableViewDelegate
+        matchingProfilesTableViewDelegate.tableView = matchingProfilesTableView
+        
+        //SearchController parameters
+        searchController.searchResultsUpdater = matchingProfilesTableViewDelegate
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        matchingProfilesTableView.tableHeaderView = searchController.searchBar
+        
+        //SearchController's search bar parameters
+        searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
+        searchController.searchBar.delegate = matchingProfilesTableViewDelegate
         
         begin()
     }
@@ -91,7 +103,7 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
         titleTextField.delegate = self
         
         descriptionTextView.delegate = self
-                
+        
     }
     
     private func hideRightBarButtonItem(){
@@ -112,6 +124,14 @@ class UserNeedDetailsTableViewController: UITableViewController, UITextFieldDele
 
 class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSource{
     
+    // MARK: - private methods
+    
+    var tableView : UITableView?
+    
+    
+    var filteredProfiles = [User]()
+    
+    
     let matchingProfiles : [User] = [
         User(name: "Angb joan", photo:UIImage(named: "userPhoto"), status: 1),
         User(name: "Diogo Justino", photo: UIImage(named: "userPhoto"), status: 0),
@@ -120,7 +140,7 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     
     
     // MARK: - Table view data source
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -145,4 +165,35 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
         return cell
     }
     
+    //MARK: Search Logic
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
+        filteredProfiles = matchingProfiles.filter { contact in
+            let categoryMatch = (scope == "Tout") //|| (user.category == scope)
+            return  categoryMatch && contact.name.lowercased().contains(searchText.lowercased())
+        }
+        if tableView != nil {
+            tableView!.reloadData()
+        }else{
+            fatalError("MatchingProfilesTableViewDelegate : tableView is not loaded")
+        }
+    }
+    
 }
+
+//SearchDelegate
+extension MatchingProfilesTableViewDelegate : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+}
+
+//SearchBar's Scope Bar delegate
+extension MatchingProfilesTableViewDelegate: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
+

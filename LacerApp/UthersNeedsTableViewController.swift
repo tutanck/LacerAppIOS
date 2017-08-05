@@ -1,5 +1,5 @@
 //
-//  SearchUthersNeedsTableViewController.swift
+//  UthersNeedsTableViewController.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 16/07/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchUthersNeedsTableViewController: UITableViewController {
+class UthersNeedsTableViewController: UITableViewController {
    
     
     // MARK: - Properties
@@ -34,7 +34,7 @@ class SearchUthersNeedsTableViewController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         
         //SearchController's search bar parameters
-        searchController.searchBar.scopeButtonTitles = ["Non qualifié", "Vos compétences"]
+        searchController.searchBar.scopeButtonTitles = ["Mes mots-clés", "Autres"]
         searchController.searchBar.delegate = self
         
         loadSample()
@@ -183,7 +183,7 @@ class SearchUthersNeedsTableViewController: UITableViewController {
 
 
 //SearchDelegate
-extension SearchUthersNeedsTableViewController : UISearchResultsUpdating {
+extension UthersNeedsTableViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
@@ -192,7 +192,7 @@ extension SearchUthersNeedsTableViewController : UISearchResultsUpdating {
 }
 
 //SearchBar's Scope Bar delegate
-extension SearchUthersNeedsTableViewController: UISearchBarDelegate {
+extension UthersNeedsTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
