@@ -82,6 +82,7 @@ class UthersNeedsTableViewController: UITableViewController {
         cell.titleLabel.text = need.title
         cell.usernameLabel.text = need.username
         cell.distanceLabel.text = String(Int(need.distance))+" m"
+        cell.keywordsLabel.text = need.tags
         
         return cell
     }

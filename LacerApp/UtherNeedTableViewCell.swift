@@ -19,6 +19,8 @@ class UtherNeedTableViewCell: UITableViewCell {
      
     @IBOutlet weak var distanceLabel: UILabel!
     
+    @IBOutlet weak var keywordsLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
