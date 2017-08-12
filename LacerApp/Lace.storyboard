@@ -118,7 +118,7 @@
                                         <rect key="frame" x="0.0" y="271" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="zWc-T9-Ufs" id="WnV-8e-EVZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7gH-gw-Owv" customClass="RatingControl" customModule="LacerApp" customModuleProvider="target">
@@ -660,7 +660,7 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZMv-Er-7Hu" id="b4e-eO-pdq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="e4r-y9-Bqo">
@@ -723,7 +723,7 @@
                                         <rect key="frame" x="0.0" y="271" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f3O-bw-Vjg" id="iQN-Ji-dXm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-aN-MKn" customClass="RatingControl" customModule="LacerApp" customModuleProvider="target">
@@ -1413,15 +1413,8 @@
                                                     <constraint firstItem="KkN-c5-6wH" firstAttribute="top" secondItem="RYt-CU-uSZ" secondAttribute="top" id="yBd-b0-uCz"/>
                                                 </constraints>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dm1-G9-BJ0">
-                                                <rect key="frame" x="8" y="399.5" width="359" height="1"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="PwG-lG-FoI"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="RYt-CU-uSZ" secondAttribute="trailing" constant="8" id="065-VT-Qa8"/>
                                             <constraint firstAttribute="trailing" secondItem="rc0-GD-uhs" secondAttribute="trailing" constant="8" id="2rn-Y3-UDP"/>
@@ -1429,13 +1422,9 @@
                                             <constraint firstItem="RYt-CU-uSZ" firstAttribute="centerX" secondItem="9YU-lZ-K1B" secondAttribute="centerX" id="Bq7-ht-IAq"/>
                                             <constraint firstAttribute="trailing" secondItem="X66-Gd-IGG" secondAttribute="trailing" constant="8" id="CcD-9w-b6B"/>
                                             <constraint firstItem="X66-Gd-IGG" firstAttribute="leading" secondItem="9YU-lZ-K1B" secondAttribute="leading" constant="8" id="Cli-jt-TTF"/>
-                                            <constraint firstItem="dm1-G9-BJ0" firstAttribute="leading" secondItem="9YU-lZ-K1B" secondAttribute="leading" constant="8" id="GWZ-Rv-oeg"/>
                                             <constraint firstItem="RYt-CU-uSZ" firstAttribute="leading" secondItem="9YU-lZ-K1B" secondAttribute="leading" constant="8" id="K1E-Vf-LnY"/>
-                                            <constraint firstItem="dm1-G9-BJ0" firstAttribute="centerX" secondItem="9YU-lZ-K1B" secondAttribute="centerX" id="KA6-Bd-T19"/>
                                             <constraint firstAttribute="trailing" secondItem="I3a-ry-doI" secondAttribute="trailing" constant="8" id="LPP-0a-fLM"/>
-                                            <constraint firstAttribute="trailing" secondItem="dm1-G9-BJ0" secondAttribute="trailing" constant="8" id="NMO-Qg-T3j"/>
                                             <constraint firstItem="rc0-GD-uhs" firstAttribute="centerX" secondItem="9YU-lZ-K1B" secondAttribute="centerX" id="NRk-Sm-Jo8"/>
-                                            <constraint firstItem="dm1-G9-BJ0" firstAttribute="centerY" secondItem="9YU-lZ-K1B" secondAttribute="centerY" id="P92-Qf-Xfg"/>
                                             <constraint firstAttribute="bottom" secondItem="RYt-CU-uSZ" secondAttribute="bottom" constant="16" id="Y6h-Hj-6FY"/>
                                             <constraint firstItem="rc0-GD-uhs" firstAttribute="top" secondItem="Vc1-vE-jbr" secondAttribute="bottom" constant="30" id="YaI-WR-eAK"/>
                                             <constraint firstItem="X66-Gd-IGG" firstAttribute="top" secondItem="9YU-lZ-K1B" secondAttribute="top" constant="8" id="dJQ-dG-JCv"/>

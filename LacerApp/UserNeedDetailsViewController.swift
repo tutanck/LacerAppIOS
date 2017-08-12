@@ -55,7 +55,7 @@ class UserNeedDetailsViewController: UIViewController, UITextFieldDelegate, UITe
     @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK: - Tap gesture
-
+    
     @IBAction func hideKeyboard(_ sender: AnyObject) {
         titleTextField.endEditing(true)
         descriptionTextView.endEditing(true)
@@ -141,12 +141,18 @@ class UserNeedDetailsViewController: UIViewController, UITextFieldDelegate, UITe
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-        adjustInsetForKeyboardShow(true, notification: notification)
+        if !isKeyboardVisible{
+            adjustInsetForKeyboardShow(true, notification: notification)
+            isKeyboardVisible = true
+        }
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
         adjustInsetForKeyboardShow(false, notification: notification)
+        isKeyboardVisible = false
     }
+    
+    private var isKeyboardVisible = false
     
     
     /*
