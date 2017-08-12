@@ -1209,7 +1209,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Mots clés du besoin" id="API-0X-Oi6">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="C1z-hx-52e" style="IBUITableViewCellStyleDefault" id="jg0-60-5UO">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="C1z-hx-52e" style="IBUITableViewCellStyleDefault" id="jg0-60-5UO">
                                         <rect key="frame" x="0.0" y="632" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jg0-60-5UO" id="ONv-wl-4Ms">
