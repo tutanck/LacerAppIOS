@@ -656,11 +656,11 @@
                         <sections>
                             <tableViewSection headerTitle="" id="Kf4-jU-8KL">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="ZMv-Er-7Hu">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="ZMv-Er-7Hu">
                                         <rect key="frame" x="0.0" y="35" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZMv-Er-7Hu" id="b4e-eO-pdq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="e4r-y9-Bqo">
@@ -1162,7 +1162,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="h32-98-67j">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="oED-Bx-c6m" style="IBUITableViewCellStyleDefault" id="B2M-UH-agy">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="oED-Bx-c6m" style="IBUITableViewCellStyleDefault" id="B2M-UH-agy">
                                         <rect key="frame" x="0.0" y="272" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2M-UH-agy" id="xwB-7j-0Z2">
@@ -1647,7 +1647,7 @@
         <image name="userPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XpB-pj-EDP"/>
+        <segue reference="z28-RZ-moJ"/>
         <segue reference="bUk-Md-L64"/>
     </inferredMetricsTieBreakers>
 </document>
