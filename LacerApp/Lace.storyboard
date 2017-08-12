@@ -68,6 +68,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userAvailabilitySwitchableControl" destination="I5v-yz-ccl" id="CYx-3P-CwW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQt-jB-uMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,11 +114,11 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="5Qw-yh-NKc">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="zWc-T9-Ufs">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="zWc-T9-Ufs">
                                         <rect key="frame" x="0.0" y="271" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zWc-T9-Ufs" id="WnV-8e-EVZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="zWc-T9-Ufs" id="WnV-8e-EVZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7gH-gw-Owv" customClass="RatingControl" customModule="LacerApp" customModuleProvider="target">
@@ -135,6 +138,7 @@
                                                 <constraint firstItem="7gH-gw-Owv" firstAttribute="centerY" secondItem="WnV-8e-EVZ" secondAttribute="centerY" id="Zh3-M0-7yy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -275,6 +279,7 @@
                         <outlet property="photoImageView" destination="5R1-aU-qOz" id="rtJ-M1-PJi"/>
                         <outlet property="ratingControl" destination="7gH-gw-Owv" id="Se7-RM-7I6"/>
                         <outlet property="typeSegmentedControl" destination="XNg-q4-UiZ" id="icK-7O-AQW"/>
+                        <outlet property="userAvailabilitySwitchableControl" destination="w57-06-QjT" id="2W2-7P-nk7"/>
                         <outlet property="usernameTextField" destination="8Fb-ub-tF5" id="J0y-q3-XvH"/>
                     </connections>
                 </tableViewController>
@@ -419,6 +424,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userAvailabilitySwitchableControl" destination="7ZL-s4-FJ4" id="Sdp-Pk-7pt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ikn-kI-mkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -642,7 +650,7 @@
             <objects>
                 <tableViewController id="eKH-z8-okw" customClass="UtherProfileTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="8Nh-P2-w1K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="840"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -715,7 +723,7 @@
                                         <rect key="frame" x="0.0" y="271" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f3O-bw-Vjg" id="iQN-Ji-dXm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTX-aN-MKn" customClass="RatingControl" customModule="LacerApp" customModuleProvider="target">
@@ -730,6 +738,7 @@
                                                 <constraint firstItem="YTX-aN-MKn" firstAttribute="centerX" secondItem="iQN-Ji-dXm" secondAttribute="centerX" id="eHr-T1-zcW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -815,7 +824,7 @@
             <objects>
                 <tableViewController id="eSv-pJ-MaD" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="cMy-E7-aAR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="840"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1090,6 +1099,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userAvailabilitySwitchableControl" destination="PGc-u3-ABM" id="5Rn-fY-II7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmE-AA-cNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1265,7 +1277,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tlC-J8-vBW" id="ACW-pR-DKq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="MIO-3b-YTK">
@@ -1635,7 +1647,7 @@
         <image name="userPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="XpB-pj-EDP"/>
         <segue reference="bUk-Md-L64"/>
-        <segue reference="whX-ts-4LD"/>
     </inferredMetricsTieBreakers>
 </document>

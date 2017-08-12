@@ -91,13 +91,17 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
     func textViewDidEndEditing(_ textView: UITextView) { showRightBarButtonItem() }
     
     
+    // MARK: - SwitchableControl
+    
+    @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
+    
     
     
     // MARK: - System Events
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        userAvailabilitySwitchableControl.context = self
         begin()
     }
     

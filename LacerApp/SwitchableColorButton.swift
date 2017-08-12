@@ -12,6 +12,8 @@ import UIKit
 @IBDesignable
 class SwitchableColorButton: UIButton {
     
+    var context : UIViewController? = nil
+    
     //MARK: Interfacce Builder settings
     
     @IBInspectable var cornerRadius : CGFloat = 0 {
@@ -54,16 +56,12 @@ class SwitchableColorButton: UIButton {
         
         switch button.backgroundColor! {
             
-        case UIColor.blue :
-            button.backgroundColor = UIColor.green
-        case UIColor.green :
-            button.backgroundColor = UIColor.orange
-        case UIColor.orange :
-            button.backgroundColor = UIColor.red
-        case UIColor.red :
-            button.backgroundColor = UIColor.blue
-        default:
-            button.backgroundColor = UIColor.green
+        //case UIColor.blue : attemptToSwitchColor(button,.green )
+        case UIColor.green : attemptToSwitchColor(button,.orange, "Vous serez toujours visible mais pas prioritaire. Vous recevrez des notifications silencieuses.")
+        case UIColor.orange : attemptToSwitchColor(button,.red,"Vous ne serez plus visible. Vous ne recevrez pas de notifications.")
+        //case UIColor.red : attemptToSwitchColor(button,.blue )
+        default : attemptToSwitchColor(button,.green, "Vous serez visible et prioritaire. Vous recevrez des notifications sonores.")
+            
         }
         
     }
@@ -71,6 +69,21 @@ class SwitchableColorButton: UIButton {
     
     
     //MARK: Private Methods
+    
+    
+    private func attemptToSwitchColor(_ button : UIButton, _ newColor : UIColor, _ msg : String){
+        if context != nil {
+            Alert.displayMessage(context: context!,
+                                 message: msg,
+                                 handler : { action in button.backgroundColor = newColor },
+                                 headerTitle :"Attention!",
+                                 cancellable : true
+            )
+        }else{
+            button.backgroundColor = newColor
+        }
+    }
+    
     
     private func setupSwitchButton() {
         
@@ -80,5 +93,5 @@ class SwitchableColorButton: UIButton {
         // Setup the button action
         self.addTarget(self, action: #selector(SwitchableColorButton.switchColor(button:)), for: .touchUpInside)
     }
-
+    
 }

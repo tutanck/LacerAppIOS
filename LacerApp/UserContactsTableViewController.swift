@@ -17,10 +17,16 @@ class UserContactsTableViewController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    // MARK: - SwitchableControl
     
+    @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userAvailabilitySwitchableControl.context = self
         
         //SearchController parameters
         searchController.searchResultsUpdater = self

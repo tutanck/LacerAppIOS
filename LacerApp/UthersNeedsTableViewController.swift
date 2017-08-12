@@ -21,11 +21,18 @@ class UthersNeedsTableViewController: UITableViewController {
     
     
     
+    // MARK: - SwitchableControl
+    
+    @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
+    
+    
     
     // MARK: - System events
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userAvailabilitySwitchableControl.context = self
         
         //SearchController parameters
         searchController.searchResultsUpdater = self

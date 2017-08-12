@@ -31,12 +31,19 @@ class Alert {
         completion : (() -> Swift.Void)? = nil,
         headerTitle : String? = "Message",
         confirmButtonTitle : String? = "OK",
+        cancellable : Bool? = false,
+        cancelButtonTitle : String? = "Annuler",
         alertControllerPreferredStyle : UIAlertControllerStyle = .alert,
         alertActionStyle : UIAlertActionStyle = .default,
         animated : Bool = true
         ){
         
         let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : .alert)
+        
+        //Cancel action
+        if cancellable == true{
+            alert.addAction( UIAlertAction(title: cancelButtonTitle, style: .default) )
+        }
         
         //Confirm action
         alert.addAction( UIAlertAction(title: confirmButtonTitle , style: .default, handler: handler) )
@@ -60,10 +67,10 @@ class Alert {
         ){
         
         let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : .alert)
-       
+        
         //TextField
         alert.addTextField()
-
+        
         //Cancel action
         alert.addAction( UIAlertAction(title: cancelButtonTitle, style: .default) )
         
