@@ -19,7 +19,14 @@ class Fire{
     
     //MARK : static ref keys
     
-    static let userStatus = "status"
+    static let userStatusKey = "status"
+    
+    static let userProfileKey = "profile"
+
+    static let userTypeKey = "type"
+    static let userNameKey = "username"
+    static let userDescriptionKey = "description"
+    
 
     
 }

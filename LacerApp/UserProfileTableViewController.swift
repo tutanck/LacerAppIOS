@@ -56,7 +56,7 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
     
     
     // MARK: - RatingControl
-
+    
     
     @IBOutlet weak var ratingControl: RatingControl!
     
@@ -96,12 +96,35 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
     
     @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
     
-  
+    
+    // MARK: - Actions
+
+    
     // MARK: - Tap gesture
     
     @IBAction func hideKeyboard(_ sender: AnyObject) {
         usernameTextField.endEditing(true)
         interestTextView.endEditing(true)
+    }
+    
+    
+    // MARK: - Save button
+    
+    @IBAction func saveUserProfile(_ sender: UIBarButtonItem) {
+        ref?.setValue([
+            Fire.userTypeKey : typeSegmentedControl.selectedSegmentIndex,
+            Fire.userNameKey : usernameTextField.text,
+            Fire.userDescriptionKey : interestTextView.text
+            ])
+        hideRightBarButtonItem()
+    }
+    
+    //MARK: Firef
+    
+    var ref : DatabaseReference? = nil{
+        didSet {
+            loadFireData()
+        }
     }
     
     
@@ -113,10 +136,18 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
         
         //user status button settings
         userAvailabilitySwitchableControl.context = self
-        if let userID = Auth.auth().currentUser?.uid{
-            userAvailabilitySwitchableControl.ref = Fire.usersRef.child(userID).child(Fire.userStatus)
-        }
+        
+        //ui inputs management initial settings
         begin()
+        
+        
+        //firef settings
+        if let userID = Auth.auth().currentUser?.uid{
+            let userRef = Fire.usersRef.child(userID)
+            userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
+            self.ref = userRef.child(Fire.userProfileKey)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -147,6 +178,20 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
     
     // MARK: - private methods
     
+    private func loadFireData(){
+        if let ref = self.ref {
+            ref.observeSingleEvent(of:.value, with: { snapshot in
+                if snapshot.exists(){
+                    //populate ui
+                    let value = snapshot.value as? NSDictionary
+                    self.typeSegmentedControl.selectedSegmentIndex = value?[Fire.userTypeKey] as? Int ?? 0
+                    self.usernameTextField.text = value?[Fire.userNameKey] as? String ?? ""
+                    self.interestTextView.text = value?[Fire.userDescriptionKey] as? String ?? ""
+                }
+            })
+        }
+    }
+    
     private func begin(){
         hideRightBarButtonItem()
         
@@ -165,5 +210,7 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
             rightBarButton.isEnabled = true
         }
     }
+    
+    
     
 }

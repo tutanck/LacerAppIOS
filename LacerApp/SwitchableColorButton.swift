@@ -39,6 +39,8 @@ class SwitchableColorButton: UIButton {
     
     var context : UIViewController?
     
+    //MARK: Firef
+    
     var ref : DatabaseReference? = nil{
         didSet {
             setupSwitchButton()
