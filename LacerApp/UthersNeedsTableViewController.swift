@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class UthersNeedsTableViewController: UITableViewController {
-   
+    
     
     // MARK: - Properties
     
     var needs : [Need] = []
-
+    
     var filteredNeeds = [Need]()
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -32,7 +33,11 @@ class UthersNeedsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //user status button settings
         userAvailabilitySwitchableControl.context = self
+        if let userID = Auth.auth().currentUser?.uid{
+            userAvailabilitySwitchableControl.ref = Fire.usersRef.child(userID).child(Fire.userStatus)
+        }
         
         //SearchController parameters
         searchController.searchResultsUpdater = self
@@ -68,7 +73,7 @@ class UthersNeedsTableViewController: UITableViewController {
         if (searchController.isActive && searchController.searchBar.text != "") {
             return filteredNeeds.count
         }
-         return needs.count
+        return needs.count
     }
     
     
@@ -172,7 +177,7 @@ class UthersNeedsTableViewController: UITableViewController {
         
         tableView.reloadData()
     }
-
+    
     
     
     

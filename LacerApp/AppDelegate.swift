@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,14 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if window != nil{
-            self.window!.rootViewController = Gatekeeper.getGate()
-            self.window!.makeKeyAndVisible()
+        //MARK : - Firebasee config
+        FirebaseApp.configure()
+        
+        
+        let fakeEmail = "joan@lace.com"
+        let fakePass = "Joan1234"
+        
+        Auth.auth().signIn(withEmail: fakeEmail,password: fakePass){ user, error in
+            if error != nil {
+                print("\n\n\n\n\n"+String(describing: error)+"\n\n\n\n")
+            }
         }
         
-        
-        
-        
+        Auth.auth().addStateDidChangeListener() { auth, user in
+            if user != nil {
+                self.window!.rootViewController = Gatekeeper.getGate()
+                self.window!.makeKeyAndVisible()
+            }
+        }
         
         return true
     }

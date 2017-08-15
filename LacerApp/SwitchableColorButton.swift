@@ -7,12 +7,45 @@
 //
 
 import UIKit
+import Firebase
 
 
 @IBDesignable
 class SwitchableColorButton: UIButton {
     
-    var context : UIViewController? = nil
+    //MARK: Hard coded Properties
+    
+    private let messages : [UIColor:String] = [
+        .red : "Invisible : Vous ne serez plus visible. Vous ne recevrez pas de notifications.",
+        .green : "Disponible : Vous serez visible et prioritaire. Vous recevrez des notifications sonores.",
+        .orange : "Occupé : Vous serez toujours visible mais pas prioritaire. Vous recevrez des notifications silencieuses."
+    ]
+    
+    private let colorToInt : [UIColor:Int] = [
+        .red : 0,
+        .green : 1,
+        .orange : 2
+    ]
+    
+    private let intToColor : [Int:UIColor] = [
+        0:.red,
+        1:.green,
+        2:.orange
+    ]
+    
+    private var activated = false
+    
+    //MARK: Properties
+    
+    var context : UIViewController?
+    
+    var ref : DatabaseReference? = nil{
+        didSet {
+            setupSwitchButton()
+        }
+    }
+    
+    
     
     //MARK: Interfacce Builder settings
     
@@ -36,62 +69,63 @@ class SwitchableColorButton: UIButton {
     
     
     
-    //MARK: Initialization
+    //MARK: Initialization & DeInitialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupSwitchButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupSwitchButton()
+    }
+    
+    deinit {
+        if let ref = self.ref{
+            ref.removeAllObservers()
+        }
     }
     
     
-    
     //MARK: Button Action
-    
-    func switchColor(button: UIButton) {
+    func switchColor(button: UIButton) {         //REMINDER : blue : imediatelly available
         
-        switch button.backgroundColor! {
-            
-        //case UIColor.blue : attemptToSwitchColor(button,.green )
-        case UIColor.green : attemptToSwitchColor(button,.orange, "Vous serez toujours visible mais pas prioritaire. Vous recevrez des notifications silencieuses.")
-        case UIColor.orange : attemptToSwitchColor(button,.red,"Vous ne serez plus visible. Vous ne recevrez pas de notifications.")
-        //case UIColor.red : attemptToSwitchColor(button,.blue )
-        default : attemptToSwitchColor(button,.green, "Vous serez visible et prioritaire. Vous recevrez des notifications sonores.")
-            
+        let nextColor : UIColor = intToColor[(colorToInt[backgroundColor!]!+1)%intToColor.count]!
+        
+        if context != nil && ref != nil {
+            Alert.displayMessage(context: context!,
+                                 message: messages[nextColor]!,
+                                 handler : { action in self.ref?.setValue(self.colorToInt[nextColor]) },
+                                 headerTitle :"Attention!",
+                                 cancellable : true)
         }
-        
     }
     
     
     
     //MARK: Private Methods
     
-    
-    private func attemptToSwitchColor(_ button : UIButton, _ newColor : UIColor, _ msg : String){
-        if context != nil {
-            Alert.displayMessage(context: context!,
-                                 message: msg,
-                                 handler : { action in button.backgroundColor = newColor },
-                                 headerTitle :"Attention!",
-                                 cancellable : true
-            )
-        }else{
-            button.backgroundColor = newColor
-        }
-    }
-    
-    
     private func setupSwitchButton() {
         
-        // Set the button appearence
-        self.backgroundColor = UIColor.green
+        if let ref = self.ref {
+            ref.observe(.value, with: { snapshot in
+                if !snapshot.exists(){
+                    // Set the button's default appearence in database
+                    self.ref?.setValue(1)
+                }else{
+                    // Set the button's current appearence
+                    self.backgroundColor = self.intToColor[snapshot.value as! Int]
+                    
+                    if self.activated == false{
+                        print("Debug : SwitchableColorButton activated")
+                        // Setup the button action
+                        self.addTarget(self, action: #selector(SwitchableColorButton.switchColor(button:)), for: .touchUpInside)
+                        self.activated = true
+                    }
+                }
+            })
+        }
         
-        // Setup the button action
-        self.addTarget(self, action: #selector(SwitchableColorButton.switchColor(button:)), for: .touchUpInside)
+        
     }
     
 }

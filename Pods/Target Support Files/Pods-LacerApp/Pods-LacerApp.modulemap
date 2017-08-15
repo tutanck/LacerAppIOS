@@ -1,0 +1,6 @@
+framework module Pods_LacerApp {
+  umbrella header "Pods-LacerApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

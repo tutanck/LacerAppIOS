@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BD2DDD322B1B190911E0CD9 /* Pods_LacerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7162C73802FEB8E87E5C8E50 /* Pods_LacerAppUITests.framework */; };
 		4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */; };
 		4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB203FF1F18BC400096CC60 /* AppDelegate.swift */; };
 		4EB204051F18BC400096CC60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204031F18BC400096CC60 /* Main.storyboard */; };
@@ -32,6 +33,8 @@
 		4EB204741F2157540096CC60 /* UserKeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204731F2157540096CC60 /* UserKeywordTableViewCell.swift */; };
 		4EB204821F23CE520096CC60 /* UtherProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */; };
 		4EB204861F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */; };
+		4ECDB3C51F426C1400352191 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */; };
+		4ECDB3C81F428E6300352191 /* Fire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C71F428E6300352191 /* Fire.swift */; };
 		4ED2B0B51F2639D10072BAEA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */; };
 		4ED2B0B71F265AC10072BAEA /* AccountCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */; };
 		4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */; };
@@ -42,6 +45,8 @@
 		4EDAA9601F36473200F1A5A2 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */; };
 		4EDAA9641F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */; };
 		4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */; };
+		6E7A1CEE1B57B7BE886540A3 /* Pods_LacerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED7376E182F88A8F84F322 /* Pods_LacerAppTests.framework */; };
+		AFFB4DAD46E9811FCAC5FA01 /* Pods_LacerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8938E35120BA4567F95B03 /* Pods_LacerApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16F2C9A17B662C29EB496269 /* Pods-LacerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LacerAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LacerAppTests/Pods-LacerAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		3E792C4FD693B2CE00E71575 /* Pods-LacerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LacerAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LacerAppTests/Pods-LacerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4EB203FC1F18BC400096CC60 /* LacerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LacerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB203FF1F18BC400096CC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +100,8 @@
 		4EB204731F2157540096CC60 /* UserKeywordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordTableViewCell.swift; sourceTree = "<group>"; };
 		4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherProfileTableViewController.swift; sourceTree = "<group>"; };
 		4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedDetailsTableViewController.swift; sourceTree = "<group>"; };
+		4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4ECDB3C71F428E6300352191 /* Fire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fire.swift; sourceTree = "<group>"; };
 		4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../WelcomeViewController.swift; sourceTree = "<group>"; };
 		4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountCheckingViewController.swift; path = ../AccountCheckingViewController.swift; sourceTree = "<group>"; };
 		4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gatekeeper.swift; sourceTree = "<group>"; };
@@ -103,6 +112,13 @@
 		4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewController.swift; sourceTree = "<group>"; };
 		4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedDetailsViewController.swift; sourceTree = "<group>"; };
 		4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingProfilesTableViewDelegate.swift; sourceTree = "<group>"; };
+		65FE5FBB2EC9BDE49E3C42D8 /* Pods-LacerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LacerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LacerApp/Pods-LacerApp.release.xcconfig"; sourceTree = "<group>"; };
+		704EAAF2E08F2ADCC4FC0A87 /* Pods-LacerAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LacerAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LacerAppUITests/Pods-LacerAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7162C73802FEB8E87E5C8E50 /* Pods_LacerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LacerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B2C43F041738560A6D1E19 /* Pods-LacerAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LacerAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LacerAppUITests/Pods-LacerAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0ED7376E182F88A8F84F322 /* Pods_LacerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LacerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF8938E35120BA4567F95B03 /* Pods_LacerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LacerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48E87BEEE67AF6F18D1D6EE /* Pods-LacerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LacerApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LacerApp/Pods-LacerApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFFB4DAD46E9811FCAC5FA01 /* Pods_LacerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7A1CEE1B57B7BE886540A3 /* Pods_LacerAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,12 +142,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD2DDD322B1B190911E0CD9 /* Pods_LacerAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15FE8E12EACA2228F6F83AAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D48E87BEEE67AF6F18D1D6EE /* Pods-LacerApp.debug.xcconfig */,
+				65FE5FBB2EC9BDE49E3C42D8 /* Pods-LacerApp.release.xcconfig */,
+				3E792C4FD693B2CE00E71575 /* Pods-LacerAppTests.debug.xcconfig */,
+				16F2C9A17B662C29EB496269 /* Pods-LacerAppTests.release.xcconfig */,
+				85B2C43F041738560A6D1E19 /* Pods-LacerAppUITests.debug.xcconfig */,
+				704EAAF2E08F2ADCC4FC0A87 /* Pods-LacerAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4EB203F31F18BC3F0096CC60 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +169,8 @@
 				4EB204131F18BC400096CC60 /* LacerAppTests */,
 				4EB2041E1F18BC400096CC60 /* LacerAppUITests */,
 				4EB203FD1F18BC400096CC60 /* Products */,
+				15FE8E12EACA2228F6F83AAD /* Pods */,
+				94E1B98DFB6B5698F8CDCB09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +195,7 @@
 				4EDAA94A1F2D6CCD00F1A5A2 /* Welcome */,
 				4EDAA9481F2D6C4900F1A5A2 /* Utils */,
 				4EB204061F18BC400096CC60 /* Assets.xcassets */,
+				4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */,
 				4EB2040B1F18BC400096CC60 /* Info.plist */,
 			);
 			path = LacerApp;
@@ -182,6 +217,14 @@
 				4EB204211F18BC400096CC60 /* Info.plist */,
 			);
 			path = LacerAppUITests;
+			sourceTree = "<group>";
+		};
+		4ECDB3C61F428E4100352191 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				4ECDB3C71F428E6300352191 /* Fire.swift */,
+			);
+			name = Firebase;
 			sourceTree = "<group>";
 		};
 		4EDAA9431F2D6B4100F1A5A2 /* User */ = {
@@ -226,6 +269,7 @@
 		4EDAA9481F2D6C4900F1A5A2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4ECDB3C61F428E4100352191 /* Firebase */,
 				4EDAA94B1F2D6CF000F1A5A2 /* CustomControl */,
 				4EB204351F1972090096CC60 /* Alert.swift */,
 				4EB2046B1F214C5F0096CC60 /* StatusColor.swift */,
@@ -329,6 +373,16 @@
 			name = Need;
 			sourceTree = "<group>";
 		};
+		94E1B98DFB6B5698F8CDCB09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF8938E35120BA4567F95B03 /* Pods_LacerApp.framework */,
+				B0ED7376E182F88A8F84F322 /* Pods_LacerAppTests.framework */,
+				7162C73802FEB8E87E5C8E50 /* Pods_LacerAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,9 +390,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EB204241F18BC400096CC60 /* Build configuration list for PBXNativeTarget "LacerApp" */;
 			buildPhases = (
+				B8BA6012FF55437BE8050818 /* [CP] Check Pods Manifest.lock */,
 				4EB203F81F18BC3F0096CC60 /* Sources */,
 				4EB203F91F18BC3F0096CC60 /* Frameworks */,
 				4EB203FA1F18BC3F0096CC60 /* Resources */,
+				1761DA37E121AC52304F4E50 /* [CP] Embed Pods Frameworks */,
+				B90FE8724B5665750A737C2D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,9 +410,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EB204271F18BC400096CC60 /* Build configuration list for PBXNativeTarget "LacerAppTests" */;
 			buildPhases = (
+				2F7FB121A9347F58989F8C96 /* [CP] Check Pods Manifest.lock */,
 				4EB2040C1F18BC400096CC60 /* Sources */,
 				4EB2040D1F18BC400096CC60 /* Frameworks */,
 				4EB2040E1F18BC400096CC60 /* Resources */,
+				AF9837180CC5EC6B1D872C05 /* [CP] Embed Pods Frameworks */,
+				41671B0275E74C80F5D94A80 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -371,9 +431,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EB2042A1F18BC400096CC60 /* Build configuration list for PBXNativeTarget "LacerAppUITests" */;
 			buildPhases = (
+				1E9D61F0C5F80F26E9CF122F /* [CP] Check Pods Manifest.lock */,
 				4EB204171F18BC400096CC60 /* Sources */,
 				4EB204181F18BC400096CC60 /* Frameworks */,
 				4EB204191F18BC400096CC60 /* Resources */,
+				1D2B28919485F3B40018CCB7 /* [CP] Embed Pods Frameworks */,
+				188994DF60236C5581A10EF9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -441,6 +504,7 @@
 			files = (
 				4EB2040A1F18BC400096CC60 /* LaunchScreen.storyboard in Resources */,
 				4EB204071F18BC400096CC60 /* Assets.xcassets in Resources */,
+				4ECDB3C51F426C1400352191 /* GoogleService-Info.plist in Resources */,
 				4EB204051F18BC400096CC60 /* Main.storyboard in Resources */,
 				4EB204381F1A060C0096CC60 /* Lace.storyboard in Resources */,
 			);
@@ -461,6 +525,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1761DA37E121AC52304F4E50 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LacerApp/Pods-LacerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		188994DF60236C5581A10EF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LacerAppUITests/Pods-LacerAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D2B28919485F3B40018CCB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LacerAppUITests/Pods-LacerAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E9D61F0C5F80F26E9CF122F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2F7FB121A9347F58989F8C96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		41671B0275E74C80F5D94A80 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LacerAppTests/Pods-LacerAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF9837180CC5EC6B1D872C05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LacerAppTests/Pods-LacerAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8BA6012FF55437BE8050818 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B90FE8724B5665750A737C2D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LacerApp/Pods-LacerApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4EB203F81F18BC3F0096CC60 /* Sources */ = {
@@ -492,6 +694,7 @@
 				4EB204501F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift in Sources */,
 				4EDAA9401F2D5EED00F1A5A2 /* UserNeedDetailsTableViewController.swift in Sources */,
 				4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */,
+				4ECDB3C81F428E6300352191 /* Fire.swift in Sources */,
 				4EDAA95C1F36186600F1A5A2 /* UserKeywordsTableViewController.swift in Sources */,
 				4EB204601F1ED4070096CC60 /* Keyword.swift in Sources */,
 				4EB204361F1972090096CC60 /* Alert.swift in Sources */,
@@ -647,6 +850,7 @@
 		};
 		4EB204251F18BC400096CC60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D48E87BEEE67AF6F18D1D6EE /* Pods-LacerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H9A6R5Z86A;
@@ -660,6 +864,7 @@
 		};
 		4EB204261F18BC400096CC60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65FE5FBB2EC9BDE49E3C42D8 /* Pods-LacerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H9A6R5Z86A;
@@ -673,6 +878,7 @@
 		};
 		4EB204281F18BC400096CC60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E792C4FD693B2CE00E71575 /* Pods-LacerAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -688,6 +894,7 @@
 		};
 		4EB204291F18BC400096CC60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16F2C9A17B662C29EB496269 /* Pods-LacerAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -703,6 +910,7 @@
 		};
 		4EB2042B1F18BC400096CC60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85B2C43F041738560A6D1E19 /* Pods-LacerAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = H9A6R5Z86A;
@@ -717,6 +925,7 @@
 		};
 		4EB2042C1F18BC400096CC60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 704EAAF2E08F2ADCC4FC0A87 /* Pods-LacerAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = H9A6R5Z86A;

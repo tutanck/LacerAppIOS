@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UserNeedsTableViewController: UITableViewController {
     
@@ -24,7 +25,11 @@ class UserNeedsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //user status button settings
         userAvailabilitySwitchableControl.context = self
+        if let userID = Auth.auth().currentUser?.uid{
+            userAvailabilitySwitchableControl.ref = Fire.usersRef.child(userID).child(Fire.userStatus)
+        }
         
         //SearchController parameters
         searchController.searchResultsUpdater = self

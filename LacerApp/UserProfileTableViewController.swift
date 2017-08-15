@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UserProfileTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -101,7 +102,12 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //user status button settings
         userAvailabilitySwitchableControl.context = self
+        if let userID = Auth.auth().currentUser?.uid{
+            userAvailabilitySwitchableControl.ref = Fire.usersRef.child(userID).child(Fire.userStatus)
+        }
         begin()
     }
     
