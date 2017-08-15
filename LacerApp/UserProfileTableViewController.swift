@@ -96,6 +96,14 @@ class UserProfileTableViewController: UITableViewController, UITextFieldDelegate
     
     @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
     
+  
+    // MARK: - Tap gesture
+    
+    @IBAction func hideKeyboard(_ sender: AnyObject) {
+        usernameTextField.endEditing(true)
+        interestTextView.endEditing(true)
+    }
+    
     
     
     // MARK: - System Events
