@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
 class UserKeywordTableViewCell: UITableViewCell {
+    
+    var ref : DatabaseReference?
     
     
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var statusSwitch: UISwitch!
     
+    @IBAction func switchStatus(_ sender: UISwitch) {
+        ref?.setValue(statusSwitch.isOn)
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
+     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

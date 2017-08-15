@@ -7,15 +7,33 @@
 //
 
 import UIKit
+import Firebase
 
 class UserKeywordsTableViewController: UITableViewController {
     
     var keywords : [Keyword] = []
     
     
+    //MARK: Firef
+    
+    var ref : DatabaseReference? = nil{
+        didSet {
+            loadFireData()
+        }
+    }
+    
+    
+    
+    // MARK: - System Events
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSample()
+        
+        //firef settings
+        if let userID = Auth.auth().currentUser?.uid{
+            let userRef = Fire.usersRef.child(userID)
+            self.ref = userRef.child(Fire.userKeywordsKey)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,79 +64,57 @@ class UserKeywordsTableViewController: UITableViewController {
         
         cell.titleLabel.text = keyword.title
         cell.statusSwitch.isOn = keyword.activ
+        cell.ref = keyword.ref
         
         return cell
     }
     
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let keyword = keywords[indexPath.row]
+            keyword.ref?.removeValue()
+        }
+    }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? UserKeywordTableViewCell else { return }
+        Alert.displayTextBox(context: self,  message: "Modifiez le mot-clé de votre activité",
+                             handler : { text in cell.ref?.removeValue(); self.ref?.child(text.lowercased()).setValue(true)},
+                             headerTitle:  "Modification", textBoxText : cell.ref!.key)
+    }
     
     
     @IBAction func addKeywordAction(_ sender: UIBarButtonItem) {
-        
-        Alert.displayTextBox(context: self, message: "Ajoutez un mot-clé à votre activité", headerTitle : "Nouveau mot-clé", confirmButtonTitle : "Ajouter")
+        Alert.displayTextBox(context: self, message: "Ajoutez un mot-clé à votre activité",
+                             handler : { text in self.ref?.child(text.lowercased()).setValue(true)},
+                             headerTitle : "Nouveau mot-clé",confirmButtonTitle : "Ajouter")
     }
     
     
     
     //MARK: Private Methods
-    
-    private func loadSample() {
-        keywords+=[
-            Keyword(title: "Java", activ:true),
-            Keyword(title: "Mongo ", activ:false),
-            Keyword(title: "Scrum",activ:true),
-        ]
+    private func loadFireData(){
+        if let ref = self.ref {
+            ref.queryOrderedByValue().observe(.value, with: { snapshot in
+                var tmp : [Keyword] = []
+                
+                for item in snapshot.children {
+                    let keyword = Keyword(snapshot: item as! DataSnapshot)
+                    tmp.append(keyword)
+                }
+                
+                self.keywords = tmp//.reversed() //TODO : find a way
+                self.tableView.reloadData()
+            })
+        }
     }
-    
-    
-    
     
 }

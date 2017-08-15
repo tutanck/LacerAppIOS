@@ -8,16 +8,18 @@
 
 
 import UIKit
+import Firebase
 
 class Keyword {
     
     var title : String
     var activ : Bool
+    let ref: DatabaseReference?
     
-    init(title : String,activ : Bool) {
-        self.title = title
-        self.activ = activ
+    init(snapshot: DataSnapshot) {
+        title = snapshot.key
+        activ = snapshot.value as! Bool
+        ref = snapshot.ref
     }
-    
     
 }

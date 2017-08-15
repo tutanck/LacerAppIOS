@@ -27,6 +27,8 @@ class Fire{
     static let userNameKey = "username"
     static let userDescriptionKey = "description"
     
+    static let userKeywordsKey = "keywords"
+    
 
     
 }

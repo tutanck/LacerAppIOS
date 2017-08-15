@@ -898,6 +898,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HnE-PV-y1f">
                                                     <rect key="frame" x="310" y="0.0" width="51" height="47.5"/>
+                                                    <connections>
+                                                        <action selector="switchStatus:" destination="b31-fl-9T7" eventType="valueChanged" id="yeC-26-mcX"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </stackView>

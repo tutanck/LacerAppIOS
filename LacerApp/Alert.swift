@@ -56,11 +56,12 @@ class Alert {
     static func displayTextBox(
         context : UIViewController,
         message : String,
-        handler : ((UIAlertAction) -> Swift.Void)? = nil,
+        handler : ((String) -> Swift.Void)? = nil,
         completion : (() -> Swift.Void)? = nil,
         headerTitle : String? = "Message",
         confirmButtonTitle : String? = "OK",
         cancelButtonTitle : String? = "Annuler",
+        textBoxText : String? = nil,
         alertControllerPreferredStyle : UIAlertControllerStyle = .alert,
         alertActionStyle : UIAlertActionStyle = .default,
         animated : Bool = true
@@ -71,11 +72,26 @@ class Alert {
         //TextField
         alert.addTextField()
         
+        if let textBoxText = textBoxText{
+            alert.textFields?.first?.text = textBoxText
+        }
+        
         //Cancel action
         alert.addAction( UIAlertAction(title: cancelButtonTitle, style: .default) )
         
         //Confirm action
-        alert.addAction( UIAlertAction(title: confirmButtonTitle , style: .default, handler: handler) )
+        alert.addAction(
+            UIAlertAction(title: confirmButtonTitle , style: .default){ action in
+                
+                if let handler = handler {
+                    
+                    guard let textField = alert.textFields?.first, let text = textField.text else { return }
+                    
+                    handler(text)
+                }
+            }
+            
+        )
         
         context.present(alert, animated: animated, completion: nil)
     }
