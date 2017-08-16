@@ -7,29 +7,32 @@
 //
 
 import UIKit
+import Firebase
 
-
-class Need {
+class Need : BacicNeed{
     
-    var title : String
+    let tagsKey = "tags"
+    let usernameKey = "username"
+    let distanceKey = "distance"
+    let descriptionKey = "description"
+    
     var tags : String
-    var activ : Bool
-    
     var username : String
     var distance : Double
     var description : String
     var photo : UIImage?
-
     
-    init(title : String,tags : String, activ : Bool, username : String, distance: Double, description : String, photo : UIImage?) {
-        self.title = title
-        self.tags = tags
-        self.activ = activ
-
-        self.username = username
-        self.distance = distance
-        self.description = description
-        self.photo = photo
-        
-     }
+    
+    override init(snapshot: DataSnapshot) {
+        let snapshotValue = snapshot.value as! NSDictionary
+    
+        self.tags = snapshotValue[tagsKey] as! String
+        self.username = snapshotValue[usernameKey] as! String
+        self.distance = snapshotValue[distanceKey] as! Double
+        self.description = snapshotValue[descriptionKey] as! String
+        self.photo =  UIImage(named: "userPhoto")
+        super.init(snapshot: snapshot)
+    }
+    
+    
 }

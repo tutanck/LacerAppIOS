@@ -107,8 +107,7 @@ class UserKeywordsTableViewController: UITableViewController {
                 var tmp : [Keyword] = []
                 
                 for item in snapshot.children {
-                    let keyword = Keyword(snapshot: item as! DataSnapshot)
-                    tmp.append(keyword)
+                     tmp.append(Keyword(snapshot: item as! DataSnapshot))
                 }
                 
                 self.keywords = tmp//.reversed() //TODO : find a way

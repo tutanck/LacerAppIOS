@@ -11,24 +11,40 @@ import Firebase
 
 class UserNeedsTableViewController: UITableViewController {
     
-    var needs : [Need] = []
+    var needs : [BacicNeed] = []
     
-    var filteredNeeds = [Need]()
+    var filteredNeeds = [BacicNeed]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - SwitchableControl
     
     @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
-
+    
+    
+    //MARK: Firef
+    
+    var ref : DatabaseReference? = nil{
+        didSet {
+            loadFireData()
+        }
+    }
+    
+    
+    
+    // MARK: - System Events
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //user status button settings
         userAvailabilitySwitchableControl.context = self
+        
+        //firef settings
         if let userID = Auth.auth().currentUser?.uid{
-            userAvailabilitySwitchableControl.ref = Fire.usersRef.child(userID).child(Fire.userStatusKey)
+            let userRef = Fire.usersRef.child(userID)
+            userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
+            self.ref = userRef.child(Fire.userNeedsKey)
         }
         
         //SearchController parameters
@@ -37,7 +53,6 @@ class UserNeedsTableViewController: UITableViewController {
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
-        loadSample()
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,84 +87,96 @@ class UserNeedsTableViewController: UITableViewController {
     }
     
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
     
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
     
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let need = needs[indexPath.row]
+            need.ref?.removeValue()
+        }
+    }
     
     
     
+    // MARK: - Navigation
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "modalUpdateUserNeed":
+            guard let destinationNavigationController = segue.destination as? UINavigationController else {
+                fatalError("Unexpected UINavigationController destination: \(segue.destination)")
+            }
+            
+            guard let needDetailViewController = destinationNavigationController.topViewController as? UserNeedDetailsViewController else {
+                fatalError("Unexpected UINavigationController.topViewController destination: \(segue.destination)")
+            }
+            
+            
+            guard let selectedNeedCell = sender as? UserNeedTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedNeedCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedNeed = needs[indexPath.row]
+            needDetailViewController.preparedRef = selectedNeed.ref
+            
+        default:return
+        }
+    }
+    
     
     
     //MARK: Search Logic
     
     func filterContentForSearchText(_ searchText: String) {
         filteredNeeds = needs.filter { need in
-             return need.username.lowercased().contains(searchText.lowercased())
+            return need.title.lowercased().contains(searchText.lowercased())
         }
         
         tableView.reloadData()
     }
-
+    
     
     
     //MARK: Private Methods
     
-    private func loadSample() {
-        needs+=[
-            Need(title: "Besoin Inedis", tags : "#java #mongo",activ:true, username: "Lol", distance: 20, description: "desc", photo: UIImage()),
-            Need(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false,username: "Lol", distance: 20, description: "desc", photo: UIImage()),
-            Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true,username: "Lol", distance: 20, description: "desc", photo: UIImage())
-        ]
+    private func loadFireData(){
+        if let ref = self.ref {
+            ref.observe(.value, with: { snapshot in
+                var tmp : [BacicNeed] = []
+                
+                for item in snapshot.children {
+                    tmp.append( BacicNeed(snapshot: item as! DataSnapshot) )
+                }
+                
+                self.needs = tmp
+                self.tableView.reloadData()
+            })
+        }
     }
+    
+    
     
     
     //Mark : unwinds
     
     @IBAction func cancelFromNeed(segue:UIStoryboardSegue) {}
-    
-    @IBAction func saveFromNeed(segue:UIStoryboardSegue) {}
-    
     
 }
 

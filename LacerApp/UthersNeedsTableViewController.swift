@@ -185,9 +185,7 @@ class UthersNeedsTableViewController: UITableViewController {
         let photo = UIImage(named: "userPhoto")
         
         needs+=[
-            Need(title: "Besoin Inedis", tags : "#java #mongo",activ:true, username : "Inedis", distance: 1230, description : "Bla bla bla", photo : photo),
-            Need(title: "BNP : Ingenieur full stack", tags : "#javascript #cassandra #node.js",activ:false, username : "BNP", distance: 450, description : "Bla bla bla", photo : photo),
-            Need(title: "Scrum master pour Google", tags : "#scrum #agilité",activ:true, username : "Google", distance: 204, description : "Bla bla bla", photo : photo),
+
         ]
     }
     

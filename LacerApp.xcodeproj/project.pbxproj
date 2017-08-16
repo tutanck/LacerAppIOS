@@ -35,6 +35,7 @@
 		4EB204861F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */; };
 		4ECDB3C51F426C1400352191 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */; };
 		4ECDB3C81F428E6300352191 /* Fire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C71F428E6300352191 /* Fire.swift */; };
+		4ECDB3CA1F43C97F00352191 /* BasicNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C91F43C97F00352191 /* BasicNeed.swift */; };
 		4ED2B0B51F2639D10072BAEA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */; };
 		4ED2B0B71F265AC10072BAEA /* AccountCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */; };
 		4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */; };
@@ -102,6 +103,7 @@
 		4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedDetailsTableViewController.swift; sourceTree = "<group>"; };
 		4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4ECDB3C71F428E6300352191 /* Fire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fire.swift; sourceTree = "<group>"; };
+		4ECDB3C91F43C97F00352191 /* BasicNeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicNeed.swift; sourceTree = "<group>"; };
 		4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../WelcomeViewController.swift; sourceTree = "<group>"; };
 		4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountCheckingViewController.swift; path = ../AccountCheckingViewController.swift; sourceTree = "<group>"; };
 		4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gatekeeper.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				4EB2045F1F1ED4070096CC60 /* Keyword.swift */,
+				4ECDB3C91F43C97F00352191 /* BasicNeed.swift */,
 				4EB204571F1BF6210096CC60 /* Need.swift */,
 				4EB204671F2147950096CC60 /* User.swift */,
 			);
@@ -672,6 +675,7 @@
 				4EB2046A1F214B2E0096CC60 /* FoundUserTableViewCell.swift in Sources */,
 				4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */,
 				4EDAA9641F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift in Sources */,
+				4ECDB3CA1F43C97F00352191 /* BasicNeed.swift in Sources */,
 				4EB204681F2147950096CC60 /* User.swift in Sources */,
 				4EDAA9601F36473200F1A5A2 /* UserProfileTableViewController.swift in Sources */,
 				4EB204821F23CE520096CC60 /* UtherProfileTableViewController.swift in Sources */,
