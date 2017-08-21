@@ -22,28 +22,28 @@ class UserContactsTableViewController: UITableViewController {
     
     @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //user status button settings
-        userAvailabilitySwitchableControl.context = self
-        if let userID = Auth.auth().currentUser?.uid{
-            userAvailabilitySwitchableControl.ref = Fire.usersRef.child(userID).child(Fire.userStatusKey)
-        }
+        /*userAvailabilitySwitchableControl.context = self
+         if let userID = Auth.auth().currentUser?.uid{
+         userAvailabilitySwitchableControl.ref = Fire.usersRef.child(userID).child(Fire.userStatusKey)
+         }
+         
+         //SearchController parameters
+         searchController.searchResultsUpdater = self
+         searchController.dimsBackgroundDuringPresentation = false
+         definesPresentationContext = true
+         tableView.tableHeaderView = searchController.searchBar
+         
+         //SearchController's search bar parameters
+         searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
+         searchController.searchBar.delegate = self*/
         
-        //SearchController parameters
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
-        
-        //SearchController's search bar parameters
-        searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
-        searchController.searchBar.delegate = self
-        
-     }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -66,15 +66,16 @@ class UserContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as? ContactTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as? UserTableViewCell  else {
             fatalError("The dequeued cell is not an instance of ContactTableViewCell.")
         }
         
         let contact = contacts[indexPath.row]
         
-        cell.usernameLabel.text = contact.name
-        cell.photoImageView.image = contact.photo
-        cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
+        cell.nameLabel.text = contact.name
+        cell.messageLabel.text = "TODO"
+        cell.profileImageView.image = contact.photo
+        //cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
         
         return cell
     }
@@ -143,7 +144,7 @@ class UserContactsTableViewController: UITableViewController {
     //Mark : unwinds
     
     @IBAction func cancelFromSearchUser(segue:UIStoryboardSegue) {}
-
+    
     
 }
 
