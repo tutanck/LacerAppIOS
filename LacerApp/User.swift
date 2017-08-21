@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class User {
+    
+    let nameKey = "name"
+    let statusKey = "status"
+    
+    let ref: DatabaseReference?
+
     
     var name : String
     
@@ -17,12 +24,25 @@ class User {
     var status : Int
     
     
-    init(name : String, photo : UIImage? , status : Int) {
+    init(name : String, photo : UIImage?, status: Int){
         self.name = name
-        self.photo=photo
-        self.status=status
+        self.status = status
+        self.photo = photo
         
+        ref = nil
     }
+    
+    
+    init(snapshot: DataSnapshot) {
+        let snapshotValue = snapshot.value as! NSDictionary
+
+        self.name = snapshotValue[nameKey] as! String
+        self.photo = UIImage(named: "userPhoto")
+        self.status = snapshotValue[statusKey] as! Int
+        
+        ref = snapshot.ref
+    }
+
     
     
 }

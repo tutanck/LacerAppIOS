@@ -20,9 +20,6 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     
     
     let matchingProfiles : [User] = [
-        User(name: "Angb joan", photo:UIImage(named: "userPhoto"), status: 1),
-        User(name: "Diogo Justino", photo: UIImage(named: "userPhoto"), status: 0),
-        User(name: "Tesla", photo: UIImage(named: "userPhoto"), status: 2)
     ]
     
     

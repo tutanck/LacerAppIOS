@@ -7,14 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class SearchUthersTableViewController: UITableViewController {
     
     // MARK: - Properties
     
     var users : [User] = []
-    
-    var filteredUsers = [User]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -36,7 +35,6 @@ class SearchUthersTableViewController: UITableViewController {
         searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
         searchController.searchBar.delegate = self
         
-        loadSample()
     }
     
     
@@ -55,9 +53,6 @@ class SearchUthersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (searchController.isActive && searchController.searchBar.text != "") {
-            return filteredUsers.count
-        }
         return users.count
     }
     
@@ -68,13 +63,8 @@ class SearchUthersTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of FoundUserTableViewCell.")
         }
         
-        let user : User
+        let user : User = users[indexPath.row]
         
-        if searchController.isActive && searchController.searchBar.text != "" {
-            user = filteredUsers[indexPath.row]
-        } else {
-            user = users[indexPath.row]
-        }
         
         cell.usernameLabel.text = user.name
         cell.photoImageView.image = user.photo
@@ -82,45 +72,6 @@ class SearchUthersTableViewController: UITableViewController {
         
         return cell
     }
-    
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    
     
     
     
@@ -152,27 +103,27 @@ class SearchUthersTableViewController: UITableViewController {
     
     //MARK: Search Logic
     
-    func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
-        filteredUsers = users.filter { user in
-            let categoryMatch = (scope == "Tout") //|| (user.category == scope)
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+       /*             let categoryMatch = (scope == "All") //|| (user.category == scope)
             return  categoryMatch && user.name.lowercased().contains(searchText.lowercased())
-        }
+        */
         
-        tableView.reloadData()
+        if searchController.isActive && searchController.searchBar.text != "" {
+            Fire.usersRef.queryOrdered(byChild:"profile/username" ).queryStarting(atValue: searchText).observe(.value, with: { snapshot in
+                var tmp : [User] = []
+                print(snapshot.value)
+                /*for item in snapshot.children {
+                 tmp.append(User(snapshot: item as! DataSnapshot))
+                 }
+                 
+                 self.users = tmp*/
+                self.tableView.reloadData()
+            })        }
+        
+        
+
     }
     
-    
-    
-    //MARK: Private Methods
-    
-    private func loadSample() {
-        let photo = UIImage(named: "userPhoto")
-        users+=[
-            User(name: "Angb joan", photo: photo, status: 1),
-            User(name: "Diogo Justino", photo: photo, status: 0),
-            User(name: "Tesla", photo: photo, status: 2)
-        ]
-    }
     
 }
 
@@ -181,7 +132,7 @@ extension SearchUthersTableViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+        filterContentForSearchText(searchBar.text!, scope: scope)
     }
 }
 

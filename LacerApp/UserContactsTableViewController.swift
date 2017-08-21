@@ -12,7 +12,7 @@ import Firebase
 class UserContactsTableViewController: UITableViewController {
     
     
-    var contacts : [User] = []
+    var contacts : [User] = [User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)]
     
     var filteredContacts = [User]()
     
@@ -43,8 +43,7 @@ class UserContactsTableViewController: UITableViewController {
         searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
         searchController.searchBar.delegate = self
         
-        loadSample()
-    }
+     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -136,18 +135,6 @@ class UserContactsTableViewController: UITableViewController {
         }
         
         tableView.reloadData()
-    }
-    
-    
-    //MARK: Private Methods
-    
-    private func loadSample() {
-        let photo = UIImage(named: "userPhoto")
-        contacts+=[
-            User(name: "Angb joan", photo: photo, status: 1),
-            User(name: "Diogo Justino", photo: photo, status: 0),
-            User(name: "Tesla", photo: photo, status: 2)
-        ]
     }
     
     

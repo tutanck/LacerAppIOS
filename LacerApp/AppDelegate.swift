@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         
-        let fakeEmail = "joan@lace.com"
-        let fakePass = "Joan1234"
+        let fakeEmail = "angb@lace.com"//"joan@lace.com"
+        let fakePass = "angb12"//"Joan1234"
         
         Auth.auth().signIn(withEmail: fakeEmail,password: fakePass){ user, error in
             if error != nil {

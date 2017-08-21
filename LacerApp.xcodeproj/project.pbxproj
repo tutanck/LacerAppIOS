@@ -164,6 +164,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4E4D20B11F4B666B001AC0C4 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D20B21F4B669D001AC0C4 /* Cells */,
+			);
+			name = UIComponents;
+			sourceTree = "<group>";
+		};
+		4E4D20B21F4B669D001AC0C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4EB204691F214B2E0096CC60 /* FoundUserTableViewCell.swift */,
+				4EB2044F1F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift */,
+				4EB204731F2157540096CC60 /* UserKeywordTableViewCell.swift */,
+				4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */,
+				4EDAA9411F2D61D500F1A5A2 /* MatchingProfileTableViewCell.swift */,
+				4EB2044D1F1BBD120096CC60 /* UserNeedTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		4EB203F31F18BC3F0096CC60 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +216,7 @@
 				4EDAA9431F2D6B4100F1A5A2 /* User */,
 				4EDAA9491F2D6C7C00F1A5A2 /* BusinessModel */,
 				4EDAA94A1F2D6CCD00F1A5A2 /* Welcome */,
+				4E4D20B11F4B666B001AC0C4 /* UIComponents */,
 				4EDAA9481F2D6C4900F1A5A2 /* Utils */,
 				4EB204061F18BC400096CC60 /* Assets.xcassets */,
 				4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */,
@@ -312,7 +334,6 @@
 		4EDAA9531F2FFCEA00F1A5A2 /* Keyword */ = {
 			isa = PBXGroup;
 			children = (
-				4EB204731F2157540096CC60 /* UserKeywordTableViewCell.swift */,
 				4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */,
 			);
 			name = Keyword;
@@ -330,7 +351,6 @@
 		4EDAA9551F2FFD3A00F1A5A2 /* Need */ = {
 			isa = PBXGroup;
 			children = (
-				4EB2044F1F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift */,
 				4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */,
 				4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */,
 			);
@@ -340,7 +360,6 @@
 		4EDAA9571F2FFD8300F1A5A2 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				4EB204691F214B2E0096CC60 /* FoundUserTableViewCell.swift */,
 				4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */,
 			);
 			name = Search;
@@ -357,7 +376,6 @@
 		4EDAA9591F2FFDB400F1A5A2 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				4EB2043F1F1A80F80096CC60 /* ContactTableViewCell.swift */,
 				4EB2043D1F1A21E30096CC60 /* UserContactsTableViewController.swift */,
 			);
 			name = Contact;
@@ -366,9 +384,7 @@
 		4EDAA95A1F2FFDC300F1A5A2 /* Need */ = {
 			isa = PBXGroup;
 			children = (
-				4EDAA9411F2D61D500F1A5A2 /* MatchingProfileTableViewCell.swift */,
 				4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */,
-				4EB2044D1F1BBD120096CC60 /* UserNeedTableViewCell.swift */,
 				4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */,
 				4EDAA93F1F2D5EED00F1A5A2 /* UserNeedDetailsTableViewController.swift */,
 				4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */,
