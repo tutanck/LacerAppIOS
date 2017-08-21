@@ -28,7 +28,7 @@ class UserContactsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //user status button settings
-        /*userAvailabilitySwitchableControl.context = self
+        userAvailabilitySwitchableControl.context = self
          if let userID = Auth.auth().currentUser?.uid{
          userAvailabilitySwitchableControl.ref = Fire.usersRef.child(userID).child(Fire.userStatusKey)
          }
@@ -41,7 +41,7 @@ class UserContactsTableViewController: UITableViewController {
          
          //SearchController's search bar parameters
          searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
-         searchController.searchBar.delegate = self*/
+         searchController.searchBar.delegate = self
         
     }
     
@@ -66,8 +66,8 @@ class UserContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as? UserTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of ContactTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as? UserTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of UserTableViewCell.")
         }
         
         let contact = contacts[indexPath.row]

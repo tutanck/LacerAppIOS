@@ -13,7 +13,8 @@ class SearchUthersTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var users : [User] = []
+     var users : [User] = [User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)]
+
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -59,16 +60,16 @@ class SearchUthersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FoundUserTableViewCell", for: indexPath) as? FoundUserTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of FoundUserTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as? UserTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of UserTableViewCell.")
         }
         
-        let user : User = users[indexPath.row]
+        let user = users[indexPath.row]
         
-        
-        cell.usernameLabel.text = user.name
-        cell.photoImageView.image = user.photo
-        cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : user.status)
+        cell.nameLabel.text = user.name
+        cell.messageLabel.text = "TODO"
+        cell.profileImageView.image = user.photo
+        //cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
         
         return cell
     }

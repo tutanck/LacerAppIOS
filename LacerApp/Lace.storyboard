@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="My8-eb-abX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1WR-Mu-GjO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -346,66 +345,20 @@
         <scene sceneID="n98-g6-MVc">
             <objects>
                 <tableViewController id="Yxr-eQ-2J3" customClass="UserContactsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="p53-Ev-4O1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="p53-Ev-4O1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="64" id="a4R-E1-87Q" customClass="ContactTableViewCell" customModule="LacerApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="cqv-Q6-MCb" customClass="UserTableViewCell" customModule="LacerApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a4R-E1-87Q" id="Kf2-Eo-pf7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cqv-Q6-MCb" id="xU4-2l-0pb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="n9X-c7-vmj">
-                                            <rect key="frame" x="0.0" y="0.0" width="63" height="63.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="n9X-c7-vmj" secondAttribute="height" multiplier="1:1" id="OIA-xG-3jb"/>
-                                            </constraints>
-                                        </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fr8-Hn-4ex">
-                                            <rect key="frame" x="71" y="22" width="288" height="20"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykb-WF-xpq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="20"/>
-                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsP-Nv-yJ5" customClass="Spot" customModule="LacerApp" customModuleProvider="target">
-                                                    <rect key="frame" x="268" y="0.0" width="20" height="20"/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="Ofq-7I-Qml"/>
-                                                        <constraint firstAttribute="width" constant="20" id="h2s-za-VNl"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="n9X-c7-vmj" firstAttribute="leading" secondItem="Kf2-Eo-pf7" secondAttribute="leading" id="8N9-bN-C9q"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="fr8-Hn-4ex" secondAttribute="trailing" constant="8" id="8NX-ky-gSx"/>
-                                        <constraint firstItem="n9X-c7-vmj" firstAttribute="top" secondItem="Kf2-Eo-pf7" secondAttribute="top" id="Gh2-6a-Awb"/>
-                                        <constraint firstItem="fr8-Hn-4ex" firstAttribute="centerY" secondItem="Kf2-Eo-pf7" secondAttribute="centerY" id="IZr-a7-8xO"/>
-                                        <constraint firstItem="fr8-Hn-4ex" firstAttribute="leading" secondItem="n9X-c7-vmj" secondAttribute="trailing" constant="8" id="eBe-YS-m4r"/>
-                                        <constraint firstAttribute="bottom" secondItem="n9X-c7-vmj" secondAttribute="bottom" id="tUX-g9-hLK"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="photoImageView" destination="n9X-c7-vmj" id="wJU-7v-8r8"/>
-                                    <outlet property="usernameLabel" destination="ykb-WF-xpq" id="a0v-9B-EuM"/>
-                                    <outlet property="userstatusLabel" destination="LsP-Nv-yJ5" id="ucm-dI-VTY"/>
-                                    <segue destination="r8e-RR-dnV" kind="show" id="o3b-NR-y5K"/>
+                                    <segue destination="r8e-RR-dnV" kind="show" id="EHI-Fk-bzs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -828,7 +781,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LyF-Gs-nGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4884" y="411.544227886057"/>
+            <point key="canvasLocation" x="4884" y="453"/>
         </scene>
         <!--Mots-clés-->
         <scene sceneID="U80-9l-pMj">
@@ -1280,79 +1233,22 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vc1-vE-jbr">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vc1-vE-jbr">
                                                 <rect key="frame" x="0.0" y="36.5" width="375" height="360"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="360" id="KfW-ec-l67"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MatchingProfileTableViewCell" id="tlC-J8-vBW" customClass="MatchingProfileTableViewCell" customModule="LacerApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="i3I-o9-THW" customClass="UserTableViewCell" customModule="LacerApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tlC-J8-vBW" id="ACW-pR-DKq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i3I-o9-THW" id="hK0-ND-cFX">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="MIO-3b-YTK">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="64"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="MIO-3b-YTK" secondAttribute="height" multiplier="64:63" id="eGd-FZ-ANL"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8RB-b5-ox3">
-                                                                    <rect key="frame" x="73" y="0.0" width="302" height="64"/>
-                                                                </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bP7-zL-zJZ">
-                                                                    <rect key="frame" x="65" y="22" width="294" height="20"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXl-c7-BVY">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="274" height="20"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0W-Y2-lMf" customClass="Spot" customModule="LacerApp" customModuleProvider="target">
-                                                                            <rect key="frame" x="274" y="0.0" width="20" height="20"/>
-                                                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="20" id="QgA-hT-ms9"/>
-                                                                                <constraint firstAttribute="width" constant="20" id="WFM-Th-aSR"/>
-                                                                            </constraints>
-                                                                            <userDefinedRuntimeAttributes>
-                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                    <real key="value" value="10"/>
-                                                                                </userDefinedRuntimeAttribute>
-                                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                                    <real key="value" value="0.0"/>
-                                                                                </userDefinedRuntimeAttribute>
-                                                                            </userDefinedRuntimeAttributes>
-                                                                        </button>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="MIO-3b-YTK" secondAttribute="bottom" id="4Wt-ME-rXn"/>
-                                                                <constraint firstItem="MIO-3b-YTK" firstAttribute="leading" secondItem="ACW-pR-DKq" secondAttribute="leading" id="CtG-oV-fjk"/>
-                                                                <constraint firstItem="bP7-zL-zJZ" firstAttribute="centerY" secondItem="ACW-pR-DKq" secondAttribute="centerY" id="DAd-vm-DwL"/>
-                                                                <constraint firstItem="8RB-b5-ox3" firstAttribute="centerY" secondItem="ACW-pR-DKq" secondAttribute="centerY" id="Jyj-cZ-hsx"/>
-                                                                <constraint firstItem="8RB-b5-ox3" firstAttribute="top" secondItem="ACW-pR-DKq" secondAttribute="top" id="N6P-rB-l2U"/>
-                                                                <constraint firstAttribute="trailing" secondItem="8RB-b5-ox3" secondAttribute="trailing" id="NGd-ik-1hu"/>
-                                                                <constraint firstItem="bP7-zL-zJZ" firstAttribute="leading" secondItem="MIO-3b-YTK" secondAttribute="trailing" id="OKu-BO-ZvC"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="bP7-zL-zJZ" secondAttribute="trailing" constant="8" id="RfT-NX-2Sg"/>
-                                                                <constraint firstItem="8RB-b5-ox3" firstAttribute="leading" secondItem="MIO-3b-YTK" secondAttribute="trailing" constant="8" id="Z9E-iz-QIN"/>
-                                                                <constraint firstItem="MIO-3b-YTK" firstAttribute="top" secondItem="ACW-pR-DKq" secondAttribute="top" id="f97-jh-tpf"/>
-                                                                <constraint firstAttribute="bottom" secondItem="8RB-b5-ox3" secondAttribute="bottom" id="oLg-yE-jkH"/>
-                                                            </constraints>
                                                         </tableViewCellContentView>
-                                                        <constraints>
-                                                            <constraint firstItem="MIO-3b-YTK" firstAttribute="height" secondItem="tlC-J8-vBW" secondAttribute="height" id="suu-yX-gS9"/>
-                                                        </constraints>
                                                         <connections>
-                                                            <outlet property="photoImageView" destination="MIO-3b-YTK" id="uy1-uz-ZAg"/>
-                                                            <outlet property="usernameLabel" destination="AXl-c7-BVY" id="hOz-TA-Wc7"/>
-                                                            <outlet property="userstatusSpot" destination="C0W-Y2-lMf" id="Qd0-gM-4ur"/>
-                                                            <segue destination="eKH-z8-okw" kind="show" id="whX-ts-4LD"/>
+                                                            <segue destination="eKH-z8-okw" kind="show" id="yel-BQ-n5W"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -1547,66 +1443,20 @@
         <scene sceneID="VMJ-QK-lWu">
             <objects>
                 <tableViewController id="13v-dW-9WO" customClass="SearchUthersTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="DYE-iE-lYG">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="DYE-iE-lYG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoundUserTableViewCell" rowHeight="64" id="C17-Zd-Sbl" customClass="FoundUserTableViewCell" customModule="LacerApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="iyJ-KP-J2W" customClass="UserTableViewCell" customModule="LacerApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C17-Zd-Sbl" id="Nnz-qQ-Lg1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iyJ-KP-J2W" id="dyx-xa-Ega">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="CVd-sq-njb">
-                                            <rect key="frame" x="0.0" y="0.0" width="64" height="63.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="64" id="Xok-HF-PnC"/>
-                                            </constraints>
-                                        </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hkx-In-6Wo">
-                                            <rect key="frame" x="72" y="22" width="287" height="20"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0Z-UX-ozE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="267" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHe-K5-HtD" customClass="Spot" customModule="LacerApp" customModuleProvider="target">
-                                                    <rect key="frame" x="267" y="0.0" width="20" height="20"/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="HTJ-Ce-qOW"/>
-                                                        <constraint firstAttribute="width" constant="20" id="OY1-N6-G8a"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Hkx-In-6Wo" secondAttribute="trailing" constant="8" id="1UE-uh-1F2"/>
-                                        <constraint firstItem="Hkx-In-6Wo" firstAttribute="leading" secondItem="CVd-sq-njb" secondAttribute="trailing" constant="8" id="Ddl-SY-0fl"/>
-                                        <constraint firstItem="Hkx-In-6Wo" firstAttribute="centerY" secondItem="Nnz-qQ-Lg1" secondAttribute="centerY" id="Ldh-Jy-7G1"/>
-                                        <constraint firstAttribute="bottom" secondItem="CVd-sq-njb" secondAttribute="bottom" id="MZs-Hg-xK5"/>
-                                        <constraint firstItem="CVd-sq-njb" firstAttribute="leading" secondItem="Nnz-qQ-Lg1" secondAttribute="leading" id="iE4-eO-joY"/>
-                                        <constraint firstItem="CVd-sq-njb" firstAttribute="top" secondItem="Nnz-qQ-Lg1" secondAttribute="top" id="tdh-sR-MPw"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="photoImageView" destination="CVd-sq-njb" id="vVn-tD-to4"/>
-                                    <outlet property="usernameLabel" destination="v0Z-UX-ozE" id="mgG-9z-dRd"/>
-                                    <outlet property="userstatusLabel" destination="GHe-K5-HtD" id="Op4-o5-Jtx"/>
-                                    <segue destination="eKH-z8-okw" kind="show" identifier="segueFromSearchUthersToUtherProfil" id="Qar-OH-LWm"/>
+                                    <segue destination="eKH-z8-okw" kind="show" id="1Jz-tQ-Wk1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1662,37 +1512,6 @@
             </objects>
             <point key="canvasLocation" x="1470" y="-1324"/>
         </scene>
-        <!--User Contacts Table View Controller-->
-        <scene sceneID="zg7-5F-t1v">
-            <objects>
-                <tableViewController id="My8-eb-abX" customClass="UserContactsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="uw3-hV-2Bn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="100" id="Fp3-V3-u94" customClass="UserTableViewCell" customModule="LacerApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fp3-V3-u94" id="A8w-aU-eTP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="r8e-RR-dnV" kind="show" id="eBf-fT-P0c"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="My8-eb-abX" id="qkZ-NM-Wqc"/>
-                            <outlet property="delegate" destination="My8-eb-abX" id="dgc-jd-zLI"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LOJ-Mm-ABn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2719" y="-1325"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="h4h-oP-UL0">
             <objects>
@@ -1716,8 +1535,7 @@
         <image name="userPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="whX-ts-4LD"/>
+        <segue reference="yel-BQ-n5W"/>
         <segue reference="48P-5d-Zva"/>
-        <segue reference="eBf-fT-P0c"/>
     </inferredMetricsTieBreakers>
 </document>

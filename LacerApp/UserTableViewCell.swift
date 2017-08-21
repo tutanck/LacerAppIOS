@@ -98,8 +98,4 @@ class UserTableViewCell: BasicTableViewCell {
         containerView.addConstraintsWithFormat("V:[v0(20)]|", views: hasReadImageView)
     }
     
-    
-    
-    
-    
 }

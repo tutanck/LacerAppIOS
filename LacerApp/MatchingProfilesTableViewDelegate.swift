@@ -18,9 +18,7 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     
     var filteredProfiles = [User]()
     
-    
-    let matchingProfiles : [User] = [
-    ]
+    var profiles : [User] = [User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)]
     
     
     // MARK: - Table view data source
@@ -32,19 +30,22 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.matchingProfiles.count
+        return self.profiles.count
     }
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // create a new cell if needed or reuse an old one
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MatchingProfileTableViewCell") as! MatchingProfileTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as? UserTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of UserTableViewCell.")
+        }
         
-        // set the text from the data model
-        cell.photoImageView.image = self.matchingProfiles[indexPath.row].photo
-        cell.usernameLabel.text = self.matchingProfiles[indexPath.row].name
-        cell.userstatusSpot.backgroundColor = StatusColor.getColor(status : self.matchingProfiles[indexPath.row].status)
+        let profile = profiles[indexPath.row]
+        
+        cell.nameLabel.text = profile.name
+        cell.messageLabel.text = "TODO"
+        cell.profileImageView.image = profile.photo
+        //cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
         
         return cell
     }
@@ -52,7 +53,7 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     //MARK: Search Logic
     
     func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
-        filteredProfiles = matchingProfiles.filter { contact in
+        filteredProfiles = profiles.filter { contact in
             let categoryMatch = (scope == "Tout") //|| (user.category == scope)
             return  categoryMatch && contact.name.lowercased().contains(searchText.lowercased())
         }
