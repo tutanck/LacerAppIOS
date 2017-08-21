@@ -16,6 +16,13 @@ class Keyword {
     var activ : Bool
     let ref: DatabaseReference?
     
+    init (title : String, activ : Bool){
+        self.title = title
+        self.activ = activ
+        
+        ref = nil
+    }
+    
     init(snapshot: DataSnapshot) {
         title = snapshot.key
         activ = snapshot.value as! Bool

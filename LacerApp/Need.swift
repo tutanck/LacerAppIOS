@@ -23,6 +23,17 @@ class Need : BacicNeed{
     var photo : UIImage?
     
     
+    init (tags : String, username : String, distance : Double, description : String ,photo : UIImage?, title : String, activ : Bool){
+        self.tags = tags
+        self.username = username
+        self.distance = distance
+        self.description = description
+        self.photo =  UIImage(named: "userPhoto")
+     
+        super.init(title : title, activ : activ)
+    }
+    
+    
     override init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! NSDictionary
     

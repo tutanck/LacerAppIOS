@@ -20,6 +20,13 @@ class BacicNeed{
     let ref: DatabaseReference?
     
     
+    init (title : String, activ : Bool){
+        self.title = title
+        self.activ = activ
+        self.ref = nil
+    }
+    
+    
     init(snapshot: DataSnapshot) {
         
         let snapshotValue = snapshot.value as! NSDictionary
