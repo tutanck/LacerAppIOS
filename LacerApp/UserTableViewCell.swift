@@ -10,6 +10,7 @@ import UIKit
 
 class UserTableViewCell: BasicTableViewCell {
     
+    //userProfileImageView
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -18,12 +19,9 @@ class UserTableViewCell: BasicTableViewCell {
         return imageView
     }()
     
-    let dividerLineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
-        return view
-    }()
     
+    
+    //metaContainerView
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Mark Zuckerberg"
@@ -56,44 +54,48 @@ class UserTableViewCell: BasicTableViewCell {
         return imageView
     }()
     
+    
+    
     override func setupViews() {
+        setupUserProfileImageView()
+        setupMetaContainerView()
+     }
+    
+    
+    fileprivate func setupUserProfileImageView() {
         
         addSubview(profileImageView)
-        addSubview(dividerLineView)
-        
-        setupContainerView()
         
         profileImageView.image = UIImage(named: "userPhoto")
         
-        addConstraintsWithFormat("H:|-12-[v0(68)]", views: profileImageView)
+        addConstraintsWithFormat("H:|-6-[v0(68)]", views: profileImageView)
         addConstraintsWithFormat("V:[v0(68)]", views: profileImageView)
-        
-        addConstraint(NSLayoutConstraint(item: profileImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
-        
-        addConstraintsWithFormat("H:|-82-[v0]|", views: dividerLineView)
-        addConstraintsWithFormat("V:[v0(1)]|", views: dividerLineView)
+        addCenteredYConstraint(about: profileImageView, to: self)
+                
     }
     
-    fileprivate func setupContainerView() {
+    
+    
+    fileprivate func setupMetaContainerView() {
         let containerView = UIView()
+        //containerView.backgroundColor = .green //debug
         addSubview(containerView)
-        
         addConstraintsWithFormat("H:|-90-[v0]|", views: containerView)
         addConstraintsWithFormat("V:[v0(50)]", views: containerView)
-        addConstraint(NSLayoutConstraint(item: containerView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
+        addCenteredYConstraint(about: containerView, to: self)
         
         containerView.addSubview(nameLabel)
         containerView.addSubview(messageLabel)
         containerView.addSubview(timeLabel)
         containerView.addSubview(hasReadImageView)
         
+        containerView.addConstraintsWithFormat("V:|[v0(24)]", views: timeLabel)
+
         containerView.addConstraintsWithFormat("H:|[v0][v1(80)]-12-|", views: nameLabel, timeLabel)
         
         containerView.addConstraintsWithFormat("V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
         
         containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, hasReadImageView)
-        
-        containerView.addConstraintsWithFormat("V:|[v0(24)]", views: timeLabel)
         
         containerView.addConstraintsWithFormat("V:[v0(20)]|", views: hasReadImageView)
     }

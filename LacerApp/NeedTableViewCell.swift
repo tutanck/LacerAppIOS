@@ -76,11 +76,8 @@ class NeedTableViewCell: BasicTableViewCell {
     
     
     override func setupViews() {
-        
         setupUserProfileImageView()
-        
         setupMetaContainerView()
-        
         setupDetailsContainerView()
     }
     
