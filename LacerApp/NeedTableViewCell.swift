@@ -31,15 +31,16 @@ class NeedTableViewCell: BasicTableViewCell {
     
     let usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "MarkZuckerbergMarkZuckerbergMarkZuckerbergMarkZuckerbergMarkZuckerberg"
-        label.textColor = UIColor.darkGray
+        label.text = "MarkZuckerbergMarkZuckerbergMarkZuckerbergMarkZuckerberg"
+        label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     let distanceLabel: UILabel = {
         let label = UILabel()
-        label.text = "2000km200m200m200m200m200m200m200m200m200m200m200m200m200m200m200m200m200m"
+        label.text = "2000km200m200m200m200m200m200m200m200m200m200m200m200m200m"
+        label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .right
         return label
@@ -48,13 +49,29 @@ class NeedTableViewCell: BasicTableViewCell {
     
     
     //detailsContainerView
-    let messageLabel: UILabel = {
-     let label = UILabel()
-     label.text = "YourfriendsmessageandsomethingelseYourfriendsmessageandsomethingelse"
-     label.textColor = UIColor.darkGray
-     label.font = UIFont.systemFont(ofSize: 14)
-     return label
-     }()
+    let tagsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag"
+        label.textColor = .darkGray
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
+    }()
+    
+    let dividerLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
+        return view
+    }()
+    
+    let descriptionTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "YourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyours"
+        textView.textColor = .black
+        textView.font = UIFont.systemFont(ofSize: 14)
+        textView.isEditable = false
+        //textView.isSelectable = false
+        return textView
+    }()
     
     
     
@@ -66,7 +83,6 @@ class NeedTableViewCell: BasicTableViewCell {
         
         setupDetailsContainerView()
     }
-    
     
     
     fileprivate func setupUserProfileImageView() {
@@ -84,9 +100,9 @@ class NeedTableViewCell: BasicTableViewCell {
     fileprivate func setupMetaContainerView() {
         
         let containerView = UIView()
-        containerView.backgroundColor = .blue
+        //containerView.backgroundColor = .blue //debug
         addSubview(containerView)
-        addConstraintsWithFormat("H:|-84-[v0]-6-|", views: containerView)
+        addConstraintsWithFormat("H:|-80-[v0]-6-|", views: containerView)
         addConstraintsWithFormat("V:[v0(50)]", views: containerView)
         addCenteredYConstraint(about: containerView, to: self.userProfileImageView)
         
@@ -94,11 +110,11 @@ class NeedTableViewCell: BasicTableViewCell {
         containerView.addSubview(usernameLabel)
         containerView.addSubview(distanceLabel)
         
-        containerView.addConstraintsWithFormat("H:|[v0]-12-|", views: titleLabel)
+        containerView.addConstraintsWithFormat("H:|[v0]|", views: titleLabel)
         
         containerView.addConstraintsWithFormat("V:|[v0][v1(24)]|", views: titleLabel, usernameLabel)
         
-        containerView.addConstraintsWithFormat("H:|[v0][v1(75)]-12-|", views: usernameLabel,distanceLabel)
+        containerView.addConstraintsWithFormat("H:|[v0][v1(75)]|", views: usernameLabel,distanceLabel)
         
         containerView.addConstraintsWithFormat("V:[v0(24)]|", views: distanceLabel)
         
@@ -108,27 +124,29 @@ class NeedTableViewCell: BasicTableViewCell {
     fileprivate func setupDetailsContainerView() {
         
         let containerView = UIView()
-        containerView.backgroundColor = .green
+        //containerView.backgroundColor = .green //debug
         addSubview(containerView)
         addConstraintsWithFormat("H:|-6-[v0]-6-|", views: containerView)
         addConstraintsWithFormat("V:[v0(120)]-2-|", views: containerView)
         addCenteredXConstraint(about: containerView, to: self)
         
+        //tagsLabel.backgroundColor = .yellow //debug
+        containerView.addSubview(tagsLabel)
+        containerView.addSubview(dividerLineView)
+        //descriptionLabel.backgroundColor = .red //debug
+        containerView.addSubview(descriptionTextView)
         
-        /*containerView.addSubview(titleLabel)
-        containerView.addSubview(usernameLabel)
-        containerView.addSubview(distanceLabel)
-        
-        containerView.addConstraintsWithFormat("H:|[v0]-12-|", views: titleLabel)
-        
-        containerView.addConstraintsWithFormat("V:|[v0][v1(24)]|", views: titleLabel, usernameLabel)
-        
-        containerView.addConstraintsWithFormat("H:|[v0][v1(80)]-12-|", views: usernameLabel,distanceLabel)
-        
-        containerView.addConstraintsWithFormat("V:[v0(24)]|", views: distanceLabel)
-        
-        */
-        
+        containerView.addConstraintsWithFormat("H:|-80-[v0]|", views: tagsLabel)
+        containerView.addConstraintsWithFormat("H:|-80-[v0]|", views: dividerLineView)
+
+        containerView.addConstraintsWithFormat("V:|[v0(24)]-2-[v1(1)]", views: tagsLabel,dividerLineView)
+
+        containerView.addConstraintsWithFormat("H:|-2-[v0]|", views: descriptionTextView)
+
+        containerView.addConstraintsWithFormat("V:[v0]-2-[v1]|", views: dividerLineView,descriptionTextView)
+
+
+//        containerView.addConstraintsWithFormat("H:|[v0]|", views: descriptionLabel)
     }
     
 }
