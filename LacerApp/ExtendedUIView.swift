@@ -23,4 +23,14 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
     }
     
+    
+    func addCenteredXConstraint(about : Any, to : Any?){
+        addConstraint(NSLayoutConstraint(item: about, attribute: .centerX, relatedBy: .equal, toItem: to, attribute: .centerX, multiplier: 1, constant: 0))
+    }
+    
+    
+    func addCenteredYConstraint(about : Any, to : Any?){
+        addConstraint(NSLayoutConstraint(item: about, attribute: .centerY, relatedBy: .equal, toItem: to, attribute: .centerY, multiplier: 1, constant: 0))
+    }
+    
 }

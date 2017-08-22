@@ -50,8 +50,7 @@ class UthersNeedsTableViewController: UITableViewController {
         //SearchController's search bar parameters
         searchController.searchBar.scopeButtonTitles = ["Mes mots-clés", "Autres"]
         searchController.searchBar.delegate = self
-        
-        loadSample()
+    
     }
     
     
@@ -178,17 +177,6 @@ class UthersNeedsTableViewController: UITableViewController {
         }
         
         tableView.reloadData()
-    }
-    
-    
-    
-    
-    private func loadSample() {
-        let photo = UIImage(named: "userPhoto")
-        
-        needs+=[
-
-        ]
     }
     
 }
