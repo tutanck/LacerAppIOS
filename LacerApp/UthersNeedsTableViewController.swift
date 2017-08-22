@@ -15,8 +15,10 @@ class UthersNeedsTableViewController: UITableViewController {
     // MARK: - Properties
     
     var needs : [Need] = [
+        Need(tags : "#Java #lol" , username : "Joana", distance : 200, description : "Chauffeur tout de suite" ,photo : UIImage(named : "userPhoto"), title : "Chauffeur", activ : true),
         Need(tags : "#Java #lol" , username : "Joana", distance : 200, description : "Chauffeur tout de suite" ,photo : UIImage(named : "userPhoto"), title : "Chauffeur", activ : true)
     ]
+
     
     var filteredNeeds = [Need]()
     
@@ -79,8 +81,8 @@ class UthersNeedsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UtherNeedTableViewCell", for: indexPath) as? UtherNeedTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of UtherNeedTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NeedTableViewCell", for: indexPath) as? NeedTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of NeedTableViewCell.")
         }
         
         let need : Need
@@ -91,7 +93,7 @@ class UthersNeedsTableViewController: UITableViewController {
             need = needs[indexPath.row]
         }
         
-        cell.photoImageView.image = need.photo
+        cell.userProfileImageView.image = need.photo
         cell.titleLabel.text = need.title
         cell.usernameLabel.text = need.username
         cell.distanceLabel.text = String(Int(need.distance))+" m"

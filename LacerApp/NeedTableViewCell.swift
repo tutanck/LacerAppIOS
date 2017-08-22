@@ -49,9 +49,9 @@ class NeedTableViewCell: BasicTableViewCell {
     
     
     //detailsContainerView
-    let tagsLabel: UILabel = {
+    let keywordsLabel: UILabel = {
         let label = UILabel()
-        label.text = "#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag#tag"
+        label.text = "#keyword#keyword#keyword#keyword#keyword#keyword#keyword#"
         label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 14)
         return label
@@ -131,15 +131,15 @@ class NeedTableViewCell: BasicTableViewCell {
         addCenteredXConstraint(about: containerView, to: self)
         
         //tagsLabel.backgroundColor = .yellow //debug
-        containerView.addSubview(tagsLabel)
+        containerView.addSubview(keywordsLabel)
         containerView.addSubview(dividerLineView)
         //descriptionLabel.backgroundColor = .red //debug
         containerView.addSubview(descriptionTextView)
         
-        containerView.addConstraintsWithFormat("H:|-80-[v0]|", views: tagsLabel)
+        containerView.addConstraintsWithFormat("H:|-80-[v0]|", views: keywordsLabel)
         containerView.addConstraintsWithFormat("H:|-80-[v0]|", views: dividerLineView)
 
-        containerView.addConstraintsWithFormat("V:|[v0(24)]-2-[v1(1)]", views: tagsLabel,dividerLineView)
+        containerView.addConstraintsWithFormat("V:|[v0(24)]-2-[v1(1)]", views: keywordsLabel,dividerLineView)
 
         containerView.addConstraintsWithFormat("H:|-2-[v0]|", views: descriptionTextView)
 
