@@ -55,16 +55,16 @@ class UserKeywordsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserKeywordTableViewCell", for: indexPath) as? UserKeywordTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of UserKeywordTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "KeywordTableViewCell", for: indexPath) as? KeywordTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of KeywordTableViewCell.")
         }
         
         // Fetches the appropriate meal for the data source layout.
         let keyword = keywords[indexPath.row]
         
-        cell.titleLabel.text = keyword.title
-        cell.statusSwitch.isOn = keyword.activ
-        cell.ref = keyword.ref
+        cell.keywordLabel.text = keyword.title
+        cell.activSwitch.isOn = keyword.activ
+        //cell.ref = keyword.ref
         
         return cell
     }

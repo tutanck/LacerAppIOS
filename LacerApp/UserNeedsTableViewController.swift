@@ -11,6 +11,10 @@ import Firebase
 
 class UserNeedsTableViewController: UITableViewController {
     
+    let cellId = "UserNeedTableViewCell"
+    
+    // MARK: - Properties
+    
     var needs : [BacicNeed] = []
     
     var filteredNeeds = [BacicNeed]()
@@ -36,7 +40,7 @@ class UserNeedsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //user status button settings
         userAvailabilitySwitchableControl.context = self
         
@@ -74,14 +78,14 @@ class UserNeedsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserNeedTableViewCell", for: indexPath) as? UserNeedTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of UserNeedTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? UserNeedTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of"+cellId)
         }
         
         // Fetches the appropriate meal for the data source layout.
         let need = needs[indexPath.row]
         
-        cell.titleLabel.text = need.title
+        //cell.titleLabel.text = need.title
         
         return cell
     }

@@ -12,6 +12,9 @@ import Firebase
 class UthersNeedsTableViewController: UITableViewController {
     
     
+    let cellId = "UtherNeedTableViewCell"
+
+    
     // MARK: - Properties
     
     var needs : [Need] = [
@@ -81,8 +84,8 @@ class UthersNeedsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NeedTableViewCell", for: indexPath) as? NeedTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of NeedTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? UtherNeedTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of "+cellId)
         }
         
         let need : Need

@@ -1,26 +1,78 @@
 //
-//  UserNeedTableViewCell.swift
+//  BasicNeedTableViewCell.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 16/07/2017.
+//  Created by Joan Angb on 22/08/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
 
-class UserNeedTableViewCell: UITableViewCell {
+class UserNeedTableViewCell: BasicTableViewCell {
     
-    @IBOutlet weak var titleLabel: UILabel!
+    //metaContainerView
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Mark Zuckerberg"
+        label.font = UIFont.systemFont(ofSize: 18)
+        return label
+    }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    let previewLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Your friend's message and something else..."
+        label.textColor = UIColor.darkGray
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
+    }()
+    
+    let timeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "12:05 pm"
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textAlignment = .right
+        return label
+    }()
+    
+    let isActivImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
+        imageView.backgroundColor = .red
+        return imageView
+    }()
+    
+    
+    
+    override func setupViews() {
+        setupMetaContainerView()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    
+    
+    fileprivate func setupMetaContainerView() {
+        let containerView = UIView()
+        //containerView.backgroundColor = .green //debug
+        addSubview(containerView)
+        addConstraintsWithFormat("H:|-12-[v0]|", views: containerView)
+        addConstraintsWithFormat("V:[v0(50)]", views: containerView)
+        addCenteredYConstraint(about: containerView, to: self)
+        
+        containerView.addSubview(titleLabel)
+        containerView.addSubview(previewLabel)
+        containerView.addSubview(timeLabel)
+        containerView.addSubview(isActivImageView)
+        
+        containerView.addConstraintsWithFormat("V:|[v0(24)]", views: timeLabel)
+        
+        containerView.addConstraintsWithFormat("H:|[v0][v1(80)]-12-|", views: titleLabel, timeLabel)
+        
+        containerView.addConstraintsWithFormat("V:|[v0][v1(24)]|", views: titleLabel, previewLabel)
+        
+        containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: previewLabel, isActivImageView)
+        
+        containerView.addConstraintsWithFormat("V:[v0(20)]|", views: isActivImageView)
     }
-
+    
 }

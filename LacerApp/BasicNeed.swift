@@ -16,6 +16,8 @@ class BacicNeed{
     
     var title : String
     var activ : Bool
+    var date : Date
+
     
     let ref: DatabaseReference?
     
@@ -23,6 +25,8 @@ class BacicNeed{
     init (title : String, activ : Bool){
         self.title = title
         self.activ = activ
+        self.date = Date()
+
         self.ref = nil
     }
     
@@ -33,6 +37,8 @@ class BacicNeed{
         title = snapshotValue[titleKey] as! String
         activ = snapshotValue[activKey] as! Bool
         
+        self.date = Date()
+
         ref = snapshot.ref
     }
     

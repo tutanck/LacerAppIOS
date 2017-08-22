@@ -12,7 +12,9 @@
 		4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */; };
 		4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */; };
 		4E4D20B91F4B859D001AC0C4 /* ExtendedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B81F4B859D001AC0C4 /* ExtendedUIView.swift */; };
-		4E4D20BE1F4B9FB7001AC0C4 /* NeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20BD1F4B9FB7001AC0C4 /* NeedTableViewCell.swift */; };
+		4E4D20BE1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20BD1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift */; };
+		4E4D20C31F4BD51F001AC0C4 /* KeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20C21F4BD51F001AC0C4 /* KeywordTableViewCell.swift */; };
+		4E4D20C71F4BE40E001AC0C4 /* UserNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20C61F4BE40E001AC0C4 /* UserNeedTableViewCell.swift */; };
 		4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB203FF1F18BC400096CC60 /* AppDelegate.swift */; };
 		4EB204051F18BC400096CC60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204031F18BC400096CC60 /* Main.storyboard */; };
 		4EB204071F18BC400096CC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204061F18BC400096CC60 /* Assets.xcassets */; };
@@ -25,8 +27,6 @@
 		4EB204421F1A89E20096CC60 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204411F1A89E20096CC60 /* Spot.swift */; };
 		4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */; };
 		4EB2044C1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */; };
-		4EB2044E1F1BBD120096CC60 /* UserNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044D1F1BBD120096CC60 /* UserNeedTableViewCell.swift */; };
-		4EB204501F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044F1F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift */; };
 		4EB204581F1BF6210096CC60 /* Need.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204571F1BF6210096CC60 /* Need.swift */; };
 		4EB204601F1ED4070096CC60 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2045F1F1ED4070096CC60 /* Keyword.swift */; };
 		4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */; };
@@ -74,7 +74,9 @@
 		4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		4E4D20B81F4B859D001AC0C4 /* ExtendedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedUIView.swift; sourceTree = "<group>"; };
-		4E4D20BD1F4B9FB7001AC0C4 /* NeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedTableViewCell.swift; sourceTree = "<group>"; };
+		4E4D20BD1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedTableViewCell.swift; sourceTree = "<group>"; };
+		4E4D20C21F4BD51F001AC0C4 /* KeywordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeywordTableViewCell.swift; sourceTree = "<group>"; };
+		4E4D20C61F4BE40E001AC0C4 /* UserNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedTableViewCell.swift; sourceTree = "<group>"; };
 		4EB203FC1F18BC400096CC60 /* LacerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LacerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB203FF1F18BC400096CC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB204041F18BC400096CC60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,8 +95,6 @@
 		4EB204411F1A89E20096CC60 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchableColorButton.swift; sourceTree = "<group>"; };
 		4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UthersNeedsTableViewController.swift; sourceTree = "<group>"; };
-		4EB2044D1F1BBD120096CC60 /* UserNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedTableViewCell.swift; sourceTree = "<group>"; };
-		4EB2044F1F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedTableViewCell.swift; sourceTree = "<group>"; };
 		4EB204571F1BF6210096CC60 /* Need.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Need.swift; sourceTree = "<group>"; };
 		4EB2045F1F1ED4070096CC60 /* Keyword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
 		4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUthersTableViewController.swift; sourceTree = "<group>"; };
@@ -175,22 +175,22 @@
 		4E4D20B21F4B669D001AC0C4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4E4D20B31F4B81DA001AC0C4 /* Custom */,
-				4EB2044F1F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift */,
-				4EB204731F2157540096CC60 /* UserKeywordTableViewCell.swift */,
-				4EB2044D1F1BBD120096CC60 /* UserNeedTableViewCell.swift */,
+				4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */,
+				4E4D20C21F4BD51F001AC0C4 /* KeywordTableViewCell.swift */,
+				4E4D20C61F4BE40E001AC0C4 /* UserNeedTableViewCell.swift */,
+				4E4D20BD1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift */,
+				4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */,
+				4E4D20B31F4B81DA001AC0C4 /* deprecated */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		4E4D20B31F4B81DA001AC0C4 /* Custom */ = {
+		4E4D20B31F4B81DA001AC0C4 /* deprecated */ = {
 			isa = PBXGroup;
 			children = (
-				4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */,
-				4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */,
-				4E4D20BD1F4B9FB7001AC0C4 /* NeedTableViewCell.swift */,
+				4EB204731F2157540096CC60 /* UserKeywordTableViewCell.swift */,
 			);
-			name = Custom;
+			name = deprecated;
 			sourceTree = "<group>";
 		};
 		4E4D20BA1F4B8B93001AC0C4 /* Extensions */ = {
@@ -716,10 +716,10 @@
 				4EDAA9641F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift in Sources */,
 				4ECDB3CA1F43C97F00352191 /* BasicNeed.swift in Sources */,
 				4EB204681F2147950096CC60 /* User.swift in Sources */,
+				4E4D20C71F4BE40E001AC0C4 /* UserNeedTableViewCell.swift in Sources */,
 				4EDAA9601F36473200F1A5A2 /* UserProfileTableViewController.swift in Sources */,
 				4EB204821F23CE520096CC60 /* UtherProfileTableViewController.swift in Sources */,
 				4EDAA95E1F362A5F00F1A5A2 /* RatingControl.swift in Sources */,
-				4EB2044E1F1BBD120096CC60 /* UserNeedTableViewCell.swift in Sources */,
 				4EB2044C1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift in Sources */,
 				4EB2046C1F214C5F0096CC60 /* StatusColor.swift in Sources */,
 				4EB2043E1F1A21E30096CC60 /* UserContactsTableViewController.swift in Sources */,
@@ -733,10 +733,10 @@
 				4ED2B0B71F265AC10072BAEA /* AccountCheckingViewController.swift in Sources */,
 				4EB204581F1BF6210096CC60 /* Need.swift in Sources */,
 				4EB204741F2157540096CC60 /* UserKeywordTableViewCell.swift in Sources */,
-				4E4D20BE1F4B9FB7001AC0C4 /* NeedTableViewCell.swift in Sources */,
-				4EB204501F1BBDCA0096CC60 /* UtherNeedTableViewCell.swift in Sources */,
+				4E4D20BE1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift in Sources */,
 				4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */,
 				4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */,
+				4E4D20C31F4BD51F001AC0C4 /* KeywordTableViewCell.swift in Sources */,
 				4ECDB3C81F428E6300352191 /* Fire.swift in Sources */,
 				4EDAA95C1F36186600F1A5A2 /* UserKeywordsTableViewController.swift in Sources */,
 				4EB204601F1ED4070096CC60 /* Keyword.swift in Sources */,
