@@ -15,6 +15,10 @@
 		4E4D20BE1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20BD1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift */; };
 		4E4D20C31F4BD51F001AC0C4 /* KeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20C21F4BD51F001AC0C4 /* KeywordTableViewCell.swift */; };
 		4E4D20C71F4BE40E001AC0C4 /* UserNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20C61F4BE40E001AC0C4 /* UserNeedTableViewCell.swift */; };
+		4E4D20CD1F4DEE5D001AC0C4 /* MessengerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20CC1F4DEE5D001AC0C4 /* MessengerCollectionViewController.swift */; };
+		4E4D20CF1F4DF08C001AC0C4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20CE1F4DF08C001AC0C4 /* Message.swift */; };
+		4E4D20D31F4DF210001AC0C4 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20D21F4DF210001AC0C4 /* MessageCollectionViewCell.swift */; };
+		4E4D20D51F4DF2D3001AC0C4 /* BasicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20D41F4DF2D3001AC0C4 /* BasicCollectionViewCell.swift */; };
 		4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB203FF1F18BC400096CC60 /* AppDelegate.swift */; };
 		4EB204051F18BC400096CC60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204031F18BC400096CC60 /* Main.storyboard */; };
 		4EB204071F18BC400096CC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204061F18BC400096CC60 /* Assets.xcassets */; };
@@ -76,6 +80,10 @@
 		4E4D20BD1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedTableViewCell.swift; sourceTree = "<group>"; };
 		4E4D20C21F4BD51F001AC0C4 /* KeywordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeywordTableViewCell.swift; sourceTree = "<group>"; };
 		4E4D20C61F4BE40E001AC0C4 /* UserNeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedTableViewCell.swift; sourceTree = "<group>"; };
+		4E4D20CC1F4DEE5D001AC0C4 /* MessengerCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerCollectionViewController.swift; sourceTree = "<group>"; };
+		4E4D20CE1F4DF08C001AC0C4 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4E4D20D21F4DF210001AC0C4 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E4D20D41F4DF2D3001AC0C4 /* BasicCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCollectionViewCell.swift; sourceTree = "<group>"; };
 		4EB203FC1F18BC400096CC60 /* LacerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LacerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB203FF1F18BC400096CC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB204041F18BC400096CC60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,6 +183,7 @@
 			children = (
 				4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */,
 				4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */,
+				4E4D20D41F4DF2D3001AC0C4 /* BasicCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -229,6 +238,23 @@
 				4E4D20C21F4BD51F001AC0C4 /* KeywordTableViewCell.swift */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		4E4D20D01F4DF1CC001AC0C4 /* Messenger */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D20D11F4DF1E9001AC0C4 /* Cells */,
+				4E4D20CC1F4DEE5D001AC0C4 /* MessengerCollectionViewController.swift */,
+			);
+			name = Messenger;
+			sourceTree = "<group>";
+		};
+		4E4D20D11F4DF1E9001AC0C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D20D21F4DF210001AC0C4 /* MessageCollectionViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		4EB203F31F18BC3F0096CC60 = {
@@ -344,6 +370,7 @@
 				4ECDB3C91F43C97F00352191 /* BasicNeed.swift */,
 				4EB204571F1BF6210096CC60 /* Need.swift */,
 				4EB204671F2147950096CC60 /* User.swift */,
+				4E4D20CE1F4DF08C001AC0C4 /* Message.swift */,
 			);
 			name = BusinessModel;
 			sourceTree = "<group>";
@@ -399,6 +426,7 @@
 		4EDAA9591F2FFDB400F1A5A2 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				4E4D20D01F4DF1CC001AC0C4 /* Messenger */,
 				4EDAA9571F2FFD8300F1A5A2 /* Search */,
 				4EB2043D1F1A21E30096CC60 /* UserContactsTableViewController.swift */,
 			);
@@ -705,8 +733,10 @@
 				4EDAA9641F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift in Sources */,
 				4ECDB3CA1F43C97F00352191 /* BasicNeed.swift in Sources */,
 				4EB204681F2147950096CC60 /* User.swift in Sources */,
+				4E4D20D31F4DF210001AC0C4 /* MessageCollectionViewCell.swift in Sources */,
 				4E4D20C71F4BE40E001AC0C4 /* UserNeedTableViewCell.swift in Sources */,
 				4EDAA9601F36473200F1A5A2 /* UserProfileTableViewController.swift in Sources */,
+				4E4D20D51F4DF2D3001AC0C4 /* BasicCollectionViewCell.swift in Sources */,
 				4EB204821F23CE520096CC60 /* UtherProfileTableViewController.swift in Sources */,
 				4EDAA95E1F362A5F00F1A5A2 /* RatingControl.swift in Sources */,
 				4EB2044C1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift in Sources */,
@@ -714,10 +744,12 @@
 				4EB2043E1F1A21E30096CC60 /* UserContactsTableViewController.swift in Sources */,
 				4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */,
 				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
+				4E4D20CF1F4DF08C001AC0C4 /* Message.swift in Sources */,
 				4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */,
 				4EB204861F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift in Sources */,
 				4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */,
 				4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */,
+				4E4D20CD1F4DEE5D001AC0C4 /* MessengerCollectionViewController.swift in Sources */,
 				4EB204421F1A89E20096CC60 /* Spot.swift in Sources */,
 				4ED2B0B71F265AC10072BAEA /* AccountCheckingViewController.swift in Sources */,
 				4EB204581F1BF6210096CC60 /* Need.swift in Sources */,
