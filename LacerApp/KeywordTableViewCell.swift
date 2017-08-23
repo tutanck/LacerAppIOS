@@ -10,15 +10,6 @@ import UIKit
 
 class KeywordTableViewCell: BasicTableViewCell {
     
-    //userProfileImageView
-    let profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 34
-        imageView.layer.masksToBounds = true
-        return imageView
-    }()
-    
     let keywordLabel: UILabel = {
         let label = UILabel()
         label.text = "JavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJava"
@@ -27,9 +18,9 @@ class KeywordTableViewCell: BasicTableViewCell {
     }()
     
     let activSwitch: UISwitch = {
-        let uiswitch = UISwitch()
-        uiswitch.isOn = true
-        return uiswitch
+        let uiSwitch = UISwitch()
+        uiSwitch.isOn = true
+        return uiSwitch
     }()
     
     
@@ -42,6 +33,8 @@ class KeywordTableViewCell: BasicTableViewCell {
         addSubview(keywordLabel)
         addSubview(activSwitch)
         
+        activSwitch.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
+        
         addConstraintsWithFormat("H:|-24-[v0]-12-[v1(60)]-2-|", views: keywordLabel,activSwitch)
         addCenteredYConstraint(about: keywordLabel, to: self)
         
@@ -52,5 +45,13 @@ class KeywordTableViewCell: BasicTableViewCell {
         
     }
     
+    
+    
+    func switchChanged(uiSwitch: UISwitch) {
+        let value = uiSwitch.isOn
+        // Do something
+        print("switchChanged")
+    }
+
     
 }

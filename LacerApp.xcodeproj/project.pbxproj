@@ -32,7 +32,6 @@
 		4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */; };
 		4EB204681F2147950096CC60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204671F2147950096CC60 /* User.swift */; };
 		4EB2046C1F214C5F0096CC60 /* StatusColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2046B1F214C5F0096CC60 /* StatusColor.swift */; };
-		4EB204741F2157540096CC60 /* UserKeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204731F2157540096CC60 /* UserKeywordTableViewCell.swift */; };
 		4EB204821F23CE520096CC60 /* UtherProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */; };
 		4EB204861F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */; };
 		4ECDB3C51F426C1400352191 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */; };
@@ -100,7 +99,6 @@
 		4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUthersTableViewController.swift; sourceTree = "<group>"; };
 		4EB204671F2147950096CC60 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4EB2046B1F214C5F0096CC60 /* StatusColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusColor.swift; sourceTree = "<group>"; };
-		4EB204731F2157540096CC60 /* UserKeywordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordTableViewCell.swift; sourceTree = "<group>"; };
 		4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherProfileTableViewController.swift; sourceTree = "<group>"; };
 		4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedDetailsTableViewController.swift; sourceTree = "<group>"; };
 		4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -164,33 +162,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4E4D20B11F4B666B001AC0C4 /* UIComponents */ = {
+		4E4D20B11F4B666B001AC0C4 /* UICommonComponents */ = {
 			isa = PBXGroup;
 			children = (
 				4E4D20B21F4B669D001AC0C4 /* Cells */,
 			);
-			name = UIComponents;
+			name = UICommonComponents;
 			sourceTree = "<group>";
 		};
 		4E4D20B21F4B669D001AC0C4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */,
-				4E4D20C21F4BD51F001AC0C4 /* KeywordTableViewCell.swift */,
-				4E4D20C61F4BE40E001AC0C4 /* UserNeedTableViewCell.swift */,
-				4E4D20BD1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift */,
 				4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */,
-				4E4D20B31F4B81DA001AC0C4 /* deprecated */,
 			);
 			name = Cells;
-			sourceTree = "<group>";
-		};
-		4E4D20B31F4B81DA001AC0C4 /* deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				4EB204731F2157540096CC60 /* UserKeywordTableViewCell.swift */,
-			);
-			name = deprecated;
 			sourceTree = "<group>";
 		};
 		4E4D20BA1F4B8B93001AC0C4 /* Extensions */ = {
@@ -208,6 +194,41 @@
 				4EB2046B1F214C5F0096CC60 /* StatusColor.swift */,
 			);
 			name = ToolServices;
+			sourceTree = "<group>";
+		};
+		4E4D20C81F4DE215001AC0C4 /* MarketPlace */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D20C91F4DE447001AC0C4 /* Cells */,
+				4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */,
+				4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */,
+				4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */,
+			);
+			name = MarketPlace;
+			sourceTree = "<group>";
+		};
+		4E4D20C91F4DE447001AC0C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D20BD1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4E4D20CA1F4DE54D001AC0C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D20C61F4BE40E001AC0C4 /* UserNeedTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4E4D20CB1F4DE60B001AC0C4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D20C21F4BD51F001AC0C4 /* KeywordTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		4EB203F31F18BC3F0096CC60 = {
@@ -235,13 +256,10 @@
 		4EB203FE1F18BC400096CC60 /* LacerApp */ = {
 			isa = PBXGroup;
 			children = (
-				4EDAA9471F2D6C1A00F1A5A2 /* Storyboards */,
-				4EDAA9461F2D6BF800F1A5A2 /* Launch */,
-				4EDAA9441F2D6B7000F1A5A2 /* Uther */,
-				4EDAA9431F2D6B4100F1A5A2 /* User */,
 				4EDAA9491F2D6C7C00F1A5A2 /* BusinessModel */,
-				4EDAA94A1F2D6CCD00F1A5A2 /* Welcome */,
-				4E4D20B11F4B666B001AC0C4 /* UIComponents */,
+				4EDAA9441F2D6B7000F1A5A2 /* Components */,
+				4EDAA9461F2D6BF800F1A5A2 /* Launch */,
+				4EDAA9471F2D6C1A00F1A5A2 /* Storyboards */,
 				4EDAA9481F2D6C4900F1A5A2 /* Utils */,
 				4EB204061F18BC400096CC60 /* Assets.xcassets */,
 				4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */,
@@ -276,24 +294,17 @@
 			name = Firebase;
 			sourceTree = "<group>";
 		};
-		4EDAA9431F2D6B4100F1A5A2 /* User */ = {
+		4EDAA9441F2D6B7000F1A5A2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4EDAA95A1F2FFDC300F1A5A2 /* Need */,
-				4EDAA9591F2FFDB400F1A5A2 /* Contact */,
-				4EDAA9581F2FFDAB00F1A5A2 /* Profile */,
-				4EDAA9531F2FFCEA00F1A5A2 /* Keyword */,
-			);
-			name = User;
-			sourceTree = "<group>";
-		};
-		4EDAA9441F2D6B7000F1A5A2 /* Uther */ = {
-			isa = PBXGroup;
-			children = (
-				4EDAA9551F2FFD3A00F1A5A2 /* Need */,
+				4EDAA94A1F2D6CCD00F1A5A2 /* Welcome */,
+				4E4D20C81F4DE215001AC0C4 /* MarketPlace */,
+				4EDAA9551F2FFD3A00F1A5A2 /* Needs */,
 				4EDAA9541F2FFD2700F1A5A2 /* Profile */,
+				4EDAA9591F2FFDB400F1A5A2 /* Contact */,
+				4E4D20B11F4B666B001AC0C4 /* UICommonComponents */,
 			);
-			name = Uther;
+			name = Components;
 			sourceTree = "<group>";
 		};
 		4EDAA9461F2D6BF800F1A5A2 /* Launch */ = {
@@ -356,30 +367,25 @@
 			name = CustomControl;
 			sourceTree = "<group>";
 		};
-		4EDAA9531F2FFCEA00F1A5A2 /* Keyword */ = {
-			isa = PBXGroup;
-			children = (
-				4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */,
-			);
-			name = Keyword;
-			sourceTree = "<group>";
-		};
 		4EDAA9541F2FFD2700F1A5A2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */,
-				4EDAA9571F2FFD8300F1A5A2 /* Search */,
+				4E4D20CB1F4DE60B001AC0C4 /* Cell */,
+				4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */,
+				4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
 		};
-		4EDAA9551F2FFD3A00F1A5A2 /* Need */ = {
+		4EDAA9551F2FFD3A00F1A5A2 /* Needs */ = {
 			isa = PBXGroup;
 			children = (
-				4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */,
-				4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */,
+				4E4D20CA1F4DE54D001AC0C4 /* Cells */,
+				4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */,
+				4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */,
+				4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */,
 			);
-			name = Need;
+			name = Needs;
 			sourceTree = "<group>";
 		};
 		4EDAA9571F2FFD8300F1A5A2 /* Search */ = {
@@ -390,30 +396,13 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
-		4EDAA9581F2FFDAB00F1A5A2 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */,
-			);
-			name = Profile;
-			sourceTree = "<group>";
-		};
 		4EDAA9591F2FFDB400F1A5A2 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				4EDAA9571F2FFD8300F1A5A2 /* Search */,
 				4EB2043D1F1A21E30096CC60 /* UserContactsTableViewController.swift */,
 			);
 			name = Contact;
-			sourceTree = "<group>";
-		};
-		4EDAA95A1F2FFDC300F1A5A2 /* Need */ = {
-			isa = PBXGroup;
-			children = (
-				4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */,
-				4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */,
-				4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */,
-			);
-			name = Need;
 			sourceTree = "<group>";
 		};
 		94E1B98DFB6B5698F8CDCB09 /* Frameworks */ = {
@@ -732,7 +721,6 @@
 				4EB204421F1A89E20096CC60 /* Spot.swift in Sources */,
 				4ED2B0B71F265AC10072BAEA /* AccountCheckingViewController.swift in Sources */,
 				4EB204581F1BF6210096CC60 /* Need.swift in Sources */,
-				4EB204741F2157540096CC60 /* UserKeywordTableViewCell.swift in Sources */,
 				4E4D20BE1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift in Sources */,
 				4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */,
 				4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */,

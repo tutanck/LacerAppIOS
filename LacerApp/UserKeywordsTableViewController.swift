@@ -85,10 +85,13 @@ class UserKeywordsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? UserKeywordTableViewCell else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? KeywordTableViewCell else { return }
         Alert.displayTextBox(context: self,  message: "Modifiez le mot-clé de votre activité",
-                             handler : { text in cell.ref?.removeValue(); self.ref?.child(text.lowercased()).setValue(true)},
-                             headerTitle:  "Modification", textBoxText : cell.ref!.key)
+                             handler : { text in
+                                //cell.ref?.removeValue()
+                                //self.ref?.child(text.lowercased()).setValue(true)
+        },headerTitle:  "Modification", textBoxText : "cell.ref!.key"
+        )
     }
     
     
@@ -107,7 +110,7 @@ class UserKeywordsTableViewController: UITableViewController {
                 var tmp : [Keyword] = []
                 
                 for item in snapshot.children {
-                     tmp.append(Keyword(snapshot: item as! DataSnapshot))
+                    tmp.append(Keyword(snapshot: item as! DataSnapshot))
                 }
                 
                 self.keywords = tmp//.reversed() //TODO : find a way
