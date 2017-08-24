@@ -36,7 +36,7 @@ class Alert {
         alertControllerPreferredStyle : UIAlertControllerStyle = .alert,
         alertActionStyle : UIAlertActionStyle = .default,
         animated : Bool = true
-        ){
+        )-> UIAlertController{
         
         let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : .alert)
         
@@ -49,11 +49,13 @@ class Alert {
         alert.addAction( UIAlertAction(title: confirmButtonTitle , style: .default, handler: handler) )
         
         context.present(alert, animated: animated, completion: nil)
+        
+        return alert //#fluent
     }
     
     
     
-    static func displayTextBox(
+    static func displayTextBox (
         context : UIViewController,
         message : String,
         handler : ((String) -> Swift.Void)? = nil,
@@ -65,7 +67,7 @@ class Alert {
         alertControllerPreferredStyle : UIAlertControllerStyle = .alert,
         alertActionStyle : UIAlertActionStyle = .default,
         animated : Bool = true
-        ){
+        )-> UIAlertController{
         
         let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : .alert)
         
@@ -94,7 +96,12 @@ class Alert {
         )
         
         context.present(alert, animated: animated, completion: nil)
+        
+        return alert //#fluent
     }
+
+    
+    
     
 }
 

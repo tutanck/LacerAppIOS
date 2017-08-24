@@ -21,23 +21,20 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
     }
     
     var messages: [Message] = [
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
         Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
         Message(text : "Yes, totally looking to buy an iPhone 7.", author : nil),
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
+        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
         Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
         Message(text : "Bla Bla Bla", author : nil),
-        Message(text : "Bla Bla Bla", author : nil),
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
+        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
         Message(text : "Bla Bla Bla", author : nil),
         Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla", author : nil)
     ]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        
     }
     
     
@@ -47,43 +44,19 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
     }
     
     
-    
-    
-    
-    
-    
-    
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MessageCollectionViewCell
         
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MessageCollectionViewCell
         
         let messageText = messages[indexPath.item].text
         
-        
-        
-        let estimatedFrame = NSString(
-            string: messageText
-            ).boundingRect(
-                with: CGSize(
-                    width: 250/*width we want for the messageTextView rect*/,
-                    height: 1000/*arbitrary height to have enougth space for text in the messageTextView rect (for making estimations of the real height needed)*/
-                ),
-                options: NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin),
-                attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18/*textFontSize*/)],
-                context: nil
-        )
-        
-        
-        
-        
         cell.messageTextView.text = messageText
         
+        let estimatedFrame = FrameEstimator.estimateTextFrame(text : messageText, textFontSize : 18, desiredWidth : 250)
         
-        if  indexPath.item % 2 == 0{
+        if  indexPath.item % 2 == 0  /*(uther message)*/{
             
-            
-            cell.profileImageView.image = UIImage(named: "userPhoto")
+            cell.profileImageView.image = interlocutor?.photo
             
             cell.messageTextView.frame = CGRect(
                 x: 48/*natural messageTextView's margin to the frame*/ + 8 /*text's margin to the left by shifting the messageTextView's position by 8 pixels from the textBubbleView */,
@@ -98,14 +71,10 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
                 width: estimatedFrame.width + 16/*prevent text overflow*/  + 8/*text's margin to the right by extending by 8 pixels the textBubbleView's width */,
                 height: estimatedFrame.height + 20/*correction*/
             )
-            cell.profileImageView.isHidden = false
-            cell.textBubbleView.backgroundColor = UIColor(white: 0.95, alpha: 1)
-            cell.messageTextView.textColor = UIColor.black
+            cell.makeup(style : .full)
+
             
-        } else {
-            
-            
-            //outgoing sending message
+        } else /*(user message)*/{
             
             cell.messageTextView.frame = CGRect(
                 x: view.frame.width - estimatedFrame.width - 16 - 16 /*prevent text overflow*/,
@@ -120,43 +89,32 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
                 width: estimatedFrame.width + 16 /*prevent text overflow*/ + 8,
                 height: estimatedFrame.height + 20/*correction*/
             )
-            cell.profileImageView.isHidden = true
-            cell.textBubbleView.backgroundColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
-            cell.messageTextView.textColor = UIColor.white
+            
+            cell.makeup(style: .light)
+            
         }
         
         return cell
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let estimatedFrame = NSString(
-            string: messages[indexPath.item].text
-            ).boundingRect(
-                with: CGSize(
-                    width: 250/*width we want for the messageTextView rect*/,
-                    height: 1000/*arbitrary height to have enougth space for text in the messageTextView rect (for making estimations of the real height needed)*/
-                ),
-                options: NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin),
-                attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18/*textFontSize*/)],
-                context: nil
-        )
+        let estimatedFrame = FrameEstimator.estimateTextFrame(text : messages[indexPath.item].text, textFontSize : 18, desiredWidth : 250)
         
-        return CGSize(width: view.frame.width, height: estimatedFrame.height + 20/*correction*/)
+        return CGSize(width: view.frame.width, height: estimatedFrame.height + 20/*height correction*/)
     }
-    
-    
-    
-    
-    
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return messages.count
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(8, 0, 0, 0)
     }
+    
+    
     
 }

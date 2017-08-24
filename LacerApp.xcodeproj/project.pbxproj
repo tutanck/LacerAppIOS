@@ -19,6 +19,7 @@
 		4E4D20CF1F4DF08C001AC0C4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20CE1F4DF08C001AC0C4 /* Message.swift */; };
 		4E4D20D31F4DF210001AC0C4 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20D21F4DF210001AC0C4 /* MessageCollectionViewCell.swift */; };
 		4E4D20D51F4DF2D3001AC0C4 /* BasicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20D41F4DF2D3001AC0C4 /* BasicCollectionViewCell.swift */; };
+		4E4D20D71F4E48E0001AC0C4 /* FrameEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20D61F4E48E0001AC0C4 /* FrameEstimator.swift */; };
 		4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB203FF1F18BC400096CC60 /* AppDelegate.swift */; };
 		4EB204051F18BC400096CC60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204031F18BC400096CC60 /* Main.storyboard */; };
 		4EB204071F18BC400096CC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204061F18BC400096CC60 /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		4E4D20CE1F4DF08C001AC0C4 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4E4D20D21F4DF210001AC0C4 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E4D20D41F4DF2D3001AC0C4 /* BasicCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E4D20D61F4E48E0001AC0C4 /* FrameEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameEstimator.swift; sourceTree = "<group>"; };
 		4EB203FC1F18BC400096CC60 /* LacerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LacerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB203FF1F18BC400096CC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB204041F18BC400096CC60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				4EB204351F1972090096CC60 /* Alert.swift */,
 				4EB2046B1F214C5F0096CC60 /* StatusColor.swift */,
+				4E4D20D61F4E48E0001AC0C4 /* FrameEstimator.swift */,
 			);
 			name = ToolServices;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */,
 				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
 				4E4D20CF1F4DF08C001AC0C4 /* Message.swift in Sources */,
+				4E4D20D71F4E48E0001AC0C4 /* FrameEstimator.swift in Sources */,
 				4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */,
 				4EB204861F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift in Sources */,
 				4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */,
