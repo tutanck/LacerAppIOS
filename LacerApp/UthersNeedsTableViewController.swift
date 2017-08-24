@@ -99,8 +99,9 @@ class UthersNeedsTableViewController: UITableViewController {
         cell.userProfileImageView.image = need.photo
         cell.titleLabel.text = need.title
         cell.usernameLabel.text = need.username
-        cell.distanceLabel.text = String(Int(need.distance))+" m"
-        cell.keywordsLabel.text = need.tags
+        cell.typeLabel.text = "Entreprise"
+        //cell.distanceLabel.text = String(Int(need.distance))+" m" //TODO
+        cell.scrollViewContainer.setText(text: "#keyword #keyword #keyword #keyword #keyword #keyword #keyword#", fontSize: 16)
         
         return cell
     }

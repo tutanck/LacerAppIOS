@@ -17,9 +17,10 @@ class KeywordTableViewCell: BasicTableViewCell {
         return label
     }()
     
-    let activSwitch: UISwitch = {
+    lazy var activSwitch: UISwitch = {
         let uiSwitch = UISwitch()
         uiSwitch.isOn = true
+        uiSwitch.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
         return uiSwitch
     }()
     
@@ -33,7 +34,6 @@ class KeywordTableViewCell: BasicTableViewCell {
         addSubview(keywordLabel)
         addSubview(activSwitch)
         
-        activSwitch.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
         
         addConstraintsWithFormat("H:|-24-[v0]-12-[v1(60)]-2-|", views: keywordLabel,activSwitch)
         addCenteredYConstraint(about: keywordLabel, to: self)

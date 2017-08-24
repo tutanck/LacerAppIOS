@@ -52,6 +52,7 @@
 		4EDAA9601F36473200F1A5A2 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */; };
 		4EDAA9641F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */; };
 		4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */; };
+		4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */; };
 		6E7A1CEE1B57B7BE886540A3 /* Pods_LacerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED7376E182F88A8F84F322 /* Pods_LacerAppTests.framework */; };
 		AFFB4DAD46E9811FCAC5FA01 /* Pods_LacerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8938E35120BA4567F95B03 /* Pods_LacerApp.framework */; };
 /* End PBXBuildFile section */
@@ -126,6 +127,7 @@
 		4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewController.swift; sourceTree = "<group>"; };
 		4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedDetailsViewController.swift; sourceTree = "<group>"; };
 		4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingProfilesTableViewDelegate.swift; sourceTree = "<group>"; };
+		4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedUIScrollView.swift; sourceTree = "<group>"; };
 		65FE5FBB2EC9BDE49E3C42D8 /* Pods-LacerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LacerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LacerApp/Pods-LacerApp.release.xcconfig"; sourceTree = "<group>"; };
 		704EAAF2E08F2ADCC4FC0A87 /* Pods-LacerAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LacerAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LacerAppUITests/Pods-LacerAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7162C73802FEB8E87E5C8E50 /* Pods_LacerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LacerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,7 @@
 			children = (
 				4E4D20B81F4B859D001AC0C4 /* ExtendedUIView.swift */,
 				4E4D20DC1F4E74D2001AC0C4 /* ExtendedUICollectionView.swift */,
+				4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				4EB2043E1F1A21E30096CC60 /* UserContactsTableViewController.swift in Sources */,
 				4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */,
 				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
+				4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */,
 				4E4D20CF1F4DF08C001AC0C4 /* Message.swift in Sources */,
 				4E4D20D71F4E48E0001AC0C4 /* FrameEstimator.swift in Sources */,
 				4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */,
