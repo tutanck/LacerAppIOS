@@ -47,17 +47,19 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         return textField
     }()
     
-    let sendButton: UIButton = {
+    lazy var sendButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Envoyer", for: UIControlState())
+        button.setTitle("Send", for: UIControlState())
         let titleColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
         button.setTitleColor(titleColor, for: UIControlState())
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.addTarget(self, action: #selector(handleSend), for: .touchUpInside)
         return button
     }()
     
+    
     var bottomConstraint: NSLayoutConstraint?
-
+    
     
     
     
@@ -66,6 +68,7 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         tabBarController?.tabBar.isHidden = true
         setupCollectionView()
         setupInputComponents()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Simulate", style: .plain, target: self, action: #selector(simulate))
     }
     
     
@@ -180,7 +183,35 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
     }
     
     
+    func simulate() {
+       let messageText = "Here's a text message that was sent a few minutes ago..."
+        let message = Message(text: messageText, author: nil)
+        messages.append(message)
+        
+        //messages = messages.sorted(by: {$0.date!.compare($1.date! as Date) == .orderedAscending})
+        
+        //if let item = messages.index(of: message) {
+            let receivingIndexPath = IndexPath(item: messages.count - 3, section: 0)
+            collectionView?.insertItems(at: [receivingIndexPath])
+        //}
+    }
     
+    
+    func handleSend() {
+        if let messageText = inputTextField.text {
+            
+            if messageText.isEmpty {return}
+            
+            messages.append(Message(text: messageText, author: nil))
+            
+            let item = messages.count - 1
+            let insertionIndexPath = IndexPath(item: item, section: 0)
+            collectionView?.insertItems(at: [insertionIndexPath])
+            collectionView?.scrollToItem(at: insertionIndexPath, at: .bottom, animated: true)
+            
+            inputTextField.text = nil
+        }
+    }
     
     func handleKeyboardNotification(_ notification: Notification) {
         
