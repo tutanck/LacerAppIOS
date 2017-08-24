@@ -116,43 +116,58 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         cell.messageTextView.text = messageText
         
         let estimatedFrame = FrameEstimator.estimateTextFrame(text : messageText, textFontSize : 18, desiredWidth : 250)
+       
+        let correction : CGFloat = 20 //estimated frame's height correction
+        
+        let textOverflow : CGFloat = 16 //text overflow prevention
+        
+        let textMargin : CGFloat = 8 //text margin : difference of space between textBubbleView & messageTextView
+        //by example : for the .full style, we get this  :
+        //text's margin to the left by shifting the messageTextView's position by 8 pixels from the textBubbleView
+        //text's margin to the right by extending by 8 pixels the textBubbleView's width
         
         if  indexPath.item % 2 == 0  /*(uther message)*/{
             
             cell.profileImageView.image = interlocutor?.photo ?? UIImage(named : "userPhoto")
             
-            cell.makeup(style : .full)
+            //textBubbleView's margin to the frame's left
+            let marginToFrameLeft : CGFloat = 48
+            
+            cell.makeup(style : .full, margin: marginToFrameLeft + textMargin)
                 .messageTextView.frame = CGRect(
-                    x: 48/*natural messageTextView's margin to the frame*/ + 8 /*text's margin to the left by shifting the messageTextView's position by 8 pixels from the textBubbleView */,
+                    x: marginToFrameLeft + textMargin,
                     y: 0,
-                    width: estimatedFrame.width + 16 /*prevent text overflow*/,
-                    height: estimatedFrame.height + 20/*correction*/
+                    width: estimatedFrame.width + textOverflow,
+                    height: estimatedFrame.height + correction
             )
             
             cell.textBubbleView.frame = CGRect(
-                x: 48/*natural textBubbleView's margin to the frame*/ ,
+                x: marginToFrameLeft,
                 y: 0,
-                width: estimatedFrame.width + 16/*prevent text overflow*/  + 8/*text's margin to the right by extending by 8 pixels the textBubbleView's width */,
-                height: estimatedFrame.height + 20/*correction*/
+                width: estimatedFrame.width + textOverflow + textMargin,
+                height: estimatedFrame.height + correction
             )
             
             
             
         } else /*(user message)*/{
             
-            cell.makeup(style: .light)
+            //textBubbleView's margin to the frame's left
+            let marginToFrameRight : CGFloat = view.frame.width - estimatedFrame.width - 16 - 16
+            
+            cell.makeup(style: .light, margin: 24)
                 .messageTextView.frame = CGRect(
-                    x: view.frame.width - estimatedFrame.width - 16 - 16 /*prevent text overflow*/,
+                    x: marginToFrameRight,
                     y: 0,
-                    width: estimatedFrame.width + 16 /*prevent text overflow*/,
-                    height: estimatedFrame.height + 20/*correction*/
+                    width: estimatedFrame.width + textOverflow,
+                    height: estimatedFrame.height + correction
             )
             
             cell.textBubbleView.frame = CGRect(
-                x: view.frame.width - estimatedFrame.width - 16 - 8 - 16 /*prevent text overflow*/,
+                x: marginToFrameRight - textMargin,
                 y: 0,
-                width: estimatedFrame.width + 16 /*prevent text overflow*/ + 8,
-                height: estimatedFrame.height + 20/*correction*/
+                width: estimatedFrame.width + textOverflow + textMargin,
+                height: estimatedFrame.height + correction
             )
             
         }
@@ -165,7 +180,7 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         
         let estimatedFrame = FrameEstimator.estimateTextFrame(text : messages[indexPath.item].text, textFontSize : 18, desiredWidth : 250)
         
-        return CGSize(width: view.frame.width, height: estimatedFrame.height + 20/*height correction*/)
+        return CGSize(width: view.frame.width, height: estimatedFrame.height + 20/*height correction*/+ 24 /*dateLabel*/)
     }
     
     
