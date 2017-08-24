@@ -24,7 +24,6 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
         Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
         Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
         Message(text : "Yes, totally looking to buy an iPhone 7.", author : nil),
         Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
         Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
@@ -71,7 +70,7 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
     
     
     fileprivate func setupCollectionView(){
-        collectionView?.backgroundColor = UIColor.white
+        collectionView?.backgroundColor = .white
         collectionView?.register(MessageCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.scrollToLastItem(atIts: .bottom, animated: false)
     }
@@ -117,7 +116,7 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         
         if  indexPath.item % 2 == 0  /*(uther message)*/{
             
-            cell.profileImageView.image = interlocutor?.photo
+            cell.profileImageView.image = interlocutor?.photo ?? UIImage(named : "userPhoto")
             
             cell.makeup(style : .full)
                 .messageTextView.frame = CGRect(
