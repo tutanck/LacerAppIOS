@@ -64,8 +64,7 @@ class MessageCollectionViewCell: BasicCollectionViewCell {
         return self //#fluent
         
     }
-    
-    
+        
     
     enum Style {
         case full , light

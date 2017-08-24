@@ -33,4 +33,13 @@ extension UIView {
         addConstraint(NSLayoutConstraint(item: about, attribute: .centerY, relatedBy: .equal, toItem: to, attribute: .centerY, multiplier: 1, constant: 0))
     }
     
+    
+    func addBottomToBottomConstraint(about : Any, to : Any?)->NSLayoutConstraint{
+        let bottomConstraint: NSLayoutConstraint = NSLayoutConstraint(item: about, attribute: .bottom, relatedBy: .equal, toItem: to, attribute: .bottom, multiplier: 1, constant: 0)
+        
+        addConstraint(bottomConstraint)
+        return bottomConstraint
+    }
+    
+    
 }
