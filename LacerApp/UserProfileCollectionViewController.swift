@@ -7,30 +7,94 @@
 //
 
 import UIKit
+import Firebase
 
 class UserProfileCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     fileprivate let cellId = "UserProfileCollectionViewCell"
     
-    var isComponentModelReady = false
-    
     let wallpaperColor = UIColor(white : 0.99 , alpha : 1)
+    
+    var bottomConstraint: NSLayoutConstraint? //TODO REM IF NOT NEEDED
+    
+    
+    
     
     var user : User? {
         didSet {
             isComponentModelReady = true
         }
     }
+    var isComponentModelReady = false
     
     
-    var bottomConstraint: NSLayoutConstraint?
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // MARK: - SwitchableControl
+    
+    @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
+    
+    
+    // MARK: - Actions
+    
+    
+    
+    // MARK: - Save button
+    
+    /*@IBAction func saveUserProfile(_ sender: UIBarButtonItem) {
+        ref?.setValue([
+            Fire.userTypeKey : typeSegmentedControl.selectedSegmentIndex,
+            Fire.userNameKey : usernameTextField.text,
+            Fire.userDescriptionKey : interestTextView.text
+            ])
+        disableRightBarButtonItem()
+    }*/
+    
+    //MARK: Firef
+    
+    var ref : DatabaseReference? = nil{
+        didSet {
+           // loadFireData()
+        }
+    }
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupCollectionView()
-        setupComponentView()
         manageKeyboard()
+        
+        
+        
+        
+        //user status button settings
+        //userAvailabilitySwitchableControl.context = self
+        
+        //ui inputs management initial settings
+        disableRightBarButtonItem()
+        
+        
+        //firef settings
+        if let userID = Auth.auth().currentUser?.uid{
+            let userRef = Fire.usersRef.child(userID)
+            //userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
+            self.ref = userRef.child(Fire.userProfileKey)
+        }
+
+
+        
+        
     }
     
     
@@ -39,8 +103,6 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
         collectionView?.register(UserProfileCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     }
     
-    fileprivate func setupComponentView() {
-    }
     
     
     
@@ -51,7 +113,10 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! UserProfileCollectionViewCell
         
-        cell.backgroundColor  = wallpaperColor
+        cell.context = self
+        cell.backgroundColor = wallpaperColor
+        
+        cell.context = self
         
         return cell
     }
@@ -75,6 +140,36 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func disableRightBarButtonItem(){
+        if let rightBarButton = self.navigationItem.rightBarButtonItem {
+            rightBarButton.isEnabled = false
+        }
+    }
+    
+    func enableRightBarButtonItem(){
+        if let rightBarButton = self.navigationItem.rightBarButtonItem {
+            rightBarButton.isEnabled = true
+        }
+    }
+
+    
+    
+    
+    
     fileprivate func manageKeyboard() {
         KeyboardNotification.keyboardWillShow(observer : self, selector: #selector(handleKeyboardNotification))
         KeyboardNotification.keyboardWillHide(observer : self, selector: #selector(handleKeyboardNotification))
@@ -92,14 +187,39 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
             
             UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                 
-                self.view.layoutIfNeeded()
+                self.view.layoutIfNeeded()//NA SEMBLE PAS MARCHER : TODO
                 
-            }, completion: { (completed) in
-                if isKeyboardShowing {
-                    self.collectionView?.scrollToLastItem(atIts: .bottom, animated: true)
+            }, completion: nil)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    //Mark : unwinds
+    
+    @IBAction func returnFromUserKeywords(segue:UIStoryboardSegue) {}
+    
+    
+    
+    
+    // MARK: - private methods
+    
+    /*private func loadFireData(){
+        if let ref = self.ref {
+            ref.observeSingleEvent(of:.value, with: { snapshot in
+                if snapshot.exists(){
+                    //populate ui
+                    let value = snapshot.value as? NSDictionary
+                    self.typeSegmentedControl.selectedSegmentIndex = value?[Fire.userTypeKey] as? Int ?? 0
+                    self.usernameTextField.text = value?[Fire.userNameKey] as? String ?? ""
+                    self.interestTextView.text = value?[Fire.userDescriptionKey] as? String ?? ""
                 }
             })
         }
-    }
+    }*/
+
     
 }

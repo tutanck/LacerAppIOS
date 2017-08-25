@@ -8,16 +8,28 @@
 
 import UIKit
 
-class UserProfileCollectionViewCell: BasicCollectionViewCell {
+class UserProfileCollectionViewCell: BasicCollectionViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate{
+    
+    var context : UserProfileCollectionViewController?
+    
+    
+    
+    
+    
+    
+    
     
     //userProfileImageView
     
-    let profileImageView: UIImageView = {
+    lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(named: "userPhoto")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
-        imageView.image = UIImage(named: "userPhoto")
-        
+        imageView.isUserInteractionEnabled = true
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImageFromPhotoLibrary))
+        singleTap.numberOfTapsRequired = 1;
+        imageView.addGestureRecognizer(singleTap)
         return imageView
     }()
     
@@ -36,7 +48,7 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell {
     
     fileprivate func setupStandingRatingControl() {
         addSubview(standingRatingControl)
-         addCenteredXConstraint(about: standingRatingControl, to: self)
+        addCenteredXConstraint(about: standingRatingControl, to: self)
     }
     
     
@@ -63,7 +75,7 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell {
         segmentedControl.backgroundColor = .white
         segmentedControl.tintColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
         
-        segmentedControl.addTarget(self, action: #selector(showActivityKeywords), for: .valueChanged)
+        segmentedControl.addTarget(self, action: #selector(typeSegmentedControlChanged), for: .valueChanged)
         
         return segmentedControl
     }()
@@ -173,14 +185,112 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell {
         setupManageActivityKeywordsButton()
         
         addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton)
+        
+        setInputsDelegate()
     }
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        
+        // Hide the keyboard : This code ensures that if the user taps the image view while typing in the text field, the keyboard is dismissed properly
+        usernameTextField.resignFirstResponder()
+        resumeTextView.resignFirstResponder()
+        
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        
+        // Only allow photos to be picked, not taken.
+        imagePickerController.sourceType = .photoLibrary
+        
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        context?.present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        context?.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        // The info dictionary may contain multiple representations of the image. You want to use the original.
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            //fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+            if let context = context {
+                Alert.displayMessage(context: context, message: "Impossible de charger l'image.")
+            }
+            return
+        }
+        
+        // Set photoImageView to display the selected image.
+        profileImageView.image = selectedImage
+        
+        // Dismiss the picker.
+        context?.dismiss(animated: true, completion: nil)
+        
+        context?.enableRightBarButtonItem()
+    }
+    
+    
+    
+    private func setInputsDelegate(){
+        usernameTextField.delegate = self
+        resumeTextView.delegate = self
+    }
+
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()         // Hide the keyboard
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) { context?.enableRightBarButtonItem() }
+    
+    
+    func textViewShouldReturn(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()         // Hide the keyboard
+        return true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) { context?.enableRightBarButtonItem() }
+    
+
     
     
     func showActivityKeywords(){
         print("showActivityKeywords")
     }
+    
+    
+    func typeSegmentedControlChanged(_ sender: UISegmentedControl) { context?.enableRightBarButtonItem() }
+    
+    // MARK: - Tap gesture
+    
+    func hideKeyboard(_ sender: AnyObject) {
+        usernameTextField.endEditing(true)
+        resumeTextView.endEditing(true)
+    }
+
     
 }

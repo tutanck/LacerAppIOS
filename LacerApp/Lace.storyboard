@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2cO-y8-eKK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1WR-Mu-GjO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -226,9 +226,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ug-QR-sOG">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <state key="normal" title="Mots-clés de mon activité"/>
-                                                    <connections>
-                                                        <segue destination="vCd-lm-uot" kind="show" id="7tM-an-P1h"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -290,13 +287,13 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1470" y="2265"/>
+            <point key="canvasLocation" x="2110" y="3227"/>
         </scene>
         <!--User Profile Collection View Controller-->
         <scene sceneID="jjQ-vK-fip">
             <objects>
                 <collectionViewController id="2cO-y8-eKK" customClass="UserProfileCollectionViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="11q-C8-H4H">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="11q-C8-H4H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -321,10 +318,17 @@
                             <outlet property="delegate" destination="2cO-y8-eKK" id="qon-v3-gf4"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="gYB-ui-RvN">
+                        <barButtonItem key="leftBarButtonItem" id="EuK-lB-eJU"/>
+                        <barButtonItem key="rightBarButtonItem" title="Enreg." id="xY5-Oz-4cI"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="vCd-lm-uot" kind="show" id="ZVg-P7-SXf"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uK-I3-7g8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="2977"/>
+            <point key="canvasLocation" x="1519" y="2265"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OWW-Xk-zAA">
@@ -688,7 +692,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="RAv-vo-bBC" kind="relationship" relationship="rootViewController" id="XoZ-8I-GRw"/>
+                        <segue destination="2cO-y8-eKK" kind="relationship" relationship="rootViewController" id="pYd-GD-c0M"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBd-F2-FBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
