@@ -22,6 +22,7 @@ class UtherNeedTableViewCell: BasicTableViewCell {
         imageView.layer.cornerRadius = 34
         imageView.layer.masksToBounds = true
         imageView.isUserInteractionEnabled = true
+        imageView.image = UIImage(named: "userPhoto")
         let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToClientProfile))
         singleTap.numberOfTapsRequired = 1;
         imageView.addGestureRecognizer(singleTap)
@@ -30,7 +31,6 @@ class UtherNeedTableViewCell: BasicTableViewCell {
     
     fileprivate func setupUserProfileImageView() {
         addSubview(userProfileImageView)
-        userProfileImageView.image = UIImage(named: "userPhoto")
         addConstraintsWithFormat("H:|-6-[v0(68)]", views: userProfileImageView)
         addConstraintsWithFormat("V:|-6-[v0(68)]", views: userProfileImageView)
     }

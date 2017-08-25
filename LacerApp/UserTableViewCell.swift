@@ -16,6 +16,7 @@ class UserTableViewCell: BasicTableViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 34
         imageView.layer.masksToBounds = true
+        imageView.image = UIImage(named: "userPhoto")
         return imageView
     }()
     
@@ -63,11 +64,7 @@ class UserTableViewCell: BasicTableViewCell {
     
     
     fileprivate func setupUserProfileImageView() {
-        
         addSubview(profileImageView)
-        
-        profileImageView.image = UIImage(named: "userPhoto")
-        
         addConstraintsWithFormat("H:|-6-[v0(68)]", views: profileImageView)
         addConstraintsWithFormat("V:[v0(68)]", views: profileImageView)
         addCenteredYConstraint(about: profileImageView, to: self)

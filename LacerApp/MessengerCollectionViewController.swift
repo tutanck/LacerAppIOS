@@ -46,7 +46,7 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         textField.layer.borderWidth = 0.8;
         textField.layer.cornerRadius = 5
         textField.layer.borderColor = UIColor(white : 0.9, alpha: 1).cgColor;
-        //textField.placeholder = "Ecrire un message..."
+        //textField.placeholder = "Ecrire un message..."//TODO
         return textField
     }()
     
