@@ -41,9 +41,12 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         return view
     }()
     
-    let inputTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Ecrire un message..."
+    let inputTextField: UITextView = {
+        let textField = UITextView()
+        textField.layer.borderWidth = 0.8;
+        textField.layer.cornerRadius = 5
+        textField.layer.borderColor = UIColor(white : 0.9, alpha: 1).cgColor;
+        //textField.placeholder = "Ecrire un message..."
         return textField
     }()
     
@@ -93,7 +96,7 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         messageInputContainerView.addSubview(sendButton)
         messageInputContainerView.addSubview(topBorderView)
         
-        messageInputContainerView.addConstraintsWithFormat("H:|-8-[v0][v1(65)]-2-|", views: inputTextField, sendButton)
+        messageInputContainerView.addConstraintsWithFormat("H:|[v0][v1(65)]-2-|", views: inputTextField, sendButton)
         messageInputContainerView.addConstraintsWithFormat("V:|[v0]|", views: inputTextField)
         messageInputContainerView.addConstraintsWithFormat("V:|[v0]|", views: sendButton)
         messageInputContainerView.addConstraintsWithFormat("H:|[v0]|", views: topBorderView)
