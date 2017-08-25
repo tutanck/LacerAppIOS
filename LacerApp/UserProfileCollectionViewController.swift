@@ -79,7 +79,7 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
         
         
         //user status button settings
-        //userAvailabilitySwitchableControl.context = self
+        userAvailabilitySwitchableControl.context = self
         
         //ui inputs management initial settings
         disableRightBarButtonItem()
@@ -88,7 +88,7 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
         //firef settings
         if let userID = Auth.auth().currentUser?.uid{
             let userRef = Fire.usersRef.child(userID)
-            //userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
+            userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
             self.ref = userRef.child(Fire.userProfileKey)
         }
 

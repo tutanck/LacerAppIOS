@@ -13,12 +13,6 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell, UIImagePickerContr
     var context : UserProfileCollectionViewController?
     
     
-    
-    
-    
-    
-    
-    
     //userProfileImageView
     
     lazy var profileImageView: UIImageView = {
@@ -57,7 +51,7 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell, UIImagePickerContr
     
     var typeContainerView : UIView = UIView()
     
-    let typeSegmentedControl : UISegmentedControl = {
+    lazy var typeSegmentedControl : UISegmentedControl = {
         let segmentedControl = UISegmentedControl(
             items: ["Particulier", "Entreprise"]
         )
@@ -254,43 +248,32 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell, UIImagePickerContr
     
     
     
-    private func setInputsDelegate(){
-        usernameTextField.delegate = self
-        resumeTextView.delegate = self
-    }
-
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()         // Hide the keyboard
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) { context?.enableRightBarButtonItem() }
-    
-    
-    func textViewShouldReturn(_ textView: UITextView) -> Bool {
-        textView.resignFirstResponder()         // Hide the keyboard
-        return true
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) { context?.enableRightBarButtonItem() }
-    
-
-    
-    
     func showActivityKeywords(){
         print("showActivityKeywords")
+        if let context = context/*, let user = user*/ {
+            context.performSegue(withIdentifier: "segueFromUserProfileToUserKeywords", sender: self)
+        }
     }
     
     
     func typeSegmentedControlChanged(_ sender: UISegmentedControl) { context?.enableRightBarButtonItem() }
     
-    // MARK: - Tap gesture
+    // MARK: - Tap gesture : TODO
     
-    func hideKeyboard(_ sender: AnyObject) {
-        usernameTextField.endEditing(true)
-        resumeTextView.endEditing(true)
-    }
-
+    func hideKeyboard(_ sender: AnyObject) { usernameTextField.endEditing(true); resumeTextView.endEditing(true) }
+    
+    
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool { textField.resignFirstResponder(); return true }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) { context?.enableRightBarButtonItem() }
+    
+    func textViewShouldReturn(_ textView: UITextView) -> Bool { textView.resignFirstResponder() ;return true }
+    
+    func textViewDidEndEditing(_ textView: UITextView) { context?.enableRightBarButtonItem() }
+    
+    private func setInputsDelegate(){ usernameTextField.delegate = self; resumeTextView.delegate = self }
     
 }

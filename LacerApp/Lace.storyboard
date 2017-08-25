@@ -289,7 +289,7 @@
             </objects>
             <point key="canvasLocation" x="2110" y="3227"/>
         </scene>
-        <!--User Profile Collection View Controller-->
+        <!--Mon profil-->
         <scene sceneID="jjQ-vK-fip">
             <objects>
                 <collectionViewController id="2cO-y8-eKK" customClass="UserProfileCollectionViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -318,12 +318,26 @@
                             <outlet property="delegate" destination="2cO-y8-eKK" id="qon-v3-gf4"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="gYB-ui-RvN">
-                        <barButtonItem key="leftBarButtonItem" id="EuK-lB-eJU"/>
+                    <navigationItem key="navigationItem" title="Mon profil" id="gYB-ui-RvN">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="qjf-Kv-nMa">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ONy-ZZ-BXI" customClass="SwitchableColorButton" customModule="LacerApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Enreg." id="xY5-Oz-4cI"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="vCd-lm-uot" kind="show" id="ZVg-P7-SXf"/>
+                        <outlet property="userAvailabilitySwitchableControl" destination="ONy-ZZ-BXI" id="r2M-nK-Cd0"/>
+                        <segue destination="vCd-lm-uot" kind="show" identifier="segueFromUserProfileToUserKeywords" id="ZVg-P7-SXf"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uK-I3-7g8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1102,7 +1116,7 @@
         <scene sceneID="GDN-KZ-YMq">
             <objects>
                 <collectionViewController id="r8e-RR-dnV" customClass="MessengerCollectionViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="AdI-DO-W07">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AdI-DO-W07">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

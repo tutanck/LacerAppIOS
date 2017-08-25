@@ -186,6 +186,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4E28FB5B1F50EE3100C6E5D7 /* obsolete */ = {
+			isa = PBXGroup;
+			children = (
+				4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */,
+			);
+			name = obsolete;
+			sourceTree = "<group>";
+		};
 		4E4D20B11F4B666B001AC0C4 /* UICommonComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,8 +428,8 @@
 		4EDAA9541F2FFD2700F1A5A2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4E28FB5B1F50EE3100C6E5D7 /* obsolete */,
 				4E4D20CB1F4DE60B001AC0C4 /* Cell */,
-				4EDAA95F1F36473200F1A5A2 /* UserProfileTableViewController.swift */,
 				4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */,
 				4EF9E94C1F5026A500922E57 /* UserProfileCollectionViewController.swift */,
 			);
