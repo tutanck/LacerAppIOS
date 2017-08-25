@@ -96,6 +96,8 @@ class UthersNeedsTableViewController: UITableViewController {
             need = needs[indexPath.row]
         }
         
+        cell.context = self
+        cell.need = need
         cell.userProfileImageView.image = need.photo
         cell.titleLabel.text = need.title
         cell.usernameLabel.text = need.username

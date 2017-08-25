@@ -10,7 +10,12 @@ import UIKit
 
 class UtherNeedTableViewCell: BasicTableViewCell {
     
+    var context : UIViewController?
+    
+    var need : Need?
+    
     //userProfileImageView
+    
     lazy var userProfileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -23,9 +28,19 @@ class UtherNeedTableViewCell: BasicTableViewCell {
         return imageView
     }()
     
+    fileprivate func setupUserProfileImageView() {
+        addSubview(userProfileImageView)
+        userProfileImageView.image = UIImage(named: "userPhoto")
+        addConstraintsWithFormat("H:|-6-[v0(68)]", views: userProfileImageView)
+        addConstraintsWithFormat("V:|-6-[v0(68)]", views: userProfileImageView)
+    }
     
     
-    //metaContainerView
+    
+    
+    //userProfileInfosContainerView
+    
+    var userProfileInfosContainerView : UIView = UIView()
     
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -51,52 +66,11 @@ class UtherNeedTableViewCell: BasicTableViewCell {
         return label
     }()
     
-    
-    
-    //detailsContainerView
-    
-    lazy var scrollViewContainer: UIScrollView = {
-        let scrollView = UIScrollView()
-        return scrollView
-    }()
-    
-    let dividerLineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
-        return view
-    }()
-    
-    let descriptionTextView: UITextView = {
-        let textView = UITextView()
-        textView.text = "YourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyours"
-        textView.textColor = .black
-        textView.font = UIFont.systemFont(ofSize: 14)
-        textView.isEditable = false
-        //textView.isSelectable = false
-        return textView
-    }()
-    
-    
-    
-    override func setupViews() {
-        setupUserProfileImageView()
-        setupMetaContainerView()
-        setupDetailsContainerView()
-    }
-    
-    
-    fileprivate func setupUserProfileImageView() {
-        addSubview(userProfileImageView)
-        userProfileImageView.image = UIImage(named: "userPhoto")
-        addConstraintsWithFormat("H:|-6-[v0(68)]", views: userProfileImageView)
-        addConstraintsWithFormat("V:|-6-[v0(68)]", views: userProfileImageView)
-    }
-    
-    
-    fileprivate func setupMetaContainerView() {
+    fileprivate func setupUserProfileInfosContainerView() {
         
-        let containerView = UIView()
-        //containerView.backgroundColor = .blue //debug
+        let containerView = userProfileInfosContainerView
+        
+        containerView.backgroundColor = self.backgroundColor //.blue //debug
         addSubview(containerView)
         addConstraintsWithFormat("H:|-80-[v0]-6-|", views: containerView)
         addConstraintsWithFormat("V:[v0(50)]", views: containerView)
@@ -117,19 +91,47 @@ class UtherNeedTableViewCell: BasicTableViewCell {
     }
     
     
+    
+    //detailsContainerView
+    
+    var detailsContainerView : UIView = UIView()
+    
+    lazy var scrollViewContainer: UIScrollView = {
+        let scrollView = UIScrollView()
+        return scrollView
+    }()
+    
+    let dividerLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
+        return view
+    }()
+    
+    lazy var descriptionTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "YourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyoursYourfriendsmessageandsomethingelseYourfriendsmessageandyours"
+        textView.textColor = .black
+        textView.font = UIFont.systemFont(ofSize: 14)
+        textView.isEditable = false
+        //textView.isSelectable = false
+        textView.backgroundColor = self.backgroundColor
+        return textView
+    }()
+    
+    
     fileprivate func setupDetailsContainerView() {
         
-        let containerView = UIView()
-        //containerView.backgroundColor = .green //debug
+        let containerView = detailsContainerView
+        
+        containerView.backgroundColor = self.backgroundColor //.green //debug
         addSubview(containerView)
         addConstraintsWithFormat("H:|-6-[v0]-6-|", views: containerView)
-        addConstraintsWithFormat("V:[v0(120)]-2-|", views: containerView)
         addCenteredXConstraint(about: containerView, to: self)
         
-        //tagsLabel.backgroundColor = .yellow //debug
+        //scrollViewContainer.backgroundColor = .yellow //debug
         containerView.addSubview(scrollViewContainer)
         containerView.addSubview(dividerLineView)
-        //descriptionLabel.backgroundColor = .red //debug
+        //descriptionTextView.backgroundColor = .red //debug
         containerView.addSubview(descriptionTextView)
         
         containerView.addConstraintsWithFormat("H:|-80-[v0]|", views: scrollViewContainer)
@@ -141,10 +143,149 @@ class UtherNeedTableViewCell: BasicTableViewCell {
         
         containerView.addConstraintsWithFormat("V:[v0]-2-[v1]|", views: dividerLineView,descriptionTextView)
         
-        
-        //        containerView.addConstraintsWithFormat("H:|[v0]|", views: descriptionLabel)
     }
     
+    
+    
+    //menuContainerView
+    
+    //TODO
+    //where //when //how many //date de publication -> modal affichage | btn  : forward to friend
+    var menuContainerView : UIView = UIView()
+    
+    
+    lazy var payImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.isUserInteractionEnabled = true
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(displayMetaInfo))
+        singleTap.numberOfTapsRequired = 1;
+        imageView.addGestureRecognizer(singleTap)
+        imageView.backgroundColor = .clear
+        imageView.image = UIImage(named : "userPhoto")
+        return imageView
+    }()
+    
+    
+    lazy var placeImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.isUserInteractionEnabled = true
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(displayMetaInfo))
+        singleTap.numberOfTapsRequired = 1;
+        imageView.addGestureRecognizer(singleTap)
+        imageView.backgroundColor = .clear
+        imageView.image = UIImage(named : "userPhoto")
+        return imageView
+    }()
+    
+    lazy var timeImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.isUserInteractionEnabled = true
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(displayMetaInfo))
+        singleTap.numberOfTapsRequired = 1;
+        imageView.addGestureRecognizer(singleTap)
+        imageView.backgroundColor = .clear
+        imageView.image = UIImage(named : "userPhoto")
+        
+        return imageView
+    }()
+    
+    
+    lazy var metaInfosImageView: UIImageView = {  //pubDate , etc
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.isUserInteractionEnabled = true
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(displayMetaInfo))
+        singleTap.numberOfTapsRequired = 1;
+        imageView.addGestureRecognizer(singleTap)
+        imageView.backgroundColor = .clear
+        imageView.image = UIImage(named : "userPhoto")
+        
+        return imageView
+    }()
+    
+    
+    lazy var forwardImageView: UIImageView = {  //pubDate , etc
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.isUserInteractionEnabled = true
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(displayMetaInfo))
+        singleTap.numberOfTapsRequired = 1;
+        imageView.addGestureRecognizer(singleTap)
+        imageView.backgroundColor = .clear
+        imageView.image = UIImage(named : "userPhoto")
+        
+        return imageView
+    }()
+    
+    
+    lazy var goImageView: UIImageView = {  //pubDate , etc
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.isUserInteractionEnabled = true
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onImageViewTapped))
+        singleTap.numberOfTapsRequired = 1;
+        imageView.addGestureRecognizer(singleTap)
+        imageView.backgroundColor = .clear
+        imageView.image = UIImage(named : "userPhoto")
+        
+        return imageView
+    }()
+    
+    
+    fileprivate func setupMenuContainerView(){
+        
+        let containerView = menuContainerView
+        
+        containerView.backgroundColor = self.backgroundColor  //.white //debug
+        
+        addSubview(containerView)
+        addConstraintsWithFormat("H:|-6-[v0]-6-|", views: containerView)
+        addCenteredXConstraint(about: containerView, to: self)
+        
+        containerView.addSubview(payImageView)
+        containerView.addSubview(placeImageView)
+        containerView.addSubview(timeImageView)
+        containerView.addSubview(metaInfosImageView)
+        containerView.addSubview(forwardImageView)
+        containerView.addSubview(goImageView)
+        
+        let spacing : CGFloat = 1
+        let width : CGFloat = 45
+
+        
+        containerView.addConstraintsWithFormat("H:[v0(\(width))]-\(spacing)-[v1(\(width))]-\(spacing)-[v2(\(width))]-\(spacing)-[v3(\(width))]-\(spacing)-[v4(\(width))]-\(spacing)-[v5(\(width))]-6-|", views: payImageView,placeImageView,timeImageView,metaInfosImageView,forwardImageView,goImageView)
+        
+        containerView.addConstraintsWithFormat("V:|[v0]|", views: payImageView)
+        containerView.addConstraintsWithFormat("V:|[v0]|", views: placeImageView)
+        containerView.addConstraintsWithFormat("V:|[v0]|", views: timeImageView)
+        containerView.addConstraintsWithFormat("V:|[v0]|", views: metaInfosImageView)
+        containerView.addConstraintsWithFormat("V:|[v0]|", views: forwardImageView)
+        containerView.addConstraintsWithFormat("V:|[v0]|", views: goImageView)
+        
+        
+    }
+    
+    
+    
+    override func setupViews() {
+        backgroundColor = UIColor(white: 0.99, alpha: 1)
+        
+        setupUserProfileImageView()
+        setupUserProfileInfosContainerView()
+        setupDetailsContainerView()
+        setupMenuContainerView()
+        
+        addConstraintsWithFormat("V:[v0(180)]-2-[v1(40)]-4-|", views: detailsContainerView,menuContainerView)
+    }
     
     
     
@@ -153,4 +294,9 @@ class UtherNeedTableViewCell: BasicTableViewCell {
     }
     
     
+    func displayMetaInfo(recognizer: UIGestureRecognizer) {
+        if let context = context, let need = need {
+            Alert.displayMessage(context: context, message: String(describing : need.distance))
+        }
+    }
 }
