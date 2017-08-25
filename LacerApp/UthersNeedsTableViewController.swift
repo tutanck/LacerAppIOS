@@ -103,8 +103,9 @@ class UthersNeedsTableViewController: UITableViewController {
         cell.usernameLabel.text = need.username
         cell.typeLabel.text = "Entreprise"
         //cell.distanceLabel.text = String(Int(need.distance))+" m" //TODO
-        cell.scrollViewContainer.setText(text: "#keyword #keyword #keyword #keyword #keyword #keyword #keyword#", fontSize: 16)
-        
+        let textView = cell.scrollViewContainer.setText(text: "#keyword #keyword #keyword #keyword #keyword #keyword #keyword#", fontSize: 16)
+        textView.textColor = .darkGray
+        textView.backgroundColor = UIColor(white : 0.995, alpha : 1)
         return cell
     }
     

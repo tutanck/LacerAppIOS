@@ -10,11 +10,10 @@ import UIKit
 
 extension UIScrollView {
     
-    func setText(
+    func setText (
         text : String,
-        fontSize : CGFloat? = 16,
-        textColor : UIColor? = .darkGray
-        ){
+        fontSize : CGFloat? = 16
+        )-> UITextView{
         let estimatedFrame = FrameEstimator.estimateTextFrame(text: text, textFontSize: fontSize!, desiredWidth: 9999, arbitraryHeight: 9999)
         
         let frame = CGRect (x : 0, y : 0, width : estimatedFrame.width+16, height : estimatedFrame.height+16)
@@ -24,11 +23,11 @@ extension UIScrollView {
         textView.isEditable = false
         textView.isScrollEnabled = false//let textView becomes unscrollable
         textView.text = text
-        textView.textColor = textColor
         
         contentSize = CGSize(width : estimatedFrame.width, height : estimatedFrame.height)
         addSubview(textView)
-        
+    
+    return textView
     }
     
 }
