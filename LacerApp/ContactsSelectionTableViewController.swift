@@ -12,7 +12,13 @@ class ContactsSelectionTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var users : [User] = [User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)]
+    var users : [User] = [
+        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Regina", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Joana", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Tino", photo : UIImage(named : "userPhoto"), status: 1)
+    ]
     
     
     let searchController = UISearchController(searchResultsController: nil)
