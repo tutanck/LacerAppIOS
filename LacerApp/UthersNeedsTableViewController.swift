@@ -13,7 +13,7 @@ class UthersNeedsTableViewController: UITableViewController {
     
     
     let cellId = "UtherNeedTableViewCell"
-
+    
     
     // MARK: - Properties
     
@@ -21,7 +21,7 @@ class UthersNeedsTableViewController: UITableViewController {
         Need(tags : "#Java #lol" , username : "Joana", distance : 200, description : "Chauffeur tout de suite" ,photo : UIImage(named : "userPhoto"), title : "Chauffeur", activ : true),
         Need(tags : "#Java #lol" , username : "Joana", distance : 200, description : "Chauffeur tout de suite" ,photo : UIImage(named : "userPhoto"), title : "Chauffeur", activ : true)
     ]
-
+    
     
     var filteredNeeds = [Need]()
     
@@ -55,16 +55,15 @@ class UthersNeedsTableViewController: UITableViewController {
         //SearchController's search bar parameters
         searchController.searchBar.scopeButtonTitles = ["Mes mots-clés", "Autres"]
         searchController.searchBar.delegate = self
-    
+        
     }
     
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
     }
-    
     
     
     
@@ -110,7 +109,10 @@ class UthersNeedsTableViewController: UITableViewController {
     }
     
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell:UITableViewCell = tableView.cellForRow(at: indexPath)!
+        cell.selectionStyle = .none
+    }
     
     /*
      // Override to support conditional editing of the table view.
@@ -188,6 +190,17 @@ class UthersNeedsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    
+    
+
+    
+    //Mark : unwinds
+    
+    @IBAction func cancelFromContactsSelection(segue:UIStoryboardSegue) {}
+    
+    //Mark : unwinds
+    
+    @IBAction func doneFromContactsSelection(segue:UIStoryboardSegue) {}
 }
 
 

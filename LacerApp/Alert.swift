@@ -12,20 +12,6 @@ class Alert {
     
     static func displayMessage(
         context : UIViewController,
-        message : String
-        ){
-        
-        let alert = UIAlertController (title : "Message", message : message, preferredStyle : .alert)
-        
-        alert.addAction( UIAlertAction(title: "OK" , style: .default, handler: nil) )
-        
-        context.present(alert, animated: true, completion: nil)
-        
-    }
-    
-    
-    static func displayMessage(
-        context : UIViewController,
         message : String,
         handler : ((UIAlertAction) -> Swift.Void)? = nil,
         completion : (() -> Swift.Void)? = nil,

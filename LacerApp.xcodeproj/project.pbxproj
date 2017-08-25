@@ -53,6 +53,7 @@
 		4EDAA9641F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */; };
 		4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */; };
 		4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */; };
+		4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */; };
 		6E7A1CEE1B57B7BE886540A3 /* Pods_LacerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED7376E182F88A8F84F322 /* Pods_LacerAppTests.framework */; };
 		AFFB4DAD46E9811FCAC5FA01 /* Pods_LacerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8938E35120BA4567F95B03 /* Pods_LacerApp.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedDetailsViewController.swift; sourceTree = "<group>"; };
 		4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingProfilesTableViewDelegate.swift; sourceTree = "<group>"; };
 		4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedUIScrollView.swift; sourceTree = "<group>"; };
+		4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSelectionTableViewController.swift; sourceTree = "<group>"; };
 		65FE5FBB2EC9BDE49E3C42D8 /* Pods-LacerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LacerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LacerApp/Pods-LacerApp.release.xcconfig"; sourceTree = "<group>"; };
 		704EAAF2E08F2ADCC4FC0A87 /* Pods-LacerAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LacerAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LacerAppUITests/Pods-LacerAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7162C73802FEB8E87E5C8E50 /* Pods_LacerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LacerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +226,7 @@
 				4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */,
 				4EB204851F23D09F0096CC60 /* UtherNeedDetailsTableViewController.swift */,
 				4EB204811F23CE520096CC60 /* UtherProfileTableViewController.swift */,
+				4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */,
 			);
 			name = MarketPlace;
 			sourceTree = "<group>";
@@ -778,6 +781,7 @@
 				4EB204601F1ED4070096CC60 /* Keyword.swift in Sources */,
 				4EB204361F1972090096CC60 /* Alert.swift in Sources */,
 				4ED2B0B51F2639D10072BAEA /* WelcomeViewController.swift in Sources */,
+				4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */,
 				4E4D20B91F4B859D001AC0C4 /* ExtendedUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
