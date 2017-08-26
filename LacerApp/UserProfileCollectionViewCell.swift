@@ -168,6 +168,16 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell, UIImagePickerContr
     
     
     
+    //Global tap gesture
+    fileprivate func setTapToDissmissKeyboard(){
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        singleTap.numberOfTapsRequired = 1;
+        addGestureRecognizer(singleTap)
+    }
+    
+    
+    
+    
     
     
     override func setupViews() {
@@ -181,6 +191,7 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell, UIImagePickerContr
         addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton)
         
         setInputsDelegate()
+        setTapToDissmissKeyboard()
     }
     
     
@@ -188,18 +199,19 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell, UIImagePickerContr
     
     
     
+    // MARK: - Actions
+    
+    func showActivityKeywords(){
+        if let context = context/*, let user = user TODO */ {
+            context.performSegue(withIdentifier: "segueFromUserProfileToUserKeywords", sender: self)
+        }
+    }
     
     
+    func hideKeyboard(_ sender: AnyObject) { usernameTextField.endEditing(true); resumeTextView.endEditing(true) }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+    func typeSegmentedControlChanged(_ sender: UISegmentedControl) { context?.enableRightBarButtonItem() }
     
     
     func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
@@ -219,12 +231,10 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell, UIImagePickerContr
         context?.present(imagePickerController, animated: true, completion: nil)
     }
     
-    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // Dismiss the picker if the user canceled.
         context?.dismiss(animated: true, completion: nil)
     }
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -248,23 +258,7 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell, UIImagePickerContr
     
     
     
-    func showActivityKeywords(){
-        print("showActivityKeywords")
-        if let context = context/*, let user = user*/ {
-            context.performSegue(withIdentifier: "segueFromUserProfileToUserKeywords", sender: self)
-        }
-    }
-    
-    
-    func typeSegmentedControlChanged(_ sender: UISegmentedControl) { context?.enableRightBarButtonItem() }
-    
-    // MARK: - Tap gesture : TODO
-    
-    func hideKeyboard(_ sender: AnyObject) { usernameTextField.endEditing(true); resumeTextView.endEditing(true) }
-    
-    
-    
-    
+    // MARK: - TextInputs handlers
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool { textField.resignFirstResponder(); return true }
     

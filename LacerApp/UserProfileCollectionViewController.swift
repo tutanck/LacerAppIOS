@@ -17,9 +17,6 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
     
     var bottomConstraint: NSLayoutConstraint? //TODO REM IF NOT NEEDED
     
-    
-    
-    
     var user : User? {
         didSet {
             isComponentModelReady = true
@@ -29,23 +26,9 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     // MARK: - SwitchableControl
     
     @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
-    
-    
-    // MARK: - Actions
-    
     
     
     // MARK: - Save button
@@ -76,8 +59,6 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
         manageKeyboard()
         
         
-        
-        
         //user status button settings
         userAvailabilitySwitchableControl.context = self
         
@@ -91,9 +72,6 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
             userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
             self.ref = userRef.child(Fire.userProfileKey)
         }
-
-
-        
         
     }
     
@@ -137,19 +115,7 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     
@@ -166,8 +132,6 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
         }
     }
 
-    
-    
     
     
     fileprivate func manageKeyboard() {
@@ -195,14 +159,9 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
     
     
     
-    
-    
-    
     //Mark : unwinds
     
     @IBAction func returnFromUserKeywords(segue:UIStoryboardSegue) {}
-    
-    
     
     
     // MARK: - private methods

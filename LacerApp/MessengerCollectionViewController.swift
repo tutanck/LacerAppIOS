@@ -65,6 +65,13 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
     
     
     
+    //Global tap gesture
+    fileprivate func setTapToDissmissKeyboard(){
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        singleTap.numberOfTapsRequired = 1;
+        collectionView?.addGestureRecognizer(singleTap)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +86,7 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         collectionView?.backgroundColor = .white
         collectionView?.register(MessageCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.scrollToLastItem(atIts: .bottom, animated: false)
+        setTapToDissmissKeyboard()
     }
     
     
@@ -196,10 +204,9 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         return UIEdgeInsetsMake(8, 0, 0, 0)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        inputTextField.endEditing(true)  //TODO add tap gesture
-    }
     
+    func hideKeyboard(_ sender: AnyObject) { inputTextField.endEditing(true) }
+
     
     func simulate() {
        let messageText = "Here's a text message that was sent a few minutes ago..."
@@ -230,6 +237,8 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
             inputTextField.text = nil
         }
     }
+    
+    
     
     func handleKeyboardNotification(_ notification: Notification) {
         

@@ -22,14 +22,12 @@ class FormLabeledEntry {
         debug : Bool? = false
         ) ->UIView{
         
-        
         let label: UILabel = label == nil ?  {
             let label = UILabel()
             label.text = text
             label.font = UIFont.systemFont(ofSize: 16)
             return label
             }() : label!
-        
         
         containerView.addSubview(label)
         containerView.addSubview(view)
@@ -38,7 +36,9 @@ class FormLabeledEntry {
         
         containerView.addConstraintsWithFormat("H:|-\(leftMargin!)-[v0]-\(rightMargin!)-|", views: view)
         
-        containerView.addConstraintsWithFormat("V:|[v0(\(labelHeight!))][v1(\(viewHeight!))]|", views: label, view)
+        containerView.addConstraintsWithFormat("V:|[v0(\(labelHeight!))]", views: label)
+        
+        containerView.addConstraintsWithFormat("V:[v0(\(viewHeight!))]|", views: view)
         
         if debug! {
             label.backgroundColor = .yellow
@@ -54,9 +54,10 @@ class FormLabeledEntry {
     entry : UIView,
     debug : Bool? = false
     ) ->UIView{
+        
         parent.addSubview(entry)
+        
         parent.addConstraintsWithFormat("H:|[v0]|", views: entry)
-        parent.addCenteredXConstraint(about: entry, to: parent)
         
         if debug! {
             parent.backgroundColor = .green
