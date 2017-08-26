@@ -15,8 +15,6 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
     
     let wallpaperColor = UIColor(white : 0.99 , alpha : 1)
     
-    var bottomConstraint: NSLayoutConstraint? //TODO REM IF NOT NEEDED
-    
     var user : User? {
         didSet {
             isComponentModelReady = true
@@ -75,14 +73,16 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
         
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    
     
     fileprivate func setupCollectionView(){
         collectionView?.backgroundColor = wallpaperColor
         collectionView?.register(UserProfileCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     }
-    
-    
-    
     
     
     
@@ -139,21 +139,28 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
         KeyboardNotification.keyboardWillHide(observer : self, selector: #selector(handleKeyboardNotification))
     }
     
+    
+    /**
+    * NE SEMBLE PAS MARCHER : TODO FAIRE MARCHEER PUIS GENERISER */
     func handleKeyboardNotification(_ notification: Notification) {
         
         if let userInfo = notification.userInfo {
             
-            let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
-            
             let isKeyboardShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
             
-            bottomConstraint?.constant = isKeyboardShowing ? -keyboardFrame!.height : 0
+            let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
             
-            UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
-                
-                self.view.layoutIfNeeded()//NA SEMBLE PAS MARCHER : TODO
-                
-            }, completion: nil)
+            if let keyboardFrame = keyboardFrame {
+                let keyboardHeight = (keyboardFrame.height) * (isKeyboardShowing ? 1 : -1)
+              
+                UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                    
+                    self.collectionView?.contentInset.bottom += (isKeyboardShowing ? 10 : -10)
+                    self.collectionView?.scrollIndicatorInsets.bottom += keyboardHeight
+                    self.view.layoutIfNeeded()
+                    
+                }, completion: nil)
+            }
         }
     }
     

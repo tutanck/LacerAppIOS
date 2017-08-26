@@ -19,14 +19,11 @@ class UserContactTableViewCell: UserTableViewCell {
         singleTap.numberOfTapsRequired = 1;
         super.profileImageView.addGestureRecognizer(singleTap)
         super.profileImageView.isUserInteractionEnabled = true
-        
-        print("var context : UserContactsTableViewController?")
     }
     
     
     func goToUtherProfile(recognizer: UIGestureRecognizer) {
-        print("context.performSegue(withIdentifier: segueToUtherProfile, sender: self)")
-        if let context = context {
+         if let context = context {
             context.performSegue(withIdentifier: "segueToUtherProfile", sender: self)
         }
     }
