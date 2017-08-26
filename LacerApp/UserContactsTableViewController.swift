@@ -73,6 +73,8 @@ class UserContactsTableViewController: UITableViewController {
         
         let contact = contacts[indexPath.row]
         
+        cell.context = self
+        
         cell.nameLabel.text = contact.name
         cell.messageLabel.text = "TODO"
         cell.profileImageView.image = contact.photo
@@ -141,11 +143,9 @@ class UserContactsTableViewController: UITableViewController {
     
     
     
-    
     //Mark : unwinds
     
     @IBAction func cancelFromSearchUser(segue:UIStoryboardSegue) {}
-    
     
 }
 

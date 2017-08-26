@@ -10,6 +10,8 @@ import UIKit
 
 class UserTableViewCell: BasicTableViewCell {
     
+    var context : UserContactsTableViewController?
+    
     //userProfileImageView
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -95,6 +97,22 @@ class UserTableViewCell: BasicTableViewCell {
         containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, hasReadImageView)
         
         containerView.addConstraintsWithFormat("V:[v0(20)]|", views: hasReadImageView)
+    }
+    
+    
+    
+    //MARK: Action segues
+    
+    func showContactProfile(recognizer: UIGestureRecognizer) {
+        if let context = context {
+            context.performSegue(withIdentifier: "segueFromUserContactsToUtherProfile", sender: self)
+        }
+    }
+    
+    func contact(recognizer: UIGestureRecognizer) {
+        if let context = context {
+            context.performSegue(withIdentifier: "segueFromUserContactsToMessenger", sender: self)
+        }
     }
     
 }
