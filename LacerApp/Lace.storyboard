@@ -168,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="cqv-Q6-MCb" customClass="UserTableViewCell" customModule="LacerApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserContactTableViewCell" id="cqv-Q6-MCb" customClass="UserContactTableViewCell" customModule="LacerApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cqv-Q6-MCb" id="xU4-2l-0pb">
@@ -176,7 +176,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="r8e-RR-dnV" kind="show" id="EHI-Fk-bzs"/>
+                                    <segue destination="r8e-RR-dnV" kind="show" identifier="segueToMessenger" id="EHI-Fk-bzs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -208,6 +208,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="userAvailabilitySwitchableControl" destination="7ZL-s4-FJ4" id="Sdp-Pk-7pt"/>
+                        <segue destination="RET-iB-kXa" kind="show" identifier="segueToUtherProfile" id="zpd-nR-U0R"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ikn-kI-mkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -383,7 +384,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LyF-Gs-nGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3644" y="2248"/>
+            <point key="canvasLocation" x="1777" y="1156"/>
         </scene>
         <!--Mots-clés-->
         <scene sceneID="U80-9l-pMj">
@@ -497,17 +498,19 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Username" id="ozz-bp-C4b">
-                        <barButtonItem key="rightBarButtonItem" title="Contacter" id="tbw-pF-m3b"/>
+                        <barButtonItem key="rightBarButtonItem" title="Contacter" id="tbw-pF-m3b">
+                            <connections>
+                                <segue destination="r8e-RR-dnV" kind="show" id="Cif-pL-ZmE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <segue destination="eSv-pJ-MaD" kind="show" identifier="segueFromUtherProfileToUtherActivityKeywords" id="luA-Bq-4qM"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTm-BF-4SW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-250" y="1157"/>
+            <point key="canvasLocation" x="-250" y="1029"/>
         </scene>
         <!--Profil-->
         <scene sceneID="8Nd-kM-Ej9">
@@ -630,7 +633,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="08W-sa-DJS" id="TAo-np-1qp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -669,11 +672,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ghF-1g-RF6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Lh7-LE-Pmh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="840"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFU-cO-KEU">
-                                <rect key="frame" x="0.0" y="64" width="375" height="727"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9YU-lZ-K1B" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
@@ -834,8 +837,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="840"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="I2X-FN-B05" id="i23-tG-6GK"/>
                         <outlet property="matchingProfilesTableView" destination="Vc1-vE-jbr" id="vnP-eD-Cqy"/>
@@ -911,7 +912,7 @@
             </objects>
             <point key="canvasLocation" x="726" y="430"/>
         </scene>
-        <!--Messenger Collection View Controller-->
+        <!--Messenger-->
         <scene sceneID="GDN-KZ-YMq">
             <objects>
                 <collectionViewController id="r8e-RR-dnV" customClass="MessengerCollectionViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -940,6 +941,9 @@
                             <outlet property="delegate" destination="r8e-RR-dnV" id="7xA-Sr-7Y4"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Messenger" id="gQ6-s4-A6l">
+                        <barButtonItem key="rightBarButtonItem" title="Profil" id="LEJ-rV-f2H"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIC-A3-39z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -987,7 +991,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TlW-JZ-wzq"/>
-        <segue reference="EHI-Fk-bzs"/>
-        <segue reference="CED-M5-GRL"/>
+        <segue reference="zpd-nR-U0R"/>
+        <segue reference="Cif-pL-ZmE"/>
     </inferredMetricsTieBreakers>
 </document>

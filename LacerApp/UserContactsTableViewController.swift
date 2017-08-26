@@ -67,8 +67,8 @@ class UserContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as? UserTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of UserTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserContactTableViewCell", for: indexPath) as? UserContactTableViewCell   else {
+            fatalError("The dequeued cell is not an instance of UserContactTableViewCell.")
         }
         
         let contact = contacts[indexPath.row]

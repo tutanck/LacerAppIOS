@@ -78,7 +78,6 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         tabBarController?.tabBar.isHidden = true
         setupCollectionView()
         setupInputComponents()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Simulate", style: .plain, target: self, action: #selector(simulate)) //TODO REM
     }
     
     
