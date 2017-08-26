@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mes Besoins-->
+        <!--Mes besoins-->
         <scene sceneID="RYk-v5-X82">
             <objects>
                 <tableViewController id="IRH-IB-TLF" customClass="UserNeedsTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                             <outlet property="delegate" destination="IRH-IB-TLF" id="BEw-iq-nf0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Mes Besoins" id="kff-zR-wl0">
+                    <navigationItem key="navigationItem" title="Mes besoins" id="kff-zR-wl0">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="P9Y-Jo-fkG">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I5v-yz-ccl" customClass="SwitchableColorButton" customModule="LacerApp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="7" width="30" height="30"/>
@@ -81,7 +81,7 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MFa-KR-uiQ" id="EJy-0g-bZu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="5R1-aU-qOz">
@@ -108,7 +108,7 @@
                                         <rect key="frame" x="0.0" y="271" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="zWc-T9-Ufs" id="WnV-8e-EVZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7gH-gw-Owv" customClass="RatingControl" customModule="LacerApp" customModuleProvider="target">
@@ -138,7 +138,7 @@
                                         <rect key="frame" x="0.0" y="371" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0SD-Ql-LDe" id="Jns-FL-EBK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XNg-q4-UiZ">
@@ -168,7 +168,7 @@
                                         <rect key="frame" x="0.0" y="463" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zZs-mz-ZAL" id="rbo-P9-m6b">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Fb-ub-tF5">
@@ -194,7 +194,7 @@
                                         <rect key="frame" x="0.0" y="563" width="375" height="204"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nu5-Bg-eVm" id="RgV-K2-Pyc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6fz-V1-pq2">
@@ -220,7 +220,7 @@
                                         <rect key="frame" x="0.0" y="803" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cRK-F6-0gg" id="l13-CG-Afg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ug-QR-sOG">
@@ -337,7 +337,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="userAvailabilitySwitchableControl" destination="ONy-ZZ-BXI" id="r2M-nK-Cd0"/>
-                        <segue destination="vCd-lm-uot" kind="show" identifier="segueFromUserProfileToUserKeywords" id="ZVg-P7-SXf"/>
+                        <segue destination="vIU-j4-9zO" kind="show" identifier="segueFromUserProfileToUserKeywords" id="Ume-Sc-GXh"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uK-I3-7g8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -443,7 +443,7 @@
             <objects>
                 <tableViewController id="eKH-z8-okw" customClass="UtherProfileTableViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="8Nh-P2-w1K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="840"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -617,7 +617,7 @@
             <objects>
                 <tableViewController id="eSv-pJ-MaD" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="cMy-E7-aAR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="840"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -692,7 +692,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8J-Ju-gp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="rT8-A8-Gn6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3590" y="2265"/>
+            <point key="canvasLocation" x="2534" y="2265"/>
         </scene>
         <!--Profil-->
         <scene sceneID="8Nd-kM-Ej9">
@@ -856,7 +856,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFU-cO-KEU">
-                                <rect key="frame" x="0.0" y="64" width="375" height="776"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="727"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9YU-lZ-K1B" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
@@ -1038,24 +1038,6 @@
             <point key="canvasLocation" x="3590" y="453"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="49E-Jr-JOD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vCd-lm-uot" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Go3-zd-lG3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vIU-j4-9zO" kind="relationship" relationship="rootViewController" id="36I-tu-cge"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8NP-bS-Ean" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2534" y="2265"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="Wi6-vL-Atz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yPy-uB-o7k" sceneMemberID="viewController">
@@ -1187,8 +1169,8 @@
         <image name="userPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="TlW-JZ-wzq"/>
+        <segue reference="zCD-nX-5u3"/>
         <segue reference="EHI-Fk-bzs"/>
-        <segue reference="bUk-Md-L64"/>
-        <segue reference="yel-BQ-n5W"/>
     </inferredMetricsTieBreakers>
 </document>
