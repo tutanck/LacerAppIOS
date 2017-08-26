@@ -153,10 +153,10 @@ class UserProfileCollectionViewController: UICollectionViewController, UICollect
             if let keyboardFrame = keyboardFrame {
                 let keyboardHeight = (keyboardFrame.height) * (isKeyboardShowing ? 1 : -1)
               
+                self.collectionView?.contentInset.bottom += (isKeyboardShowing ? 10 : -10)
+                self.collectionView?.scrollIndicatorInsets.bottom += keyboardHeight
+                
                 UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
-                    
-                    self.collectionView?.contentInset.bottom += (isKeyboardShowing ? 10 : -10)
-                    self.collectionView?.scrollIndicatorInsets.bottom += keyboardHeight
                     self.view.layoutIfNeeded()
                     
                 }, completion: nil)

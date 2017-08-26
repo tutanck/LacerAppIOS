@@ -80,6 +80,10 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         setupInputComponents()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     
     fileprivate func setupCollectionView(){
         collectionView?.backgroundColor = .white

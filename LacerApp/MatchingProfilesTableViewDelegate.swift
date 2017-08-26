@@ -11,7 +11,9 @@ import UIKit
 
 class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSource{
     
-    // MARK: - private methods
+    
+    let cellID = "MatchingProfilesTableViewCell"
+    
     
     var tableView : UITableView?
     
@@ -19,6 +21,8 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     var filteredProfiles = [User]()
     
     var profiles : [User] = [User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)]
+    
+    
     
     
     // MARK: - Table view data source
@@ -36,8 +40,8 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as? UserTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of UserTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? MatchingProfilesTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of " + cellID)
         }
         
         let profile = profiles[indexPath.row]

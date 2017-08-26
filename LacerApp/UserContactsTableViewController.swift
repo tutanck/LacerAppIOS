@@ -11,6 +11,8 @@ import Firebase
 
 class UserContactsTableViewController: UITableViewController {
     
+    let cellID = "UserContactTableViewCell"
+    
     
     var contacts : [User] = [User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)]
     
@@ -67,8 +69,8 @@ class UserContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserContactTableViewCell", for: indexPath) as? UserContactTableViewCell   else {
-            fatalError("The dequeued cell is not an instance of UserContactTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? UserContactTableViewCell   else {
+            fatalError("The dequeued cell is not an instance of " + cellID)
         }
         
         let contact = contacts[indexPath.row]

@@ -240,7 +240,6 @@ class UserProfileCollectionViewCell: BasicCollectionViewCell, UIImagePickerContr
         
         // The info dictionary may contain multiple representations of the image. You want to use the original.
         guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-            //fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
             if let context = context {
                 Alert.displayMessage(context: context, message: "Impossible de charger l'image.")
             }

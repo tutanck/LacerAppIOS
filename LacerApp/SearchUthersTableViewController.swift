@@ -11,6 +11,10 @@ import Firebase
 
 class SearchUthersTableViewController: UITableViewController {
     
+    
+    let cellID = "SearchUthersTableViewCell"
+    
+    
     // MARK: - Properties
     
      var users : [User] = [User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)]
@@ -60,8 +64,8 @@ class SearchUthersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as? UserTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of UserTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? SearchUthersTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of " + cellID)
         }
         
         let user = users[indexPath.row]

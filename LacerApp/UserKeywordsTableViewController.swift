@@ -11,6 +11,9 @@ import Firebase
 
 class UserKeywordsTableViewController: UITableViewController {
     
+    let cellID = "KeywordTableViewCell"
+    
+    
     var keywords : [Keyword] = []
     
     
@@ -55,8 +58,8 @@ class UserKeywordsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "KeywordTableViewCell", for: indexPath) as? KeywordTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of KeywordTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? KeywordTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of " + cellID)
         }
         
         // Fetches the appropriate meal for the data source layout.

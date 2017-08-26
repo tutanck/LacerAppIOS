@@ -10,6 +10,8 @@ import UIKit
 
 class ContactsSelectionTableViewController: UITableViewController {
     
+    let cellID = "UserContactsSelectionTableViewCell"
+    
     // MARK: - Properties
     
     var users : [User] = [
@@ -17,8 +19,19 @@ class ContactsSelectionTableViewController: UITableViewController {
         User(name : "Regina", photo : UIImage(named : "userPhoto"), status: 1),
         User(name : "Joana", photo : UIImage(named : "userPhoto"), status: 1),
         User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Tino", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
         User(name : "Tino", photo : UIImage(named : "userPhoto"), status: 1)
     ]
+    
+    
+    var selectedUserIndexList = [Int : String]()
     
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -58,20 +71,44 @@ class ContactsSelectionTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as? UserTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of UserTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? UserContactsSelectionTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of "+cellID)
         }
         
         let user = users[indexPath.row]
         
         cell.nameLabel.text = user.name
-        cell.messageLabel.text = "TODO"
+        cell.messageLabel.text = "TODO" //TODO
         cell.profileImageView.image = user.photo
         //cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
         
+        if selectedUserIndexList[indexPath.row] == nil {
+            cell.accessoryType = UITableViewCellAccessoryType.none
+            cell.backgroundColor = .white
+        }else{
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            cell.backgroundColor = UIColor(white: 0.97, alpha: 1)
+        }
+        
         return cell
     }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? UserContactsSelectionTableViewCell {
+            if selectedUserIndexList[indexPath.row] == nil {
+                selectedUserIndexList[indexPath.row] = "userId"
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                cell.backgroundColor = UIColor(white: 0.97, alpha: 1)
+            }else{
+                selectedUserIndexList[indexPath.row] = nil
+                cell.accessoryType = UITableViewCellAccessoryType.none
+                cell.backgroundColor = .white
+            }
+            tableView.reloadData()
+        }
+    }
+    
     
     
     
@@ -118,11 +155,10 @@ class ContactsSelectionTableViewController: UITableViewController {
                  
                  self.users = tmp*/
                 self.tableView.reloadData()
-            })        }
-        
-        
-        
+            })
+        }
     }
+    
     
     
 }

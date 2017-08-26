@@ -79,7 +79,7 @@ class UserNeedsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? UserNeedTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of"+cellId)
+            fatalError("The dequeued cell is not an instance of" + cellId)
         }
         
         // Fetches the appropriate meal for the data source layout.
