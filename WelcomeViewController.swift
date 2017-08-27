@@ -22,6 +22,8 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(white: 0.99, alpha: 1)
+        
         
         // Handle the text fields user input through delegate callbacks.
         useridTextField.delegate = self
@@ -57,7 +59,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         if(isDeviceVerifiedForThisUserID){
             Alert.displayMessage(context: self, message: "Connect")
         }else{
-            Alert.displayMessage(context: self, message: "Un code de vérification sera envoyé à "+userid, confirmAction : { action in self.performSegue(withIdentifier: "segueFromWelcomeToAccountChecking", sender: self)
+            Alert.displayMessage(context: self, message: "Un code de vérification sera envoyé à "+userid, confirmAction : { action in self.performSegue(withIdentifier: "segueFromWelcomeToCodeVerification", sender: self)
             })
         }
     }

@@ -12,6 +12,7 @@ class CodeVerificationViewController: UIViewController, CodeInputViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(white: 0.99, alpha: 1)
         let frame = CGRect(x: (view.frame.width-315)/2, y: 242, width: 315, height: 60)
         let codeInputView = CodeInputView(frame: frame)
         codeInputView.delegate = self

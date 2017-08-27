@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Pdf-H2-HgE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -75,6 +75,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="connectOrGoToAccountChecking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5is-XX-PYm"/>
+                                                    <segue destination="Pdf-H2-HgE" kind="presentation" identifier="segueFromWelcomeToCodeVerification" id="osK-G0-K3v"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -101,97 +102,11 @@
                     </view>
                     <connections>
                         <outlet property="useridTextField" destination="uNE-h8-IRg" id="sxz-lG-9io"/>
-                        <segue destination="dw4-wI-wK9" kind="show" identifier="segueFromWelcomeToAccountChecking" id="7hp-eu-zXb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-474" y="500"/>
-        </scene>
-        <!--Account Checking View Controller-->
-        <scene sceneID="Ond-Sl-zOa">
-            <objects>
-                <viewController id="dw4-wI-wK9" customClass="AccountCheckingViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="S9B-sq-Zcf"/>
-                        <viewControllerLayoutGuide type="bottom" id="pnY-60-Wzp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SQv-GU-5nl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="yWE-DH-ySd">
-                                <rect key="frame" x="16" y="80" width="343" height="277.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vérification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8u-Gl-FLH">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un code de vérification a été envoyé" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk0-aw-0Fk">
-                                        <rect key="frame" x="0.0" y="72" width="343" height="19.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Yiw-jC-jUJ">
-                                        <rect key="frame" x="0.0" y="139.5" width="343" height="138"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEA-LH-ebg">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="73H-qN-d4I"/>
-                                                    <constraint firstAttribute="width" constant="120" id="ap6-xl-ePZ"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXM-II-bqe">
-                                                <rect key="frame" x="0.0" y="54" width="343" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="GO !">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="connect:" destination="dw4-wI-wK9" eventType="touchUpInside" id="BEb-1n-KgJ"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-eQ-tLN">
-                                                <rect key="frame" x="0.0" y="108" width="343" height="30"/>
-                                                <state key="normal" title="Modifier Votre numéro"/>
-                                                <connections>
-                                                    <segue destination="dR0-0q-R0y" kind="unwind" unwindAction="returnFromAccountCheckingWithSegue:" id="mrr-5r-EaJ"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="g5g-eQ-tLN" firstAttribute="leading" secondItem="Yiw-jC-jUJ" secondAttribute="leading" id="4Xx-sV-OSS"/>
-                                            <constraint firstAttribute="trailing" secondItem="gXM-II-bqe" secondAttribute="trailing" id="G8d-dP-Dze"/>
-                                            <constraint firstItem="gXM-II-bqe" firstAttribute="leading" secondItem="Yiw-jC-jUJ" secondAttribute="leading" id="btL-Nj-3Bl"/>
-                                            <constraint firstAttribute="trailing" secondItem="g5g-eQ-tLN" secondAttribute="trailing" id="s65-zP-GYq"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yWE-DH-ySd" firstAttribute="top" secondItem="S9B-sq-Zcf" secondAttribute="bottom" constant="60" id="30h-Z3-l5g"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yWE-DH-ySd" secondAttribute="trailing" id="7eY-K2-Zga"/>
-                            <constraint firstItem="yWE-DH-ySd" firstAttribute="leading" secondItem="SQv-GU-5nl" secondAttribute="leadingMargin" id="HTz-Xx-FwZ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="codeTextField" destination="CEA-LH-ebg" id="GT9-GO-A7u"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="60b-di-Mgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="dR0-0q-R0y" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="305" y="500"/>
         </scene>
         <!--Code Verification View Controller-->
         <scene sceneID="f0q-5w-bT8">
@@ -204,12 +119,30 @@
                     <view key="view" contentMode="scaleToFill" id="bsi-rH-IgB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P2F-wd-8ES">
+                                <rect key="frame" x="24" y="90" width="327" height="21.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrez le code reçu par sms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLc-q2-nIT">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P2F-wd-8ES" firstAttribute="leading" secondItem="bsi-rH-IgB" secondAttribute="leadingMargin" constant="8" id="4JH-Oh-dhX"/>
+                            <constraint firstItem="P2F-wd-8ES" firstAttribute="top" secondItem="nmo-w6-DMe" secondAttribute="bottom" constant="70" id="THM-39-5zF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P2F-wd-8ES" secondAttribute="trailing" constant="8" id="weE-yG-K5w"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7es-Mq-Cvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1195" y="549"/>
+            <point key="canvasLocation" x="478" y="500"/>
         </scene>
     </scenes>
 </document>
