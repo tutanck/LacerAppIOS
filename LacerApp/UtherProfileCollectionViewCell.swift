@@ -20,9 +20,38 @@ class UtherProfileCollectionViewCell: BasicCollectionViewCell {
         imageView.image = UIImage(named: "userPhoto")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        //Inner ratingView
+        
+        let ratingView: RatingControl = {
+            let rating = RatingControl()
+            rating.starSize = CGSize(width: 24.0, height: 24.0)
+            rating.translatesAutoresizingMaskIntoConstraints = false
+            return rating
+        }()
+        imageView.addSubview(ratingView)
+        imageView.addConstraintsWithFormat("H:|-8-[v0]", views: ratingView)
+        imageView.addConstraintsWithFormat("V:[v0]-8-|", views: ratingView)
+        
+        //Inner presenceView
+        
+        let presenceView: UIImageView = {
+            let presence = UIImageView()
+            presence.backgroundColor = .red
+            presence.contentMode = .scaleAspectFill
+            presence.layer.cornerRadius = 12
+            presence.layer.masksToBounds = true
+            presence.translatesAutoresizingMaskIntoConstraints = false
+            return presence
+        }()
+        imageView.addSubview(presenceView)
+        imageView.addConstraintsWithFormat("H:[v0(24)]-8-|", views: presenceView)
+        imageView.addConstraintsWithFormat("V:[v0(24)]-8-|", views: presenceView)
         
         //interraction
         imageView.isUserInteractionEnabled = false
+        
         return imageView
     }()
     
