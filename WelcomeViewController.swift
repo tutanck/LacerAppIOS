@@ -65,13 +65,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    //Mark : unwinds
-
-    @IBAction func returnFromAccountChecking(segue:UIStoryboardSegue) {}
-
-    
-    
-    
+        
     /*
      // MARK: - Navigation
      

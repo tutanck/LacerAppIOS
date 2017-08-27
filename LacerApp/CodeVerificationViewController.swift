@@ -31,7 +31,7 @@ class CodeVerificationViewController: UIViewController, CodeInputViewDelegate {
              confirmButtonTitle : "Réessayer",
              cancellable : true,
              cancelButtonTitle : "Retour",
-             cancelAction : { _ in codeInputView.clear() } //TODO UNWIND
+             cancelAction : { _ in self.dismiss(animated: true, completion: nil) }
             )
         }
         

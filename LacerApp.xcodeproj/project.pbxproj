@@ -52,7 +52,6 @@
 		4ECDB3C81F428E6300352191 /* Fire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C71F428E6300352191 /* Fire.swift */; };
 		4ECDB3CA1F43C97F00352191 /* BasicNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C91F43C97F00352191 /* BasicNeed.swift */; };
 		4ED2B0B51F2639D10072BAEA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */; };
-		4ED2B0B71F265AC10072BAEA /* AccountCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */; };
 		4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */; };
 		4EDAA95C1F36186600F1A5A2 /* UserKeywordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */; };
 		4EDAA95E1F362A5F00F1A5A2 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */; };
@@ -137,7 +136,6 @@
 		4ECDB3C71F428E6300352191 /* Fire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fire.swift; sourceTree = "<group>"; };
 		4ECDB3C91F43C97F00352191 /* BasicNeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicNeed.swift; sourceTree = "<group>"; };
 		4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../WelcomeViewController.swift; sourceTree = "<group>"; };
-		4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountCheckingViewController.swift; path = ../AccountCheckingViewController.swift; sourceTree = "<group>"; };
 		4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gatekeeper.swift; sourceTree = "<group>"; };
 		4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordsTableViewController.swift; sourceTree = "<group>"; };
 		4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -428,7 +426,6 @@
 			children = (
 				4E28FB6A1F5241F300C6E5D7 /* modules */,
 				4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */,
-				4ED2B0B61F265AC10072BAEA /* AccountCheckingViewController.swift */,
 				4E28FB681F5241E100C6E5D7 /* CodeVerificationViewController.swift */,
 			);
 			name = Welcome;
@@ -809,7 +806,6 @@
 				4E4D20CD1F4DEE5D001AC0C4 /* MessengerCollectionViewController.swift in Sources */,
 				4E28FB611F51F86A00C6E5D7 /* UserContactTableViewCell.swift in Sources */,
 				4EB204421F1A89E20096CC60 /* Spot.swift in Sources */,
-				4ED2B0B71F265AC10072BAEA /* AccountCheckingViewController.swift in Sources */,
 				4E28FB5F1F51DC4700C6E5D7 /* UtherProfileCollectionViewCell.swift in Sources */,
 				4EB204581F1BF6210096CC60 /* Need.swift in Sources */,
 				4E4D20BE1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift in Sources */,
