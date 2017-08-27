@@ -12,13 +12,14 @@ class Alert {
     
     static func displayMessage(
         context : UIViewController,
-        message : String,
-        handler : ((UIAlertAction) -> Swift.Void)? = nil,
+        message : String?=nil,
+        confirmAction : ((UIAlertAction) -> Swift.Void)? = nil,
         completion : (() -> Swift.Void)? = nil,
         headerTitle : String? = "Message",
         confirmButtonTitle : String? = "OK",
         cancellable : Bool? = false,
         cancelButtonTitle : String? = "Annuler",
+        cancelAction : ((UIAlertAction) -> Swift.Void)? = nil,
         alertControllerPreferredStyle : UIAlertControllerStyle = .alert,
         alertActionStyle : UIAlertActionStyle = .default,
         animated : Bool = true
@@ -28,11 +29,11 @@ class Alert {
         
         //Cancel action
         if cancellable == true{
-            alert.addAction( UIAlertAction(title: cancelButtonTitle, style: .default) )
+            alert.addAction( UIAlertAction(title: cancelButtonTitle, style: .default, handler: cancelAction))
         }
         
         //Confirm action
-        alert.addAction( UIAlertAction(title: confirmButtonTitle , style: .default, handler: handler) )
+        alert.addAction( UIAlertAction(title: confirmButtonTitle , style: .default, handler: confirmAction) )
         
         context.present(alert, animated: animated, completion: nil)
         

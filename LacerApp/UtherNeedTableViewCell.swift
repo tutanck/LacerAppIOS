@@ -297,7 +297,7 @@ class UtherNeedTableViewCell: BasicTableViewCell {
     
     func displayPayInfo(recognizer: UIGestureRecognizer) {
         if let context = context, let need = need {
-            Alert.displayMessage(context: context, message: String(describing : "Pay"),handler : nil,completion : nil,
+            Alert.displayMessage(context: context, message: String(describing : "Pay"),confirmAction : nil,completion : nil,
                                  headerTitle : "Qu'est-ce que j'y gagne ?")
         }
     }
@@ -305,7 +305,7 @@ class UtherNeedTableViewCell: BasicTableViewCell {
     
     func displayPlaceInfo(recognizer: UIGestureRecognizer) {
         if let context = context, let need = need {
-            Alert.displayMessage(context: context, message: String(describing : "Place"),handler : nil,completion : nil,
+            Alert.displayMessage(context: context, message: String(describing : "Place"),confirmAction : nil,completion : nil,
                                  headerTitle : "Où ?")
         }
     }
@@ -313,14 +313,14 @@ class UtherNeedTableViewCell: BasicTableViewCell {
     
     func displayTimeInfo(recognizer: UIGestureRecognizer) {
         if let context = context, let need = need {
-            Alert.displayMessage(context: context, message: String(describing : "Time"),handler : nil,completion : nil,
+            Alert.displayMessage(context: context, message: String(describing : "Time"),confirmAction : nil,completion : nil,
                                  headerTitle : "Quand ?")
         }
     }
     
     func displayMetaInfos(recognizer: UIGestureRecognizer) {
         if let context = context, let need = need {
-            Alert.displayMessage(context: context, message: String(describing : "Information"),handler : nil,completion : nil, headerTitle : "Informations")
+            Alert.displayMessage(context: context, message: String(describing : "Information"),confirmAction : nil,completion : nil, headerTitle : "Informations")
         }
     }
     
