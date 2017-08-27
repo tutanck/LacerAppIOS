@@ -1,53 +1,18 @@
 //
-//  UserProfileCollectionViewController.swift
+//  UserNeedDetailsCollectionViewController.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 25/08/2017.
+//  Created by Joan Angb on 27/08/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
-class UserProfileCollectionViewController : UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class UserNeedDetailsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    fileprivate let cellId = "UserProfileCollectionViewCell"
+    fileprivate let cellId = "UserNeedDetailsCollectionViewCell"
     
     let wallpaperColor = UIColor(white : 0.99 , alpha : 1)
-    
-    var user : User? {
-        didSet {
-            isComponentModelReady = true
-        }
-    }
-    var isComponentModelReady = false
-    
-    
-    
-    // MARK: - SwitchableControl
-    
-    @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
-    
-    
-    // MARK: - Save button
-    
-    /*@IBAction func saveUserProfile(_ sender: UIBarButtonItem) {
-        ref?.setValue([
-            Fire.userTypeKey : typeSegmentedControl.selectedSegmentIndex,
-            Fire.userNameKey : usernameTextField.text,
-            Fire.userDescriptionKey : interestTextView.text
-            ])
-        disableRightBarButtonItem()
-    }*/
-    
-    //MARK: Firef
-    
-    var ref : DatabaseReference? = nil{
-        didSet {
-           // loadFireData()
-        }
-    }
-
     
     
     override func viewDidLoad() {
@@ -56,32 +21,35 @@ class UserProfileCollectionViewController : UICollectionViewController, UICollec
         setupCollectionView()
         manageKeyboard()
         
-        
-        //user status button settings
-        userAvailabilitySwitchableControl.context = self
-        
-        //ui inputs management initial settings
-        disableRightBarButtonItem()
-        
-        
-        //firef settings
-        if let userID = Auth.auth().currentUser?.uid{
-            let userRef = Fire.usersRef.child(userID)
-            userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
-            self.ref = userRef.child(Fire.userProfileKey)
-        }
-        
+        //TODO
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(UserNeedDetailsViewController.keyboardWillShow(_:)),
+            name: Notification.Name.UIKeyboardWillShow,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(UserNeedDetailsViewController.keyboardWillHide(_:)),
+            name: Notification.Name.UIKeyboardWillHide,
+            object: nil
+        )
+    }
+    
+    // MARK: - Tap gesture
+    
+    @IBAction func hideKeyboard(_ sender: AnyObject) {
+    //    titleTextField.endEditing(true)
+      //  descriptionTextView.endEditing(true)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
-    
     
     fileprivate func setupCollectionView(){
         collectionView?.backgroundColor = wallpaperColor
-        collectionView?.register(UserProfileCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(UserNeedDetailsCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     }
     
     
@@ -89,7 +57,7 @@ class UserProfileCollectionViewController : UICollectionViewController, UICollec
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! UserProfileCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! UserNeedDetailsCollectionViewCell
         
         cell.context = self
         cell.backgroundColor = wallpaperColor
@@ -115,9 +83,6 @@ class UserProfileCollectionViewController : UICollectionViewController, UICollec
     }
     
     
-
-    
-    
     
     
     func disableRightBarButtonItem(){
@@ -131,7 +96,7 @@ class UserProfileCollectionViewController : UICollectionViewController, UICollec
             rightBarButton.isEnabled = true
         }
     }
-
+    
     
     
     fileprivate func manageKeyboard() {
@@ -141,7 +106,7 @@ class UserProfileCollectionViewController : UICollectionViewController, UICollec
     
     
     /**
-    * NE SEMBLE PAS MARCHER : TODO FAIRE MARCHEER PUIS GENERISER */
+     * NE SEMBLE PAS MARCHER : TODO FAIRE MARCHEER PUIS GENERISER */
     func handleKeyboardNotification(_ notification: Notification) {
         
         if let userInfo = notification.userInfo {
@@ -152,7 +117,7 @@ class UserProfileCollectionViewController : UICollectionViewController, UICollec
             
             if let keyboardFrame = keyboardFrame {
                 let keyboardHeight = (keyboardFrame.height) * (isKeyboardShowing ? 1 : -1)
-              
+                
                 self.collectionView?.contentInset.bottom += (isKeyboardShowing ? 10 : -10)
                 self.collectionView?.scrollIndicatorInsets.bottom += keyboardHeight
                 
@@ -169,23 +134,5 @@ class UserProfileCollectionViewController : UICollectionViewController, UICollec
     //Mark : unwinds
     
     @IBAction func returnFromUserKeywords(segue:UIStoryboardSegue) {}
-    
-    
-    // MARK: - private methods
-    
-    /*private func loadFireData(){
-        if let ref = self.ref {
-            ref.observeSingleEvent(of:.value, with: { snapshot in
-                if snapshot.exists(){
-                    //populate ui
-                    let value = snapshot.value as? NSDictionary
-                    self.typeSegmentedControl.selectedSegmentIndex = value?[Fire.userTypeKey] as? Int ?? 0
-                    self.usernameTextField.text = value?[Fire.userNameKey] as? String ?? ""
-                    self.interestTextView.text = value?[Fire.userDescriptionKey] as? String ?? ""
-                }
-            })
-        }
-    }*/
-
     
 }

@@ -20,12 +20,22 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     
     var filteredProfiles = [User]()
     
-    var profiles : [User] = [User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)]
+    var profiles : [User] = [
+        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1),
+        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)
+    ]
     
     
     
     
     // MARK: - Table view data source
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        return 84;
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
