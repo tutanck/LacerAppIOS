@@ -269,43 +269,6 @@
             </objects>
             <point key="canvasLocation" x="761" y="2649"/>
         </scene>
-        <!--Username-->
-        <scene sceneID="fE8-sb-7kd">
-            <objects>
-                <collectionViewController id="RET-iB-kXa" customClass="UtherProfileCollectionViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="EMI-9s-yJL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fW8-gw-41D">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="E6Q-jZ-hHT">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="RET-iB-kXa" id="vyF-GW-PiL"/>
-                            <outlet property="delegate" destination="RET-iB-kXa" id="dot-gk-pVI"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Username" id="ozz-bp-C4b">
-                        <barButtonItem key="rightBarButtonItem" title="Contacter" id="tbw-pF-m3b"/>
-                    </navigationItem>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pTm-BF-4SW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2540" y="834"/>
-        </scene>
         <!--Profil-->
         <scene sceneID="8Nd-kM-Ej9">
             <objects>
