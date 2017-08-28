@@ -1,5 +1,5 @@
 //
-//  UserNeedViewController.swift
+//  UserNeedDetailsViewController.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 28/08/2017.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UserNeedViewController: ScrollViewController, UITextFieldDelegate, UITextViewDelegate   {
+class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, UITextViewDelegate   {
     
     //matchingProfilesTableView
     
