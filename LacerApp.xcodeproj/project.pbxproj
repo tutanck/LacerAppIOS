@@ -57,6 +57,7 @@
 		4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */; };
 		4EF162C31F53BF7F00D61310 /* UserNeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C21F53BF7F00D61310 /* UserNeedDetailsViewController.swift */; };
 		4EF162C51F5426DC00D61310 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C41F5426DC00D61310 /* ScrollViewController.swift */; };
+		4EF162C81F543C0600D61310 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C71F543C0600D61310 /* UserProfileViewController.swift */; };
 		4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */; };
 		4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */; };
 		4EF9E94D1F5026A500922E57 /* UserProfileCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E94C1F5026A500922E57 /* UserProfileCollectionViewController.swift */; };
@@ -141,6 +142,7 @@
 		4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingProfilesTableViewDelegate.swift; sourceTree = "<group>"; };
 		4EF162C21F53BF7F00D61310 /* UserNeedDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedDetailsViewController.swift; sourceTree = "<group>"; };
 		4EF162C41F5426DC00D61310 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		4EF162C71F543C0600D61310 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedUIScrollView.swift; sourceTree = "<group>"; };
 		4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSelectionTableViewController.swift; sourceTree = "<group>"; };
 		4EF9E94C1F5026A500922E57 /* UserProfileCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCollectionViewController.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				4E4D20CB1F4DE60B001AC0C4 /* Cell */,
 				4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */,
 				4EF9E94C1F5026A500922E57 /* UserProfileCollectionViewController.swift */,
+				4EF162C71F543C0600D61310 /* UserProfileViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				4E4D20D71F4E48E0001AC0C4 /* FrameEstimator.swift in Sources */,
 				4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */,
 				4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */,
+				4EF162C81F543C0600D61310 /* UserProfileViewController.swift in Sources */,
 				4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */,
 				4E4D20CD1F4DEE5D001AC0C4 /* MessengerCollectionViewController.swift in Sources */,
 				4E28FB611F51F86A00C6E5D7 /* UserContactTableViewCell.swift in Sources */,

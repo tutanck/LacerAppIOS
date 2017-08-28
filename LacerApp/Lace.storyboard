@@ -68,7 +68,7 @@
         <scene sceneID="jjQ-vK-fip">
             <objects>
                 <collectionViewController id="2cO-y8-eKK" customClass="UserProfileCollectionViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="11q-C8-H4H">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="11q-C8-H4H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,12 +112,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="userAvailabilitySwitchableControl" destination="ONy-ZZ-BXI" id="r2M-nK-Cd0"/>
-                        <segue destination="vIU-j4-9zO" kind="show" identifier="segueFromUserProfileToUserKeywords" id="Ume-Sc-GXh"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uK-I3-7g8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1198" y="2649"/>
+            <point key="canvasLocation" x="-329" y="3183"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OWW-Xk-zAA">
@@ -352,7 +351,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2cO-y8-eKK" kind="relationship" relationship="rootViewController" id="pYd-GD-c0M"/>
+                        <segue destination="TUo-6p-2ts" kind="relationship" relationship="rootViewController" id="Yd5-xA-DOb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBd-F2-FBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -521,10 +520,10 @@
             </objects>
             <point key="canvasLocation" x="761" y="-988"/>
         </scene>
-        <!--View Controller-->
+        <!--Mon profil-->
         <scene sceneID="oo0-qx-qhv">
             <objects>
-                <viewController id="TUo-6p-2ts" sceneMemberID="viewController">
+                <viewController id="TUo-6p-2ts" customClass="UserProfileViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cW5-gF-zoI"/>
                         <viewControllerLayoutGuide type="bottom" id="awL-pZ-4jp"/>
@@ -534,10 +533,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Mon profil" id="txn-UV-bvu">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="4pw-cp-6bx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Grr-JL-cDC" customClass="SwitchableColorButton" customModule="LacerApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Enreg." id="T2B-b1-8tD"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="userAvailabilitySwitchableControl" destination="Grr-JL-cDC" id="jhl-yy-2HK"/>
+                        <segue destination="vIU-j4-9zO" kind="show" identifier="segueFromUserProfileToUserKeywords" id="MNG-CD-k35"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhI-SC-cED" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610" y="-994"/>
+            <point key="canvasLocation" x="-1199" y="2649"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wi6-vL-Atz">
@@ -676,7 +696,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="TlW-JZ-wzq"/>
-        <segue reference="IMu-cn-UC2"/>
-        <segue reference="Cif-pL-ZmE"/>
+        <segue reference="SDh-5t-DqK"/>
+        <segue reference="upg-OZ-TnR"/>
     </inferredMetricsTieBreakers>
 </document>
