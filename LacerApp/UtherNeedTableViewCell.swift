@@ -149,94 +149,13 @@ class UtherNeedTableViewCell: BasicTableViewCell {
     
     //menuContainerView
     
-    //where //when //how many //date de publication -> modal affichage | btn  : forward to friend
+    //where //when //how many //date de publication -> modal affichage | btn  : forward to friend, go to messenger
     var menuContainerView : UIView = UIView()
     
-    
-    lazy var payImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.masksToBounds = true
-        imageView.isUserInteractionEnabled = true
-        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(displayPayInfo))
-        singleTap.numberOfTapsRequired = 1;
-        imageView.addGestureRecognizer(singleTap)
-        imageView.backgroundColor = .clear
-        imageView.image = UIImage(named : "userPhoto")
-        return imageView
-    }()
-    
-    
-    lazy var placeImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.masksToBounds = true
-        imageView.isUserInteractionEnabled = true
-        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(displayPlaceInfo))
-        singleTap.numberOfTapsRequired = 1;
-        imageView.addGestureRecognizer(singleTap)
-        imageView.backgroundColor = .clear
-        imageView.image = UIImage(named : "userPhoto")
-        return imageView
-    }()
-    
-    lazy var timeImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.masksToBounds = true
-        imageView.isUserInteractionEnabled = true
-        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(displayTimeInfo))
-        singleTap.numberOfTapsRequired = 1;
-        imageView.addGestureRecognizer(singleTap)
-        imageView.backgroundColor = .clear
-        imageView.image = UIImage(named : "userPhoto")
-        
-        return imageView
-    }()
-    
-    
-    lazy var metaInfosImageView: UIImageView = {  //pubDate , etc
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.masksToBounds = true
-        imageView.isUserInteractionEnabled = true
-        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(displayMetaInfos))
-        singleTap.numberOfTapsRequired = 1;
-        imageView.addGestureRecognizer(singleTap)
-        imageView.backgroundColor = .clear
-        imageView.image = UIImage(named : "userPhoto")
-        
-        return imageView
-    }()
-    
-    
-    lazy var forwardImageView: UIImageView = {  //pubDate , etc
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.masksToBounds = true
-        imageView.isUserInteractionEnabled = true
-        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(forwardToContacts))
-        singleTap.numberOfTapsRequired = 1;
-        imageView.addGestureRecognizer(singleTap)
-        imageView.backgroundColor = .clear
-        imageView.image = UIImage(named : "userPhoto")
-        
-        return imageView
-    }()
-    
-    
-    lazy var goImageView: UIImageView = {  //pubDate , etc
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.masksToBounds = true
-        imageView.isUserInteractionEnabled = true
-        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(contactClient))
-        singleTap.numberOfTapsRequired = 1;
-        imageView.addGestureRecognizer(singleTap)
-        imageView.backgroundColor = .clear
-        imageView.image = UIImage(named : "userPhoto")
-        
-        return imageView
+    let utherNeedMenu : UtherNeedMenu = {
+        let menu = UtherNeedMenu()
+        menu.spacing = 8
+        return menu
     }()
     
     
@@ -250,27 +169,9 @@ class UtherNeedTableViewCell: BasicTableViewCell {
         addConstraintsWithFormat("H:|-6-[v0]-6-|", views: containerView)
         addCenteredXConstraint(about: containerView, to: self)
         
-        containerView.addSubview(payImageView)
-        containerView.addSubview(placeImageView)
-        containerView.addSubview(timeImageView)
-        containerView.addSubview(metaInfosImageView)
-        containerView.addSubview(forwardImageView)
-        containerView.addSubview(goImageView)
-        
-        let spacing : CGFloat = 1
-        let width : CGFloat = 45
-        
-        
-        containerView.addConstraintsWithFormat("H:[v0(\(width))]-\(spacing)-[v1(\(width))]-\(spacing)-[v2(\(width))]-\(spacing)-[v3(\(width))]-\(spacing)-[v4(\(width))]-\(spacing)-[v5(\(width))]-6-|", views: payImageView,placeImageView,timeImageView,metaInfosImageView,forwardImageView,goImageView)
-        
-        containerView.addConstraintsWithFormat("V:|[v0]|", views: payImageView)
-        containerView.addConstraintsWithFormat("V:|[v0]|", views: placeImageView)
-        containerView.addConstraintsWithFormat("V:|[v0]|", views: timeImageView)
-        containerView.addConstraintsWithFormat("V:|[v0]|", views: metaInfosImageView)
-        containerView.addConstraintsWithFormat("V:|[v0]|", views: forwardImageView)
-        containerView.addConstraintsWithFormat("V:|[v0]|", views: goImageView)
-        
-        
+        containerView.addSubview(utherNeedMenu)
+        containerView.addCenteredXConstraint(about: utherNeedMenu, to: containerView)
+        containerView.addConstraintsWithFormat("V:|[v0]|", views: utherNeedMenu)
     }
     
     
@@ -294,45 +195,4 @@ class UtherNeedTableViewCell: BasicTableViewCell {
         }
     }
     
-    
-    func displayPayInfo(recognizer: UIGestureRecognizer) {
-        if let context = context, let need = need {
-            Alert.displayMessage(context: context, message: String(describing : "Pay"),confirmAction : nil,completion : nil,
-                                 headerTitle : "Qu'est-ce que j'y gagne ?")
-        }
-    }
-    
-    
-    func displayPlaceInfo(recognizer: UIGestureRecognizer) {
-        if let context = context, let need = need {
-            Alert.displayMessage(context: context, message: String(describing : "Place"),confirmAction : nil,completion : nil,
-                                 headerTitle : "Où ?")
-        }
-    }
-    
-    
-    func displayTimeInfo(recognizer: UIGestureRecognizer) {
-        if let context = context, let need = need {
-            Alert.displayMessage(context: context, message: String(describing : "Time"),confirmAction : nil,completion : nil,
-                                 headerTitle : "Quand ?")
-        }
-    }
-    
-    func displayMetaInfos(recognizer: UIGestureRecognizer) {
-        if let context = context, let need = need {
-            Alert.displayMessage(context: context, message: String(describing : "Information"),confirmAction : nil,completion : nil, headerTitle : "Informations")
-        }
-    }
-    
-    func forwardToContacts(recognizer: UIGestureRecognizer) {
-        if let context = context, let need = need {
-            context.performSegue(withIdentifier: "segueFromMarketPlaceToContactsSelection", sender: self)
-        }
-    }
-    
-    func contactClient(recognizer: UIGestureRecognizer) {
-        if let context = context, let need = need {
-            context.performSegue(withIdentifier: "segueFromMarketPlaceToMessenger", sender: self)
-        }
-    }
 }
