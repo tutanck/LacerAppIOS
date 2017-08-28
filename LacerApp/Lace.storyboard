@@ -494,7 +494,7 @@
         <!--Besoin-->
         <scene sceneID="Lyh-Pl-h5L">
             <objects>
-                <viewController id="xMp-Br-XeO" customClass="UserNeedViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xMp-Br-XeO" customClass="UserNeedDetailsViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6nf-M2-3zS"/>
                         <viewControllerLayoutGuide type="bottom" id="4a1-wd-b9z"/>
