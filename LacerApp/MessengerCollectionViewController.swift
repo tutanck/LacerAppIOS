@@ -113,9 +113,8 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
         messageInputContainerView.addConstraintsWithFormat("H:|[v0]|", views: topBorderView)
         messageInputContainerView.addConstraintsWithFormat("V:|[v0(0.5)]", views: topBorderView)
         
-        KeyboardNotification.keyboardWillShow(observer : self, selector: #selector(handleKeyboardNotification))
-        KeyboardNotification.keyboardWillHide(observer : self, selector: #selector(handleKeyboardNotification))
-        
+        KeyboardNotification.addObserverOnKeyboardWillShow(observer : self, selector: #selector(handleKeyboardNotification))
+        KeyboardNotification.addObserverOnKeyboardWillHide(observer : self, selector: #selector(handleKeyboardNotification))
     }
     
     

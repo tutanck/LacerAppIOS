@@ -135,8 +135,8 @@ class UserProfileCollectionViewController : UICollectionViewController, UICollec
     
     
     fileprivate func manageKeyboard() {
-        KeyboardNotification.keyboardWillShow(observer : self, selector: #selector(handleKeyboardNotification))
-        KeyboardNotification.keyboardWillHide(observer : self, selector: #selector(handleKeyboardNotification))
+        KeyboardNotification.addObserverOnKeyboardWillShow(observer : self, selector: #selector(handleKeyboardNotification))
+        KeyboardNotification.addObserverOnKeyboardWillHide(observer : self, selector: #selector(handleKeyboardNotification))
     }
     
     
