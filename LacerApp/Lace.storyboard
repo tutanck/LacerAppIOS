@@ -152,7 +152,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="userAvailabilitySwitchableControl" destination="7ZL-s4-FJ4" id="Sdp-Pk-7pt"/>
-                        <segue destination="RET-iB-kXa" kind="show" identifier="segueToUtherProfile" id="zpd-nR-U0R"/>
+                        <segue destination="fUq-1D-g7b" kind="show" identifier="segueToUtherProfile" id="PhB-7r-cnN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ikn-kI-mkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,6 +199,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cec-k8-ncV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1614" y="922"/>
+        </scene>
+        <!--Username-->
+        <scene sceneID="azs-BI-Svm">
+            <objects>
+                <viewController id="fUq-1D-g7b" customClass="UtherProfileViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p5L-8U-HPh"/>
+                        <viewControllerLayoutGuide type="bottom" id="xxq-v0-9h4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nbg-gX-HTK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Username" id="g3u-c1-YVT">
+                        <barButtonItem key="rightBarButtonItem" title="Contacter" id="nOh-RS-Cfi">
+                            <connections>
+                                <segue destination="r8e-RR-dnV" kind="show" id="QxW-B5-cY7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="eSv-pJ-MaD" kind="show" identifier="segueFromUtherProfileToUtherActivityKeywords" id="bgP-2f-aFM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qJM-dK-qul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="761" y="922"/>
         </scene>
         <!--Mot-clés-->
         <scene sceneID="psC-YM-P9S">
@@ -271,19 +299,12 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Username" id="ozz-bp-C4b">
-                        <barButtonItem key="rightBarButtonItem" title="Contacter" id="tbw-pF-m3b">
-                            <connections>
-                                <segue destination="r8e-RR-dnV" kind="show" id="Cif-pL-ZmE"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Contacter" id="tbw-pF-m3b"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="eSv-pJ-MaD" kind="show" identifier="segueFromUtherProfileToUtherActivityKeywords" id="luA-Bq-4qM"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTm-BF-4SW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="922"/>
+            <point key="canvasLocation" x="2540" y="834"/>
         </scene>
         <!--Profil-->
         <scene sceneID="8Nd-kM-Ej9">
@@ -386,7 +407,7 @@
                         <outlet property="userAvailabilitySwitchableControl" destination="PGc-u3-ABM" id="5Rn-fY-II7"/>
                         <segue destination="r8e-RR-dnV" kind="show" identifier="segueFromMarketPlaceToMessenger" id="SDh-5t-DqK"/>
                         <segue destination="ZtS-WI-GIp" kind="presentation" identifier="segueFromMarketPlaceToContactsSelection" id="KcW-Xi-Aw4"/>
-                        <segue destination="RET-iB-kXa" kind="show" identifier="segueFromMarketPlaceToUtherProfile" id="upg-OZ-TnR"/>
+                        <segue destination="fUq-1D-g7b" kind="show" identifier="segueFromMarketPlaceToUtherProfile" id="kfg-Xz-ivc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmE-AA-cNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -458,7 +479,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Enreg." id="8kq-AD-pqV"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="RET-iB-kXa" kind="show" id="IMu-cn-UC2"/>
+                        <segue destination="fUq-1D-g7b" kind="show" id="lEe-uE-xub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgZ-Ti-Hhw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -540,7 +561,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="RET-iB-kXa" kind="show" id="CED-M5-GRL"/>
+                                    <segue destination="fUq-1D-g7b" kind="show" id="ELy-vD-OBc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -594,7 +615,7 @@
                     <navigationItem key="navigationItem" title="Messenger" id="gQ6-s4-A6l">
                         <barButtonItem key="rightBarButtonItem" title="Profil" id="LEJ-rV-f2H">
                             <connections>
-                                <segue destination="RET-iB-kXa" kind="show" id="GpG-yI-nxV"/>
+                                <segue destination="fUq-1D-g7b" kind="show" id="BmD-bQ-bU2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -642,7 +663,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="TlW-JZ-wzq"/>
-        <segue reference="SDh-5t-DqK"/>
-        <segue reference="upg-OZ-TnR"/>
+        <segue reference="lEe-uE-xub"/>
+        <segue reference="QxW-B5-cY7"/>
     </inferredMetricsTieBreakers>
 </document>

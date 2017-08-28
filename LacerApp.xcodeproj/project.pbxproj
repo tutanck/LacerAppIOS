@@ -58,6 +58,7 @@
 		4EF162C31F53BF7F00D61310 /* UserNeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C21F53BF7F00D61310 /* UserNeedDetailsViewController.swift */; };
 		4EF162C51F5426DC00D61310 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C41F5426DC00D61310 /* ScrollViewController.swift */; };
 		4EF162C81F543C0600D61310 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C71F543C0600D61310 /* UserProfileViewController.swift */; };
+		4EF162CA1F54460600D61310 /* UtherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C91F54460600D61310 /* UtherProfileViewController.swift */; };
 		4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */; };
 		4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */; };
 		4EF9E9511F50482700922E57 /* FormLabeledEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9501F50482700922E57 /* FormLabeledEntry.swift */; };
@@ -141,6 +142,7 @@
 		4EF162C21F53BF7F00D61310 /* UserNeedDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedDetailsViewController.swift; sourceTree = "<group>"; };
 		4EF162C41F5426DC00D61310 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		4EF162C71F543C0600D61310 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		4EF162C91F54460600D61310 /* UtherProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherProfileViewController.swift; sourceTree = "<group>"; };
 		4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedUIScrollView.swift; sourceTree = "<group>"; };
 		4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSelectionTableViewController.swift; sourceTree = "<group>"; };
 		4EF9E9501F50482700922E57 /* FormLabeledEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabeledEntry.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */,
 				4E28FB5C1F51D8B900C6E5D7 /* UtherProfileCollectionViewController.swift */,
 				4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */,
+				4EF162C91F54460600D61310 /* UtherProfileViewController.swift */,
 			);
 			name = MarketPlace;
 			sourceTree = "<group>";
@@ -814,6 +817,7 @@
 				4E4D20DD1F4E74D2001AC0C4 /* ExtendedUICollectionView.swift in Sources */,
 				4EDAA95C1F36186600F1A5A2 /* UserKeywordsTableViewController.swift in Sources */,
 				4EB204601F1ED4070096CC60 /* Keyword.swift in Sources */,
+				4EF162CA1F54460600D61310 /* UtherProfileViewController.swift in Sources */,
 				4E28FB671F522E2A00C6E5D7 /* SearchUthersTableViewCell.swift in Sources */,
 				4EB204361F1972090096CC60 /* Alert.swift in Sources */,
 				4ED2B0B51F2639D10072BAEA /* WelcomeViewController.swift in Sources */,

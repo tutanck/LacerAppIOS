@@ -184,17 +184,6 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

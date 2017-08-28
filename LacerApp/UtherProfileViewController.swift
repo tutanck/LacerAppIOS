@@ -1,16 +1,14 @@
 //
-//  UtherProfileCollectionViewCell.swift
+//  UtherProfileViewController.swift
 //  LacerApp
 //
-//  Created by Joan Angb on 26/08/2017.
+//  Created by Joan Angb on 28/08/2017.
 //  Copyright © 2017 DevArtisant. All rights reserved.
 //
 
 import UIKit
 
-class UtherProfileCollectionViewCell: BasicCollectionViewCell {
-    
-    var context : UtherProfileCollectionViewController?
+class UtherProfileViewController: ScrollViewController {
     
     
     //userProfileImageView
@@ -56,7 +54,7 @@ class UtherProfileCollectionViewCell: BasicCollectionViewCell {
     }()
     
     fileprivate func setupUserProfileImageView() {
-        FormLabeledEntry.installEntryIn(parent: self,entry: profileImageView)
+        FormLabeledEntry.installEntryIn(parent: containerView,entry: profileImageView)
     }
     
     
@@ -70,8 +68,8 @@ class UtherProfileCollectionViewCell: BasicCollectionViewCell {
     }()
     
     fileprivate func setupStandingRatingControl() {
-        addSubview(standingRatingControl)
-        addCenteredXConstraint(about: standingRatingControl, to: self)
+        containerView.addSubview(standingRatingControl)
+        containerView.addCenteredXConstraint(about: standingRatingControl, to: containerView)
     }
     
     
@@ -106,7 +104,7 @@ class UtherProfileCollectionViewCell: BasicCollectionViewCell {
     
     fileprivate func setupTypeContainerView() -> UIView{
         return FormLabeledEntry.installEntryIn(
-            parent: self,
+            parent: containerView,
             entry: FormLabeledEntry.composeEntry(
                 containerView: typeContainerView,
                 view: typeSegmentedControl,
@@ -140,7 +138,7 @@ class UtherProfileCollectionViewCell: BasicCollectionViewCell {
     
     fileprivate func setupIdentityContainerView() -> UIView{
         return FormLabeledEntry.installEntryIn(
-            parent: self,
+            parent: containerView,
             entry: FormLabeledEntry.composeEntry(
                 containerView: identityContainerView,
                 view: usernameTextField,
@@ -174,7 +172,7 @@ class UtherProfileCollectionViewCell: BasicCollectionViewCell {
     
     fileprivate func setupResumeContainerView() -> UIView{
         return FormLabeledEntry.installEntryIn(
-            parent: self,
+            parent: containerView,
             entry: FormLabeledEntry.composeEntry(
                 containerView: resumeContainerView,
                 view: resumeTextView,
@@ -199,13 +197,21 @@ class UtherProfileCollectionViewCell: BasicCollectionViewCell {
     }()
     
     fileprivate func setupManageActivityKeywordsButton() {
-        addSubview(manageActivityKeywordsButton)
-        addConstraintsWithFormat("H:|-24-[v0]-24-|", views: manageActivityKeywordsButton)
-        addCenteredXConstraint(about: manageActivityKeywordsButton, to: self)
+        containerView.addSubview(manageActivityKeywordsButton)
+        containerView.addConstraintsWithFormat("H:|-24-[v0]-24-|", views: manageActivityKeywordsButton)
+        containerView.addCenteredXConstraint(about: manageActivityKeywordsButton, to: containerView)
     }
     
     
-    override func setupViews() {
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.scrollView.contentSize = CGSize(width:view.bounds.size.width,height: 800)
+        containerView.backgroundColor = UIColor(white: 0.99, alpha: 1)
+        
         setupUserProfileImageView()
         setupStandingRatingControl()
         setupTypeContainerView()
@@ -213,9 +219,8 @@ class UtherProfileCollectionViewCell: BasicCollectionViewCell {
         setupResumeContainerView()
         setupManageActivityKeywordsButton()
         
-        addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton)
+        containerView.addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton)
     }
-    
     
     
     
@@ -224,9 +229,20 @@ class UtherProfileCollectionViewCell: BasicCollectionViewCell {
     // MARK: - SEGUE
     
     func showActivityKeywords(){
-        if let context = context/*, let uther = uther TODO */ {
-            context.performSegue(withIdentifier: "segueFromUtherProfileToUtherActivityKeywords", sender: self)
-        }
+        performSegue(withIdentifier: "segueFromUtherProfileToUtherActivityKeywords", sender: self)
     }
+    
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
