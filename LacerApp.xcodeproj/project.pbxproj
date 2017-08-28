@@ -55,7 +55,6 @@
 		4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */; };
 		4EDAA95C1F36186600F1A5A2 /* UserKeywordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */; };
 		4EDAA95E1F362A5F00F1A5A2 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */; };
-		4EDAA9641F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */; };
 		4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */; };
 		4EF162C31F53BF7F00D61310 /* UserNeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C21F53BF7F00D61310 /* UserNeedViewController.swift */; };
 		4EF162C51F5426DC00D61310 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C41F5426DC00D61310 /* ScrollViewController.swift */; };
@@ -141,7 +140,6 @@
 		4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gatekeeper.swift; sourceTree = "<group>"; };
 		4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordsTableViewController.swift; sourceTree = "<group>"; };
 		4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
-		4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedDetailsViewController.swift; sourceTree = "<group>"; };
 		4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingProfilesTableViewDelegate.swift; sourceTree = "<group>"; };
 		4EF162C21F53BF7F00D61310 /* UserNeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedViewController.swift; sourceTree = "<group>"; };
 		4EF162C41F5426DC00D61310 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
@@ -462,7 +460,6 @@
 				4E4D20CA1F4DE54D001AC0C4 /* Cells */,
 				4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */,
 				4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */,
-				4EDAA9631F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift */,
 				4EF162C21F53BF7F00D61310 /* UserNeedViewController.swift */,
 			);
 			name = Needs;
@@ -784,7 +781,6 @@
 			files = (
 				4E28FB651F522CE400C6E5D7 /* MatchingProfilesTableViewCell.swift in Sources */,
 				4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */,
-				4EDAA9641F3ECC8B00F1A5A2 /* UserNeedDetailsViewController.swift in Sources */,
 				4ECDB3CA1F43C97F00352191 /* BasicNeed.swift in Sources */,
 				4EB204681F2147950096CC60 /* User.swift in Sources */,
 				4E4D20D31F4DF210001AC0C4 /* MessageCollectionViewCell.swift in Sources */,
