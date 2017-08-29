@@ -38,8 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
-               // self.window!.rootViewController = Gatekeeper.getGate()
-               // self.window!.makeKeyAndVisible()
+                self.window!.rootViewController = Gatekeeper.getGate()
+                self.window!.makeKeyAndVisible()
             }
         }
         

@@ -180,14 +180,31 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     
     
+    lazy var disconnectButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("DÉCONNECTION", for: UIControlState())
+        let backgroundColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
+        let titleColor = UIColor(white: 0.99, alpha: 1)
+        button.setTitleColor(titleColor, for: UIControlState())
+        button.backgroundColor = backgroundColor
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        button.addTarget(self, action: #selector(disconnect), for: .touchUpInside)
+        button.layer.cornerRadius = 5
+        button.clipsToBounds = true
+        return button
+    }()
     
+    fileprivate func setupDisconnectButton() {
+        containerView.addSubview(disconnectButton)
+        containerView.addConstraintsWithFormat("H:|-24-[v0]-24-|", views: disconnectButton)
+        containerView.addCenteredXConstraint(about: disconnectButton, to: containerView)
+    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.scrollView.contentSize = CGSize(width:view.bounds.size.width,height: 800)
+        self.scrollView.contentSize = CGSize(width:view.bounds.size.width,height: 832)
         containerView.backgroundColor = UIColor(white: 0.99, alpha: 1)
         
         setupUserProfileImageView()
@@ -196,9 +213,9 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
         setupIdentityContainerView()
         setupResumeContainerView()
         setupManageActivityKeywordsButton()
+        setupDisconnectButton()
         
-        
-        containerView.addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton)
+        containerView.addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]-32-[v6(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton,disconnectButton)
         
         
         //user status button settings
@@ -259,9 +276,19 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     // MARK: - Actions
     
+    func disconnect(){
+        Alert.displayMessage(
+            context: self,
+            message: "Vous allez être déconnecté.",
+            confirmAction : {action in print("déconnection")},
+            headerTitle : "Déconnection",
+            cancellable : true
+        )
+    }
+    
     func showActivityKeywords(){
-             performSegue(withIdentifier: "segueFromUserProfileToUserKeywords", sender: self)
-     }
+        performSegue(withIdentifier: "segueFromUserProfileToUserKeywords", sender: self)
+    }
     
     
     func hideKeyboard(_ sender: AnyObject) { usernameTextField.endEditing(true); resumeTextView.endEditing(true) }
