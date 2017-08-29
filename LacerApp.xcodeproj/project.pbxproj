@@ -13,7 +13,7 @@
 		4E28FB651F522CE400C6E5D7 /* MatchingProfilesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E28FB641F522CE400C6E5D7 /* MatchingProfilesTableViewCell.swift */; };
 		4E28FB671F522E2A00C6E5D7 /* SearchUthersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E28FB661F522E2A00C6E5D7 /* SearchUthersTableViewCell.swift */; };
 		4E28FB691F5241E100C6E5D7 /* CodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E28FB681F5241E100C6E5D7 /* CodeVerificationViewController.swift */; };
-		4E28FB6C1F52421D00C6E5D7 /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E28FB6B1F52421D00C6E5D7 /* CodeInputView.swift */; };
+		4E28FB6C1F52421D00C6E5D7 /* CodeInputViewO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E28FB6B1F52421D00C6E5D7 /* CodeInputViewO.swift */; };
 		4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */; };
 		4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */; };
 		4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */; };
@@ -58,6 +58,7 @@
 		4EF162C81F543C0600D61310 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C71F543C0600D61310 /* UserProfileViewController.swift */; };
 		4EF162CA1F54460600D61310 /* UtherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C91F54460600D61310 /* UtherProfileViewController.swift */; };
 		4EF162CC1F54B1FB00D61310 /* UtherNeedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162CB1F54B1FB00D61310 /* UtherNeedMenu.swift */; };
+		4EF162CE1F5558B400D61310 /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162CD1F5558B400D61310 /* CodeInputView.swift */; };
 		4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */; };
 		4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */; };
 		4EF9E9511F50482700922E57 /* FormLabeledEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9501F50482700922E57 /* FormLabeledEntry.swift */; };
@@ -90,7 +91,7 @@
 		4E28FB641F522CE400C6E5D7 /* MatchingProfilesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingProfilesTableViewCell.swift; sourceTree = "<group>"; };
 		4E28FB661F522E2A00C6E5D7 /* SearchUthersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUthersTableViewCell.swift; sourceTree = "<group>"; };
 		4E28FB681F5241E100C6E5D7 /* CodeVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewController.swift; sourceTree = "<group>"; };
-		4E28FB6B1F52421D00C6E5D7 /* CodeInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
+		4E28FB6B1F52421D00C6E5D7 /* CodeInputViewO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputViewO.swift; sourceTree = "<group>"; };
 		4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 		4EF162C71F543C0600D61310 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		4EF162C91F54460600D61310 /* UtherProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherProfileViewController.swift; sourceTree = "<group>"; };
 		4EF162CB1F54B1FB00D61310 /* UtherNeedMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeedMenu.swift; sourceTree = "<group>"; };
+		4EF162CD1F5558B400D61310 /* CodeInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
 		4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedUIScrollView.swift; sourceTree = "<group>"; };
 		4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSelectionTableViewController.swift; sourceTree = "<group>"; };
 		4EF9E9501F50482700922E57 /* FormLabeledEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabeledEntry.swift; sourceTree = "<group>"; };
@@ -197,7 +199,7 @@
 		4E28FB6A1F5241F300C6E5D7 /* modules */ = {
 			isa = PBXGroup;
 			children = (
-				4E28FB6B1F52421D00C6E5D7 /* CodeInputView.swift */,
+				4E28FB6B1F52421D00C6E5D7 /* CodeInputViewO.swift */,
 			);
 			name = modules;
 			sourceTree = "<group>";
@@ -430,9 +432,10 @@
 		4EDAA94B1F2D6CF000F1A5A2 /* CustomControl */ = {
 			isa = PBXGroup;
 			children = (
-				4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */,
 				4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */,
 				4EF162CB1F54B1FB00D61310 /* UtherNeedMenu.swift */,
+				4EF162CD1F5558B400D61310 /* CodeInputView.swift */,
+				4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */,
 				4EB204411F1A89E20096CC60 /* Spot.swift */,
 			);
 			name = CustomControl;
@@ -790,6 +793,7 @@
 				4EB2046C1F214C5F0096CC60 /* StatusColor.swift in Sources */,
 				4EF162C31F53BF7F00D61310 /* UserNeedDetailsViewController.swift in Sources */,
 				4EB2043E1F1A21E30096CC60 /* UserContactsTableViewController.swift in Sources */,
+				4EF162CE1F5558B400D61310 /* CodeInputView.swift in Sources */,
 				4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */,
 				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
 				4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */,
@@ -806,7 +810,7 @@
 				4E4D20BE1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift in Sources */,
 				4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */,
 				4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */,
-				4E28FB6C1F52421D00C6E5D7 /* CodeInputView.swift in Sources */,
+				4E28FB6C1F52421D00C6E5D7 /* CodeInputViewO.swift in Sources */,
 				4E4D20C31F4BD51F001AC0C4 /* KeywordTableViewCell.swift in Sources */,
 				4EF162C51F5426DC00D61310 /* ScrollViewController.swift in Sources */,
 				4ECDB3C81F428E6300352191 /* Fire.swift in Sources */,

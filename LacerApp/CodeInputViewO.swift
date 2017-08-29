@@ -8,13 +8,11 @@
 
 import UIKit
 
-open class CodeInputView: UIView, UIKeyInput {
+/*open class CodeInputView: UIView, UIKeyInput {
     
     open var delegate: CodeInputViewDelegate?
-    
+   
     private var nextTag = 1
-    
-    var nbInputs = 4
     
     // MARK: - UIResponder
     
@@ -27,11 +25,9 @@ open class CodeInputView: UIView, UIKeyInput {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        //backgroundColor = .green //debug
-        
         // Add six digitLabels
         var frame = CGRect(x: 15, y: 10, width: 35, height: 40)
-        for index in 1...nbInputs {
+        for index in 1...6 {
             let digitLabel = UILabel(frame: frame)
             digitLabel.font = .systemFont(ofSize: 42)
             digitLabel.tag = index
@@ -50,11 +46,11 @@ open class CodeInputView: UIView, UIKeyInput {
     }
     
     open func insertText(_ text: String) {
-        if nextTag < nbInputs+1 {
+        if nextTag < 7 {
             (viewWithTag(nextTag)! as! UILabel).text = text
             nextTag += 1
             
-            if nextTag == nbInputs+1 {
+            if nextTag == 7 {
                 var code = ""
                 for index in 1..<nextTag {
                     code += (viewWithTag(index)! as! UILabel).text!
@@ -85,4 +81,4 @@ open class CodeInputView: UIView, UIKeyInput {
 public protocol CodeInputViewDelegate {
     func codeInputView(_ codeInputView: CodeInputView, didFinishWithCode code: String)
 }
- 
+ */

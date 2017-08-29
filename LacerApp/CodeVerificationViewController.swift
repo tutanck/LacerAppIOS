@@ -13,7 +13,15 @@ class CodeVerificationViewController: UIViewController, CodeInputViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(white: 0.99, alpha: 1)
-        let frame = CGRect(x: (view.frame.width-315)/2, y: 242, width: 315, height: 60)
+        
+        let codeInputViewWidth : CGFloat = 215
+        
+        let frame = CGRect(
+            x: (view.frame.width - codeInputViewWidth)/2,
+            y: 242,
+            width: codeInputViewWidth,
+            height: 60
+        )
         let codeInputView = CodeInputView(frame: frame)
         codeInputView.delegate = self
         view.addSubview(codeInputView)
@@ -22,7 +30,7 @@ class CodeVerificationViewController: UIViewController, CodeInputViewDelegate {
     
     func codeInputView(_ codeInputView: CodeInputView, didFinishWithCode code: String) {
         
-        if code == "123456" {
+        if code == "1234" {
             self.connect()
         }else{
              Alert.displayMessage(context : self,

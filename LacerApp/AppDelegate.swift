@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        //Searchbars shared global style
+        UISearchBar.appearance().barTintColor = UIColor(white: 0.99, alpha: 1)
+        UISearchBar.appearance().tintColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = UIColor(white: 0.99, alpha: 1)
+
+        
         //MARK : - Firebasee config
         FirebaseApp.configure()
         
@@ -32,8 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.window!.rootViewController = Gatekeeper.getGate()
-                self.window!.makeKeyAndVisible()
+               // self.window!.rootViewController = Gatekeeper.getGate()
+               // self.window!.makeKeyAndVisible()
             }
         }
         
