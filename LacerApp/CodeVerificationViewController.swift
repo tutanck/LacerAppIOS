@@ -14,11 +14,11 @@ class CodeVerificationViewController: UIViewController, CodeInputViewDelegate {
         super.viewDidLoad()
         view.backgroundColor = UIColor(white: 0.99, alpha: 1)
         
-        let codeInputViewWidth : CGFloat = 215
+        let codeInputViewWidth : CGFloat = 15 + 200 // vary from +-50(input's space) per input
         
         let frame = CGRect(
-            x: (view.frame.width - codeInputViewWidth)/2,
-            y: 242,
+            x: (view.frame.width - codeInputViewWidth)/2, //centered
+            y: 242, //arbitrary
             width: codeInputViewWidth,
             height: 60
         )
