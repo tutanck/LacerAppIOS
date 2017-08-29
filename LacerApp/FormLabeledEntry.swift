@@ -32,6 +32,8 @@ class FormLabeledEntry {
         containerView.addSubview(label)
         containerView.addSubview(view)
         
+        //containerView.translatesAutoresizingMaskIntoConstraints = false
+        
         containerView.addConstraintsWithFormat("H:|-\(leftMargin!)-[v0]-\(rightMargin!)-|", views: label)
         
         containerView.addConstraintsWithFormat("H:|-\(leftMargin!)-[v0]-\(rightMargin!)-|", views: view)
