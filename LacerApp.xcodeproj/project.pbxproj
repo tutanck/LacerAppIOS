@@ -13,7 +13,6 @@
 		4E28FB651F522CE400C6E5D7 /* MatchingProfilesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E28FB641F522CE400C6E5D7 /* MatchingProfilesTableViewCell.swift */; };
 		4E28FB671F522E2A00C6E5D7 /* SearchUthersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E28FB661F522E2A00C6E5D7 /* SearchUthersTableViewCell.swift */; };
 		4E28FB691F5241E100C6E5D7 /* CodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E28FB681F5241E100C6E5D7 /* CodeVerificationViewController.swift */; };
-		4E28FB6C1F52421D00C6E5D7 /* CodeInputViewO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E28FB6B1F52421D00C6E5D7 /* CodeInputViewO.swift */; };
 		4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */; };
 		4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */; };
 		4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */; };
@@ -37,7 +36,6 @@
 		4EB204361F1972090096CC60 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204351F1972090096CC60 /* Alert.swift */; };
 		4EB204381F1A060C0096CC60 /* Lace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB204371F1A060C0096CC60 /* Lace.storyboard */; };
 		4EB2043E1F1A21E30096CC60 /* UserContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2043D1F1A21E30096CC60 /* UserContactsTableViewController.swift */; };
-		4EB204421F1A89E20096CC60 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204411F1A89E20096CC60 /* Spot.swift */; };
 		4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */; };
 		4EB2044C1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */; };
 		4EB204581F1BF6210096CC60 /* Need.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204571F1BF6210096CC60 /* Need.swift */; };
@@ -91,7 +89,6 @@
 		4E28FB641F522CE400C6E5D7 /* MatchingProfilesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingProfilesTableViewCell.swift; sourceTree = "<group>"; };
 		4E28FB661F522E2A00C6E5D7 /* SearchUthersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUthersTableViewCell.swift; sourceTree = "<group>"; };
 		4E28FB681F5241E100C6E5D7 /* CodeVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewController.swift; sourceTree = "<group>"; };
-		4E28FB6B1F52421D00C6E5D7 /* CodeInputViewO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputViewO.swift; sourceTree = "<group>"; };
 		4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,7 +118,6 @@
 		4EB204351F1972090096CC60 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4EB204371F1A060C0096CC60 /* Lace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lace.storyboard; sourceTree = "<group>"; };
 		4EB2043D1F1A21E30096CC60 /* UserContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserContactsTableViewController.swift; sourceTree = "<group>"; };
-		4EB204411F1A89E20096CC60 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchableColorButton.swift; sourceTree = "<group>"; };
 		4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UthersNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4EB204571F1BF6210096CC60 /* Need.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Need.swift; sourceTree = "<group>"; };
@@ -199,7 +195,6 @@
 		4E28FB6A1F5241F300C6E5D7 /* modules */ = {
 			isa = PBXGroup;
 			children = (
-				4E28FB6B1F52421D00C6E5D7 /* CodeInputViewO.swift */,
 			);
 			name = modules;
 			sourceTree = "<group>";
@@ -436,7 +431,6 @@
 				4EF162CB1F54B1FB00D61310 /* UtherNeedMenu.swift */,
 				4EF162CD1F5558B400D61310 /* CodeInputView.swift */,
 				4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */,
-				4EB204411F1A89E20096CC60 /* Spot.swift */,
 			);
 			name = CustomControl;
 			sourceTree = "<group>";
@@ -805,12 +799,10 @@
 				4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */,
 				4E4D20CD1F4DEE5D001AC0C4 /* MessengerCollectionViewController.swift in Sources */,
 				4E28FB611F51F86A00C6E5D7 /* UserContactTableViewCell.swift in Sources */,
-				4EB204421F1A89E20096CC60 /* Spot.swift in Sources */,
 				4EB204581F1BF6210096CC60 /* Need.swift in Sources */,
 				4E4D20BE1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift in Sources */,
 				4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */,
 				4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */,
-				4E28FB6C1F52421D00C6E5D7 /* CodeInputViewO.swift in Sources */,
 				4E4D20C31F4BD51F001AC0C4 /* KeywordTableViewCell.swift in Sources */,
 				4EF162C51F5426DC00D61310 /* ScrollViewController.swift in Sources */,
 				4ECDB3C81F428E6300352191 /* Fire.swift in Sources */,
