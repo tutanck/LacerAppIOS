@@ -182,7 +182,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     lazy var disconnectButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("DÉCONNECTION", for: UIControlState())
+        button.setTitle("DÉCONNEXION", for: UIControlState())
         let backgroundColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
         let titleColor = UIColor(white: 0.99, alpha: 1)
         button.setTitleColor(titleColor, for: UIControlState())
@@ -280,8 +280,8 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
         Alert.displayMessage(
             context: self,
             message: "Vous allez être déconnecté.",
-            confirmAction : {action in print("déconnection")},
-            headerTitle : "Déconnection",
+            confirmAction : {action in print("déconnexion")},
+            headerTitle : "Déconnexion",
             cancellable : true
         )
     }
