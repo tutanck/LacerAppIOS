@@ -21,7 +21,7 @@ import UIKit
     
     //MARK: IBInspectables
     
-    @IBInspectable var buttonSize: CGSize = CGSize(width: 44.0, height: 44.0) {
+    @IBInspectable var buttonSize: CGSize = CGSize(width: 44.0, height: 40.0/*menuContainer is 40 for height : change this accordingly*/) {
         didSet {
             setupButtons()
         }
