@@ -9,6 +9,7 @@ target 'LacerApp' do
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
+pod 'Socket.IO-Client-Swift'
 
   target 'LacerAppTests' do
     inherit! :search_paths

@@ -51,6 +51,7 @@
 		4EDAA95C1F36186600F1A5A2 /* UserKeywordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */; };
 		4EDAA95E1F362A5F00F1A5A2 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */; };
 		4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */; };
+		4EE74F3E1F5786040023C34D /* Regina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE74F3D1F5786040023C34D /* Regina.swift */; };
 		4EF162C31F53BF7F00D61310 /* UserNeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C21F53BF7F00D61310 /* UserNeedDetailsViewController.swift */; };
 		4EF162C51F5426DC00D61310 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C41F5426DC00D61310 /* ScrollViewController.swift */; };
 		4EF162C81F543C0600D61310 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF162C71F543C0600D61310 /* UserProfileViewController.swift */; };
@@ -133,6 +134,7 @@
 		4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordsTableViewController.swift; sourceTree = "<group>"; };
 		4EDAA95D1F362A5F00F1A5A2 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		4EDAA9651F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingProfilesTableViewDelegate.swift; sourceTree = "<group>"; };
+		4EE74F3D1F5786040023C34D /* Regina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regina.swift; sourceTree = "<group>"; };
 		4EF162C21F53BF7F00D61310 /* UserNeedDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedDetailsViewController.swift; sourceTree = "<group>"; };
 		4EF162C41F5426DC00D61310 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		4EF162C71F543C0600D61310 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				4EDAA94B1F2D6CF000F1A5A2 /* CustomControl */,
 				4E4D20BA1F4B8B93001AC0C4 /* Extensions */,
 				4ECDB3C61F428E4100352191 /* Firebase */,
+				4EE74F3C1F5785C80023C34D /* New Group */,
 				4E4D20BF1F4BA111001AC0C4 /* ToolServices */,
 			);
 			name = Utils;
@@ -472,6 +475,14 @@
 				4EB2043D1F1A21E30096CC60 /* UserContactsTableViewController.swift */,
 			);
 			name = Contact;
+			sourceTree = "<group>";
+		};
+		4EE74F3C1F5785C80023C34D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				4EE74F3D1F5786040023C34D /* Regina.swift */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		94E1B98DFB6B5698F8CDCB09 /* Frameworks */ = {
@@ -783,6 +794,7 @@
 				4E4D20DB1F4E6C2B001AC0C4 /* KeyboardNotification.swift in Sources */,
 				4EF162CC1F54B1FB00D61310 /* UtherNeedMenu.swift in Sources */,
 				4EDAA95E1F362A5F00F1A5A2 /* RatingControl.swift in Sources */,
+				4EE74F3E1F5786040023C34D /* Regina.swift in Sources */,
 				4EB2044C1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift in Sources */,
 				4EB2046C1F214C5F0096CC60 /* StatusColor.swift in Sources */,
 				4EF162C31F53BF7F00D61310 /* UserNeedDetailsViewController.swift in Sources */,

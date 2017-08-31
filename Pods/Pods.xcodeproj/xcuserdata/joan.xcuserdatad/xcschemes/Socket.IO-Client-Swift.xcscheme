@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "46750A44D32C4D664A87E576990B6E10"
-               BuildableName = "Pods_LacerApp.framework"
-               BlueprintName = "Pods-LacerApp"
+               BlueprintIdentifier = "BE49032326C62F1854480EC3D2D9763E"
+               BuildableName = "SocketIO.framework"
+               BlueprintName = "Socket.IO-Client-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "46750A44D32C4D664A87E576990B6E10"
-            BuildableName = "Pods_LacerApp.framework"
-            BlueprintName = "Pods-LacerApp"
+            BlueprintIdentifier = "BE49032326C62F1854480EC3D2D9763E"
+            BuildableName = "SocketIO.framework"
+            BlueprintName = "Socket.IO-Client-Swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
