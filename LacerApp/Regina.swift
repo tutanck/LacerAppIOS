@@ -155,5 +155,4 @@ public enum ReginaEvent : String {
 }
 
 public typealias JSONObject = [String: Any]
-
 public typealias JSONObjects = [[String: Any]]
