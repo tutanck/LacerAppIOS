@@ -20,8 +20,11 @@ public class Regina {
         
         //linked server config
         if let url = URL(string: serverURL){
-            socket = SocketIOClient(socketURL: url, config: [.log(true), .compress]) //TODO CHECK OPTIONS MEANING
-        }else{ return nil }
+            socket = SocketIOClient(socketURL: url, config: [.log(true), .compress]) //config : log socket messages and allow data compression
+        }else{
+            print("Regina client failed to init")
+            return nil
+        }
         
         
         //Events handling
@@ -55,7 +58,7 @@ public class Regina {
         socket.on(ReginaEvent.noack.rawValue) { dataArray, ack in
             delegate.handle(reginaEvent: .noack, message : dataArray[0] as! String) //TODO TEST
         }
-
+        
     }
     
     deinit {
@@ -76,10 +79,10 @@ public class Regina {
     
     public func find(
         coll : String,
-        query : SocketData?=[:],
-        opt : SocketData?=[:],
-        meta : NSDictionary?=[:],
-        ack : @escaping AckCallback,
+        query : JSONObject?=[:],
+        opt : JSONObject?=[:],
+        meta : JSONObject?=[:],
+        ack : @escaping ([Any]) -> (),
         timeout : Double?=0
         ){
         socket.emitWithAck("find", coll, query!, opt!, meta!).timingOut(after: timeout!, callback: ack)
@@ -89,10 +92,10 @@ public class Regina {
     
     public func count(
         coll : String,
-        query : SocketData?=[:],
-        opt : SocketData?=[:],
-        meta : NSDictionary?=[:],
-        ack : @escaping AckCallback,
+        query : JSONObject?=[:],
+        opt : JSONObject?=[:],
+        meta : JSONObject?=[:],
+        ack : @escaping ([Any]) -> (),
         timeout : Double?=0
         ){
         socket.emitWithAck("count", coll, query!, opt!, meta!).timingOut(after: timeout!, callback: ack)
@@ -102,10 +105,10 @@ public class Regina {
     
     public func insert(
         coll : String,
-        docs : SocketData,
-        opt : SocketData?=[:],
-        meta : NSDictionary?=[:],
-        ack : @escaping AckCallback,
+        docs : JSONObjects,
+        opt : JSONObject?=[:],
+        meta : JSONObject?=[:],
+        ack : @escaping ([Any]) -> (),
         timeout : Double?=0
         ){
         socket.emitWithAck("insert", coll, docs, opt!, meta!).timingOut(after: timeout!, callback: ack)
@@ -115,11 +118,11 @@ public class Regina {
     
     public func update(
         coll : String,
-        query : SocketData,
-        update : SocketData,
-        opt : SocketData?=[:],
-        meta : NSDictionary?=[:],
-        ack : @escaping AckCallback,
+        query : JSONObject,
+        update : JSONObject,
+        opt : JSONObject?=[:],
+        meta : JSONObject?=[:],
+        ack : @escaping ([Any]) -> (),
         timeout : Double?=0
         ){
         socket.emitWithAck("update", coll, query, update, opt!, meta!).timingOut(after: timeout!, callback: ack)
@@ -129,10 +132,10 @@ public class Regina {
     
     public func remove(
         coll : String,
-        query : SocketData,
-        opt : SocketData?=[:],
-        meta : NSDictionary?=[:],
-        ack : @escaping AckCallback,
+        query : JSONObject,
+        opt : JSONObject?=[:],
+        meta : JSONObject?=[:],
+        ack : @escaping ([Any]) -> (),
         timeout : Double?=0
         ){
         socket.emitWithAck("remove", coll, query, opt!, meta!).timingOut(after: timeout!, callback: ack)
@@ -148,7 +151,9 @@ public protocol SocketClientEventDelegate {
 }
 
 public enum ReginaEvent : String {
-    case noack = "regina_noack"
+    case noack = "regina_noack_callback_error"
 }
 
+public typealias JSONObject = [String: Any]
 
+public typealias JSONObjects = [[String: Any]]
