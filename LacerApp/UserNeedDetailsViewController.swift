@@ -411,7 +411,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
             
         }
         
-        UserNeed(
+        UserNeedSnap(
             ownerID : "59ab7691217e0e0294d2e1c9",
             searchText : searchController.searchBar.text!,
             visible: needStatusSwitch.isOn,
@@ -456,7 +456,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
     
     private func loadData(){
         if let userid = self._id {
-            regina.find(coll: UserNeed.coll, query: ["_id" : userid], ack: dataDidLoad)
+            regina.find(coll: UserNeedSnap.coll, query: ["_id" : userid], ack: dataDidLoad)
         }
     }
     

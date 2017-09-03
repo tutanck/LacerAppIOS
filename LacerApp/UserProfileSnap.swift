@@ -1,5 +1,5 @@
 //
-//  UserProfile.swift
+//  UserProfileSnap.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 03/09/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserProfile : Snap {
+class UserProfileSnap : Snap {
     
     //Constants
     static let regina = IO.r
@@ -41,8 +41,8 @@ class UserProfile : Snap {
         //self.photo = photo
         
         super.init(
-            regina: UserProfile.regina,
-            coll: UserProfile.coll,
+            regina: UserProfileSnap.regina,
+            coll: UserProfileSnap.coll,
             ack: ack,
             timeout: timeout,
             _id: _id,

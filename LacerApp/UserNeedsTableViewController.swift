@@ -15,9 +15,9 @@ class UserNeedsTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var needs : [BacicNeed] = []
+    var needs : [UserNeed] = []
     
-    var filteredNeeds = [BacicNeed]()
+    var filteredNeeds = [UserNeed]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -159,10 +159,10 @@ class UserNeedsTableViewController: UITableViewController {
     private func loadFireData(){
         if let ref = self.ref {
             ref.observe(.value, with: { snapshot in
-                var tmp : [BacicNeed] = []
+                var tmp : [UserNeed] = []
                 
                 for item in snapshot.children {
-                    tmp.append( BacicNeed(snapshot: item as! DataSnapshot) )
+                    tmp.append( UserNeed(snapshot: item as! DataSnapshot) )
                 }
                 
                 self.needs = tmp

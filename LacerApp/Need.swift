@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class Need : BacicNeed{
+class Need : UserNeed{
     
     let tagsKey = "tags"
     let usernameKey = "username"
@@ -19,7 +19,6 @@ class Need : BacicNeed{
     var tags : String
     var username : String
     var distance : Double
-    var description : String
     var photo : UIImage?
     
     
@@ -27,10 +26,9 @@ class Need : BacicNeed{
         self.tags = tags
         self.username = username
         self.distance = distance
-        self.description = description
         self.photo =  UIImage(named: "userPhoto")
      
-        super.init(title : title, activ : activ)
+        super.init(title : title, activ : activ, description : description)
     }
     
     
@@ -40,7 +38,7 @@ class Need : BacicNeed{
         self.tags = snapshotValue[tagsKey] as! String
         self.username = snapshotValue[usernameKey] as! String
         self.distance = snapshotValue[distanceKey] as! Double
-        self.description = snapshotValue[descriptionKey] as! String
+       // self.description = snapshotValue[descriptionKey] as! String
         self.photo =  UIImage(named: "userPhoto")
         super.init(snapshot: snapshot)
     }

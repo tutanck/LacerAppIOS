@@ -381,7 +381,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     // MARK: - Save button
     
     @IBAction func saveUserProfile(_ sender: UIBarButtonItem) {
-        UserProfile(
+        UserProfileSnap(
             type: typeSegmentedControl.selectedSegmentIndex,
             username: usernameTextField.text!,
             resume: resumeTextView.text,
@@ -418,7 +418,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     private func loadData(){
         if let userid = self._id {
-            regina.find(coll: UserProfile.coll, query: ["_id" : userid], ack: dataDidLoad)
+            regina.find(coll: UserProfileSnap.coll, query: ["_id" : userid], ack: dataDidLoad)
         }
     }
     

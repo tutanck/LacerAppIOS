@@ -266,7 +266,7 @@ class UtherProfileViewController: ScrollViewController {
     
     private func loadData(){
         if let userid = self._id {
-            regina.find(coll: UserProfile.coll, query: ["_id" : userid], ack: dataDidLoad)
+            regina.find(coll: UserProfileSnap.coll, query: ["_id" : userid], ack: dataDidLoad)
         }
     }
     
