@@ -176,7 +176,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f2U-Cv-JoW">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="47.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="344" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -478,7 +478,11 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Enreg." id="T2B-b1-8tD"/>
+                        <barButtonItem key="rightBarButtonItem" title="Enreg." id="T2B-b1-8tD">
+                            <connections>
+                                <action selector="saveUserProfile:" destination="TUo-6p-2ts" id="qnm-TW-unF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="userAvailabilitySwitchableControl" destination="Grr-JL-cDC" id="jhl-yy-2HK"/>
@@ -520,7 +524,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iyJ-KP-J2W" id="dyx-xa-Ega">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -550,7 +554,7 @@
         <scene sceneID="GDN-KZ-YMq">
             <objects>
                 <collectionViewController id="r8e-RR-dnV" customClass="MessengerCollectionViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="AdI-DO-W07">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AdI-DO-W07">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -11,13 +11,8 @@ import Firebase
 
 class UserProfileViewController: ScrollViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
+    let regina = IO.r //TODO voir cmt gerer le cas ou regina = nil
     
-    var user : User? {
-        didSet {
-            isComponentModelReady = true
-        }
-    }
-    var isComponentModelReady = false
     
     // MARK: - SwitchableControl
     
@@ -372,9 +367,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     private var isKeyboardVisible = false
     
-    
-    
-    
+
     
     
     /*
@@ -401,14 +394,28 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     // MARK: - Save button
     
-    /*@IBAction func saveUserProfile(_ sender: UIBarButtonItem) {
-     ref?.setValue([
-     Fire.userTypeKey : typeSegmentedControl.selectedSegmentIndex,
-     Fire.userNameKey : usernameTextField.text,
-     Fire.userDescriptionKey : interestTextView.text
-     ])
-     disableRightBarButtonItem()
-     }*/
+    @IBAction func saveUserProfile(_ sender: UIBarButtonItem) {
+        regina.update(
+            coll: DB.users,
+            query: [
+                Fire.userTypeKey : typeSegmentedControl.selectedSegmentIndex,
+                Fire.userNameKey : usernameTextField.text,
+                Fire.userDescriptionKey : resumeTextView.text
+                ],
+            update: [
+                :
+            ],
+            ack: { (dataArray) in
+                print(dataArray)
+        }
+        )
+        ref?.setValue([
+            Fire.userTypeKey : typeSegmentedControl.selectedSegmentIndex,
+            Fire.userNameKey : usernameTextField.text,
+            Fire.userDescriptionKey : resumeTextView.text
+            ])
+        disableRightBarButtonItem()
+    }
     
     //MARK: Firef
     
@@ -421,19 +428,19 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     // MARK: - private methods
     
-    /*private func loadFireData(){
-     if let ref = self.ref {
-     ref.observeSingleEvent(of:.value, with: { snapshot in
-     if snapshot.exists(){
-     //populate ui
-     let value = snapshot.value as? NSDictionary
-     self.typeSegmentedControl.selectedSegmentIndex = value?[Fire.userTypeKey] as? Int ?? 0
-     self.usernameTextField.text = value?[Fire.userNameKey] as? String ?? ""
-     self.interestTextView.text = value?[Fire.userDescriptionKey] as? String ?? ""
-     }
-     })
-     }
-     }*/
+    private func loadFireData(){
+        if let ref = self.ref {
+            ref.observeSingleEvent(of:.value, with: { snapshot in
+                if snapshot.exists(){
+                    //populate ui
+                    let value = snapshot.value as? NSDictionary
+                    self.typeSegmentedControl.selectedSegmentIndex = value?[Fire.userTypeKey] as? Int ?? 0
+                    self.usernameTextField.text = value?[Fire.userNameKey] as? String ?? ""
+                    self.resumeTextView.text = value?[Fire.userDescriptionKey] as? String ?? ""
+                }
+            })
+        }
+    }
     
     
 }

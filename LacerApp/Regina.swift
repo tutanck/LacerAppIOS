@@ -11,19 +11,18 @@ import SocketIO
 
 public class Regina {
     
-    public let socket : SocketIOClient
+    public final let socket : SocketIOClient
     
-    public init?(
+    public init(
         serverURL : String,
         delegate : SocketClientEventDelegate
         ) {
         
         //linked server config
         if let url = URL(string: serverURL){
-            socket = SocketIOClient(socketURL: url, config: [.log(true), .compress]) //config : log socket messages and allow data compression
+            socket = SocketIOClient(socketURL: url, config: [.log(false), .compress]) //config : log socket messages and allow data compression
         }else{
-            print("Regina client failed to init")
-            return nil
+            fatalError("Regina client failed to init due to failure of the initialization of the server's url")
         }
         
         
@@ -68,16 +67,16 @@ public class Regina {
     
     
     //SocketIO io commubication convenience methods
-    public func connect() {socket.connect()}
+    public final func connect() {socket.connect()}
     
-    public func disconnect() {socket.disconnect()}
+    public final func disconnect() {socket.disconnect()}
     
     
     
     
     //regina's services (convenience methods)
     
-    public func find(
+    public final func find(
         coll : String,
         query : JSONObject?=[:],
         opt : JSONObject?=[:],
@@ -90,7 +89,7 @@ public class Regina {
     
     
     
-    public func count(
+    public final func count(
         coll : String,
         query : JSONObject?=[:],
         opt : JSONObject?=[:],
@@ -103,7 +102,7 @@ public class Regina {
     
     
     
-    public func insert(
+    public final func insert(
         coll : String,
         docs : JSONObjects,
         opt : JSONObject?=[:],
@@ -115,8 +114,20 @@ public class Regina {
     }
     
     
+    public final func insert(
+        coll : String,
+        doc : JSONObject,
+        opt : JSONObject?=[:],
+        meta : JSONObject?=[:],
+        ack : @escaping ([Any]) -> (),
+        timeout : Double?=0
+        ){
+        socket.emitWithAck("insert", coll, doc, opt!, meta!).timingOut(after: timeout!, callback: ack)
+    }
     
-    public func update(
+    
+    
+    public final func update(
         coll : String,
         query : JSONObject,
         update : JSONObject,
@@ -130,7 +141,7 @@ public class Regina {
     
     
     
-    public func remove(
+    public final func remove(
         coll : String,
         query : JSONObject,
         opt : JSONObject?=[:],
