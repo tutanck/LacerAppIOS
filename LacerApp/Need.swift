@@ -32,7 +32,7 @@ class Need : UserNeedShot{
     }
     
     
-    override init(snapshot: DataSnapshot) {
+     init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! NSDictionary
     
         self.tags = snapshotValue[tagsKey] as! String
@@ -40,7 +40,9 @@ class Need : UserNeedShot{
         self.distance = snapshotValue[distanceKey] as! Double
        // self.description = snapshotValue[descriptionKey] as! String
         self.photo =  UIImage(named: "userPhoto")
-        super.init(snapshot: snapshot)
+        //super.init(snapshot: snapshot)
+        
+        super.init(_id : "", title : "", visible : false, description : "")
     }
     
     

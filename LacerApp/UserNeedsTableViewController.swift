@@ -26,16 +26,6 @@ class UserNeedsTableViewController: UITableViewController {
     @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
     
     
-    //MARK: Firef
-    
-    /*var ref : DatabaseReference? = nil{
-     didSet {
-     loadFireData()
-     }
-     }*/
-    
-    
-    
     // MARK: - System Events
     
     override func viewDidLoad() {
@@ -43,13 +33,6 @@ class UserNeedsTableViewController: UITableViewController {
         
         //user status button settings
         userAvailabilitySwitchableControl.context = self
-        
-        /* //firef settings
-         if let userID = Auth.auth().currentUser?.uid{
-         let userRef = Fire.usersRef.child(userID)
-         userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
-         self.ref = userRef.child(Fire.userNeedsKey)
-         }*/
         
         //SearchController parameters
         searchController.searchResultsUpdater = self
@@ -105,7 +88,7 @@ class UserNeedsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let need = needs[indexPath.row]
-            need.ref?.removeValue()
+            
         }
     }
     
