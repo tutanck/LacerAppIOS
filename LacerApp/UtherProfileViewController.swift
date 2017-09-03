@@ -220,6 +220,10 @@ class UtherProfileViewController: ScrollViewController {
         setupManageActivityKeywordsButton()
         
         containerView.addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton)
+        
+        
+        
+        _id = "59ab7691217e0e0294d2e1c9"
     }
     
     
@@ -244,5 +248,46 @@ class UtherProfileViewController: ScrollViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    
+    
+    
+    // MARK: - IO
+    let regina = IO.r
+    
+    var _id : String?=nil {
+        didSet {
+            loadData()
+        }
+    }
+    
+    
+    // MARK: - private methods
+    
+    private func loadData(){
+        if let userid = self._id {
+            regina.find(coll: UserProfile.coll, query: ["_id" : userid], ack: dataDidLoad)
+        }
+    }
+    
+    private func dataDidLoad(dataArray : [Any])->(){
+        Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
+            if let res = res as? JSONObjects {
+                populateUI(data : res)
+            }
+        })
+    }
+    
+    private func populateUI(data : JSONObjects){
+        if data.count == 1 {
+            let profile = data[0]
+            self.typeSegmentedControl.selectedSegmentIndex = profile["type"] as? Int ?? 0
+            self.usernameTextField.text = profile["username"] as? String ?? ""
+            self.resumeTextView.text = profile["resume"] as? String ?? ""
+        }else{
+            Waiter.isConfused(self)
+        }
+    }
+
     
 }

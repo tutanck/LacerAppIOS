@@ -64,6 +64,7 @@
 		4EF85B131F5A4DAC001E37EE /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B121F5A4DAC001E37EE /* Snap.swift */; };
 		4EF85B151F5B6E96001E37EE /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B141F5B6E96001E37EE /* UserProfile.swift */; };
 		4EF85B171F5B9D01001E37EE /* Waiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B161F5B9D01001E37EE /* Waiter.swift */; };
+		4EF85B1B1F5C21C0001E37EE /* UserNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B1A1F5C21C0001E37EE /* UserNeed.swift */; };
 		4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */; };
 		4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */; };
 		4EF9E9511F50482700922E57 /* FormLabeledEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9501F50482700922E57 /* FormLabeledEntry.swift */; };
@@ -153,6 +154,7 @@
 		4EF85B121F5A4DAC001E37EE /* Snap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		4EF85B141F5B6E96001E37EE /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		4EF85B161F5B9D01001E37EE /* Waiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waiter.swift; sourceTree = "<group>"; };
+		4EF85B1A1F5C21C0001E37EE /* UserNeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeed.swift; sourceTree = "<group>"; };
 		4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedUIScrollView.swift; sourceTree = "<group>"; };
 		4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSelectionTableViewController.swift; sourceTree = "<group>"; };
 		4EF9E9501F50482700922E57 /* FormLabeledEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabeledEntry.swift; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				4EF85B141F5B6E96001E37EE /* UserProfile.swift */,
+				4EF85B1A1F5C21C0001E37EE /* UserNeed.swift */,
 			);
 			name = Snaps;
 			sourceTree = "<group>";
@@ -875,6 +878,7 @@
 				4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */,
 				4E4D20B91F4B859D001AC0C4 /* ExtendedUIView.swift in Sources */,
 				4EF85B151F5B6E96001E37EE /* UserProfile.swift in Sources */,
+				4EF85B1B1F5C21C0001E37EE /* UserNeed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

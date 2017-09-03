@@ -54,8 +54,9 @@ class Snap : StateSnap {
     }
     
     final func socketRepresentation() -> SocketData { return render() }
-    
 }
 
 
-public protocol StateSnap : SocketData{ func render()->JSONObject }
+public protocol StateSnap : SocketData{
+    func render()->JSONObject
+}

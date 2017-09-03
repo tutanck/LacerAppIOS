@@ -129,7 +129,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
     let descriptionTextView: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 14)
-        textView.text = "Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message "
+        textView.text = ""
         textView.backgroundColor = .white
         //border
         textView.layer.borderWidth = 0.8;
@@ -265,8 +265,8 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
             "V:|[v0(400)]-16-[v1(54)]-16-[v2(54)]-16-[v3(250)]-16-[v4(54)]-16-[v5(54)]-16-[v6(54)]"
             ,views: matchingProfilesTableViewContainer,needStatusContainerView,titleContainerView,descriptionContainerView,rewardContainerView,placeContainerView,timeContainerView
         )
-
-        hideRightBarButtonItem()
+        
+        disableRightBarButtonItem()
         setInputsDelegate()
         manageKeyboard()
         setTapToDissmissKeyboard()
@@ -281,6 +281,15 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
             ref = preparedRef
         }
         
+        
+        
+        
+        
+        
+        
+        
+        
+        _id = "59abf28f217e0e0294d2e1cb"
     }
     
     deinit {
@@ -292,7 +301,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
     
     
     
-    
+    //Mark : - Methods
     
     
     private func setInputsDelegate(){
@@ -324,33 +333,33 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
     
     
     
-    private func hideRightBarButtonItem(){
+    private func disableRightBarButtonItem(){
         if let rightBarButton = self.navigationItem.rightBarButtonItem {
             rightBarButton.isEnabled = false
         }
     }
     
-    private func showRightBarButtonItem(){
+    private func enableRightBarButtonItem(){
         if let rightBarButton = self.navigationItem.rightBarButtonItem {
             rightBarButton.isEnabled = true
         }
     }
     
-    func needStatusSwitchChanged(_ sender: UISegmentedControl) { showRightBarButtonItem() } //TODO
+    func needStatusSwitchChanged(_ sender: UISegmentedControl) { enableRightBarButtonItem() } //TODO
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) { showRightBarButtonItem() }
+    func textFieldDidEndEditing(_ textField: UITextField) { enableRightBarButtonItem() }
     
     func textViewShouldReturn(_ textView: UITextView) -> Bool {
         textView.resignFirstResponder()
         return true
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) { showRightBarButtonItem() }
+    func textViewDidEndEditing(_ textView: UITextView) { enableRightBarButtonItem() }
     
     
     
@@ -394,7 +403,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
     
     
     
-    func saveUserNeed(_ sender: UIBarButtonItem) {
+    @IBAction func saveUserNeed(_ sender: UIBarButtonItem) {
         
         if let titletext = titleTextField.text{
             if titletext.characters.count < 1 {
@@ -408,26 +417,114 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
                 Alert.displayMessage(context: self, message: "La description doit être renseignée pour pouvoir être contacté")
                 return
             }
+            if rewardTextField.text!.characters.count < 1 {
+                Alert.displayMessage(context: self, message: "La récompense doit être renseignée pour pouvoir être contacté")
+                return
+            }
+            if placeTextField.text!.characters.count < 1 {
+                Alert.displayMessage(context: self, message: "Le lieu doit être renseignée pour pouvoir être contacté")
+                return
+            }
+            if timeTextField.text!.characters.count < 1 {
+                Alert.displayMessage(context: self, message: "Le moment doit être renseignée pour pouvoir être contacté")
+                return
+            }
+            
         }
         
         
         let need : NSDictionary = [Fire.userNeedIsActivKey: needStatusSwitch.isOn,
-                                   Fire.userNeedTitleKey: titleTextField.text!,
-                                   Fire.userNeedDescriptionKey: descriptionTextView.text]
+         Fire.userNeedTitleKey: titleTextField.text!,
+         Fire.userNeedDescriptionKey: descriptionTextView.text]
+         
+         if ref == nil {
+         ref = Fire.needsRef.childByAutoId()
+         }
+         
+         let needKey : String = ref!.key
+         
+         
+         Fire.rootRef.updateChildValues(["/"+Fire.needsRef.key+"/\(needKey)": need,
+         "/"+Fire.usersRef.key+"/\(userID!)/"+Fire.userNeedsKey+"/\(needKey)/": need])
+         
         
-        if ref == nil {
-            ref = Fire.needsRef.childByAutoId()
-        }
-        
-        let needKey : String = ref!.key
         
         
-        Fire.rootRef.updateChildValues(["/"+Fire.needsRef.key+"/\(needKey)": need,
-                                        "/"+Fire.usersRef.key+"/\(userID!)/"+Fire.userNeedsKey+"/\(needKey)/": need])
+        UserNeed(
+            ownerID : "59ab7691217e0e0294d2e1c9",
+            searchText : searchController.searchBar.text!,
+            visible: needStatusSwitch.isOn,
+            title: titleTextField.text!,
+            description: descriptionTextView.text,
+            reward:  rewardTextField.text,
+            place:  placeTextField.text,
+            time:  timeTextField.text,
+            ack: userNeedDidSave,
+            _id : _id)
         
-        
-        hideRightBarButtonItem()
+        disableRightBarButtonItem()
     }
+    
+    
+    
+    // MARK: - IO
+    let regina = IO.r
+    
+    var _id : String?=nil {
+        didSet {
+            loadData()
+        }
+    }
+    
+    
+    // MARK: - private methods
+    
+    private func userNeedDidSave (dataArray : [Any])->(){
+        enableRightBarButtonItem()
+        Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
+            Alert.displayMessage(context: self, headerTitle: "Votre besoin a été mis à jour", confirmable : false)
+            disableRightBarButtonItem()
+        })
+    }
+    
+    
+    
+    
+    
+    
+    
+    private func loadData(){
+        if let userid = self._id {
+            regina.find(coll: UserNeed.coll, query: ["_id" : userid], ack: dataDidLoad)
+        }
+    }
+    
+    private func dataDidLoad(dataArray : [Any])->(){
+        Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
+            if let res = res as? JSONObjects {
+                populateUI(data : res)
+            }
+        })
+    }
+    
+    private func populateUI(data : JSONObjects){
+        if data.count == 1 {
+            let need = data[0]
+            self.needStatusSwitch.isOn = need["visible"] as? Bool ?? false
+            self.titleTextField.text = need["title"] as? String ?? ""
+            self.descriptionTextView.text = need["description"] as? String ?? ""
+            self.rewardTextField.text = need["reward"] as? String ?? ""
+            self.placeTextField.text = need["place"] as? String ?? ""
+            self.timeTextField.text = need["time"] as? String ?? ""
+            self.searchController.searchBar.text = need["searchText"] as? String ?? ""
+        }else{
+            Waiter.isConfused(self)
+        }
+    }
+    
+    
+    
+    
     
     
     //MARK: Firef
