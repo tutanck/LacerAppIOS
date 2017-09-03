@@ -11,7 +11,7 @@ import SocketIO
 
 
 /**
- Not a snapshot (stored) but actually a snap like a snapchat's snap (ephemerial or death born)
+ Not a snapshot (stored data) but actually a snap like a snapchat's snap (ephemerial or death born data)
  **/
 class Snap : StateSnap {
     
