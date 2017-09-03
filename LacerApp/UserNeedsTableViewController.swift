@@ -144,23 +144,7 @@ class UserNeedsTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
-    /*private func loadFireData(){
-     if let ref = self.ref {
-     ref.observe(.value, with: { snapshot in
-     var tmp : [UserNeed] = []
-     
-     for item in snapshot.children {
-     tmp.append( UserNeed(snapshot: item as! DataSnapshot) )
-     }
-     
-     self.needs = tmp
-     self.tableView.reloadData()
-     })
-     }
-     }*/
-    
-    
-    private func loadData(){ UserNeedShot.find(ack: dataDidLoad) }
+    private func loadData(){ UserNeedShot.findUserNeeds(ack: dataDidLoad) }
     
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in

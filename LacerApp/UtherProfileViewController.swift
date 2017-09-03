@@ -253,7 +253,6 @@ class UtherProfileViewController: ScrollViewController {
     
     
     // MARK: - IO
-    let regina = IO.r
     
     var _id : String?=nil {
         didSet {
@@ -265,8 +264,8 @@ class UtherProfileViewController: ScrollViewController {
     // MARK: - private methods
     
     private func loadData(){
-        if let userid = self._id {
-            regina.find(coll: DB.user_profiles, query: ["_id" : userid], ack: dataDidLoad)
+        if let userID = self._id {
+            User.findProfile(userID : userID, ack: dataDidLoad)
         }
     }
     

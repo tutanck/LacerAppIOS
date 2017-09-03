@@ -393,7 +393,6 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     
     // MARK: - IO
-    let regina = IO.r
     
     var _id : String?=nil {
         didSet {
@@ -417,9 +416,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     
     private func loadData(){
-        if let userid = self._id {
-            regina.find(coll: DB.user_profiles, query: ["_id" : userid], ack: dataDidLoad)
-        }
+             User.findUserProfile(ack: dataDidLoad)
     }
     
     private func dataDidLoad(dataArray : [Any])->(){

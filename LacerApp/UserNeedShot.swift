@@ -36,6 +36,7 @@ class UserNeedShot : Shot {
         super.init(_id : _id)
     }
     
+    
     init (
         snapshot : JSONObject
         ){
@@ -50,7 +51,9 @@ class UserNeedShot : Shot {
     }
     
     
-    static func find(
+    
+    
+    static func findUserNeeds(
         ack : @escaping ([Any]) -> ()
         ){
         if let userID = UserInfos._id {
@@ -64,6 +67,17 @@ class UserNeedShot : Shot {
                 ],
                 ack: ack)
         }
+    }
+    
+    
+    static func findNeed(
+        needID : String,
+        ack : @escaping ([Any]) -> ()
+        ){
+        regina.find(
+            coll: UserNeedShot.coll,
+            query: ["_id" : needID],
+            ack: ack)
     }
     
 }

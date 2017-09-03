@@ -434,7 +434,6 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
     
     
     // MARK: - IO
-    let regina = IO.r
     
     var _id : String?=nil {
         didSet {
@@ -460,9 +459,9 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
     
     
     private func loadData(){
-        if let userid = self._id {
-            regina.find(coll: UserNeedSnap.coll, query: ["_id" : userid], ack: dataDidLoad)
-        }
+        if let needID = self._id {
+            UserNeedShot.findNeed(needID: needID, ack: dataDidLoad)
+         }
     }
     
     private func dataDidLoad(dataArray : [Any])->(){
