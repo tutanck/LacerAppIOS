@@ -50,7 +50,7 @@ class Snap : StateSnap {
     
     
     public func render()->JSONObject {
-        preconditionFailure("Snap's property 'rendering' must be set! Override the render() method for this purpose.")
+        preconditionFailure("fatal : Snap's 'render()' must be overridden!")
     }
     
     final func socketRepresentation() -> SocketData { return render() }

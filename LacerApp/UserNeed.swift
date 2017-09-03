@@ -12,7 +12,7 @@ class UserNeed : Snap {
     
     //Constants
     static let regina = IO.r
-    static let coll = "needs"
+    static let coll = "UserNeed"
     static var collTag = "#"+coll
     
     //Model properties
@@ -24,7 +24,6 @@ class UserNeed : Snap {
     var reward : String?
     var place : String?
     var time : String?
-    
     
     
     init?(
@@ -52,7 +51,6 @@ class UserNeed : Snap {
         self.reward = reward
         self.place = place
         self.time = time
-        
         
         super.init(
             regina: UserNeed.regina,

@@ -12,7 +12,7 @@ class UserProfile : Snap {
     
     //Constants
     static let regina = IO.r
-    static let coll = "profiles"
+    static let coll = "UserProfile"
     static var collTag = "#"+coll
     
     //Model properties
@@ -20,7 +20,6 @@ class UserProfile : Snap {
     var username : String
     var resume : String
     //var photo : UIImage? //TODO
-    
     
     
     init?(
