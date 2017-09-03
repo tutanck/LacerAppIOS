@@ -62,7 +62,7 @@ class UserKeywordsTableViewController: UITableViewController {
         let keyword = keywords[indexPath.row]
         
         cell.keywordLabel.text = keyword.title
-        cell.activSwitch.isOn = keyword.activ
+        cell.activSwitch.isOn = keyword.active
         //cell.ref = keyword.ref
         
         return cell

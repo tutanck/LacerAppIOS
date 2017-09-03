@@ -18,7 +18,7 @@ class UserNeedSnap : Snap {
     //Model properties
     var ownerID : String
     var searchText : String
-    var visible : Bool
+    var active : Bool
     var title : String
     var description : String?
     var reward : String?
@@ -29,7 +29,7 @@ class UserNeedSnap : Snap {
     init?(
         ownerID : String,
         searchText : String,
-        visible: Bool,
+        active: Bool,
         title : String,
         description : String?="",
         reward : String?="",
@@ -45,7 +45,7 @@ class UserNeedSnap : Snap {
         
         self.ownerID = ownerID
         self.searchText = searchText
-        self.visible = visible
+        self.active = active
         self.title = title
         self.description = description
         self.reward = reward
@@ -68,7 +68,7 @@ class UserNeedSnap : Snap {
         return [
             "ownerID" : ownerID,
             "searchText" : searchText,
-            "visible" : visible,
+            "active" : active,
             "title" : title,
             "description" : description!,
             "reward" : reward!,

@@ -17,21 +17,21 @@ class UserNeedShot : Shot {
     
     var title : String
     var description : String
-    var visible : Bool
+    var active : Bool
     var date : Date
     
     
     init (
         _id : String,
         title : String,
-        visible : Bool,
+        active : Bool,
         description : String
         ){
         
         self.title = title
-        self.visible = visible
+        self.active = active
         self.description = description
-        self.date = Date()
+        self.date = Date()  //TODO
         
         super.init(_id : _id)
     }
@@ -42,7 +42,7 @@ class UserNeedShot : Shot {
         
         self.title = snapshot["title"] as! String
         self.description = snapshot["description"] as! String
-        self.visible = snapshot["visible"] as! Bool
+        self.active = snapshot["active"] as! Bool
         
         self.date = Date()
         
@@ -60,7 +60,7 @@ class UserNeedShot : Shot {
                 opt: [
                     "title": 1,
                     "description": 1,
-                    "visible": 1
+                    "active": 1
                 ],
                 ack: ack)
         }

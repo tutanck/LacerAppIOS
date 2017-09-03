@@ -69,7 +69,7 @@ class UserNeedsTableViewController: UITableViewController {
         cell.titleLabel.text = need.title
         cell.previewLabel.text = need.description
         cell.timeLabel.text = need.date.description
-        cell.isActivImageView.backgroundColor = need.visible ? .green : .red
+        cell.isActivImageView.backgroundColor = need.active ? .green : .red
         
         return cell
     }

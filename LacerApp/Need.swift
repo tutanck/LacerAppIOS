@@ -22,13 +22,13 @@ class Need : UserNeedShot{
     var photo : UIImage?
     
     
-    init (_id : String, tags : String, username : String, distance : Double, description : String ,photo : UIImage?, title : String, visible : Bool){
+    init (_id : String, tags : String, username : String, distance : Double, description : String ,photo : UIImage?, title : String, active : Bool){
         self.tags = tags
         self.username = username
         self.distance = distance
         self.photo =  UIImage(named: "userPhoto")
      
-        super.init(_id : _id, title : title, visible : visible, description : description)
+        super.init(_id : _id, title : title, active : active, description : description)
     }
     
     
@@ -42,7 +42,7 @@ class Need : UserNeedShot{
         self.photo =  UIImage(named: "userPhoto")
         //super.init(snapshot: snapshot)
         
-        super.init(_id : "", title : "", visible : false, description : "")
+        super.init(_id : "", title : "", active : false, description : "")
     }
     
     

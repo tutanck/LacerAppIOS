@@ -416,7 +416,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         UserNeedSnap(
             ownerID : userID,
             searchText : searchController.searchBar.text!,
-            visible: needStatusSwitch.isOn,
+            active: needStatusSwitch.isOn,
             title: titleTextField.text!,
             description: descriptionTextView.text,
             reward:  rewardTextField.text,
