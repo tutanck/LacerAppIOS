@@ -21,7 +21,9 @@ class Snap : Stateshot {
         ack : @escaping ([Any]) -> (),
         timeout : Double? = 0,
         _id : String?=nil,
-        meta : JSONObject?=[:]
+        meta : JSONObject?=[:],
+        insert_opt : JSONObject?=[:],
+        update_opt : JSONObject?=[:]
         ) {
         
         if let _id = _id {
@@ -29,6 +31,7 @@ class Snap : Stateshot {
                 coll: coll,
                 query: ["_id" : _id],
                 update: render(),
+                opt: update_opt,
                 meta: meta,
                 ack: ack,
                 timeout: timeout)
@@ -36,6 +39,7 @@ class Snap : Stateshot {
             regina.insert(
                 coll: coll,
                 doc: render(),
+                opt: insert_opt,
                 meta: meta,
                 ack: ack,
                 timeout: timeout)

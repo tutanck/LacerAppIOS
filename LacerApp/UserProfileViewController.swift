@@ -367,7 +367,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     private var isKeyboardVisible = false
     
-
+    
     
     
     /*
@@ -395,25 +395,22 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     // MARK: - Save button
     
     @IBAction func saveUserProfile(_ sender: UIBarButtonItem) {
-        regina.update(
-            coll: DB.users,
-            query: [
-                Fire.userTypeKey : typeSegmentedControl.selectedSegmentIndex,
-                Fire.userNameKey : usernameTextField.text,
-                Fire.userDescriptionKey : resumeTextView.text
-                ],
-            update: [
-                :
-            ],
-            ack: { (dataArray) in
-                print(dataArray)
-        }
+        UserProfile(
+            type: typeSegmentedControl.selectedSegmentIndex,
+            username: usernameTextField.text!,
+            resume: resumeTextView.text,
+            ack: { (dataArray) in print(dataArray) }
         )
+    
+        
+        
         ref?.setValue([
             Fire.userTypeKey : typeSegmentedControl.selectedSegmentIndex,
             Fire.userNameKey : usernameTextField.text,
             Fire.userDescriptionKey : resumeTextView.text
             ])
+        
+        
         disableRightBarButtonItem()
     }
     

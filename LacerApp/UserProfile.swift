@@ -13,10 +13,7 @@ class UserProfile : Snap {
     //Constants
     static let regina = IO.r
     static let coll = "profiles"
-    
-    //Configurables
-    static var timeout : Double? = 0
-    static var meta : JSONObject? = ["tags":["#"+coll]]
+    static var collTag = "#"+coll
     
     //Model properties
     var type : Int
@@ -31,10 +28,13 @@ class UserProfile : Snap {
         type: Int,
         username : String,
         resume : String,
-       // photo : UIImage?,
+        // photo : UIImage?,
         
         ack: @escaping ([Any]) -> (),
-        _id : String?=nil
+        _id : String?=nil,
+        update_opt : JSONObject?=[:],
+        meta : JSONObject? = ["tags":[collTag]],
+        timeout : Double? = 0
         ){
         self.type = type
         self.username = username
@@ -45,9 +45,20 @@ class UserProfile : Snap {
             regina: UserProfile.regina,
             coll: UserProfile.coll,
             ack: ack,
-            timeout: UserProfile.timeout,
+            timeout: timeout,
             _id: _id,
-            meta: UserProfile.meta)
+            meta: meta,
+            update_opt : update_opt
+        )
+    }
+    
+    
+    public override func render()->JSONObject {
+        return [
+            "type" : type,
+            "username" : username,
+            "resume" : resume
+        ]
     }
     
 }
