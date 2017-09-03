@@ -116,27 +116,27 @@ import UIKit
         
         func displayPayInfo() {
             if let context = context, let pay = needData["pay"]  {
-                Alert.displayMessage(context: context, message: String(describing : pay),confirmAction : nil,completion : nil, headerTitle : "Qu'est-ce que j'y gagne ?")
+                Alert.displayMessage(context: context, headerTitle : "Qu'est-ce que j'y gagne ?", message: String(describing : pay) )
             }
         }
         
         
         func displayPlaceInfo() {
             if let context = context, let place = needData["place"] {
-                Alert.displayMessage(context: context, message: String(describing : place),confirmAction : nil,completion : nil, headerTitle : "Où ?")
+                Alert.displayMessage(context: context, headerTitle : "Où ?", message: String(describing : place))
             }
         }
         
         
         func displayTimeInfo() {
             if let context = context, let time = needData["time"] {
-                Alert.displayMessage(context: context, message: String(describing : time),confirmAction : nil,completion : nil, headerTitle : "Quand ?")
+                Alert.displayMessage(context: context, headerTitle : "Quand ?", message: String(describing : time))
             }
         }
         
         func displayMetaInfos() {
             if let context = context, let meta = needData["meta"] {
-                Alert.displayMessage(context: context, message: String(describing : meta),confirmAction : nil,completion : nil, headerTitle : "Informations")
+                Alert.displayMessage(context: context,headerTitle : "Informations", message: String(describing : meta))
             }
         }
         

@@ -95,9 +95,9 @@ class SwitchableColorButton: UIButton {
         
         if context != nil && ref != nil {
             Alert.displayMessage(context: context!,
+                                 headerTitle :"Attention!",
                                  message: messages[nextColor]!,
                                  confirmAction : { action in self.ref?.setValue(self.colorToInt[nextColor]) },
-                                 headerTitle :"Attention!",
                                  cancellable : true)
         }
     }

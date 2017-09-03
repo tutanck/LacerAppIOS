@@ -39,7 +39,7 @@ class UserKeywordsTableViewController: UITableViewController {
         }
     }
     
-        
+    
     
     
     // MARK: - Table view data source
@@ -85,19 +85,24 @@ class UserKeywordsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? KeywordTableViewCell else { return }
-        Alert.displayTextBox(context: self,  message: "Modifiez le mot-clé de votre activité",
+        Alert.displayTextBox(context: self,
+                             headerTitle:  "Modification",
+                             message: "Modifiez le mot-clé de votre activité",
                              handler : { text in
                                 //cell.ref?.removeValue()
                                 //self.ref?.child(text.lowercased()).setValue(true)
-        },headerTitle:  "Modification", textBoxText : "cell.ref!.key"
-        )
+        }, textBoxText : "cell.ref!.key")
     }
     
     
     @IBAction func addKeywordAction(_ sender: UIBarButtonItem) {
-        Alert.displayTextBox(context: self, message: "Ajoutez un mot-clé à votre activité",
+        Alert.displayTextBox(context: self,
+                             headerTitle : "Nouveau mot-clé",
+                             message: "Ajoutez un mot-clé à votre activité",
                              handler : { text in self.ref?.child(text.lowercased()).setValue(true)},
-                             headerTitle : "Nouveau mot-clé",confirmButtonTitle : "Ajouter")
+                             confirmButtonTitle : "Ajouter")
+        
+        //*** Terminating app due to uncaught exception 'InvalidPathValidation', reason: '(child:) Must be a non-empty string and not contain '.' '#' '$' '[' or ']'' //TODO fix
     }
     
     

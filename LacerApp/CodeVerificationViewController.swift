@@ -33,13 +33,14 @@ class CodeVerificationViewController: UIViewController, CodeInputViewDelegate {
         if code == "1234" {
             self.connect()
         }else{
-             Alert.displayMessage(context : self,
-             confirmAction: { action in codeInputView.clear() },
-             headerTitle : "Code Invalide!",
-             confirmButtonTitle : "Réessayer",
-             cancellable : true,
-             cancelButtonTitle : "Retour",
-             cancelAction : { _ in self.dismiss(animated: true, completion: nil) }
+            Alert.displayMessage(
+                context : self,
+                headerTitle : "Code Invalide!",
+                confirmButtonTitle : "Réessayer",
+                confirmAction: { action in codeInputView.clear() },
+                cancellable : true,
+                cancelButtonTitle : "Retour",
+                cancelAction : { _ in self.dismiss(animated: true, completion: nil) }
             )
         }
         

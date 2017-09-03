@@ -11,8 +11,6 @@ import Firebase
 
 class UserProfileViewController: ScrollViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
-    let regina = IO.r //TODO voir cmt gerer le cas ou regina = nil
-    
     
     // MARK: - SwitchableControl
     
@@ -231,14 +229,21 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
             self.ref = userRef.child(Fire.userProfileKey)
         }
         
+        
+        
+        
+        
+        
+        _userid = "59ab49b8217e0e0294d2e1bb"
+        
+        
+        
+        
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    
-    
     
     
     //Global tap gesture
@@ -247,10 +252,6 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
         singleTap.numberOfTapsRequired = 1;
         containerView.addGestureRecognizer(singleTap)
     }
-    
-    
-    
-    
     
     
     func disableRightBarButtonItem(){
@@ -274,9 +275,9 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     func disconnect(){
         Alert.displayMessage(
             context: self,
+            headerTitle : "Déconnexion",
             message: "Vous allez être déconnecté.",
             confirmAction : {action in print("déconnexion")},
-            headerTitle : "Déconnexion",
             cancellable : true
         )
     }
@@ -399,9 +400,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
             type: typeSegmentedControl.selectedSegmentIndex,
             username: usernameTextField.text!,
             resume: resumeTextView.text,
-            ack: { (dataArray) in print(dataArray) }
-        )
-    
+            ack: userProfileDidSave)
         
         
         ref?.setValue([
@@ -412,6 +411,55 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
         
         
         disableRightBarButtonItem()
+    }
+    
+    
+    //IO
+    
+    let regina = IO.r
+    
+    var _userid : String? {
+        didSet {
+            loadData()
+        }
+    }
+    
+    
+    private func userProfileDidSave (dataArray : [Any])->(){
+        Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
+            Alert.displayMessage(context: self, headerTitle: "Votre profil a été mis à jour", confirmable : false)
+        })
+    }
+    
+    
+    
+    
+    private func loadData(){
+        if let userid = self._userid {
+            regina.find(coll: UserProfile.coll, query: ["_id" : userid], ack: dataDidLoad)
+        }
+    }
+    
+    
+    private func dataDidLoad(dataArray : [Any])->(){
+        Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
+            if let res = res as? JSONObjects {
+                populateUI(data : res)
+            }
+        })
+    }
+    
+    
+    
+    private func populateUI(data : JSONObjects){
+        if data.count == 1 {
+            let profile = data[0]
+            self.typeSegmentedControl.selectedSegmentIndex = profile["type"] as? Int ?? 0
+            self.usernameTextField.text = profile["username"] as? String ?? ""
+            self.resumeTextView.text = profile["resume"] as? String ?? ""
+        }else{
+            Waiter.isConfused(self)
+        }
     }
     
     //MARK: Firef

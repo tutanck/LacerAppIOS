@@ -12,30 +12,47 @@ class Alert {
     
     static func displayMessage(
         context : UIViewController,
-        message : String?=nil,
-        confirmAction : ((UIAlertAction) -> Swift.Void)? = nil,
-        completion : (() -> Swift.Void)? = nil,
         headerTitle : String? = "Message",
+        message : String?=nil,
+        
+        confirmable : Bool? = true,
         confirmButtonTitle : String? = "OK",
+        confirmAction : ((UIAlertAction) -> Swift.Void)? = nil,
+        
         cancellable : Bool? = false,
         cancelButtonTitle : String? = "Annuler",
         cancelAction : ((UIAlertAction) -> Swift.Void)? = nil,
+        
         alertControllerPreferredStyle : UIAlertControllerStyle = .alert,
         alertActionStyle : UIAlertActionStyle = .default,
-        animated : Bool = true
+        
+        animated : Bool = true,
+        completion : (() -> Swift.Void)? = nil
         ){
         
-        let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : .alert)
+        let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : alertControllerPreferredStyle)
         
-        //Cancel action
-        if cancellable == true{
-            alert.addAction( UIAlertAction(title: cancelButtonTitle, style: .default, handler: cancelAction))
+        
+        if confirmable == true{
+            
+            //Cancel action
+            if cancellable == true {
+                alert.addAction( UIAlertAction(title: cancelButtonTitle, style: alertActionStyle, handler: cancelAction))
+            }
+            
+            //Confirm action
+            alert.addAction( UIAlertAction(title: confirmButtonTitle , style: alertActionStyle, handler: confirmAction) )
+       
+            context.present(alert, animated: animated, completion: completion)
+            
+        }else{
+            context.present(alert, animated: animated, completion: completion)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
+                alert.dismiss(animated: animated, completion: completion)
+            }
+            
         }
-        
-        //Confirm action
-        alert.addAction( UIAlertAction(title: confirmButtonTitle , style: .default, handler: confirmAction) )
-        
-        context.present(alert, animated: animated, completion: nil)
         
     }
     
@@ -43,19 +60,22 @@ class Alert {
     
     static func displayTextBox (
         context : UIViewController,
-        message : String,
-        handler : ((String) -> Swift.Void)? = nil,
-        completion : (() -> Swift.Void)? = nil,
         headerTitle : String? = "Message",
+        message : String,
+        
+        handler : ((String) -> Swift.Void)? = nil,
         confirmButtonTitle : String? = "OK",
         cancelButtonTitle : String? = "Annuler",
         textBoxText : String? = nil,
+        
         alertControllerPreferredStyle : UIAlertControllerStyle = .alert,
         alertActionStyle : UIAlertActionStyle = .default,
-        animated : Bool = true
+        
+        animated : Bool = true,
+        completion : (() -> Swift.Void)? = nil
         ){
         
-        let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : .alert)
+        let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : alertControllerPreferredStyle)
         
         //TextField
         alert.addTextField()
@@ -65,11 +85,11 @@ class Alert {
         }
         
         //Cancel action
-        alert.addAction( UIAlertAction(title: cancelButtonTitle, style: .default) )
+        alert.addAction( UIAlertAction(title: cancelButtonTitle, style: alertActionStyle) )
         
         //Confirm action
         alert.addAction(
-            UIAlertAction(title: confirmButtonTitle , style: .default){ action in
+            UIAlertAction(title: confirmButtonTitle , style: alertActionStyle){ action in
                 
                 if let handler = handler {
                     
@@ -81,9 +101,9 @@ class Alert {
             
         )
         
-        context.present(alert, animated: animated, completion: nil)
+        context.present(alert, animated: animated, completion: completion)
     }
-
+    
     
     
     
