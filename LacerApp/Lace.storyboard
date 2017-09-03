@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="yPy-uB-o7k" kind="show" id="TlW-JZ-wzq"/>
+                                    <segue destination="yPy-uB-o7k" kind="presentation" identifier="modalUpdateUserNeed" id="TlW-JZ-wzq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -558,7 +558,7 @@
         <scene sceneID="GDN-KZ-YMq">
             <objects>
                 <collectionViewController id="r8e-RR-dnV" customClass="MessengerCollectionViewController" customModule="LacerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AdI-DO-W07">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="AdI-DO-W07">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

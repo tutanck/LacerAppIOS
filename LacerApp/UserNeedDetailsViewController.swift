@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, UITextViewDelegate   {
     
@@ -270,26 +269,6 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         setInputsDelegate()
         manageKeyboard()
         setTapToDissmissKeyboard()
-        
-        
-        //firef settings
-        if let userID = Auth.auth().currentUser?.uid {
-            self.userID = userID
-        }
-        
-        if let preparedRef = self.preparedRef{
-            ref = preparedRef
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        _id = "59abf28f217e0e0294d2e1cb"
     }
     
     deinit {
@@ -432,24 +411,6 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
             
         }
         
-        
-        let need : NSDictionary = [Fire.userNeedIsActivKey: needStatusSwitch.isOn,
-         Fire.userNeedTitleKey: titleTextField.text!,
-         Fire.userNeedDescriptionKey: descriptionTextView.text]
-         
-         if ref == nil {
-         ref = Fire.needsRef.childByAutoId()
-         }
-         
-         let needKey : String = ref!.key
-         
-         
-         Fire.rootRef.updateChildValues(["/"+Fire.needsRef.key+"/\(needKey)": need,
-         "/"+Fire.usersRef.key+"/\(userID!)/"+Fire.userNeedsKey+"/\(needKey)/": need])
-         
-        
-        
-        
         UserNeed(
             ownerID : "59ab7691217e0e0294d2e1c9",
             searchText : searchController.searchBar.text!,
@@ -521,38 +482,6 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
             Waiter.isConfused(self)
         }
     }
-    
-    
-    
-    
-    
-    
-    //MARK: Firef
-    
-    var ref : DatabaseReference? = nil{
-        didSet {
-            loadFireData()
-        }
-    }
-    
-    var userID : String? = nil
-    
-    var preparedRef : DatabaseReference? = nil
-    
-    private func loadFireData(){
-        if let ref = self.ref {
-            ref.observeSingleEvent(of:.value, with: { snapshot in
-                if snapshot.exists(){
-                    let value = snapshot.value as? NSDictionary
-                    print( value)
-                    self.needStatusSwitch.isOn = value?[Fire.userNeedIsActivKey] as? Bool ?? false
-                    self.titleTextField.text = value?[Fire.userNeedTitleKey] as? String ?? ""
-                    self.descriptionTextView.text = value?[Fire.userNeedDescriptionKey] as? String ?? ""
-                }
-            })
-        }
-    }
-    
     
     
 }

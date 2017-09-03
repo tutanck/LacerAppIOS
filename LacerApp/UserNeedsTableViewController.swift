@@ -134,7 +134,7 @@ class UserNeedsTableViewController: UITableViewController {
             }
             
             let selectedNeed = needs[indexPath.row]
-            needDetailViewController.preparedRef = selectedNeed.ref
+            needDetailViewController._id = "59abf28f217e0e0294d2e1cb" //selectedNeed._id
             
         default:return
         }
