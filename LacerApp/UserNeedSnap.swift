@@ -12,8 +12,8 @@ class UserNeedSnap : Snap {
     
     //Constants
     static let regina = IO.r
-    static let coll = "UserNeeds"
-    static var collTag = "#"+coll
+    static let coll = DB.user_needs
+    static var collTag = DB.user_needs_tag
     
     //Model properties
     var ownerID : String

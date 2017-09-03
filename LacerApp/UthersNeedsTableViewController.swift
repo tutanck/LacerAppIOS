@@ -18,8 +18,8 @@ class UthersNeedsTableViewController: UITableViewController {
     // MARK: - Properties
     
     var needs : [Need] = [
-        Need(tags : "#Java #lol" , username : "Joana", distance : 200, description : "Chauffeur tout de suite" ,photo : UIImage(named : "userPhoto"), title : "Chauffeur", activ : true),
-        Need(tags : "#Java #lol" , username : "Joana", distance : 200, description : "Chauffeur tout de suite" ,photo : UIImage(named : "userPhoto"), title : "Chauffeur", activ : true)
+        Need(_id : "", tags : "#Java #lol" , username : "Joana", distance : 200, description : "Chauffeur tout de suite" ,photo : UIImage(named : "userPhoto"), title : "Chauffeur", visible : true),
+        Need(_id : "", tags : "#Java #lol" , username : "Joana", distance : 200, description : "Chauffeur tout de suite" ,photo : UIImage(named : "userPhoto"), title : "Chauffeur", visible : true)
     ]
     
     

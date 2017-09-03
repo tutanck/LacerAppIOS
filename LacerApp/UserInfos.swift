@@ -11,6 +11,6 @@ import UIKit
 
 class UserInfos{
     
-    static var _id : String?
+    static var _id : String?     = "59ac637de2f722738609c6e8"
     
 }

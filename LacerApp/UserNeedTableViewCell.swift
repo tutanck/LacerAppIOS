@@ -13,14 +13,14 @@ class UserNeedTableViewCell: BasicTableViewCell {
     //metaContainerView
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Mark Zuckerberg"
+        label.text = ""
         label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
     
     let previewLabel: UILabel = {
         let label = UILabel()
-        label.text = "Your friend's message and something else..."
+        label.text = ""
         label.textColor = UIColor.darkGray
         label.font = UIFont.systemFont(ofSize: 14)
         return label
@@ -28,8 +28,8 @@ class UserNeedTableViewCell: BasicTableViewCell {
     
     let timeLabel: UILabel = {
         let label = UILabel()
-        label.text = "12:05 pm"
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.text = ""
+        label.font = UIFont.systemFont(ofSize: 12)
         label.textAlignment = .right
         return label
     }()

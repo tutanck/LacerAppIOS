@@ -22,13 +22,13 @@ class Need : UserNeed{
     var photo : UIImage?
     
     
-    init (tags : String, username : String, distance : Double, description : String ,photo : UIImage?, title : String, activ : Bool){
+    init (_id : String, tags : String, username : String, distance : Double, description : String ,photo : UIImage?, title : String, visible : Bool){
         self.tags = tags
         self.username = username
         self.distance = distance
         self.photo =  UIImage(named: "userPhoto")
      
-        super.init(title : title, activ : activ, description : description)
+        super.init(_id : _id, title : title, visible : visible, description : description)
     }
     
     

@@ -28,11 +28,11 @@ class UserNeedsTableViewController: UITableViewController {
     
     //MARK: Firef
     
-    var ref : DatabaseReference? = nil{
-        didSet {
-            loadFireData()
-        }
-    }
+    /*var ref : DatabaseReference? = nil{
+     didSet {
+     loadFireData()
+     }
+     }*/
     
     
     
@@ -40,16 +40,16 @@ class UserNeedsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //user status button settings
         userAvailabilitySwitchableControl.context = self
         
-        //firef settings
-        if let userID = Auth.auth().currentUser?.uid{
-            let userRef = Fire.usersRef.child(userID)
-            userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
-            self.ref = userRef.child(Fire.userNeedsKey)
-        }
+        /* //firef settings
+         if let userID = Auth.auth().currentUser?.uid{
+         let userRef = Fire.usersRef.child(userID)
+         userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
+         self.ref = userRef.child(Fire.userNeedsKey)
+         }*/
         
         //SearchController parameters
         searchController.searchResultsUpdater = self
@@ -60,7 +60,10 @@ class UserNeedsTableViewController: UITableViewController {
     }
     
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadData()
+    }
     
     // MARK: - Table view data source
     
@@ -81,7 +84,10 @@ class UserNeedsTableViewController: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let need = needs[indexPath.row]
         
-        //cell.titleLabel.text = need.title
+        cell.titleLabel.text = need.title
+        cell.previewLabel.text = need.description
+        cell.timeLabel.text = need.date.description
+        cell.isActivImageView.backgroundColor = need.visible ? .green : .red
         
         return cell
     }
@@ -134,7 +140,7 @@ class UserNeedsTableViewController: UITableViewController {
             }
             
             let selectedNeed = needs[indexPath.row]
-            needDetailViewController._id = "59abf28f217e0e0294d2e1cb" //selectedNeed._id
+            needDetailViewController._id =  selectedNeed._id
             
         default:return
         }
@@ -156,23 +162,43 @@ class UserNeedsTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
-    private func loadFireData(){
-        if let ref = self.ref {
-            ref.observe(.value, with: { snapshot in
-                var tmp : [UserNeed] = []
-                
-                for item in snapshot.children {
-                    tmp.append( UserNeed(snapshot: item as! DataSnapshot) )
-                }
-                
-                self.needs = tmp
-                self.tableView.reloadData()
-            })
-        }
+    /*private func loadFireData(){
+     if let ref = self.ref {
+     ref.observe(.value, with: { snapshot in
+     var tmp : [UserNeed] = []
+     
+     for item in snapshot.children {
+     tmp.append( UserNeed(snapshot: item as! DataSnapshot) )
+     }
+     
+     self.needs = tmp
+     self.tableView.reloadData()
+     })
+     }
+     }*/
+    
+    
+    private func loadData(){ UserNeed.find(ack: dataDidLoad) }
+    
+    private func dataDidLoad(dataArray : [Any])->(){
+        Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
+            if let res = res as? JSONObjects {
+                populateTable(data : res)
+            }
+        })
     }
     
-    
-    
+    private func populateTable(data : JSONObjects){
+        var tmp : [UserNeed] = []
+        
+        for item in data {
+            tmp.append( UserNeed(snapshot: item) )
+        }
+        
+        self.needs = tmp
+        self.tableView.reloadData()
+    }
+
     
     //Mark : unwinds
     

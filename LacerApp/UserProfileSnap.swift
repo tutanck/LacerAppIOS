@@ -12,8 +12,8 @@ class UserProfileSnap : Snap {
     
     //Constants
     static let regina = IO.r
-    static let coll = "UserProfiles"
-    static var collTag = "#"+coll
+    static let coll = DB.user_profiles
+    static var collTag = DB.user_profiles_tag
     
     //Model properties
     var type : Int

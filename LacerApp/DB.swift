@@ -11,13 +11,10 @@ import UIKit
 
 class DB {
     
-    static let users = "users"
+    static let user_profiles = "user_profiles"
+    static let user_profiles_tag = "#"+user_profiles
     
-    static let userProfileKey = "profile"
+    static let user_needs = "user_needs"
+    static let user_needs_tag = "#"+user_needs
     
-    /*static let usersRef = rootRef.child("users")
-     
-     static let needsRef = rootRef.child("needs")
-     
-     static let keywordsRef = rootRef.child("keywords")*/
 }

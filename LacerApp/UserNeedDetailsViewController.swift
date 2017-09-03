@@ -411,8 +411,10 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
             
         }
         
+        if let userID = UserInfos._id {
+        
         UserNeedSnap(
-            ownerID : "59ab7691217e0e0294d2e1c9",
+            ownerID : userID,
             searchText : searchController.searchBar.text!,
             visible: needStatusSwitch.isOn,
             title: titleTextField.text!,
@@ -422,6 +424,9 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
             time:  timeTextField.text,
             ack: userNeedDidSave,
             _id : _id)
+        }else{
+            Waiter.isConfused(self)
+        }
         
         disableRightBarButtonItem()
     }

@@ -225,7 +225,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
         
         
         
-        _id = "59ab7691217e0e0294d2e1c9"  //TODO REM bouchon
+        _id = UserInfos._id
     }
     
     deinit {
@@ -418,7 +418,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     private func loadData(){
         if let userid = self._id {
-            regina.find(coll: UserProfileSnap.coll, query: ["_id" : userid], ack: dataDidLoad)
+            regina.find(coll: DB.user_profiles, query: ["_id" : userid], ack: dataDidLoad)
         }
     }
     

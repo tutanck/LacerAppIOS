@@ -426,9 +426,9 @@
 		4EDAA9491F2D6C7C00F1A5A2 /* BusinessModel */ = {
 			isa = PBXGroup;
 			children = (
-				4EF85B1E1F5C73F6001E37EE /* Shots */,
 				4EF85B181F5BB31F001E37EE /* Snaps */,
 				4EB2045F1F1ED4070096CC60 /* Keyword.swift */,
+				4ECDB3C91F43C97F00352191 /* UserNeed.swift */,
 				4EB204671F2147950096CC60 /* User.swift */,
 				4EB204571F1BF6210096CC60 /* Need.swift */,
 				4E4D20CE1F4DF08C001AC0C4 /* Message.swift */,
@@ -520,14 +520,6 @@
 				4EF85B1A1F5C21C0001E37EE /* UserNeedSnap.swift */,
 			);
 			name = Snaps;
-			sourceTree = "<group>";
-		};
-		4EF85B1E1F5C73F6001E37EE /* Shots */ = {
-			isa = PBXGroup;
-			children = (
-				4ECDB3C91F43C97F00352191 /* UserNeed.swift */,
-			);
-			name = Shots;
 			sourceTree = "<group>";
 		};
 		94E1B98DFB6B5698F8CDCB09 /* Frameworks */ = {
