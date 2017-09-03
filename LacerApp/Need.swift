@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class Need : UserNeed{
+class Need : UserNeedShot{
     
     let tagsKey = "tags"
     let usernameKey = "username"

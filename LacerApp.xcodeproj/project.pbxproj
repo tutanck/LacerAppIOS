@@ -45,7 +45,7 @@
 		4EB2046C1F214C5F0096CC60 /* StatusColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2046B1F214C5F0096CC60 /* StatusColor.swift */; };
 		4ECDB3C51F426C1400352191 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */; };
 		4ECDB3C81F428E6300352191 /* Fire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C71F428E6300352191 /* Fire.swift */; };
-		4ECDB3CA1F43C97F00352191 /* UserNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C91F43C97F00352191 /* UserNeed.swift */; };
+		4ECDB3CA1F43C97F00352191 /* UserNeedShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECDB3C91F43C97F00352191 /* UserNeedShot.swift */; };
 		4ED2B0B51F2639D10072BAEA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */; };
 		4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */; };
 		4EDAA95C1F36186600F1A5A2 /* UserKeywordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */; };
@@ -65,6 +65,7 @@
 		4EF85B151F5B6E96001E37EE /* UserProfileSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B141F5B6E96001E37EE /* UserProfileSnap.swift */; };
 		4EF85B171F5B9D01001E37EE /* Waiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B161F5B9D01001E37EE /* Waiter.swift */; };
 		4EF85B1B1F5C21C0001E37EE /* UserNeedSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B1A1F5C21C0001E37EE /* UserNeedSnap.swift */; };
+		4EF85B231F5CA19C001E37EE /* Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B221F5CA19C001E37EE /* Shot.swift */; };
 		4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */; };
 		4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */; };
 		4EF9E9511F50482700922E57 /* FormLabeledEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9501F50482700922E57 /* FormLabeledEntry.swift */; };
@@ -135,7 +136,7 @@
 		4EB2046B1F214C5F0096CC60 /* StatusColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusColor.swift; sourceTree = "<group>"; };
 		4ECDB3C41F426C1400352191 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4ECDB3C71F428E6300352191 /* Fire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fire.swift; sourceTree = "<group>"; };
-		4ECDB3C91F43C97F00352191 /* UserNeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeed.swift; sourceTree = "<group>"; };
+		4ECDB3C91F43C97F00352191 /* UserNeedShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedShot.swift; sourceTree = "<group>"; };
 		4ED2B0B41F2639D10072BAEA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../WelcomeViewController.swift; sourceTree = "<group>"; };
 		4ED2B0B81F26656A0072BAEA /* Gatekeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gatekeeper.swift; sourceTree = "<group>"; };
 		4EDAA95B1F36186600F1A5A2 /* UserKeywordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordsTableViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		4EF85B141F5B6E96001E37EE /* UserProfileSnap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSnap.swift; sourceTree = "<group>"; };
 		4EF85B161F5B9D01001E37EE /* Waiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waiter.swift; sourceTree = "<group>"; };
 		4EF85B1A1F5C21C0001E37EE /* UserNeedSnap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedSnap.swift; sourceTree = "<group>"; };
+		4EF85B221F5CA19C001E37EE /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
 		4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedUIScrollView.swift; sourceTree = "<group>"; };
 		4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSelectionTableViewController.swift; sourceTree = "<group>"; };
 		4EF9E9501F50482700922E57 /* FormLabeledEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabeledEntry.swift; sourceTree = "<group>"; };
@@ -426,9 +428,9 @@
 		4EDAA9491F2D6C7C00F1A5A2 /* BusinessModel */ = {
 			isa = PBXGroup;
 			children = (
+				4EF85B211F5CA174001E37EE /* Shots */,
 				4EF85B181F5BB31F001E37EE /* Snaps */,
 				4EB2045F1F1ED4070096CC60 /* Keyword.swift */,
-				4ECDB3C91F43C97F00352191 /* UserNeed.swift */,
 				4EB204671F2147950096CC60 /* User.swift */,
 				4EB204571F1BF6210096CC60 /* Need.swift */,
 				4E4D20CE1F4DF08C001AC0C4 /* Message.swift */,
@@ -501,6 +503,7 @@
 			children = (
 				4EE74F3D1F5786040023C34D /* Regina.swift */,
 				4EF85B121F5A4DAC001E37EE /* Snap.swift */,
+				4EF85B221F5CA19C001E37EE /* Shot.swift */,
 			);
 			name = Regina;
 			sourceTree = "<group>";
@@ -520,6 +523,14 @@
 				4EF85B1A1F5C21C0001E37EE /* UserNeedSnap.swift */,
 			);
 			name = Snaps;
+			sourceTree = "<group>";
+		};
+		4EF85B211F5CA174001E37EE /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				4ECDB3C91F43C97F00352191 /* UserNeedShot.swift */,
+			);
+			name = Shots;
 			sourceTree = "<group>";
 		};
 		94E1B98DFB6B5698F8CDCB09 /* Frameworks */ = {
@@ -820,7 +831,7 @@
 			files = (
 				4E28FB651F522CE400C6E5D7 /* MatchingProfilesTableViewCell.swift in Sources */,
 				4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */,
-				4ECDB3CA1F43C97F00352191 /* UserNeed.swift in Sources */,
+				4ECDB3CA1F43C97F00352191 /* UserNeedShot.swift in Sources */,
 				4EB204681F2147950096CC60 /* User.swift in Sources */,
 				4E4D20D31F4DF210001AC0C4 /* MessageCollectionViewCell.swift in Sources */,
 				4E4D20C71F4BE40E001AC0C4 /* UserNeedTableViewCell.swift in Sources */,
@@ -869,6 +880,7 @@
 				4ED2B0B51F2639D10072BAEA /* WelcomeViewController.swift in Sources */,
 				4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */,
 				4E4D20B91F4B859D001AC0C4 /* ExtendedUIView.swift in Sources */,
+				4EF85B231F5CA19C001E37EE /* Shot.swift in Sources */,
 				4EF85B151F5B6E96001E37EE /* UserProfileSnap.swift in Sources */,
 				4EF85B1B1F5C21C0001E37EE /* UserNeedSnap.swift in Sources */,
 			);

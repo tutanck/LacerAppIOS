@@ -1,5 +1,5 @@
 //
-//  UserNeed.swift
+//  UserNeedShot.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 16/08/2017.
@@ -9,14 +9,13 @@
 import UIKit
 import Firebase
 
-class UserNeed {
+class UserNeedShot : Shot {
     
     //Constants
     static let regina = IO.r
     static let coll = DB.user_needs
     static var collTag = DB.user_needs_tag
     
-    var _id : String
     var title : String
     var description : String
     var visible : Bool
@@ -24,17 +23,17 @@ class UserNeed {
     
     
     init (_id : String, title : String, visible : Bool, description : String){
-        self._id = _id
+        
         self.title = title
         self.visible = visible
         self.description = description
         self.date = Date()
         
         self.ref = nil
+        super.init(_id : _id)
     }
     
     init (snapshot : JSONObject){
-        self._id = snapshot["_id"] as! String
         self.title = snapshot["title"] as! String
         self.description = snapshot["description"] as! String
         self.visible = snapshot["visible"] as! Bool
@@ -42,13 +41,14 @@ class UserNeed {
         self.date = Date()
         
         ref = nil
+        super.init(_id :  snapshot["_id"] as! String)
     }
     
     
     static func find(ack : @escaping ([Any]) -> ()){
         if let userID = UserInfos._id {
             regina.find(
-                coll: UserNeed.coll,
+                coll: UserNeedShot.coll,
                 query: ["ownerID":userID],
                 opt: [
                     "title": 1,
@@ -65,8 +65,7 @@ class UserNeed {
     let titleKey = "title"
     let activKey = "activ"
     init(snapshot: DataSnapshot) {
-        self._id = ""
-        self.description = ""
+         self.description = ""
         let snapshotValue = snapshot.value as! NSDictionary
         title = snapshotValue[titleKey] as! String
         visible = snapshotValue[activKey] as! Bool
@@ -74,6 +73,7 @@ class UserNeed {
         self.date = Date()
         
         ref = snapshot.ref
+        super.init(_id : "")
     }
     
 }

@@ -15,9 +15,9 @@ class UserNeedsTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var needs : [UserNeed] = []
+    var needs : [UserNeedShot] = []
     
-    var filteredNeeds = [UserNeed]()
+    var filteredNeeds = [UserNeedShot]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -178,7 +178,7 @@ class UserNeedsTableViewController: UITableViewController {
      }*/
     
     
-    private func loadData(){ UserNeed.find(ack: dataDidLoad) }
+    private func loadData(){ UserNeedShot.find(ack: dataDidLoad) }
     
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
@@ -189,10 +189,10 @@ class UserNeedsTableViewController: UITableViewController {
     }
     
     private func populateTable(data : JSONObjects){
-        var tmp : [UserNeed] = []
+        var tmp : [UserNeedShot] = []
         
         for item in data {
-            tmp.append( UserNeed(snapshot: item) )
+            tmp.append( UserNeedShot(snapshot: item) )
         }
         
         self.needs = tmp
