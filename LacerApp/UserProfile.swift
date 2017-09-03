@@ -19,7 +19,6 @@ class UserProfile : Snap {
     var type : Int
     var username : String
     var resume : String
-    
     //var photo : UIImage? //TODO
     
     

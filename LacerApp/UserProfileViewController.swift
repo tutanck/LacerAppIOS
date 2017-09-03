@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class UserProfileViewController: ScrollViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
@@ -128,7 +127,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     let resumeTextView: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 14)
-        textView.text = "Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message "
+        textView.text = ""
         textView.backgroundColor = .white
         //border
         textView.layer.borderWidth = 0.8;
@@ -222,23 +221,11 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
         setTapToDissmissKeyboard()
         
         
-        //firef settings
-        if let userID = Auth.auth().currentUser?.uid{
-            let userRef = Fire.usersRef.child(userID)
-            userAvailabilitySwitchableControl.ref = userRef.child(Fire.userStatusKey)
-            self.ref = userRef.child(Fire.userProfileKey)
-        }
         
         
         
         
-        
-        
-        _userid = "59ab49b8217e0e0294d2e1bb"
-        
-        
-        
-        
+        _id = "59ab7691217e0e0294d2e1c9"  //TODO REM bouchon
     }
     
     deinit {
@@ -391,8 +378,6 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     
     
-    
-    
     // MARK: - Save button
     
     @IBAction func saveUserProfile(_ sender: UIBarButtonItem) {
@@ -400,46 +385,42 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
             type: typeSegmentedControl.selectedSegmentIndex,
             username: usernameTextField.text!,
             resume: resumeTextView.text,
-            ack: userProfileDidSave)
-        
-        
-        ref?.setValue([
-            Fire.userTypeKey : typeSegmentedControl.selectedSegmentIndex,
-            Fire.userNameKey : usernameTextField.text,
-            Fire.userDescriptionKey : resumeTextView.text
-            ])
-        
-        
+            ack: userProfileDidSave,
+            _id : _id)
         disableRightBarButtonItem()
     }
     
     
-    //IO
     
+    // MARK: - IO
     let regina = IO.r
     
-    var _userid : String? {
+    var _id : String?=nil {
         didSet {
             loadData()
         }
     }
     
     
+    // MARK: - private methods
+    
     private func userProfileDidSave (dataArray : [Any])->(){
+        enableRightBarButtonItem()
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
             Alert.displayMessage(context: self, headerTitle: "Votre profil a été mis à jour", confirmable : false)
+            disableRightBarButtonItem()
         })
     }
     
     
     
     
+    
     private func loadData(){
-        if let userid = self._userid {
+        if let userid = self._id {
             regina.find(coll: UserProfile.coll, query: ["_id" : userid], ack: dataDidLoad)
         }
     }
-    
     
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
@@ -448,8 +429,6 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
             }
         })
     }
-    
-    
     
     private func populateUI(data : JSONObjects){
         if data.count == 1 {
@@ -461,31 +440,5 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
             Waiter.isConfused(self)
         }
     }
-    
-    //MARK: Firef
-    
-    var ref : DatabaseReference? = nil{
-        didSet {
-            // loadFireData()
-        }
-    }
-    
-    
-    // MARK: - private methods
-    
-    private func loadFireData(){
-        if let ref = self.ref {
-            ref.observeSingleEvent(of:.value, with: { snapshot in
-                if snapshot.exists(){
-                    //populate ui
-                    let value = snapshot.value as? NSDictionary
-                    self.typeSegmentedControl.selectedSegmentIndex = value?[Fire.userTypeKey] as? Int ?? 0
-                    self.usernameTextField.text = value?[Fire.userNameKey] as? String ?? ""
-                    self.resumeTextView.text = value?[Fire.userDescriptionKey] as? String ?? ""
-                }
-            })
-        }
-    }
-    
     
 }
