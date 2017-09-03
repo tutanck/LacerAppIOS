@@ -35,6 +35,7 @@ class UserProfile : Snap {
         meta : JSONObject? = ["tags":[collTag]],
         timeout : Double? = 0
         ){
+        
         self.type = type
         self.username = username
         self.resume = resume

@@ -13,7 +13,7 @@ import SocketIO
 /**
  Not a snapshot (stored) but actually a snap like a snapchat's snap (ephemerial or death born)
  **/
-class Snap : Stateshot {
+class Snap : StateSnap {
     
     public init?(
         regina : Regina,
@@ -58,4 +58,4 @@ class Snap : Stateshot {
 }
 
 
-public protocol Stateshot : SocketData{ func render()->JSONObject }
+public protocol StateSnap : SocketData{ func render()->JSONObject }
