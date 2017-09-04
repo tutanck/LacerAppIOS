@@ -26,7 +26,14 @@ class UserStatusSnap : Snap {
         ack: (([Any]) -> ())? = {dataArray in},
         _id : String? = UserInfos._id!,
         update_opt : JSONObject?=["upsert":true],
-        meta : JSONObject? = ["tag":[collTag+"/"+UserInfos._id!]],
+        meta : JSONObject? =
+        ["tags":
+            [
+                ["kind" : "io",
+                 "val" : collTag+"/"+UserInfos._id!]
+                
+            ]
+        ],
         timeout : Double? = 0
         ){
         
