@@ -99,18 +99,11 @@ class SwitchableColorButton: UIButton {
         
         let nextColor : UIColor = intToColor[(colorToInt[backgroundColor!]!+1)%intToColor.count]!
         
-        //if context != nil /*&& ref != nil */{
         Alert.displayMessage(context: context!,
                              headerTitle :"Attention!",
                              message: messages[nextColor]!,
-                             confirmAction : { action in
-                                UserStatusSnap(status: self.colorToInt[nextColor]!)
-                                print ("confirmed")
-                                // action in self.ref?.setValue(self.colorToInt[nextColor])
-                                
-        },
+                             confirmAction : { _ in UserStatusSnap(status: self.colorToInt[nextColor]!) },
                              cancellable : true)
-        // }
     }
     
     
@@ -176,12 +169,12 @@ class SwitchableColorButton: UIButton {
                 self.addTarget(self, action: #selector(SwitchableColorButton.switchColor(button:)), for: .touchUpInside)
                 self.activated = true
             }
-
+            
         }else if data.count == 0 {
             UserStatusSnap(status: 1)
         }else{
             Waiter.isConfused(context!)
         }
     }
-
+    
 }
