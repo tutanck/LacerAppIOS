@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 
 class SearchUthersTableViewController: UITableViewController {
     
@@ -17,7 +17,7 @@ class SearchUthersTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-     var users : [User] = [User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)]
+    var users : [User] = [User(_id : "", _date : "2017-09-04T21:16:40.179Z",username : "Joan", status: 1)]
 
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -63,7 +63,7 @@ class SearchUthersTableViewController: UITableViewController {
         
         let user = users[indexPath.row]
         
-        cell.nameLabel.text = user.name
+        cell.nameLabel.text = user.username
         cell.messageLabel.text = "TODO"
         cell.profileImageView.image = user.photo
         //cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
@@ -107,7 +107,7 @@ class SearchUthersTableViewController: UITableViewController {
         */
         
         if searchController.isActive && searchController.searchBar.text != "" {
-            Fire.usersRef.queryOrdered(byChild:"profile/username" ).queryStarting(atValue: searchText).observe(.value, with: { snapshot in
+           /* Fire.usersRef.queryOrdered(byChild:"profile/username" ).queryStarting(atValue: searchText).observe(.value, with: { snapshot in
                 var tmp : [User] = []
                 print(snapshot.value)
                 /*for item in snapshot.children {
@@ -116,7 +116,9 @@ class SearchUthersTableViewController: UITableViewController {
                  
                  self.users = tmp*/
                 self.tableView.reloadData()
-            })        }
+            })
+        */
+        }
         
         
 

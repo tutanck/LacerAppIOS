@@ -11,12 +11,6 @@ import UIKit
 
 class UserStatusSnap : Snap {
     
-    //Constants
-    
-    static let coll = DB.user_status
-    static var collTag = DB.user_status_tag
-    
-    //Model properties
     var status : Int
     
     
@@ -30,8 +24,7 @@ class UserStatusSnap : Snap {
         ["tags":
             [
                 ["kind" : "io",
-                 "val" : collTag+"/"+UserInfos._id!]
-                
+                 "val" : UserStatusColl.tag+"/"+UserInfos._id!]
             ]
         ],
         timeout : Double? = 0
@@ -41,7 +34,7 @@ class UserStatusSnap : Snap {
         
         super.init(
             regina: IO.r,
-            coll: UserStatusSnap.coll,
+            coll: UserStatusColl.coll,
             ack: ack!,
             timeout: timeout,
             _id: _id,

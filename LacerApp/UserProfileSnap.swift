@@ -10,11 +10,6 @@ import UIKit
 
 class UserProfileSnap : Snap {
     
-    //Constants
-    static let coll = DB.user_profiles
-    static var collTag = DB.user_profiles_tag
-    
-    //Model properties
     var type : Int
     var username : String
     var resume : String
@@ -30,7 +25,7 @@ class UserProfileSnap : Snap {
         ack: @escaping ([Any]) -> (),
         _id : String?=nil,
         update_opt : JSONObject?=[:],
-        meta : JSONObject? = ["tags":[collTag]],
+        meta : JSONObject? = ["tags":[UserProfilesColl.tag]],
         timeout : Double? = 0
         ){
         
@@ -41,7 +36,7 @@ class UserProfileSnap : Snap {
         
         super.init(
             regina: IO.r,
-            coll: UserProfileSnap.coll,
+            coll: UserProfilesColl.coll,
             ack: ack,
             timeout: timeout,
             _id: _id,

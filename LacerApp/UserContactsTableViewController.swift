@@ -8,12 +8,13 @@
 
 import UIKit
 
+
 class UserContactsTableViewController: UITableViewController {
     
     let cellID = "UserContactTableViewCell"
     
     
-    var contacts : [User] = [User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)]
+    var contacts : [User] = [User(_id:"", _date : "2017-09-04T21:16:40.179Z", username : "Joan", status: 1)]
     
     var filteredContacts = [User]()
     
@@ -30,7 +31,7 @@ class UserContactsTableViewController: UITableViewController {
         
         tabBarController?.tabBar.isHidden = false
         
-        Message.findPrivateConversationBetween(
+        UserMessagesColl.findPrivateConversationBetween(
             speakers: ["",""], ack: { (dataArray) in
         print (dataArray)
         
@@ -80,7 +81,7 @@ class UserContactsTableViewController: UITableViewController {
         
         cell.context = self
         
-        cell.nameLabel.text = contact.name
+        cell.nameLabel.text = contact.username
         cell.messageLabel.text = "TODO"
         cell.profileImageView.image = contact.photo
         //cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
@@ -140,7 +141,7 @@ class UserContactsTableViewController: UITableViewController {
     func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
         filteredContacts = contacts.filter { contact in
             let categoryMatch = (scope == "Tout") //|| (user.category == scope)
-            return  categoryMatch && contact.name.lowercased().contains(searchText.lowercased())
+            return  categoryMatch && contact.username.lowercased().contains(searchText.lowercased())
         }
         
         tableView.reloadData()
@@ -159,7 +160,7 @@ class UserContactsTableViewController: UITableViewController {
     
     private func startFollowingConversation() {
         if let userID = UserInfos._id {
-            IO.r.socket.on(DB.user_messages_tag+"/"+userID, callback: { (dataArray) in /*check itsan update*/self.loadData() })
+            IO.r.socket.on(UserMessagesColl.tag+"/"+userID, callback: { (dataArray) in /*check itsan update*/self.loadData() })
             loadData()
         }
     }
@@ -167,7 +168,7 @@ class UserContactsTableViewController: UITableViewController {
     
     private func loadData(){
         if let userID = UserInfos._id {
-            Message.findUserInterlocutors(ack: dataDidLoad)
+           // MessageShot.findUserInterlocutors(ack: dataDidLoad)
         }
     }
     
@@ -186,7 +187,7 @@ class UserContactsTableViewController: UITableViewController {
         var tmp : [User] = []
         
         for item in data {
-            tmp.append( User(_id : item["contactID"] as! String ) )
+           // tmp.append( User(_id : item["contactID"] as! String ) )
         }
         
         self.contacts = tmp

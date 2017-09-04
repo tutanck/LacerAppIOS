@@ -8,15 +8,16 @@
 
 import UIKit
 
+
 class UserNeedsTableViewController: UITableViewController {
     
     let cellId = "UserNeedTableViewCell"
     
     // MARK: - Properties
     
-    var needs : [UserNeedShot] = []
+    var needs : [UserNeed] = []
     
-    var filteredNeeds = [UserNeedShot]()
+    var filteredNeeds = [UserNeed]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -67,8 +68,8 @@ class UserNeedsTableViewController: UITableViewController {
         let need = needs[indexPath.row]
         
         cell.titleLabel.text = need.title
-        cell.previewLabel.text = need.description
-        cell.timeLabel.text = need.date.description
+        cell.previewLabel.text = need.searchText
+        cell.timeLabel.text = need._date.description
         cell.isActivImageView.backgroundColor = need.active ? .green : .red
         
         return cell
@@ -144,7 +145,7 @@ class UserNeedsTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
-    private func loadData(){ UserNeedShot.findUserNeeds(ack: dataDidLoad) }
+    private func loadData(){ UserNeedsColl.findUserNeeds(ack: dataDidLoad) }
     
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
@@ -155,10 +156,10 @@ class UserNeedsTableViewController: UITableViewController {
     }
     
     private func populateTable(data : JSONObjects){
-        var tmp : [UserNeedShot] = []
+        var tmp : [UserNeed] = []
         
         for item in data {
-            tmp.append( UserNeedShot(snapshot: item) )
+            tmp.append( UserNeed(snapshot: item) )
         }
         
         self.needs = tmp

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class UtherProfileViewController: ScrollViewController {
     
     
@@ -265,7 +266,7 @@ class UtherProfileViewController: ScrollViewController {
     
     private func loadData(){
         if let userID = self._id {
-            User.findProfile(userID : userID, ack: dataDidLoad)
+            UserProfilesColl.findProfile(userID : userID, ack: dataDidLoad)
         }
     }
     

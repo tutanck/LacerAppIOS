@@ -97,32 +97,12 @@ class SwitchableColorButton: UIButton {
     
     //MARK: Private Methods
     
-    /*private func setupSwitchButton() {
-     
-     if let ref = self.ref {
-     ref.observe(.value, with: { snapshot in
-     if !snapshot.exists(){
-     // Set the button's default appearence in database
-     self.ref?.setValue(1)
-     }else{
-     // Set the button's current appearence
-     self.backgroundColor = self.intToColor[snapshot.value as! Int]
-     
-     if self.activated == false{
-     print("Debug : SwitchableColorButton activated")
-     // Setup the button action
-     self.addTarget(self, action: #selector(SwitchableColorButton.switchColor(button:)), for: .touchUpInside)
-     self.activated = true
-     }
-     }
-     })
-     }
-     }*/
-    
-    
     private func setupSwitchButton() {
         if let userID = UserInfos._id {
-            IO.r.socket.on(DB.user_status_tag+"/"+userID, callback: { (dataArray) in /*check itsan update*/self.loadData() })
+            IO.r.socket.on(UserStatusColl.tag+"/"+userID, callback: {
+                (dataArray, ackEmitter) in
+                if dataArray[0] as! Int == 2 { self.loadData() }
+            })
             loadData()
         }
     }
@@ -130,7 +110,7 @@ class SwitchableColorButton: UIButton {
     
     private func loadData(){
         if let userID = UserInfos._id {
-            IO.r.find(coll: DB.user_status, query: ["_id":userID], ack: dataDidLoad)
+            IO.r.find(coll: UserStatusColl.coll, query: ["_id":userID], ack: dataDidLoad)
         }
     }
     

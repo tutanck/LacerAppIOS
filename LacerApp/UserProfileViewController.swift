@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class UserProfileViewController: ScrollViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     
@@ -416,7 +417,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     
     private func loadData(){
-             User.findUserProfile(ack: dataDidLoad)
+             UserProfilesColl.findUserProfile(ack: dataDidLoad)
     }
     
     private func dataDidLoad(dataArray : [Any])->(){

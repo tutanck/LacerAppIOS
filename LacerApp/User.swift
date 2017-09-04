@@ -7,90 +7,42 @@
 //
 
 import UIKit
-import Firebase
 
-class User : Shot {
-    
-    //Constants
-    static let coll = DB.user_profiles
-    static var collTag = DB.user_profiles_tag
 
-    let nameKey = "name"
-    let statusKey = "status"
+class User : Snapshot {
     
-    let ref: DatabaseReference?
-
-    
-    var name : String
-    
-    var photo : UIImage?
-    
+    var username : String
+    var photo : UIImage
     var status : Int
     
     
-    init(_id : String, name : String, photo : UIImage?, status: Int){
-        self.name = name
-        self.status = status
-        self.photo = photo
+    init(
+        _id : String,
+        _date : String,
         
-        ref = nil
-        super.init(_id: _id)
-    }
-    
-    init(name : String, photo : UIImage?, status: Int){
-        self.name = name
-        self.status = status
-        self.photo = photo
-        
-        ref = nil
-        super.init(_id: "")
-    }
-    
-    
-    override init(_id : String){
-        //autoload user
-        self.name = ""
-        self.status = 0
-        self.photo = UIImage()
-        ref = nil
-        super.init(_id: _id)
-    }
-    
-    
-    init(snapshot: DataSnapshot) {
-        let snapshotValue = snapshot.value as! NSDictionary
-
-        self.name = snapshotValue[nameKey] as! String
-        self.photo = UIImage(named: "userPhoto")
-        self.status = snapshotValue[statusKey] as! Int
-        
-        ref = snapshot.ref
-        super.init(_id: "")
-    }
-
-    
-    
-    
-    static func findUserProfile(
-        ack : @escaping ([Any]) -> ()
+        username : String,
+        photo : UIImage? = UIImage(named : "userPhoto"),
+        status: Int
         ){
-        if let userID = UserInfos._id {
-            IO.r.find(
-                coll: User.coll,
-                query: ["_id":userID],
-                ack: ack)
-        }
+        
+        self.username = username
+        self.photo = photo!
+        self.status = status
+        
+        super.init(_id: _id,
+                   _date: _date)
     }
     
     
-    static func findProfile(
-        userID : String,
-        ack : @escaping ([Any]) -> ()
-        ){
-        IO.r.find(
-            coll: User.coll,
-            query: ["_id" : userID],
-            ack: ack)
+    init(
+        snapshot: JSONObject
+        ) {
+        self.username = snapshot["username"] as! String
+        self.status = snapshot["status"] as! Int
+        self.photo =  snapshot["photo"] as? UIImage ?? UIImage(named: "userPhoto")!
+        
+        super.init(_id: snapshot["_id"] as! String,
+                   _date: snapshot["date"] as! String)
     }
-
+    
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, UITextViewDelegate   {
     
     //matchingProfilesTableView
@@ -24,7 +25,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         return tableView
     }()
     
-    fileprivate func setupMatchingProfilesTableView() -> UIView{
+    fileprivate func setupMatchingProfilesTableView() {
         
         matchingProfilesTableViewDelegate = MatchingProfilesTableViewDelegate()
         matchingProfilesTableView.delegate = matchingProfilesTableViewDelegate
@@ -41,7 +42,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
         searchController.searchBar.delegate = matchingProfilesTableViewDelegate
         
-        return FormLabeledEntry.installEntryIn(
+        FormLabeledEntry.installEntryIn(
             parent: containerView,
             entry: FormLabeledEntry.composeEntry(
                 containerView: matchingProfilesTableViewContainer,
@@ -75,7 +76,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         return uiswitch
     }()
     
-    fileprivate func setupNeedStatusSwitch() -> UIView {
+    fileprivate func setupNeedStatusSwitch() {
         needStatusContainerView.addSubview(label)
         needStatusContainerView.addSubview(needStatusSwitch)
         
@@ -83,7 +84,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         needStatusContainerView.addConstraintsWithFormat("V:|[v0]|", views: label)
         needStatusContainerView.addCenteredYConstraint(about: needStatusSwitch, to: label)
         
-        return FormLabeledEntry.installEntryIn(
+        FormLabeledEntry.installEntryIn(
             parent: containerView,
             entry: needStatusContainerView,
             debug: false)
@@ -108,8 +109,8 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         return textField
     }()
     
-    fileprivate func setupTitleContainerView() -> UIView{
-        return FormLabeledEntry.installEntryIn(
+    fileprivate func setupTitleContainerView(){
+        FormLabeledEntry.installEntryIn(
             parent: containerView,
             entry: FormLabeledEntry.composeEntry(
                 containerView: titleContainerView,
@@ -138,8 +139,8 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         return textView
     }()
     
-    fileprivate func setupDescriptionContainerView() -> UIView{
-        return FormLabeledEntry.installEntryIn(
+    fileprivate func setupDescriptionContainerView(){
+        FormLabeledEntry.installEntryIn(
             parent: containerView,
             entry: FormLabeledEntry.composeEntry(
                 containerView: descriptionContainerView,
@@ -169,8 +170,8 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         return textField
     }()
     
-    fileprivate func setupRewardContainerView() -> UIView{
-        return FormLabeledEntry.installEntryIn(
+    fileprivate func setupRewardContainerView(){
+        FormLabeledEntry.installEntryIn(
             parent: containerView,
             entry: FormLabeledEntry.composeEntry(
                 containerView: rewardContainerView,
@@ -199,8 +200,8 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         return textField
     }()
     
-    fileprivate func setupPlaceContainerView() -> UIView{
-        return FormLabeledEntry.installEntryIn(
+    fileprivate func setupPlaceContainerView(){
+        FormLabeledEntry.installEntryIn(
             parent: containerView,
             entry: FormLabeledEntry.composeEntry(
                 containerView: placeContainerView,
@@ -229,8 +230,8 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         return textField
     }()
     
-    fileprivate func setupTimeContainerView() -> UIView{
-        return FormLabeledEntry.installEntryIn(
+    fileprivate func setupTimeContainerView() {
+        FormLabeledEntry.installEntryIn(
             parent: containerView,
             entry: FormLabeledEntry.composeEntry(
                 containerView: timeContainerView,
@@ -383,6 +384,13 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
     
     
     @IBAction func saveUserNeed(_ sender: UIBarButtonItem) {
+        //TODO SEARCHTEXT
+        /*if let titletext = titleTextField.text{
+            if titletext.characters.count < 1 {
+                Alert.displayMessage(context: self, message: "Le titre doit être renseigné pour pouvoir sauvegarder ce besoin")
+                return
+            }
+        }*/
         
         if let titletext = titleTextField.text{
             if titletext.characters.count < 1 {
@@ -415,7 +423,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
         
         UserNeedSnap(
             ownerID : userID,
-            searchText : searchController.searchBar.text!,
+            searchText : searchController.searchBar.text!+"e",
             active: needStatusSwitch.isOn,
             title: titleTextField.text!,
             description: descriptionTextView.text,
@@ -460,7 +468,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
     
     private func loadData(){
         if let needID = self._id {
-            UserNeedShot.findNeed(needID: needID, ack: dataDidLoad)
+            UserNeedsColl.findNeed(needID: needID, ack: dataDidLoad)
          }
     }
     

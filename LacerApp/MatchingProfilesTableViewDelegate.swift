@@ -21,11 +21,8 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     var filteredProfiles = [User]()
     
     var profiles : [User] = [
-        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1)
+        User(_id : "", _date:"2017-09-04T21:16:40.179Z", username : "Joan", status: 1),
+        User(_id : "", _date:"2017-09-04T21:16:40.179Z", username : "Jon", status: 1),
     ]
     
     
@@ -56,7 +53,7 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
         
         let profile = profiles[indexPath.row]
         
-        cell.nameLabel.text = profile.name
+        cell.nameLabel.text = profile.username
         cell.messageLabel.text = "TODO"
         cell.profileImageView.image = profile.photo
         //cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
@@ -69,7 +66,7 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
         filteredProfiles = profiles.filter { contact in
             let categoryMatch = (scope == "Tout") //|| (user.category == scope)
-            return  categoryMatch && contact.name.lowercased().contains(searchText.lowercased())
+            return  categoryMatch && contact.username.lowercased().contains(searchText.lowercased())
         }
         if tableView != nil {
             tableView!.reloadData()

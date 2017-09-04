@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ContactsSelectionTableViewController: UITableViewController {
     
     let cellID = "UserContactsSelectionTableViewCell"
@@ -15,19 +16,9 @@ class ContactsSelectionTableViewController: UITableViewController {
     // MARK: - Properties
     
     var users : [User] = [
-        User(name : "Joan", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Regina", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Joana", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Tino", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Sergio", photo : UIImage(named : "userPhoto"), status: 1),
-        User(name : "Tino", photo : UIImage(named : "userPhoto"), status: 1)
+        User(_id: "", _date: "2017-09-04T21:16:40.179Z", username : "Joan", status: 1),
+        User(_id: "", _date: "2017-09-04T21:16:40.179Z", username : "Joan", status: 1),
+
     ]
     
     
@@ -77,7 +68,7 @@ class ContactsSelectionTableViewController: UITableViewController {
         
         let user = users[indexPath.row]
         
-        cell.nameLabel.text = user.name
+        cell.nameLabel.text = user.username
         cell.messageLabel.text = "TODO" //TODO
         cell.profileImageView.image = user.photo
         //cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
@@ -146,7 +137,7 @@ class ContactsSelectionTableViewController: UITableViewController {
          */
         
         if searchController.isActive && searchController.searchBar.text != "" {
-            Fire.usersRef.queryOrdered(byChild:"profile/username" ).queryStarting(atValue: searchText).observe(.value, with: { snapshot in
+           /* Fire.usersRef.queryOrdered(byChild:"profile/username" ).queryStarting(atValue: searchText).observe(.value, with: { snapshot in
                 var tmp : [User] = []
                 print(snapshot.value)
                 /*for item in snapshot.children {
@@ -155,7 +146,7 @@ class ContactsSelectionTableViewController: UITableViewController {
                  
                  self.users = tmp*/
                 self.tableView.reloadData()
-            })
+            })*/
         }
     }
     

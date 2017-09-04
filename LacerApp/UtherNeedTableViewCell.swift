@@ -12,7 +12,7 @@ class UtherNeedTableViewCell: BasicTableViewCell {
     
     var context : UIViewController?
     
-    var need : Need?
+    var need : UtherNeed?
     
     //userProfileImageView
     

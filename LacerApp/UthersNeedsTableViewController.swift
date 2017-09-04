@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 
 class UthersNeedsTableViewController: UITableViewController {
     
@@ -17,13 +17,21 @@ class UthersNeedsTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var needs : [Need] = [
-        Need(_id : "", tags : "#Java #lol" , username : "Joana", distance : 200, description : "Chauffeur tout de suite" ,photo : UIImage(named : "userPhoto"), title : "Chauffeur", active : true),
-        Need(_id : "", tags : "#Java #lol" , username : "Joana", distance : 200, description : "Chauffeur tout de suite" ,photo : UIImage(named : "userPhoto"), title : "Chauffeur", active : true)
+    var needs : [UtherNeed] = [
+      UtherNeed(_id : String(),
+        _date : "2017-09-04T21:16:40.179Z",
+        title : String(),
+        active : false,
+        searchText : String(),
+        ownerID : String(),
+        description : String(),
+        reward : String(),
+        place : String(),
+        time : String())
     ]
     
     
-    var filteredNeeds = [Need]()
+    var filteredNeeds = [UtherNeed]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -42,9 +50,6 @@ class UthersNeedsTableViewController: UITableViewController {
         
         //user status button settings
         userAvailabilitySwitchableControl.context = self
-        /*if let userID = Auth.auth().currentUser?.uid{
-            userAvailabilitySwitchableControl.ref = Fire.usersRef.child(userID).child(Fire.userStatusKey)
-        }*/
         
         //SearchController parameters
         searchController.searchResultsUpdater = self
@@ -86,7 +91,7 @@ class UthersNeedsTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of "+cellId)
         }
         
-        let need : Need
+        let need : UtherNeed
         
         if searchController.isActive && searchController.searchBar.text != "" {
             need = filteredNeeds[indexPath.row]
@@ -97,9 +102,9 @@ class UthersNeedsTableViewController: UITableViewController {
         cell.context = self
         cell.utherNeedMenu.context = self
         cell.need = need
-        cell.userProfileImageView.image = need.photo
+        cell.userProfileImageView.image = UIImage(named : "userPhoto")
         cell.titleLabel.text = need.title
-        cell.usernameLabel.text = need.username
+        cell.usernameLabel.text = need.ownerID
         cell.typeLabel.text = "Entreprise"
         //cell.distanceLabel.text = String(Int(need.distance))+" m" //TODO
         let textView = cell.scrollViewContainer.setText(text: "#keyword #keyword #keyword #keyword #keyword #keyword #keyword#", fontSize: 16)
@@ -122,7 +127,7 @@ class UthersNeedsTableViewController: UITableViewController {
     func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
         filteredNeeds = needs.filter { need in
             let categoryMatch = (scope == "Tout") //|| (user.category == scope)
-            return  categoryMatch && need.username.lowercased().contains(searchText.lowercased())
+            return  categoryMatch && need.ownerID.lowercased().contains(searchText.lowercased())
         }
         
         tableView.reloadData()

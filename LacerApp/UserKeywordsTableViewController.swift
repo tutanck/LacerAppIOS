@@ -7,24 +7,13 @@
 //
 
 import UIKit
-import Firebase
+
 
 class UserKeywordsTableViewController: UITableViewController {
     
     let cellID = "KeywordTableViewCell"
     
-    
     var keywords : [Keyword] = []
-    
-    
-    //MARK: Firef
-    
-    var ref : DatabaseReference? = nil{
-        didSet {
-            loadFireData()
-        }
-    }
-    
     
     
     // MARK: - System Events
@@ -32,11 +21,6 @@ class UserKeywordsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //firef settings
-        if let userID = Auth.auth().currentUser?.uid{
-            let userRef = Fire.usersRef.child(userID)
-            self.ref = userRef.child(Fire.userKeywordsKey)
-        }
     }
     
     
@@ -78,7 +62,6 @@ class UserKeywordsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let keyword = keywords[indexPath.row]
-            keyword.ref?.removeValue()
         }
     }
     
@@ -99,7 +82,7 @@ class UserKeywordsTableViewController: UITableViewController {
         Alert.displayTextBox(context: self,
                              headerTitle : "Nouveau mot-clé",
                              message: "Ajoutez un mot-clé à votre activité",
-                             handler : { text in self.ref?.child(text.lowercased()).setValue(true)},
+                             handler : { text in /*self.ref?.child(text.lowercased()).setValue(true)*/},
                              confirmButtonTitle : "Ajouter")
         
         //*** Terminating app due to uncaught exception 'InvalidPathValidation', reason: '(child:) Must be a non-empty string and not contain '.' '#' '$' '[' or ']'' //TODO fix
@@ -107,7 +90,7 @@ class UserKeywordsTableViewController: UITableViewController {
     
     
     
-    //MARK: Private Methods
+   /* //MARK: Private Methods
     private func loadFireData(){
         if let ref = self.ref {
             ref.queryOrderedByValue().observe(.value, with: { snapshot in
@@ -121,6 +104,6 @@ class UserKeywordsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             })
         }
-    }
+    }*/
     
 }
