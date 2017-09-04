@@ -31,7 +31,6 @@ class UserStatusSnap : Snap {
         ){
         
         self.status = status
-        print(status)
         
         super.init(
             regina: IO.r,
