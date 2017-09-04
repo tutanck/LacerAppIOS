@@ -11,7 +11,6 @@ import UIKit
 class UserProfileSnap : Snap {
     
     //Constants
-    static let regina = IO.r
     static let coll = DB.user_profiles
     static var collTag = DB.user_profiles_tag
     
@@ -41,7 +40,7 @@ class UserProfileSnap : Snap {
         //self.photo = photo
         
         super.init(
-            regina: UserProfileSnap.regina,
+            regina: IO.r,
             coll: UserProfileSnap.coll,
             ack: ack,
             timeout: timeout,

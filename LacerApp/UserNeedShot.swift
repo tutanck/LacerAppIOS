@@ -11,7 +11,6 @@ import UIKit
 class UserNeedShot : Shot {
     
     //Constants
-    static let regina = IO.r
     static let coll = DB.user_needs
     static var collTag = DB.user_needs_tag
     
@@ -57,7 +56,7 @@ class UserNeedShot : Shot {
         ack : @escaping ([Any]) -> ()
         ){
         if let userID = UserInfos._id {
-            regina.find(
+            IO.r.find(
                 coll: UserNeedShot.coll,
                 query: ["ownerID":userID],
                 opt: [
@@ -74,7 +73,7 @@ class UserNeedShot : Shot {
         needID : String,
         ack : @escaping ([Any]) -> ()
         ){
-        regina.find(
+        IO.r.find(
             coll: UserNeedShot.coll,
             query: ["_id" : needID],
             ack: ack)

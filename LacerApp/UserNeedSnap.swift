@@ -11,7 +11,6 @@ import UIKit
 class UserNeedSnap : Snap {
     
     //Constants
-    static let regina = IO.r
     static let coll = DB.user_needs
     static var collTag = DB.user_needs_tag
     
@@ -53,7 +52,7 @@ class UserNeedSnap : Snap {
         self.time = time
         
         super.init(
-            regina: UserNeedSnap.regina,
+            regina: IO.r,
             coll: UserNeedSnap.coll,
             ack: ack,
             timeout: timeout,

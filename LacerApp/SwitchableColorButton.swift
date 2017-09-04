@@ -37,15 +37,21 @@ class SwitchableColorButton: UIButton {
     
     //MARK: Properties
     
-    var context : UIViewController?
-    
-    //MARK: Firef
-    
-    var ref : DatabaseReference? = nil{
+    var context : UIViewController?{
         didSet {
-            setupSwitchButton()
+            if context != nil{
+                setupSwitchButton()
+            }
         }
     }
+    
+    /*//MARK: Firef
+     
+     var ref : DatabaseReference? = nil{
+     didSet {
+     setupSwitchButton()
+     }
+     }*/
     
     
     
@@ -82,9 +88,9 @@ class SwitchableColorButton: UIButton {
     }
     
     deinit {
-        if let ref = self.ref{
-            ref.removeAllObservers()
-        }
+        /*  if let ref = self.ref{
+         ref.removeAllObservers()
+         }*/
     }
     
     
@@ -93,41 +99,89 @@ class SwitchableColorButton: UIButton {
         
         let nextColor : UIColor = intToColor[(colorToInt[backgroundColor!]!+1)%intToColor.count]!
         
-        if context != nil && ref != nil {
-            Alert.displayMessage(context: context!,
-                                 headerTitle :"Attention!",
-                                 message: messages[nextColor]!,
-                                 confirmAction : { action in self.ref?.setValue(self.colorToInt[nextColor]) },
-                                 cancellable : true)
-        }
+        //if context != nil /*&& ref != nil */{
+        Alert.displayMessage(context: context!,
+                             headerTitle :"Attention!",
+                             message: messages[nextColor]!,
+                             confirmAction : { action in
+                                UserStatusSnap(status: self.colorToInt[nextColor]!)
+                                print ("confirmed")
+                                // action in self.ref?.setValue(self.colorToInt[nextColor])
+                                
+        },
+                             cancellable : true)
+        // }
     }
     
     
     
     //MARK: Private Methods
     
+    /*private func setupSwitchButton() {
+     
+     if let ref = self.ref {
+     ref.observe(.value, with: { snapshot in
+     if !snapshot.exists(){
+     // Set the button's default appearence in database
+     self.ref?.setValue(1)
+     }else{
+     // Set the button's current appearence
+     self.backgroundColor = self.intToColor[snapshot.value as! Int]
+     
+     if self.activated == false{
+     print("Debug : SwitchableColorButton activated")
+     // Setup the button action
+     self.addTarget(self, action: #selector(SwitchableColorButton.switchColor(button:)), for: .touchUpInside)
+     self.activated = true
+     }
+     }
+     })
+     }
+     }*/
+    
+    
     private func setupSwitchButton() {
-        
-        if let ref = self.ref {
-            ref.observe(.value, with: { snapshot in
-                if !snapshot.exists(){
-                    // Set the button's default appearence in database
-                    self.ref?.setValue(1)
-                }else{
-                    // Set the button's current appearence
-                    self.backgroundColor = self.intToColor[snapshot.value as! Int]
-                    
-                    if self.activated == false{
-                        print("Debug : SwitchableColorButton activated")
-                        // Setup the button action
-                        self.addTarget(self, action: #selector(SwitchableColorButton.switchColor(button:)), for: .touchUpInside)
-                        self.activated = true
-                    }
-                }
-            })
+        if let userID = UserInfos._id {
+            IO.r.socket.on(DB.user_status_tag+"/"+userID, callback: { (dataArray) in /*check itsan update*/self.loadData() })
+            loadData()
         }
-        
-        
     }
     
+    
+    private func loadData(){
+        if let userID = UserInfos._id {
+            IO.r.find(coll: DB.user_status, query: ["_id":userID], ack: dataDidLoad)
+        }
+    }
+    
+    private func dataDidLoad(dataArray : [Any])->(){
+        Waiter.popNServ(context: context!, dataArray: dataArray, drink: {res in
+            if let res = res as? JSONObjects {
+                populateUI(data : res)
+            }
+        })
+    }
+    
+    private func populateUI(data : JSONObjects){
+        
+        if UserInfos._id == nil { return }
+        
+        if data.count == 1 {
+            let userStatus = data[0]
+            self.backgroundColor = self.intToColor[userStatus["status"] as? Int ?? 1 ]
+            
+            if self.activated == false{
+                print("Debug : SwitchableColorButton activated")
+                // Setup the button action
+                self.addTarget(self, action: #selector(SwitchableColorButton.switchColor(button:)), for: .touchUpInside)
+                self.activated = true
+            }
+
+        }else if data.count == 0 {
+            UserStatusSnap(status: 1)
+        }else{
+            Waiter.isConfused(context!)
+        }
+    }
+
 }

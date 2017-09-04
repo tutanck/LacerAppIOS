@@ -66,6 +66,7 @@
 		4EF85B171F5B9D01001E37EE /* Waiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B161F5B9D01001E37EE /* Waiter.swift */; };
 		4EF85B1B1F5C21C0001E37EE /* UserNeedSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B1A1F5C21C0001E37EE /* UserNeedSnap.swift */; };
 		4EF85B231F5CA19C001E37EE /* Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B221F5CA19C001E37EE /* Shot.swift */; };
+		4EF85B251F5CF026001E37EE /* UserStatusSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF85B241F5CF026001E37EE /* UserStatusSnap.swift */; };
 		4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */; };
 		4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */; };
 		4EF9E9511F50482700922E57 /* FormLabeledEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9E9501F50482700922E57 /* FormLabeledEntry.swift */; };
@@ -157,6 +158,7 @@
 		4EF85B161F5B9D01001E37EE /* Waiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waiter.swift; sourceTree = "<group>"; };
 		4EF85B1A1F5C21C0001E37EE /* UserNeedSnap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedSnap.swift; sourceTree = "<group>"; };
 		4EF85B221F5CA19C001E37EE /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
+		4EF85B241F5CF026001E37EE /* UserStatusSnap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStatusSnap.swift; sourceTree = "<group>"; };
 		4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedUIScrollView.swift; sourceTree = "<group>"; };
 		4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSelectionTableViewController.swift; sourceTree = "<group>"; };
 		4EF9E9501F50482700922E57 /* FormLabeledEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabeledEntry.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 			children = (
 				4EF85B141F5B6E96001E37EE /* UserProfileSnap.swift */,
 				4EF85B1A1F5C21C0001E37EE /* UserNeedSnap.swift */,
+				4EF85B241F5CF026001E37EE /* UserStatusSnap.swift */,
 			);
 			name = Snaps;
 			sourceTree = "<group>";
@@ -854,6 +857,7 @@
 				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
 				4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */,
 				4E4D20CF1F4DF08C001AC0C4 /* Message.swift in Sources */,
+				4EF85B251F5CF026001E37EE /* UserStatusSnap.swift in Sources */,
 				4E4D20D71F4E48E0001AC0C4 /* FrameEstimator.swift in Sources */,
 				4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */,
 				4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */,

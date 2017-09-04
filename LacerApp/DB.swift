@@ -17,4 +17,6 @@ class DB {
     static let user_needs = "user_needs"
     static let user_needs_tag = "#"+user_needs
     
+    static let user_status = "user_status"
+    static let user_status_tag = "#"+user_status
 }

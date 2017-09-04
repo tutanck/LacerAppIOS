@@ -10,8 +10,8 @@ import UIKit
 import Firebase
 
 class User {
+    
     //Constants
-    static let regina = IO.r
     static let coll = DB.user_profiles
     static var collTag = DB.user_profiles_tag
 
@@ -54,7 +54,7 @@ class User {
         ack : @escaping ([Any]) -> ()
         ){
         if let userID = UserInfos._id {
-            regina.find(
+            IO.r.find(
                 coll: User.coll,
                 query: ["_id":userID],
                 ack: ack)
@@ -66,7 +66,7 @@ class User {
         userID : String,
         ack : @escaping ([Any]) -> ()
         ){
-        regina.find(
+        IO.r.find(
             coll: User.coll,
             query: ["_id" : userID],
             ack: ack)

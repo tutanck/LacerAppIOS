@@ -37,9 +37,9 @@ class UserContactsTableViewController: UITableViewController {
         
         //user status button settings
         userAvailabilitySwitchableControl.context = self
-         if let userID = Auth.auth().currentUser?.uid{
+         /*if let userID = Auth.auth().currentUser?.uid{
          userAvailabilitySwitchableControl.ref = Fire.usersRef.child(userID).child(Fire.userStatusKey)
-         }
+         }*/
          
          //SearchController parameters
          searchController.searchResultsUpdater = self
