@@ -19,4 +19,7 @@ class DB {
     
     static let user_status = "user_status"
     static let user_status_tag = "#"+user_status
+    
+    static let user_messages = "user_messages"
+    static let user_messages_tag = "#"+user_messages
 }

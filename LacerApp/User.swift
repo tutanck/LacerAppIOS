@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class User {
+class User : Shot {
     
     //Constants
     static let coll = DB.user_profiles
@@ -28,12 +28,32 @@ class User {
     var status : Int
     
     
+    init(_id : String, name : String, photo : UIImage?, status: Int){
+        self.name = name
+        self.status = status
+        self.photo = photo
+        
+        ref = nil
+        super.init(_id: _id)
+    }
+    
     init(name : String, photo : UIImage?, status: Int){
         self.name = name
         self.status = status
         self.photo = photo
         
         ref = nil
+        super.init(_id: "")
+    }
+    
+    
+    override init(_id : String){
+        //autoload user
+        self.name = ""
+        self.status = 0
+        self.photo = UIImage()
+        ref = nil
+        super.init(_id: _id)
     }
     
     
@@ -45,6 +65,7 @@ class User {
         self.status = snapshotValue[statusKey] as! Int
         
         ref = snapshot.ref
+        super.init(_id: "")
     }
 
     

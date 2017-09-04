@@ -21,16 +21,16 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
     }
     
     var messages: [Message] = [
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
-        Message(text : "Yes, totally looking to buy an iPhone 7.", author : nil),
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
-        Message(text : "Bla Bla Bla", author : nil),
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
-        Message(text : "Bla Bla Bla", author : nil),
-        Message(text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla", author : nil)
+        Message(_id: "", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
+        Message(_id: "", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
+        Message(_id: "", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
+        Message(_id: "", text : "Yes, totally looking to buy an iPhone 7.", author : nil),
+        Message(_id: "", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
+        Message(_id: "", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
+        Message(_id: "", text : "Bla Bla Bla", author : nil),
+        Message(_id: "", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", author : nil),
+        Message(_id: "", text : "Bla Bla Bla", author : nil),
+        Message(_id: "", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla", author : nil)
     ]
     
     
@@ -212,7 +212,7 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
     
     func simulate() {
        let messageText = "Here's a text message that was sent a few minutes ago..."
-        let message = Message(text: messageText, author: nil)
+        let message = Message(_id: "", text: messageText, author: nil)
         messages.append(message)
         
         //messages = messages.sorted(by: {$0.date!.compare($1.date! as Date) == .orderedAscending})
@@ -229,13 +229,15 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
             
             if messageText.isEmpty {return}
             
-            messages.append(Message(text: messageText, author: nil))
+            messages.append(Message(_id: "", text: messageText, author: nil))
+            
             
             let item = messages.count - 1
             let insertionIndexPath = IndexPath(item: item, section: 0)
             collectionView?.insertItems(at: [insertionIndexPath])
-            collectionView?.scrollToItem(at: insertionIndexPath, at: .bottom, animated: true)
+            //collectionView?.scrollToItem(at: insertionIndexPath, at: .bottom, animated: true)
             
+            collectionView!.scrollToLastItem(atIts: .bottom, animated: true)
             inputTextField.text = nil
         }
     }

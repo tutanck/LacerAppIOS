@@ -29,6 +29,13 @@ class UserContactsTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         tabBarController?.tabBar.isHidden = false
+        
+        Message.findPrivateConversationBetween(
+            speakers: ["",""], ack: { (dataArray) in
+        print (dataArray)
+        
+        })
+        
     }
     
     override func viewDidLoad() {
@@ -144,6 +151,50 @@ class UserContactsTableViewController: UITableViewController {
     //Mark : unwinds
     
     @IBAction func cancelFromSearchUser(segue:UIStoryboardSegue) {}
+    
+    
+    
+    
+    
+    
+    private func startFollowingConversation() {
+        if let userID = UserInfos._id {
+            IO.r.socket.on(DB.user_messages_tag+"/"+userID, callback: { (dataArray) in /*check itsan update*/self.loadData() })
+            loadData()
+        }
+    }
+    
+    
+    private func loadData(){
+        if let userID = UserInfos._id {
+            Message.findUserInterlocutors(ack: dataDidLoad)
+        }
+    }
+    
+    private func dataDidLoad(dataArray : [Any])->(){
+        Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
+            if let res = res as? JSONObjects {
+                populateUI(data : res)
+            }
+        })
+    }
+    
+    private func populateUI(data : JSONObjects){
+        
+        if UserInfos._id == nil { return }
+        
+        var tmp : [User] = []
+        
+        for item in data {
+            tmp.append( User(_id : item["contactID"] as! String ) )
+        }
+        
+        self.contacts = tmp
+        self.tableView.reloadData()
+
+    }
+    
+
     
 }
 
