@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Firebase
-
 
 @IBDesignable
 class SwitchableColorButton: UIButton {
@@ -45,14 +43,6 @@ class SwitchableColorButton: UIButton {
         }
     }
     
-    /*//MARK: Firef
-     
-     var ref : DatabaseReference? = nil{
-     didSet {
-     setupSwitchButton()
-     }
-     }*/
-    
     
     
     //MARK: Interfacce Builder settings
@@ -88,17 +78,14 @@ class SwitchableColorButton: UIButton {
     }
     
     deinit {
-        /*  if let ref = self.ref{
-         ref.removeAllObservers()
-         }*/
+    //TODO wakanai what
     }
     
     
     //MARK: Button Action
     func switchColor(button: UIButton) {         //REMINDER : blue : imediatelly available
-        
+
         let nextColor : UIColor = intToColor[(colorToInt[backgroundColor!]!+1)%intToColor.count]!
-        
         Alert.displayMessage(context: context!,
                              headerTitle :"Attention!",
                              message: messages[nextColor]!,
@@ -161,7 +148,7 @@ class SwitchableColorButton: UIButton {
         
         if data.count == 1 {
             let userStatus = data[0]
-            self.backgroundColor = self.intToColor[userStatus["status"] as? Int ?? 1 ]
+            self.backgroundColor = self.intToColor[userStatus["status"] as! Int]
             
             if self.activated == false{
                 print("Debug : SwitchableColorButton activated")

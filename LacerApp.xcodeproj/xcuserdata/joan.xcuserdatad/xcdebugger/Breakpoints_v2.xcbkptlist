@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LacerApp/SwitchableColorButton.swift"
-            timestampString = "526187797.371628"
+            timestampString = "526191232.735737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "SwitchableColorButton"
             landmarkType = "3">
          </BreakpointContent>
