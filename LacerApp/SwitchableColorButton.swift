@@ -78,13 +78,13 @@ class SwitchableColorButton: UIButton {
     }
     
     deinit {
-    //TODO wakanai what
+        //TODO wakanai what
     }
     
     
     //MARK: Button Action
     func switchColor(button: UIButton) {         //REMINDER : blue : imediatelly available
-
+        
         let nextColor : UIColor = intToColor[(colorToInt[backgroundColor!]!+1)%intToColor.count]!
         Alert.displayMessage(context: context!,
                              headerTitle :"Attention!",
@@ -157,11 +157,9 @@ class SwitchableColorButton: UIButton {
                 self.activated = true
             }
             
-        }else if data.count == 0 {
-            UserStatusSnap(status: 1)
-        }else{
-            Waiter.isConfused(context!)
         }
+        else if data.count == 0 { UserStatusSnap(status: 1) }
+        else{ Waiter.isConfused(context!) }
     }
     
 }
