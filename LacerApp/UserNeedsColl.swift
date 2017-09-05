@@ -10,15 +10,15 @@ import UIKit
 
 class UserNeedsColl {
     
-    static let coll = "user_needs"
-    static let tag = "#"+coll
+    static let name = "user_needs"
+    static let tag = "#"+name
     
     static func findUserNeeds(
         ack : @escaping ([Any]) -> ()
         ){
         if let userID = UserInfos._id {
             IO.r.find(
-                coll: coll,
+                coll: name,
                 query: ["ownerID":userID],
                 opt: [
                     "title": 1,
@@ -36,7 +36,7 @@ class UserNeedsColl {
         ack : @escaping ([Any]) -> ()
         ){
         IO.r.find(
-            coll: coll,
+            coll: name,
             query: ["_id" : needID],
             ack: ack)
     }

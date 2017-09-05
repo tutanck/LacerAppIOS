@@ -1,5 +1,5 @@
 //
-//  Keyword.swift
+//  UserKeyword.swift
 //  LacerApp
 //
 //  Created by Joan Angb on 19/07/2017.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-class Keyword : Snapshot {
+class UserKeyword : Snapshot {
     
     var title : String
     var active : Bool

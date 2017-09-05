@@ -10,6 +10,14 @@ import UIKit
 
 class UserProfileSnap : Snap {
     
+    static var meta = ["tags":
+        [
+            ["kind" : "io",
+             "val" : UserProfilesColl.tag+"/"+UserInfos._id!]
+        ]
+    ]
+    
+    
     var type : Int
     var username : String
     var resume : String
@@ -23,9 +31,8 @@ class UserProfileSnap : Snap {
         // photo : UIImage?,
         
         ack: @escaping ([Any]) -> (),
-        _id : String?=nil,
         update_opt : JSONObject?=[:],
-        meta : JSONObject? = ["tags":[UserProfilesColl.tag]],
+        meta : JSONObject? = meta,
         timeout : Double? = 0
         ){
         
@@ -36,10 +43,10 @@ class UserProfileSnap : Snap {
         
         super.init(
             regina: IO.r,
-            coll: UserProfilesColl.coll,
+            coll: UserProfilesColl.name,
             ack: ack,
             timeout: timeout,
-            _id: _id,
+            _id: UserInfos._id!,
             meta: meta,
             update_opt : update_opt
         )

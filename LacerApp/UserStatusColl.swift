@@ -11,7 +11,7 @@ import UIKit
 
 class UserStatusColl {
     
-    static let coll = "user_status"
-    static let tag = "#"+coll
+    static let name = "user_status"
+    static let tag = "#"+name
     
 }

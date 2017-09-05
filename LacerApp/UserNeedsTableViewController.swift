@@ -149,23 +149,20 @@ class UserNeedsTableViewController: UITableViewController {
     
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
-            if let res = res as? JSONObjects {
-                populateTable(data : res)
+            if let res = res as? JSONArray {
+
+                var tmp : [UserNeed] = []
+                
+                for item in res {
+                    tmp.append( UserNeed(snapshot: item) )
+                }
+                
+                self.needs = tmp
+                self.tableView.reloadData()
             }
         })
     }
     
-    private func populateTable(data : JSONObjects){
-        var tmp : [UserNeed] = []
-        
-        for item in data {
-            tmp.append( UserNeed(snapshot: item) )
-        }
-        
-        self.needs = tmp
-        self.tableView.reloadData()
-    }
-
     
     //Mark : unwinds
     

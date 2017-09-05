@@ -104,7 +104,7 @@ public class Regina {
     
     public final func insert(
         coll : String,
-        docs : JSONObjects,
+        docs : JSONArray,
         opt : JSONObject?=[:],
         meta : JSONObject?=[:],
         ack : @escaping ([Any]) -> (),
@@ -166,4 +166,4 @@ public enum ReginaEvent : String {
 }
 
 public typealias JSONObject = [String: Any]
-public typealias JSONObjects = [[String: Any]]
+public typealias JSONArray = [[String: Any]]

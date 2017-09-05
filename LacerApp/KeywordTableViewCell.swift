@@ -10,6 +10,8 @@ import UIKit
 
 class KeywordTableViewCell: BasicTableViewCell {
     
+    var _id :String?
+    
     let keywordLabel: UILabel = {
         let label = UILabel()
         label.text = "JavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJava"
@@ -49,8 +51,12 @@ class KeywordTableViewCell: BasicTableViewCell {
     
     func switchChanged(uiSwitch: UISwitch) {
         let value = uiSwitch.isOn
-        // Do something
-        print("switchChanged")
+        UserKeywordSnap(
+            _id : _id!,
+            title: keywordLabel.text!,
+            active : value,
+            ack: { dataArray in print("Snap : \(dataArray)") }
+        )
     }
 
     

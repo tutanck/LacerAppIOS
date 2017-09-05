@@ -17,6 +17,9 @@
 		4E32D3FE1F5DF04500DEEC31 /* UserNeedsColl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D3FD1F5DF04500DEEC31 /* UserNeedsColl.swift */; };
 		4E32D4001F5DF0B400DEEC31 /* UserMessagesColl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D3FF1F5DF0B400DEEC31 /* UserMessagesColl.swift */; };
 		4E32D4031F5DFD8700DEEC31 /* DatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4021F5DFD8700DEEC31 /* DatesManager.swift */; };
+		4E32D4051F5EFD0600DEEC31 /* UserKeywordsColl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4041F5EFD0600DEEC31 /* UserKeywordsColl.swift */; };
+		4E32D4071F5F025300DEEC31 /* UserKeywordSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4061F5F025300DEEC31 /* UserKeywordSnap.swift */; };
+		4E32D4091F5F253B00DEEC31 /* ExtendedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4081F5F253B00DEEC31 /* ExtendedString.swift */; };
 		4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */; };
 		4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */; };
 		4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */; };
@@ -43,7 +46,7 @@
 		4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */; };
 		4EB2044C1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */; };
 		4EB204581F1BF6210096CC60 /* UtherNeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204571F1BF6210096CC60 /* UtherNeed.swift */; };
-		4EB204601F1ED4070096CC60 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2045F1F1ED4070096CC60 /* Keyword.swift */; };
+		4EB204601F1ED4070096CC60 /* UserKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2045F1F1ED4070096CC60 /* UserKeyword.swift */; };
 		4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */; };
 		4EB204681F2147950096CC60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB204671F2147950096CC60 /* User.swift */; };
 		4EB2046C1F214C5F0096CC60 /* StatusColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2046B1F214C5F0096CC60 /* StatusColor.swift */; };
@@ -106,6 +109,9 @@
 		4E32D3FD1F5DF04500DEEC31 /* UserNeedsColl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsColl.swift; sourceTree = "<group>"; };
 		4E32D3FF1F5DF0B400DEEC31 /* UserMessagesColl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessagesColl.swift; sourceTree = "<group>"; };
 		4E32D4021F5DFD8700DEEC31 /* DatesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesManager.swift; sourceTree = "<group>"; };
+		4E32D4041F5EFD0600DEEC31 /* UserKeywordsColl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordsColl.swift; sourceTree = "<group>"; };
+		4E32D4061F5F025300DEEC31 /* UserKeywordSnap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordSnap.swift; sourceTree = "<group>"; };
+		4E32D4081F5F253B00DEEC31 /* ExtendedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedString.swift; sourceTree = "<group>"; };
 		4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,7 +144,7 @@
 		4EB204491F1ACE3F0096CC60 /* SwitchableColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchableColorButton.swift; sourceTree = "<group>"; };
 		4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UthersNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4EB204571F1BF6210096CC60 /* UtherNeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherNeed.swift; sourceTree = "<group>"; };
-		4EB2045F1F1ED4070096CC60 /* Keyword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
+		4EB2045F1F1ED4070096CC60 /* UserKeyword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeyword.swift; sourceTree = "<group>"; };
 		4EB204651F2147350096CC60 /* SearchUthersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUthersTableViewController.swift; sourceTree = "<group>"; };
 		4EB204671F2147950096CC60 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4EB2046B1F214C5F0096CC60 /* StatusColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusColor.swift; sourceTree = "<group>"; };
@@ -232,6 +238,7 @@
 				4E32D3FB1F5DEFD300DEEC31 /* UserProfilesColl.swift */,
 				4E32D3FD1F5DF04500DEEC31 /* UserNeedsColl.swift */,
 				4E32D3FF1F5DF0B400DEEC31 /* UserMessagesColl.swift */,
+				4E32D4041F5EFD0600DEEC31 /* UserKeywordsColl.swift */,
 			);
 			name = Colls;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 				4E4D20DC1F4E74D2001AC0C4 /* ExtendedUICollectionView.swift */,
 				4EF9E9461F4F735F00922E57 /* ExtendedUIScrollView.swift */,
 				4EF162C41F5426DC00D61310 /* ScrollViewController.swift */,
+				4E32D4081F5F253B00DEEC31 /* ExtendedString.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -447,8 +455,8 @@
 		4EDAA9491F2D6C7C00F1A5A2 /* BusinessModel */ = {
 			isa = PBXGroup;
 			children = (
-				4EF85B211F5CA174001E37EE /* Snapshots */,
 				4EF85B181F5BB31F001E37EE /* Snaps */,
+				4EF85B211F5CA174001E37EE /* Snapshots */,
 			);
 			name = BusinessModel;
 			sourceTree = "<group>";
@@ -537,6 +545,7 @@
 				4EF85B141F5B6E96001E37EE /* UserProfileSnap.swift */,
 				4EF85B1A1F5C21C0001E37EE /* UserNeedSnap.swift */,
 				4EF85B241F5CF026001E37EE /* UserStatusSnap.swift */,
+				4E32D4061F5F025300DEEC31 /* UserKeywordSnap.swift */,
 			);
 			name = Snaps;
 			sourceTree = "<group>";
@@ -548,7 +557,7 @@
 				4EB204571F1BF6210096CC60 /* UtherNeed.swift */,
 				4ECDB3C91F43C97F00352191 /* UserNeed.swift */,
 				4E4D20CE1F4DF08C001AC0C4 /* Message.swift */,
-				4EB2045F1F1ED4070096CC60 /* Keyword.swift */,
+				4EB2045F1F1ED4070096CC60 /* UserKeyword.swift */,
 			);
 			name = Snapshots;
 			sourceTree = "<group>";
@@ -852,6 +861,7 @@
 				4E28FB651F522CE400C6E5D7 /* MatchingProfilesTableViewCell.swift in Sources */,
 				4E32D4031F5DFD8700DEEC31 /* DatesManager.swift in Sources */,
 				4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */,
+				4E32D4091F5F253B00DEEC31 /* ExtendedString.swift in Sources */,
 				4ECDB3CA1F43C97F00352191 /* UserNeed.swift in Sources */,
 				4EB204681F2147950096CC60 /* User.swift in Sources */,
 				4E4D20D31F4DF210001AC0C4 /* MessageCollectionViewCell.swift in Sources */,
@@ -883,9 +893,11 @@
 				4EF162C81F543C0600D61310 /* UserProfileViewController.swift in Sources */,
 				4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */,
 				4E4D20CD1F4DEE5D001AC0C4 /* MessengerCollectionViewController.swift in Sources */,
+				4E32D4071F5F025300DEEC31 /* UserKeywordSnap.swift in Sources */,
 				4E28FB611F51F86A00C6E5D7 /* UserContactTableViewCell.swift in Sources */,
 				4EB204581F1BF6210096CC60 /* UtherNeed.swift in Sources */,
 				4E4D20BE1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift in Sources */,
+				4E32D4051F5EFD0600DEEC31 /* UserKeywordsColl.swift in Sources */,
 				4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */,
 				4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */,
 				4E32D3FE1F5DF04500DEEC31 /* UserNeedsColl.swift in Sources */,
@@ -894,7 +906,7 @@
 				4E32D4001F5DF0B400DEEC31 /* UserMessagesColl.swift in Sources */,
 				4E4D20DD1F4E74D2001AC0C4 /* ExtendedUICollectionView.swift in Sources */,
 				4EDAA95C1F36186600F1A5A2 /* UserKeywordsTableViewController.swift in Sources */,
-				4EB204601F1ED4070096CC60 /* Keyword.swift in Sources */,
+				4EB204601F1ED4070096CC60 /* UserKeyword.swift in Sources */,
 				4EF85B131F5A4DAC001E37EE /* Snap.swift in Sources */,
 				4EF162CA1F54460600D61310 /* UtherProfileViewController.swift in Sources */,
 				4EF85B0E1F5A4405001E37EE /* UserStatusColl.swift in Sources */,

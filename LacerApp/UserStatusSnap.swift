@@ -11,22 +11,22 @@ import UIKit
 
 class UserStatusSnap : Snap {
     
+    static let meta = ["tags":
+        [
+            ["kind" : "io",
+             "val" : UserStatusColl.tag+"/"+UserInfos._id!]
+        ]
+    ]
+    
+    
     var status : Int
     
     
     init?(
         status: Int,
         
-        ack: (([Any]) -> ())? = {dataArray in},
-        _id : String? = UserInfos._id!,
-        update_opt : JSONObject?=["upsert":true],
-        meta : JSONObject? =
-        ["tags":
-            [
-                ["kind" : "io",
-                 "val" : UserStatusColl.tag+"/"+UserInfos._id!]
-            ]
-        ],
+        ack: @escaping ([Any]) -> (),
+        meta : JSONObject? = meta,
         timeout : Double? = 0
         ){
         
@@ -34,12 +34,12 @@ class UserStatusSnap : Snap {
         
         super.init(
             regina: IO.r,
-            coll: UserStatusColl.coll,
-            ack: ack!,
+            coll: UserStatusColl.name,
+            ack: ack,
             timeout: timeout,
-            _id: _id,
+            _id: UserInfos._id!,
             meta: meta,
-            update_opt : update_opt
+            update_opt : ["upsert":true]
         )
     }
     

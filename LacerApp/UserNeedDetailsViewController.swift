@@ -419,10 +419,8 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
             
         }
         
-        if let userID = UserInfos._id {
         
         UserNeedSnap(
-            ownerID : userID,
             searchText : searchController.searchBar.text!+"e",
             active: needStatusSwitch.isOn,
             title: titleTextField.text!,
@@ -432,10 +430,7 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
             time:  timeTextField.text,
             ack: userNeedDidSave,
             _id : _id)
-        }else{
-            Waiter.isConfused(self)
-        }
-        
+            
         disableRightBarButtonItem()
     }
     
@@ -474,13 +469,13 @@ class UserNeedDetailsViewController: ScrollViewController, UITextFieldDelegate, 
     
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
-            if let res = res as? JSONObjects {
+            if let res = res as? JSONArray {
                 populateUI(data : res)
             }
         })
     }
     
-    private func populateUI(data : JSONObjects){
+    private func populateUI(data : JSONArray){
         if data.count == 1 {
             let need = data[0]
             self.needStatusSwitch.isOn = need["visible"] as? Bool ?? false

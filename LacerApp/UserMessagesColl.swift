@@ -10,8 +10,8 @@ import UIKit
 
 class UserMessagesColl {
     
-    static let coll = "user_messages"
-    static let tag = "#"+coll
+    static let name = "user_messages"
+    static let tag = "#"+name
     
     
     static func findPrivateConversationBetween(
@@ -22,7 +22,7 @@ class UserMessagesColl {
             fatalError("findPrivateConversation : private conversation has always 2 speakers!")
         }
         IO.r.find(
-            coll: coll,
+            coll: name,
             query:
             ["$or" :
                 [

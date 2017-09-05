@@ -89,7 +89,11 @@ class SwitchableColorButton: UIButton {
         Alert.displayMessage(context: context!,
                              headerTitle :"Attention!",
                              message: messages[nextColor]!,
-                             confirmAction : { _ in UserStatusSnap(status: self.colorToInt[nextColor]!) },
+                             confirmAction : { _ in
+                                UserStatusSnap(
+                                    status: self.colorToInt[nextColor]!,
+                                    ack: { dataArray in print("Snap : \(dataArray)")}
+                                ) },
                              cancellable : true)
     }
     
@@ -101,7 +105,12 @@ class SwitchableColorButton: UIButton {
         if let userID = UserInfos._id {
             IO.r.socket.on(UserStatusColl.tag+"/"+userID, callback: {
                 (dataArray, ackEmitter) in
-                if dataArray[0] as! Int == 2 { self.loadData() }
+                
+                let ctx = dataArray[1] as! JSONObject
+                if ctx["op"] as! Int == 2 {
+                    self.loadData()
+                }
+                
             })
             loadData()
         }
@@ -110,19 +119,19 @@ class SwitchableColorButton: UIButton {
     
     private func loadData(){
         if let userID = UserInfos._id {
-            IO.r.find(coll: UserStatusColl.coll, query: ["_id":userID], ack: dataDidLoad)
+            IO.r.find(coll: UserStatusColl.name, query: ["_id":userID], ack: dataDidLoad)
         }
     }
     
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: context!, dataArray: dataArray, drink: {res in
-            if let res = res as? JSONObjects {
+            if let res = res as? JSONArray {
                 populateUI(data : res)
             }
         })
     }
     
-    private func populateUI(data : JSONObjects){
+    private func populateUI(data : JSONArray){
         
         if UserInfos._id == nil { return }
         
@@ -138,7 +147,10 @@ class SwitchableColorButton: UIButton {
             }
             
         }
-        else if data.count == 0 { UserStatusSnap(status: 1) }
+        else if data.count == 0 { UserStatusSnap(
+            status: 1,
+            ack: { dataArray in print("Snap : \(dataArray)")}
+            ) }
         else{ Waiter.isConfused(context!) }
     }
     

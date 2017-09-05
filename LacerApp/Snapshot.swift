@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Snapshot : StateShot {
+class Snapshot : StateSnapshot {
     
     var _id : String
     var _date : Date
@@ -30,4 +30,4 @@ class Snapshot : StateShot {
 }
 
 
-public protocol StateShot {}
+public protocol StateSnapshot {}

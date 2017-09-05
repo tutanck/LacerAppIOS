@@ -220,13 +220,10 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
         setInputsDelegate()
         manageKeyboard()
         setTapToDissmissKeyboard()
-        
-        
-        
-        
-        
-        
-        _id = UserInfos._id
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadData()
     }
     
     deinit {
@@ -386,20 +383,13 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
             type: typeSegmentedControl.selectedSegmentIndex,
             username: usernameTextField.text!,
             resume: resumeTextView.text,
-            ack: userProfileDidSave,
-            _id : _id)
+            ack: userProfileDidSave)
+        
         disableRightBarButtonItem()
     }
     
     
     
-    // MARK: - IO
-    
-    var _id : String?=nil {
-        didSet {
-            loadData()
-        }
-    }
     
     
     // MARK: - private methods
@@ -407,7 +397,10 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     private func userProfileDidSave (dataArray : [Any])->(){
         enableRightBarButtonItem()
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
-            Alert.displayMessage(context: self, headerTitle: "Votre profil a été mis à jour", confirmable : false)
+            if let res = res as? JSONObject {
+                UserInfos._id = res["_id"] as! String
+                Alert.displayMessage(context: self, headerTitle: "Votre profil a été mis à jour", confirmable : false)
+            }
             disableRightBarButtonItem()
         })
     }
@@ -422,13 +415,13 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
-            if let res = res as? JSONObjects {
+            if let res = res as? JSONArray {
                 populateUI(data : res)
             }
         })
     }
     
-    private func populateUI(data : JSONObjects){
+    private func populateUI(data : JSONArray){
         if data.count == 1 {
             let profile = data[0]
             self.typeSegmentedControl.selectedSegmentIndex = profile["type"] as? Int ?? 0

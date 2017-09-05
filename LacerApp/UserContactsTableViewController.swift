@@ -174,13 +174,13 @@ class UserContactsTableViewController: UITableViewController {
     
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
-            if let res = res as? JSONObjects {
+            if let res = res as? JSONArray {
                 populateUI(data : res)
             }
         })
     }
     
-    private func populateUI(data : JSONObjects){
+    private func populateUI(data : JSONArray){
         
         if UserInfos._id == nil { return }
         

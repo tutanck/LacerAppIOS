@@ -49,6 +49,33 @@ class Snap : StateSnap {
     }
     
     
+    
+    
+    public init?(
+        regina : Regina,
+        coll : String,
+        ack : @escaping ([Any]) -> (),
+        timeout : Double? = 0,
+        query : JSONObject,
+        meta : JSONObject?=[:],
+        opt : JSONObject?=[:]
+        ) {
+        
+        regina.update(
+            coll: coll,
+            query: query,
+            update: render(),
+            opt: opt,
+            meta: meta,
+            ack: ack,
+            timeout: timeout)
+        
+        return nil //transient init
+    }
+    
+    
+    
+    
     public func render()->JSONObject {
         preconditionFailure("fatal : Snap's 'render()' must be overridden!")
     }

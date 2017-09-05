@@ -10,8 +10,8 @@ import UIKit
 
 class UserProfilesColl {
 
-    static let coll = "user_profiles"
-    static let tag = "#"+coll
+    static let name = "user_profiles"
+    static let tag = "#"+name
     
     
     static func findUserProfile(
@@ -19,7 +19,7 @@ class UserProfilesColl {
         ){
         if let userID = UserInfos._id {
             IO.r.find(
-                coll: coll,
+                coll: name,
                 query: ["_id":userID],
                 ack: ack)
         }
@@ -31,7 +31,7 @@ class UserProfilesColl {
         ack : @escaping ([Any]) -> ()
         ){
         IO.r.find(
-            coll: coll,
+            coll: name,
             query: ["_id" : userID],
             ack: ack)
     }

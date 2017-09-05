@@ -11,6 +11,6 @@ import UIKit
 
 class UserInfos{
     
-    static var _id : String?     = "59ac637de2f722738609c6e8"
+    static var _id : String? = "59af186e04f3a230ffed406a" //TODO tester tte l app avec _id=nil
     
 }

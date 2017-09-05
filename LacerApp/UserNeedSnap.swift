@@ -10,7 +10,16 @@ import UIKit
 
 class UserNeedSnap : Snap {
     
-    var ownerID : String
+    static let meta = ["tags":
+        [
+            ["kind" : "io",
+             "val" : UserNeedsColl.tag+"/"+UserInfos._id!],
+            ["kind" : "io",
+             "val" : UserNeedsColl.tag]
+        ]
+    ]
+        
+    
     var searchText : String
     var active : Bool
     var title : String
@@ -21,7 +30,6 @@ class UserNeedSnap : Snap {
     
     
     init?(
-        ownerID : String,
         searchText : String,
         active: Bool,
         title : String,
@@ -33,11 +41,10 @@ class UserNeedSnap : Snap {
         ack: @escaping ([Any]) -> (),
         _id : String?=nil,
         update_opt : JSONObject?=[:],
-        meta : JSONObject? = ["tags":[UserNeedsColl.tag]],
+        meta : JSONObject? = meta,
         timeout : Double? = 0
         ){
         
-        self.ownerID = ownerID
         self.searchText = searchText
         self.active = active
         self.title = title
@@ -48,7 +55,7 @@ class UserNeedSnap : Snap {
         
         super.init(
             regina: IO.r,
-            coll: UserNeedsColl.coll,
+            coll: UserNeedsColl.name,
             ack: ack,
             timeout: timeout,
             _id: _id,
@@ -60,7 +67,7 @@ class UserNeedSnap : Snap {
     
     public override func render()->JSONObject {
         return [
-            "ownerID" : ownerID,
+            "ownerID" : UserInfos._id!,
             "searchText" : searchText,
             "active" : active,
             "title" : title,

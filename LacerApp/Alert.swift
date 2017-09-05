@@ -27,7 +27,9 @@ class Alert {
         alertActionStyle : UIAlertActionStyle = .default,
         
         animated : Bool = true,
-        completion : (() -> Swift.Void)? = nil
+        completion : (() -> Swift.Void)? = nil,
+        
+        displayDuration : Double? = 2
         ){
         
         let alert = UIAlertController (title : headerTitle, message : message, preferredStyle : alertControllerPreferredStyle)
@@ -48,7 +50,7 @@ class Alert {
         }else{
             context.present(alert, animated: animated, completion: completion)
             
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + displayDuration!){
                 alert.dismiss(animated: animated, completion: completion)
             }
             
