@@ -10,6 +10,8 @@ import UIKit
 
 class UserNeedTableViewCell: BasicTableViewCell {
     
+    var _id : String?
+    
     //metaContainerView
     let titleLabel: UILabel = {
         let label = UILabel()

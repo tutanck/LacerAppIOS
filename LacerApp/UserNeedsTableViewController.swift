@@ -50,15 +50,11 @@ class UserNeedsTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return needs.count
-    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return needs.count }
     
-    
+    //GET
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? UserNeedTableViewCell  else {
             fatalError("The dequeued cell is not an instance of" + cellId)
@@ -67,6 +63,7 @@ class UserNeedsTableViewController: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let need = needs[indexPath.row]
         
+        cell._id = need._id
         cell.titleLabel.text = need.title
         cell.previewLabel.text = need.searchText
         cell.timeLabel.text = need._date.description
@@ -76,18 +73,14 @@ class UserNeedsTableViewController: UITableViewController {
     }
     
     
+    //DELETE
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
     
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    
-    
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+      guard let cell = tableView.cellForRow(at: indexPath) as? KeywordTableViewCell else { return }
+        
         if editingStyle == .delete {
-            let need = needs[indexPath.row]
+            //UserNeedsColl.delete //TODO
             
         }
     }
