@@ -18,7 +18,6 @@ class UserNeed : Snapshot {
     
     init (
         _id : String,
-        _date : String,
         
         title : String,
         active : Bool,
@@ -29,8 +28,7 @@ class UserNeed : Snapshot {
         self.active = active
         self.searchText = searchText
         
-        super.init(_id : _id,
-                   _date: _date)
+        super.init(_id : _id)
     }
     
     
@@ -42,8 +40,7 @@ class UserNeed : Snapshot {
         self.searchText = snapshot["searchText"] as! String
         self.active = snapshot["active"] as! Bool
         
-        super.init(_id : snapshot["_id"] as! String,
-                   _date: snapshot["_date"] as! String)
+        super.init(_id : snapshot["_id"] as! String)
     }
     
 }

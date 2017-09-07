@@ -22,9 +22,9 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
     }
     
     var messages: [Message] = [
-        Message(_id: "", _date:"2017-09-04T21:16:40.179Z", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", authorID : "",recipientID : ""),
-        Message(_id: "", _date:"2017-09-04T21:16:40.179Z", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", authorID : "",recipientID : ""),
-        Message(_id: "", _date:"2017-09-04T21:16:40.179Z", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", authorID : "",recipientID : "")
+        Message(_id: "", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", authorID : "",recipientID : ""),
+        Message(_id: "", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", authorID : "",recipientID : ""),
+        Message(_id: "", text : "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ", authorID : "",recipientID : "")
     ]
     
     
@@ -206,7 +206,7 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
     
     func simulate() {
        let messageText = "Here's a text message that was sent a few minutes ago..."
-        let message = Message(_id: "",_date:"2017-09-04T21:16:40.179Z", text: messageText, authorID: "", recipientID:"")
+        let message = Message(_id: "", text: messageText, authorID: "", recipientID:"")
         messages.append(message)
         
         //messages = messages.sorted(by: {$0.date!.compare($1.date! as Date) == .orderedAscending})
@@ -223,7 +223,7 @@ class MessengerCollectionViewController : UICollectionViewController, UICollecti
             
             if messageText.isEmpty {return}
             
-            messages.append(Message(_id: "",_date: "2017-09-04T21:16:40.179Z", text: messageText, authorID: "", recipientID:""))
+            messages.append(Message(_id: "",text: messageText, authorID: "", recipientID:""))
             
             
             let item = messages.count - 1

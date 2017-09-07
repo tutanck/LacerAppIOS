@@ -19,7 +19,6 @@ class UthersNeedsTableViewController: UITableViewController {
     
     var needs : [UtherNeed] = [
       UtherNeed(_id : String(),
-        _date : "2017-09-04T21:16:40.179Z",
         title : String(),
         active : false,
         searchText : String(),

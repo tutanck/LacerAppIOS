@@ -16,7 +16,6 @@ class UserKeyword : Snapshot {
     
     init (
         _id :String,
-        _date : String,
         
         title : String,
         active : Bool
@@ -25,8 +24,7 @@ class UserKeyword : Snapshot {
         self.title = title
         self.active = active
         
-        super.init(_id : _id,
-                   _date: _date)
+        super.init(_id : _id)
     }
     
     init(
@@ -36,8 +34,7 @@ class UserKeyword : Snapshot {
         self.title = snapshot["title"] as! String
         self.active = snapshot["active"] as! Bool
         
-        super.init(_id :  snapshot["_id"] as! String,
-                   _date: snapshot["_date"] as! String)
+        super.init(_id :  snapshot["_id"] as! String)
     }
     
 }

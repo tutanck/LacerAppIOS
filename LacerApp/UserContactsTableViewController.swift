@@ -14,7 +14,7 @@ class UserContactsTableViewController: UITableViewController {
     let cellID = "UserContactTableViewCell"
     
     
-    var contacts : [User] = [User(_id:"", _date : "2017-09-04T21:16:40.179Z", username : "Joan", status: 1)]
+    var contacts : [User] = [User(_id:"", username : "Joan", status: 1)]
     
     var filteredContacts = [User]()
     

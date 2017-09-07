@@ -15,21 +15,37 @@ class UserKeywordsTableViewController: UITableViewController {
     
     var keywords : [UserKeyword] = []
     
+    var filteredKeywords = [UserKeyword]()
+    
+    
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
     
     // MARK: - System Events
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //SearchController parameters
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+        //SearchController's search bar parameters
+        searchController.searchBar.scopeButtonTitles = ["Tout", "Actifs", "Inactifs"]
+        searchController.searchBar.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if let userID = UserInfos._id {
             IO.r.socket.on(UserKeywordsColl.tag+"/"+userID, callback: {
                 (dataArray, ackEmitter) in
-            
+                
                 let ctx = dataArray[1] as! JSONObject
                 let op = ctx["op"] as! Int
-                    if op == 2 || op == -1 {
+                if op == 2 || op == -1 {
                     self.loadData()
                 }
                 
@@ -44,9 +60,13 @@ class UserKeywordsTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if SearchBarManager.isFiltering(searchController) {
+            return filteredKeywords.count
+        }
+        return keywords.count
+    }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return keywords.count }
     
     //GET
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,8 +74,13 @@ class UserKeywordsTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of " + cellID)
         }
         
-        // Fetches the appropriate meal for the data source layout.
-        let keyword = keywords[indexPath.row]
+        let keyword : UserKeyword
+        
+        if SearchBarManager.isFiltering(searchController) {
+            keyword = filteredKeywords[indexPath.row]
+        }else{
+            keyword = keywords[indexPath.row]
+        }
         
         cell._id = keyword._id
         cell.keywordLabel.text = keyword.title
@@ -65,7 +90,7 @@ class UserKeywordsTableViewController: UITableViewController {
     }
     
     
-    
+    //EDITABLE
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
     
     
@@ -113,9 +138,14 @@ class UserKeywordsTableViewController: UITableViewController {
     //DELETE
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? KeywordTableViewCell else { return }
-
+        
         if editingStyle == .delete {
-            UserKeywordsColl.deleteUserKeyword(_id: cell._id!, ack: { dataArray in print(dataArray) })
+            Reaper.delete(
+                coll: UserKeywordsColl.name ,
+                _id: cell._id!,
+                meta : UserKeywordSnap.meta,
+                ack: { dataArray in print(dataArray) }
+            )
         }
     }
     
@@ -135,6 +165,7 @@ class UserKeywordsTableViewController: UITableViewController {
                 }
                 
                 self.keywords = tmp
+                updateSearchResults(for: searchController)
                 self.tableView.reloadData()
                 
             }
@@ -142,4 +173,53 @@ class UserKeywordsTableViewController: UITableViewController {
     }
     
     
+    
+    
+    
+    //MARK: Search Logic
+    
+    func filterContentFor(_ searchText: String, scope: String = "Tout") {
+        filteredKeywords = keywords.filter({
+            (keyword : UserKeyword) -> Bool in
+            
+            var doesScopeMatch = false
+            
+            if (scope == "Tout"){
+                doesScopeMatch = true
+            } else if scope == "Actifs" && keyword.active {
+                doesScopeMatch = true
+            } else if scope == "Inactifs" && !keyword.active {
+                doesScopeMatch = true
+            }
+            
+           let searchText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            if searchText.isEmpty {
+                return doesScopeMatch
+            } else {
+                return doesScopeMatch && keyword.title.lowercased().contains(searchText.lowercased())
+            }
+        })
+        tableView.reloadData()
+    }
+    
+    
+    
 }
+
+
+//SearchDelegate
+extension UserKeywordsTableViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentFor(searchController.searchBar.text!, scope: scope)
+    }
+}
+
+extension UserKeywordsTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentFor(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
+

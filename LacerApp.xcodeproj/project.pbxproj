@@ -20,6 +20,8 @@
 		4E32D4051F5EFD0600DEEC31 /* UserKeywordsColl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4041F5EFD0600DEEC31 /* UserKeywordsColl.swift */; };
 		4E32D4071F5F025300DEEC31 /* UserKeywordSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4061F5F025300DEEC31 /* UserKeywordSnap.swift */; };
 		4E32D4091F5F253B00DEEC31 /* ExtendedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4081F5F253B00DEEC31 /* ExtendedString.swift */; };
+		4E32D40B1F61CD1200DEEC31 /* Reaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D40A1F61CD1200DEEC31 /* Reaper.swift */; };
+		4E32D40D1F61E04700DEEC31 /* SearchBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D40C1F61E04700DEEC31 /* SearchBarManager.swift */; };
 		4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */; };
 		4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */; };
 		4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */; };
@@ -112,6 +114,8 @@
 		4E32D4041F5EFD0600DEEC31 /* UserKeywordsColl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordsColl.swift; sourceTree = "<group>"; };
 		4E32D4061F5F025300DEEC31 /* UserKeywordSnap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserKeywordSnap.swift; sourceTree = "<group>"; };
 		4E32D4081F5F253B00DEEC31 /* ExtendedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedString.swift; sourceTree = "<group>"; };
+		4E32D40A1F61CD1200DEEC31 /* Reaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reaper.swift; sourceTree = "<group>"; };
+		4E32D40C1F61E04700DEEC31 /* SearchBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarManager.swift; sourceTree = "<group>"; };
 		4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				4EF85B0B1F5A19B9001E37EE /* IO.swift */,
 				4EF85B161F5B9D01001E37EE /* Waiter.swift */,
 				4E32D4021F5DFD8700DEEC31 /* DatesManager.swift */,
+				4E32D40C1F61E04700DEEC31 /* SearchBarManager.swift */,
 			);
 			name = ToolServices;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 		4ECDB3C61F428E4100352191 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				4E32D40A1F61CD1200DEEC31 /* Reaper.swift */,
 				4E32D4011F5DF18A00DEEC31 /* Colls */,
 			);
 			name = DB;
@@ -882,6 +888,7 @@
 				4EF162C31F53BF7F00D61310 /* UserNeedDetailsViewController.swift in Sources */,
 				4EB2043E1F1A21E30096CC60 /* UserContactsTableViewController.swift in Sources */,
 				4EF162CE1F5558B400D61310 /* CodeInputView.swift in Sources */,
+				4E32D40B1F61CD1200DEEC31 /* Reaper.swift in Sources */,
 				4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */,
 				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
 				4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */,
@@ -902,6 +909,7 @@
 				4ED2B0B91F26656A0072BAEA /* Gatekeeper.swift in Sources */,
 				4E32D3FE1F5DF04500DEEC31 /* UserNeedsColl.swift in Sources */,
 				4E4D20C31F4BD51F001AC0C4 /* KeywordTableViewCell.swift in Sources */,
+				4E32D40D1F61E04700DEEC31 /* SearchBarManager.swift in Sources */,
 				4EF162C51F5426DC00D61310 /* ScrollViewController.swift in Sources */,
 				4E32D4001F5DF0B400DEEC31 /* UserMessagesColl.swift in Sources */,
 				4E4D20DD1F4E74D2001AC0C4 /* ExtendedUICollectionView.swift in Sources */,

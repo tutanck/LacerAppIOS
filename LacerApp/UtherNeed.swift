@@ -21,7 +21,6 @@ class UtherNeed : UserNeed {
     
     init (
         _id : String,
-        _date : String,
         
         title : String,
         active : Bool,
@@ -43,7 +42,6 @@ class UtherNeed : UserNeed {
         //self.position = position
         
         super.init(_id : _id,
-                   _date : _date,
                    title : title,
                    active : active,
                    searchText : searchText)
@@ -66,7 +64,6 @@ class UtherNeed : UserNeed {
         //self.position = snapshot["position"] as! Double
         
         super.init(_id :  snapshot["_id"] as! String,
-                   _date: snapshot["_date"] as! String,
                    title: snapshot["title"] as! String,
                    active: snapshot["active"] as! Bool,
                    searchText: snapshot["searchText"] as! String)

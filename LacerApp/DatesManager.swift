@@ -10,7 +10,11 @@ import UIKit
 
 class DatesManager {
     
-    
-    
+    static func toDate(_ dateStr: String) -> Date?{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        return dateFormatter.date(from: dateStr)
+    }
    
 }

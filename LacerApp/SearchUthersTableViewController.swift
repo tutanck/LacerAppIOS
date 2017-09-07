@@ -17,7 +17,7 @@ class SearchUthersTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var users : [User] = [User(_id : "", _date : "2017-09-04T21:16:40.179Z",username : "Joan", status: 1)]
+    var users : [User] = [User(_id : "", username : "Joan", status: 1)]
 
     
     let searchController = UISearchController(searchResultsController: nil)

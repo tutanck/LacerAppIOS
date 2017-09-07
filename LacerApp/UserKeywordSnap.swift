@@ -61,7 +61,6 @@ class UserKeywordSnap : Snap {
         timeout : Double? = 0
         ){
         
-        
         let title = title.lowercased() //important!
         self.title = title
         self.active = active!

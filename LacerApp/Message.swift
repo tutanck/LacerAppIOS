@@ -17,7 +17,6 @@ class Message : Snapshot{
     
     
     init(_id : String,
-         _date : String,
          
          text : String,
          authorID : String,
@@ -28,8 +27,7 @@ class Message : Snapshot{
         self.authorID = authorID
         self.recipientID = recipientID
         
-        super.init(_id : _id,
-                   _date: _date)
+        super.init(_id : _id)
     }
     
     
@@ -41,8 +39,7 @@ class Message : Snapshot{
         self.authorID = snapshot["authorID"] as! String
         self.recipientID = snapshot["recipientID"] as! String
         
-        super.init(_id :  snapshot["_id"] as! String,
-                   _date: snapshot["_date"] as! String)
+        super.init(_id :  snapshot["_id"] as! String)
     }
     
     
