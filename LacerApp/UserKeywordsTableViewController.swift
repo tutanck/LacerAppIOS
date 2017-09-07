@@ -13,7 +13,11 @@ class UserKeywordsTableViewController: UITableViewController {
     
     let cellID = "KeywordTableViewCell"
     
-    var keywords : [UserKeyword] = []
+    var keywords : [UserKeyword] = []{
+        didSet {
+            updateSearchResults(for: searchController)
+        }
+    }
     
     var filteredKeywords = [UserKeyword]()
     
@@ -165,7 +169,6 @@ class UserKeywordsTableViewController: UITableViewController {
                 }
                 
                 self.keywords = tmp
-                updateSearchResults(for: searchController)
                 self.tableView.reloadData()
                 
             }
