@@ -409,6 +409,32 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     private func loadData(){
         UserProfilesColl.findUserProfile(ack: dataDidLoad)
+        
+        if let userID = UserInfos._id {
+            
+            UserStarsColl.findReputation(ofID: userID, ack: { dataArray in
+                
+                Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
+                    if let data = res as? JSONArray {
+                        
+                        if data.count == 1 {
+                            let reputation = data[0]["reputation"] as! Int
+                             self.standingRatingControl.rating = reputation
+                        }else if data.count == 0 {
+                            self.standingRatingControl.rating = 0
+                        }else{
+                            Waiter.isConfused(self)
+                        }
+                        
+                    }
+                })
+                
+            })
+            
+        }else{
+            Waiter.isConfused(self)
+        }
+        
     }
     
     private func dataDidLoad(dataArray : [Any])->(){

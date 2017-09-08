@@ -76,6 +76,20 @@ public class Regina {
     
     //regina's services (convenience methods)
     
+    
+    public final func aggregate(
+        coll : String,
+        pipeline : JSONArray,
+        opt : JSONObject?=[:],
+        meta : JSONObject?=[:],
+        ack : @escaping ([Any]) -> (),
+        timeout : Double?=0
+        ){
+        socket.emitWithAck("aggregate", coll, pipeline, opt!, meta!).timingOut(after: timeout!, callback: ack)
+    }
+    
+    
+    
     public final func find(
         coll : String,
         query : JSONObject?=[:],

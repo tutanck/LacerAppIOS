@@ -8,18 +8,29 @@
 
 import UIKit
 
-class RatingControl: UIStackView {
+@IBDesignable class RatingControl: UIStackView {
     
     
-    //MARK: Properties
+    //MARK: IBInspectables
+    
+    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
+        didSet {
+            setupButtons()
+        }
+    }
+    
+    @IBInspectable var starCount: Int = 5 {
+        didSet {
+            setupButtons()
+        }
+    }
+    
+    @IBInspectable var isEditable: Bool = false
+
     
     var activated = false
     
-    var starSize: CGSize = CGSize(width: 44.0, height: 44.0)
     
-    var starCount: Int = 5
-    
-    var isEditable: Bool = false
     
     private var ratingButtons = [UIButton]()
     
@@ -37,8 +48,10 @@ class RatingControl: UIStackView {
         setupButtons()
     }
     
-    required init(coder: NSCoder) { fatalError("RatingControl::init(coder: NSCoder) not implemented") }
-    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+        setupButtons()
+    }
     
     
     
@@ -47,20 +60,17 @@ class RatingControl: UIStackView {
     func ratingButtonTapped(button: UIButton) {
         guard let index = ratingButtons.index(of: button) else {return}
         
-        if isEditable {
+        if let toID = toID {
             
-            if let toID = self.toID {
-                
-                // Calculate the rating of the selected button
-                var selectedRating = index + 1
-                
-                if index == 0 && rating == 1 { selectedRating = 0 }
-                
-                UserStarsSnap(toID: toID, stars: selectedRating, ack: {dataArray in print(dataArray)} )
-                
-            }
+            // Calculate the rating of the selected button
+            var selectedRating = index + 1
+            
+            if index == 0 && rating == 1 { selectedRating = 0 }
+            
+            UserStarsSnap(toID: toID, stars: selectedRating, ack: {dataArray in print(dataArray)} )
             
         }
+        
     }
     
     
@@ -68,24 +78,25 @@ class RatingControl: UIStackView {
     
     var context : UIViewController?{
         didSet{
-            
-            if let context = context, let userID = UserInfos._id, let toID = toID {
+            if isEditable {
                 
-                IO.r.socket.on(UserStarsColl.tag+"/fromID:"+userID+"/toID:"+toID, callback: {
-                    (dataArray, ackEmitter) in
-                    let ctx = dataArray[1] as! JSONObject
-                    let op = ctx["op"] as! Int
-                    if op == 2 || op == -1 {
-                        self.loadData()
-                    }
-                })
+                if let context = context, let userID = UserInfos._id, let toID = toID {
+                    
+                    IO.r.socket.on(UserStarsColl.tag+"/fromID:"+userID+"/toID:"+toID, callback: {
+                        (dataArray, ackEmitter) in
+                        let ctx = dataArray[1] as! JSONObject
+                        let op = ctx["op"] as! Int
+                        if op == 2 || op == -1 {
+                            self.loadData()
+                        }
+                    })
+                    
+                    loadData()
+                }else{
+                    Waiter.isConfused(context!)
+                }
                 
-                loadData()
-                
-            }else{
-                Waiter.isConfused(context!)
             }
-            
         }
     }
     
@@ -130,6 +141,13 @@ class RatingControl: UIStackView {
     //MARK: Private Methods
     
     private func setupButtons() {
+        
+        // Clear any existing buttons
+        for button in ratingButtons {
+            removeArrangedSubview(button)
+            button.removeFromSuperview()
+        }
+        ratingButtons.removeAll()
         
         // Load Button Images
         let bundle = Bundle(for: type(of: self))  //For the images to load properly in Interface Builder, you must explicitly specify the catalog’s bundle

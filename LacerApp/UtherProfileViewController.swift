@@ -29,6 +29,7 @@ class UtherProfileViewController: ScrollViewController {
             rating.translatesAutoresizingMaskIntoConstraints = false
             return rating
         }()
+        ratingView.tag = 100
         imageView.addSubview(ratingView)
         imageView.addConstraintsWithFormat("H:|-8-[v0]", views: ratingView)
         imageView.addConstraintsWithFormat("V:[v0]-8-|", views: ratingView)
@@ -232,7 +233,7 @@ class UtherProfileViewController: ScrollViewController {
     // MARK: - SEGUE
     
     func showActivityKeywords(){
-         if let _id = _id {
+        if let _id = _id {
             performSegue(withIdentifier: "segueFromUtherProfileToUtherActivityKeywords", sender: self)
         }else{
             Waiter.isConfused(self)
@@ -277,9 +278,28 @@ class UtherProfileViewController: ScrollViewController {
     // MARK: - private methods
     
     private func loadData(){
-        if let utherID = self._id {
-            standingRatingControl.toID = _id
+        if let utherID = _id {
             UserProfilesColl.findProfile(userID : utherID, ack: dataDidLoad)
+
+            UserStarsColl.findReputation(ofID: utherID, ack: { dataArray in
+                
+                Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
+                    if let data = res as? JSONArray {
+
+                        if data.count == 1 {
+                            let reputation = data[0]["reputation"] as! Int
+                            let utherReputationRatingControl = self.profileImageView.viewWithTag(100) as! RatingControl
+                            utherReputationRatingControl.rating = reputation
+                        }else{
+                            Waiter.isConfused(self)
+                        }
+                        
+                    }
+                })
+                
+            })
+            
+            standingRatingControl.toID = _id
         }
     }
     
