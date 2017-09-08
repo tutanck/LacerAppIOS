@@ -92,9 +92,9 @@ import UIKit
         
         // Load Button Images
         let bundle = Bundle(for: type(of: self))  //For the images to load properly in Interface Builder, you must explicitly specify the catalog’s bundle
-        let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
+        let highlightedStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
         let emptyStar = UIImage(named:"emptyStar", in: bundle, compatibleWith: self.traitCollection)
-        let highlightedStar = UIImage(named:"highlightedStar", in: bundle, compatibleWith: self.traitCollection)
+        let filledStar = UIImage(named:"highlightedStar", in: bundle, compatibleWith: self.traitCollection)
         
         // Add new buttons
         for _ in 0..<starCount {
