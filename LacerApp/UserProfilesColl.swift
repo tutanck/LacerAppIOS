@@ -47,8 +47,8 @@ class UserProfilesColl {
             "username":[
                 "$regex": "^"+username,
                 "$options": "i"
-            ],
-            "_id" : ["$ne":UserInfos._id]
+            ]
+            ,"_id" : ["$ne":UserInfos._id]
         ]
         
         if let type = type { query["type"] = type }

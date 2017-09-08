@@ -75,7 +75,8 @@ class UtherActivityKeywordsTableViewController: UITableViewController {
             keyword = keywords[indexPath.row]
         }
         
-        cell.titleLabel.text = keyword.title
+        cell._id = keyword._id
+        cell.keywordLabel.text = keyword.title
         
         return cell
     }

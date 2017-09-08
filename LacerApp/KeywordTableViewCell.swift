@@ -14,7 +14,7 @@ class KeywordTableViewCell: BasicTableViewCell {
     
     let keywordLabel: UILabel = {
         let label = UILabel()
-        label.text = "JavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJava"
+        label.text = ""
         label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
