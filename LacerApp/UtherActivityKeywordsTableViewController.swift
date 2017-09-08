@@ -86,6 +86,8 @@ class UtherActivityKeywordsTableViewController: UITableViewController {
     private func loadData(){
         if let ownerID = ownerID {
             UserKeywordsColl.findUtherKeywords(utherID: ownerID, ack: dataDidLoad)
+        }else{
+            Waiter.isConfused(self)
         }
     }
     

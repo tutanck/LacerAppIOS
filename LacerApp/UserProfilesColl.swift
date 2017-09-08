@@ -43,10 +43,12 @@ class UserProfilesColl {
         ack : @escaping ([Any]) -> ()
         ){
         
-        var query : [String:Any] = ["username":[
-            "$regex": "^"+username,
-            "$options": "i"
-            ]
+        var query : [String:Any] = [
+            "username":[
+                "$regex": "^"+username,
+                "$options": "i"
+            ],
+            "_id" : ["$ne":UserInfos._id]
         ]
         
         if let type = type { query["type"] = type }
@@ -55,7 +57,7 @@ class UserProfilesColl {
             coll: name,
             query:query,
             opt: ["limit":10],
-                ack: ack)
+            ack: ack)
     }
     
     

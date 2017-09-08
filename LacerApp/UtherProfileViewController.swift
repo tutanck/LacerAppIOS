@@ -230,8 +230,10 @@ class UtherProfileViewController: ScrollViewController {
     // MARK: - SEGUE
     
     func showActivityKeywords(){
-        if let _id = _id {
+         if let _id = _id {
             performSegue(withIdentifier: "segueFromUtherProfileToUtherActivityKeywords", sender: self)
+        }else{
+            Waiter.isConfused(self)
         }
     }
     
