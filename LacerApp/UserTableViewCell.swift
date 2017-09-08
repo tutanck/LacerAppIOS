@@ -47,7 +47,7 @@ class UserTableViewCell: BasicTableViewCell {
         return label
     }()
     
-    let hasReadImageView: UIImageView = {
+    let userStatusImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 10
@@ -85,7 +85,7 @@ class UserTableViewCell: BasicTableViewCell {
         containerView.addSubview(nameLabel)
         containerView.addSubview(messageLabel)
         containerView.addSubview(timeLabel)
-        containerView.addSubview(hasReadImageView)
+        containerView.addSubview(userStatusImageView)
         
         containerView.addConstraintsWithFormat("V:|[v0(24)]", views: timeLabel)
 
@@ -93,9 +93,9 @@ class UserTableViewCell: BasicTableViewCell {
         
         containerView.addConstraintsWithFormat("V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
         
-        containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, hasReadImageView)
+        containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, userStatusImageView)
         
-        containerView.addConstraintsWithFormat("V:[v0(20)]|", views: hasReadImageView)
+        containerView.addConstraintsWithFormat("V:[v0(20)]|", views: userStatusImageView)
     }
     
 }

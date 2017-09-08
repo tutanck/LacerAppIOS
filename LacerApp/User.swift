@@ -11,6 +11,7 @@ import UIKit
 
 class User : Snapshot {
     
+    var type : Int
     var username : String
     var photo : UIImage
     var status : Int
@@ -19,11 +20,13 @@ class User : Snapshot {
     init(
         _id : String,
         
+        type : Int,
         username : String,
         photo : UIImage? = UIImage(named : "userPhoto"),
         status: Int
         ){
         
+        self.type = type
         self.username = username
         self.photo = photo!
         self.status = status
@@ -35,6 +38,8 @@ class User : Snapshot {
     init(
         snapshot: JSONObject
         ) {
+
+        self.type = snapshot["type"] as! Int
         self.username = snapshot["username"] as! String
         self.status = snapshot["status"] as! Int
         self.photo =  snapshot["photo"] as? UIImage ?? UIImage(named: "userPhoto")!

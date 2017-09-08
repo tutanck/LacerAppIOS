@@ -53,7 +53,7 @@ class UserKeywordsTableViewController: UITableViewController {
                     self.loadData()
                 }
             })
-            
+        
             loadData()
         }
     }
@@ -170,7 +170,7 @@ class UserKeywordsTableViewController: UITableViewController {
                 
                 self.keywords = tmp
                 self.tableView.reloadData()
-                
+
             }
         })
     }

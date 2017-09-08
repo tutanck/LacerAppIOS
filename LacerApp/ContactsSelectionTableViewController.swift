@@ -16,8 +16,8 @@ class ContactsSelectionTableViewController: UITableViewController {
     // MARK: - Properties
     
     var users : [User] = [
-        User(_id: "", username : "Joan", status: 1),
-        User(_id: "", username : "Joan", status: 1),
+        User(_id: "", type : 1, username : "Joan", status: 1),
+        User(_id: "", type : 1, username : "Joan", status: 1),
 
     ]
     

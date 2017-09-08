@@ -14,11 +14,25 @@ class UserContactsTableViewController: UITableViewController {
     let cellID = "UserContactTableViewCell"
     
     
-    var contacts : [User] = [User(_id:"", username : "Joan", status: 1)]
+    var contacts : [User] = [
+        User(_id:"", type : 1, username : "Joan", status: 1),
+            User(_id:"", type : 1, username : "Jan", status: 1),
+            User(_id:"", type : 0, username : "Jon", status: 1),
+            User(_id:"", type : 1, username : "Jean", status: 1)
+    
+        ]{
+        didSet {
+            updateSearchResults(for: searchController)
+        }
+    }
+
     
     var filteredContacts = [User]()
     
+    
     let searchController = UISearchController(searchResultsController: nil)
+    
+    
     
     // MARK: - SwitchableControl
     
@@ -28,45 +42,44 @@ class UserContactsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         tabBarController?.tabBar.isHidden = false
-        
-        UserMessagesColl.findPrivateConversationBetween(
-            speakers: ["",""], ack: { (dataArray) in
-        print (dataArray)
-        
-        })
-        
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //user status button settings
         userAvailabilitySwitchableControl.context = self
-         
-         //SearchController parameters
-         searchController.searchResultsUpdater = self
-         searchController.dimsBackgroundDuringPresentation = false
-         definesPresentationContext = true
-         tableView.tableHeaderView = searchController.searchBar
-         
-         //SearchController's search bar parameters
-         searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
-         searchController.searchBar.delegate = self
         
+        //SearchController parameters
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+        //SearchController's search bar parameters
+        searchController.searchBar.scopeButtonTitles = ["Tout","Particuliers","Entreprises"]
+        searchController.searchBar.delegate = self
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadData()
+    }
+    
+    
     
     
     
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if SearchBarManager.isFiltering(searchController) {
+            return filteredContacts.count
+        }
         return contacts.count
     }
     
@@ -77,53 +90,24 @@ class UserContactsTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of " + cellID)
         }
         
-        let contact = contacts[indexPath.row]
-        
         cell.context = self
+        
+        let contact : User
+            
+        if SearchBarManager.isFiltering(searchController) {
+            contact = filteredContacts[indexPath.row]
+        }else{
+            contact = contacts[indexPath.row]
+        }
         
         cell.nameLabel.text = contact.username
         cell.messageLabel.text = "TODO"
         cell.profileImageView.image = contact.photo
-        //cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
+        cell.userStatusImageView.backgroundColor = StatusColor.getColor(status : contact.status)
         
         return cell
     }
     
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
     
     /*
      // MARK: - Navigation
@@ -136,16 +120,6 @@ class UserContactsTableViewController: UITableViewController {
      */
     
     
-    //MARK: Search Logic
-    
-    func filterContentForSearchText(_ searchText: String, scope: String = "Tout") {
-        filteredContacts = contacts.filter { contact in
-            let categoryMatch = (scope == "Tout") //|| (user.category == scope)
-            return  categoryMatch && contact.username.lowercased().contains(searchText.lowercased())
-        }
-        
-        tableView.reloadData()
-    }
     
     
     
@@ -158,44 +132,58 @@ class UserContactsTableViewController: UITableViewController {
     
     
     
-    private func startFollowingConversation() {
-        if let userID = UserInfos._id {
-            IO.r.socket.on(UserMessagesColl.tag+"/"+userID, callback: { (dataArray) in /*check itsan update*/self.loadData() })
-            loadData()
-        }
-    }
     
     
-    private func loadData(){
-        if let userID = UserInfos._id {
-           // MessageShot.findUserInterlocutors(ack: dataDidLoad)
-        }
-    }
+    private func loadData(){ UserMessagesColl.findUserIntelocutors(ack: dataDidLoad) }
     
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
             if let res = res as? JSONArray {
-                populateUI(data : res)
+
+                var tmp : [User] = []
+                
+                for item in res {
+                    tmp.append(User(snapshot: item))
+                }
+                
+                self.contacts = tmp
+                self.tableView.reloadData()
+                
             }
         })
     }
     
-    private func populateUI(data : JSONArray){
-        
-        if UserInfos._id == nil { return }
-        
-        var tmp : [User] = []
-        
-        for item in data {
-           // tmp.append( User(_id : item["contactID"] as! String ) )
-        }
-        
-        self.contacts = tmp
-        self.tableView.reloadData()
-
-    }
     
+    
+    
+    //MARK: Search Logic
+    
+    func filterContentFor(_ searchText: String, scope: String = "Tout") {
+        filteredContacts = contacts.filter({
+            (contact : User) -> Bool in
+            
+            var doesScopeMatch = false
+            
+            if (scope == "Tout"){
+                doesScopeMatch = true
+            } else if scope == "Particuliers" && contact.type == 0 {
+                doesScopeMatch = true
+            } else if scope == "Entreprises" && contact.type == 1 {
+                doesScopeMatch = true
+            }
+            
+            let searchText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            if searchText.isEmpty {
+                return doesScopeMatch
+            } else {
+                return doesScopeMatch && contact.username.lowercased().contains(searchText.lowercased())
+            }
+        })
+        tableView.reloadData()
+    }
 
+    
     
 }
 
@@ -206,14 +194,14 @@ extension UserContactsTableViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+        filterContentFor(searchController.searchBar.text!, scope: scope)
     }
 }
 
 //SearchBar's Scope Bar delegate
 extension UserContactsTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+        filterContentFor(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
 }
 

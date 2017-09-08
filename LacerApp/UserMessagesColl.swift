@@ -14,36 +14,49 @@ class UserMessagesColl {
     static let tag = "#"+name
     
     
-    static func findPrivateConversationBetween(
-        speakers : [String],
+    static func findUserConversation(
+        with utherID : String,
         ack : @escaping ([Any]) -> ()
         ){
-        if speakers.count != 2 {
-            fatalError("findPrivateConversation : private conversation has always 2 speakers!")
-        }
-        IO.r.find(
-            coll: name,
-            query:
-            ["$or" :
-                [
-                    
-                    [ "$and" :
-                        [
-                            ["authorID" : speakers[0]]
-                            ,["recipientID" : speakers[1]]
+        if let userID = UserInfos._id {
+            IO.r.find(
+                coll: name,
+                query:
+                ["$or" :
+                    [
+                        
+                        [ "$and" :
+                            [
+                                ["authorID" : userID]
+                                ,["recipientID" : utherID]
+                            ]
+                        ],
+                        
+                        [ "$and" :
+                            [
+                                ["authorID" : utherID]
+                                ,["recipientID" : userID]
+                            ]
                         ]
-                    ],
-                    
-                    [ "$and" :
-                        [
-                            ["authorID" : speakers[1]]
-                            ,["recipientID" : speakers[0]]
-                        ]
+                        
                     ]
-                    
-                ]
-            ],
-            ack: ack)
+                ],
+                ack: ack)
+        }
     }
-
+    
+    
+    
+    
+    static func findUserIntelocutors(
+        ack : @escaping ([Any]) -> ()
+        ){
+        
+        if let userID = UserInfos._id {
+            
+            //TODO
+        }
+        
+    }
+    
 }
