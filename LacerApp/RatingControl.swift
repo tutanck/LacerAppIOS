@@ -8,28 +8,18 @@
 
 import UIKit
 
-@IBDesignable class RatingControl: UIStackView {
-    
-    
-    //MARK: IBInspectables
-    
-    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
-        didSet {
-            setupButtons()
-        }
-    }
-    
-    @IBInspectable var starCount: Int = 5 {
-        didSet {
-            setupButtons()
-        }
-    }
-    
-    @IBInspectable var isEditable: Bool = false
-    
+class RatingControl: UIStackView {
     
     
     //MARK: Properties
+    
+    var activated = false
+    
+    var starSize: CGSize = CGSize(width: 44.0, height: 44.0)
+    
+    var starCount: Int = 5
+    
+    var isEditable: Bool = false
     
     private var ratingButtons = [UIButton]()
     
@@ -40,7 +30,6 @@ import UIKit
     }
     
     
-    
     //MARK: Initialization
     
     override init(frame: CGRect) {
@@ -48,10 +37,7 @@ import UIKit
         setupButtons()
     }
     
-    required init(coder: NSCoder) {
-        super.init(coder: coder)
-        setupButtons()
-    }
+    required init(coder: NSCoder) { fatalError("RatingControl::init(coder: NSCoder) not implemented") }
     
     
     
@@ -63,19 +49,81 @@ import UIKit
         
         if isEditable {
             
-            // Calculate the rating of the selected button
-            let selectedRating = index + 1
-            
-            if index == 0 && selectedRating == rating {
-                // If the selected star represents the current rating, reset the rating to 0.
-                rating = 0
-            } else {
-                // Otherwise set the rating to the selected star
-                rating = selectedRating
+            if let toID = self.toID {
+                
+                // Calculate the rating of the selected button
+                var selectedRating = index + 1
+                
+                if index == 0 && rating == 1 { selectedRating = 0 }
+                
+                UserStarsSnap(toID: toID, stars: selectedRating, ack: {dataArray in print(dataArray)} )
+                
             }
-        
+            
         }
     }
+    
+    
+    var toID : String?=nil
+    
+    var context : UIViewController?{
+        didSet{
+            
+            if let context = context, let userID = UserInfos._id, let toID = toID {
+                
+                IO.r.socket.on(UserStarsColl.tag+"/fromID:"+userID+"/toID:"+toID, callback: {
+                    (dataArray, ackEmitter) in
+                    let ctx = dataArray[1] as! JSONObject
+                    let op = ctx["op"] as! Int
+                    if op == 2 || op == -1 {
+                        self.loadData()
+                    }
+                })
+                
+                loadData()
+                
+            }else{
+                Waiter.isConfused(context!)
+            }
+            
+        }
+    }
+    
+    
+    
+    
+    
+    private func loadData(){
+        IO.r.find(coll: UserStarsColl.name, query: ["fromID":UserInfos._id!,"toID":toID],ack: dataDidLoad)
+    }
+    
+    
+    
+    private func dataDidLoad(dataArray : [Any])->(){
+        Waiter.popNServ(context: context!, dataArray: dataArray, drink: {res in
+            if let res = res as? JSONArray {
+                populateUI(data : res)
+            }
+        })
+    }
+    
+    
+    
+    private func populateUI(data : JSONArray){
+        if self.activated == false{
+            print("Debug : RatingControl activated")
+            // Setup the button action
+            for (index, button) in ratingButtons.enumerated() {
+                button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
+            }
+            self.activated = true
+        }
+        
+        if data.count == 1 { self.rating = data[0]["stars"] as! Int }
+        else if data.count == 0 {  rating = 0 }
+        else{ Waiter.isConfused(context!) }
+    }
+    
     
     
     
@@ -83,16 +131,8 @@ import UIKit
     
     private func setupButtons() {
         
-        // Clear any existing buttons
-        for button in ratingButtons {
-            removeArrangedSubview(button)
-            button.removeFromSuperview()
-        }
-        ratingButtons.removeAll()
-        
         // Load Button Images
         let bundle = Bundle(for: type(of: self))  //For the images to load properly in Interface Builder, you must explicitly specify the catalog’s bundle
-        let highlightedStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
         let emptyStar = UIImage(named:"emptyStar", in: bundle, compatibleWith: self.traitCollection)
         let filledStar = UIImage(named:"highlightedStar", in: bundle, compatibleWith: self.traitCollection)
         
@@ -104,16 +144,13 @@ import UIKit
             // Set the button images
             button.setImage(emptyStar, for: .normal)
             button.setImage(filledStar, for: .selected)
-            button.setImage(highlightedStar, for: .highlighted)
-            button.setImage(highlightedStar, for: [.highlighted, .selected])
+            button.setImage(emptyStar, for: .highlighted)
+            button.setImage(emptyStar, for: [.highlighted, .selected])
             
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
             button.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
             button.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
-            
-            // Setup the button action
-            button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
             
             // Add the button to the stack
             addArrangedSubview(button)

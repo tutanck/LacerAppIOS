@@ -24,6 +24,8 @@
 		4E32D40D1F61E04700DEEC31 /* SearchBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D40C1F61E04700DEEC31 /* SearchBarManager.swift */; };
 		4E32D40F1F6245E100DEEC31 /* UtherActivityKeywordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D40E1F6245E100DEEC31 /* UtherActivityKeywordsTableViewController.swift */; };
 		4E32D4111F624B8000DEEC31 /* UtherActivityKeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4101F624B8000DEEC31 /* UtherActivityKeywordTableViewCell.swift */; };
+		4E32D4131F6322D300DEEC31 /* UserStarsColl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4121F6322D300DEEC31 /* UserStarsColl.swift */; };
+		4E32D4151F63230400DEEC31 /* UserStarsSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4141F63230400DEEC31 /* UserStarsSnap.swift */; };
 		4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */; };
 		4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */; };
 		4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */; };
@@ -120,6 +122,8 @@
 		4E32D40C1F61E04700DEEC31 /* SearchBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarManager.swift; sourceTree = "<group>"; };
 		4E32D40E1F6245E100DEEC31 /* UtherActivityKeywordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherActivityKeywordsTableViewController.swift; sourceTree = "<group>"; };
 		4E32D4101F624B8000DEEC31 /* UtherActivityKeywordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherActivityKeywordTableViewCell.swift; sourceTree = "<group>"; };
+		4E32D4121F6322D300DEEC31 /* UserStarsColl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStarsColl.swift; sourceTree = "<group>"; };
+		4E32D4141F63230400DEEC31 /* UserStarsSnap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStarsSnap.swift; sourceTree = "<group>"; };
 		4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				4E32D3FD1F5DF04500DEEC31 /* UserNeedsColl.swift */,
 				4E32D3FF1F5DF0B400DEEC31 /* UserMessagesColl.swift */,
 				4E32D4041F5EFD0600DEEC31 /* UserKeywordsColl.swift */,
+				4E32D4121F6322D300DEEC31 /* UserStarsColl.swift */,
 			);
 			name = Colls;
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 				4EF85B1A1F5C21C0001E37EE /* UserNeedSnap.swift */,
 				4EF85B241F5CF026001E37EE /* UserStatusSnap.swift */,
 				4E32D4061F5F025300DEEC31 /* UserKeywordSnap.swift */,
+				4E32D4141F63230400DEEC31 /* UserStarsSnap.swift */,
 			);
 			name = Snaps;
 			sourceTree = "<group>";
@@ -870,6 +876,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E32D4131F6322D300DEEC31 /* UserStarsColl.swift in Sources */,
 				4E28FB651F522CE400C6E5D7 /* MatchingProfilesTableViewCell.swift in Sources */,
 				4E32D4031F5DFD8700DEEC31 /* DatesManager.swift in Sources */,
 				4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */,
@@ -904,6 +911,7 @@
 				4E4D20D71F4E48E0001AC0C4 /* FrameEstimator.swift in Sources */,
 				4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */,
 				4EDAA9661F3ED1DE00F1A5A2 /* MatchingProfilesTableViewDelegate.swift in Sources */,
+				4E32D4151F63230400DEEC31 /* UserStarsSnap.swift in Sources */,
 				4EF162C81F543C0600D61310 /* UserProfileViewController.swift in Sources */,
 				4EB204001F18BC400096CC60 /* AppDelegate.swift in Sources */,
 				4E4D20CD1F4DEE5D001AC0C4 /* MessengerCollectionViewController.swift in Sources */,
