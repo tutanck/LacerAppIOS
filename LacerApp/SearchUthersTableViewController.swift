@@ -17,11 +17,9 @@ class SearchUthersTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var users : [User] = [User(_id : "", type : 1, username : "Joan", status: 1)]
-
+    var users = [User]()
     
     let searchController = UISearchController(searchResultsController: nil)
-    
     
     
     
@@ -37,22 +35,16 @@ class SearchUthersTableViewController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         
         //SearchController's search bar parameters
-        searchController.searchBar.scopeButtonTitles = ["Particuliers","Entreprises"]
+        searchController.searchBar.scopeButtonTitles = ["Tout","Particuliers","Entreprises"]
         searchController.searchBar.delegate = self
-        
     }
     
     
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
-    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return users.count }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,9 +56,10 @@ class SearchUthersTableViewController: UITableViewController {
         let user = users[indexPath.row]
         
         cell.nameLabel.text = user.username
-        cell.messageLabel.text = "TODO"
+        cell.messageLabel.text = ""
+        cell.timeLabel.text = ""
         cell.profileImageView.image = user.photo
-        //cell.userstatusLabel.backgroundColor = StatusColor.getColor(status : contact.status)
+        cell.userStatusImageView.backgroundColor = StatusColor.getColor(status : user.status)
         
         return cell
     }
@@ -76,6 +69,35 @@ class SearchUthersTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "segueFromSearchUthersToUtherProfil":
+            guard let utherProfileController = segue.destination as? UtherProfileViewController else {
+                fatalError("The segue.destination is not an instance of UtherProfileViewController.")
+            }
+            
+            guard let selectedCell = sender as? SearchUthersTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedUther = users[indexPath.row]
+            
+            utherProfileController._id =  selectedUther._id
+            
+        default:return
+        }
+    }
+
+        
         //model 4 later
         /* if segue.identifier == "segueFromSearchUthersToUtherProfil" {
          if let indexPath = tableView.indexPathForSelectedRow {
@@ -90,38 +112,45 @@ class SearchUthersTableViewController: UITableViewController {
          }
          }
          
-         guard let utherProfileController = segue.destination as? UtherProfileTableViewController else {
-         fatalError("The segue.destination is not an instance of UtherProfileTableViewController.")
-         }
-         
+     
          utherProfileController.user = user*/
         
-    }
+    
     
     
     //MARK: Search Logic
     
-    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-       /*             let categoryMatch = (scope == "All") //|| (user.category == scope)
-            return  categoryMatch && user.name.lowercased().contains(searchText.lowercased())
-        */
+    func loadDataFor(_ searchText: String, scope: String = "Tout") {
         
-        if searchController.isActive && searchController.searchBar.text != "" {
-           /* Fire.usersRef.queryOrdered(byChild:"profile/username" ).queryStarting(atValue: searchText).observe(.value, with: { snapshot in
-                var tmp : [User] = []
-                print(snapshot.value)
-                /*for item in snapshot.children {
-                 tmp.append(User(snapshot: item as! DataSnapshot))
-                 }
-                 
-                 self.users = tmp*/
-                self.tableView.reloadData()
-            })
-        */
+        let searchText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        if searchText.isEmpty{ return }
+        
+        if scope == "Tout"{
+            UserProfilesColl.findProfiles(username : searchText, ack: dataDidLoad)
+        }else{
+            var type : Int = 0
+            if scope == "Entreprises" { type = 1 }
+            UserProfilesColl.findProfiles(username : searchText, type : type, ack: dataDidLoad)
         }
         
-        
-
+    }
+    
+    
+    private func dataDidLoad(dataArray : [Any])->(){
+        Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
+            if let res = res as? JSONArray {
+                
+                var tmp : [User] = []
+                
+                for item in res {
+                    tmp.append(User(snapshot: item))
+                }
+                
+                self.users = tmp
+                self.tableView.reloadData()
+                
+            }
+        })
     }
     
     
@@ -132,13 +161,13 @@ extension SearchUthersTableViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchBar.text!, scope: scope)
+        loadDataFor(searchController.searchBar.text!, scope: scope)
     }
 }
 
 //SearchBar's Scope Bar delegate
 extension SearchUthersTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+        loadDataFor(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
 }

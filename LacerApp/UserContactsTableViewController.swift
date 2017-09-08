@@ -129,11 +129,8 @@ class UserContactsTableViewController: UITableViewController {
     
     
     
-    
-    
-    
-    
-    
+    //Mark : data loading
+
     private func loadData(){ UserMessagesColl.findUserIntelocutors(ack: dataDidLoad) }
     
     private func dataDidLoad(dataArray : [Any])->(){

@@ -9,7 +9,7 @@
 import UIKit
 
 class UserProfilesColl {
-
+    
     static let name = "user_profiles"
     static let tag = "#"+name
     
@@ -36,6 +36,27 @@ class UserProfilesColl {
             ack: ack)
     }
     
-
+    
+    static func findProfiles(
+        username : String,
+        type : Int? = nil,
+        ack : @escaping ([Any]) -> ()
+        ){
+        
+        var query : [String:Any] = ["username":[
+            "$regex": "^"+username,
+            "$options": "i"
+            ]
+        ]
+        
+        if let type = type { query["type"] = type }
+        
+        IO.r.find(
+            coll: name,
+            query:query,
+            opt: ["limit":10],
+                ack: ack)
+    }
+    
     
 }

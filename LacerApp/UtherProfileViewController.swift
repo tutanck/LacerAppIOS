@@ -221,11 +221,7 @@ class UtherProfileViewController: ScrollViewController {
         setupManageActivityKeywordsButton()
         
         containerView.addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton)
-        
-        
-        
-        _id = UserInfos._id
-    }
+     }
     
     
     
@@ -265,8 +261,8 @@ class UtherProfileViewController: ScrollViewController {
     // MARK: - private methods
     
     private func loadData(){
-        if let userID = self._id {
-            UserProfilesColl.findProfile(userID : userID, ack: dataDidLoad)
+        if let utherID = self._id {
+            UserProfilesColl.findProfile(userID : utherID, ack: dataDidLoad)
         }
     }
     

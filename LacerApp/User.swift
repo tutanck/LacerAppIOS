@@ -41,7 +41,7 @@ class User : Snapshot {
 
         self.type = snapshot["type"] as! Int
         self.username = snapshot["username"] as! String
-        self.status = snapshot["status"] as! Int
+        self.status = 1//snapshot["status"] as! Int //TODO UNCOMMENT
         self.photo =  snapshot["photo"] as? UIImage ?? UIImage(named: "userPhoto")!
         
         super.init(_id: snapshot["_id"] as! String)
