@@ -22,7 +22,6 @@ class UserKeywordsTableViewController: UITableViewController {
     var filteredKeywords = [UserKeyword]()
     
     
-    
     let searchController = UISearchController(searchResultsController: nil)
     
     
@@ -43,17 +42,18 @@ class UserKeywordsTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         if let userID = UserInfos._id {
             IO.r.socket.on(UserKeywordsColl.tag+"/"+userID, callback: {
                 (dataArray, ackEmitter) in
-                
                 let ctx = dataArray[1] as! JSONObject
                 let op = ctx["op"] as! Int
                 if op == 2 || op == -1 {
                     self.loadData()
                 }
-                
             })
+            
             loadData()
         }
     }

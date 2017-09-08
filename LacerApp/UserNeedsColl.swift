@@ -19,7 +19,10 @@ class UserNeedsColl {
         if let userID = UserInfos._id {
             IO.r.find(
                 coll: name,
-                query: ["ownerID":userID],
+                query: [
+                    "ownerID":userID,
+                    "deleted": ["$ne": true]
+                ],
                 opt: [
                     "title": 1,
                     "searchText": 1,
@@ -40,5 +43,5 @@ class UserNeedsColl {
             ack: ack)
     }
     
-
+    
 }

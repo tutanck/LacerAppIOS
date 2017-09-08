@@ -13,17 +13,25 @@ class UserNeedsTableViewController: UITableViewController {
     
     let cellId = "UserNeedTableViewCell"
     
+    
     // MARK: - Properties
     
-    var needs : [UserNeed] = []
+    var needs : [UserNeed] = []{
+        didSet {
+            updateSearchResults(for: searchController)
+        }
+    }
     
     var filteredNeeds = [UserNeed]()
+
     
     let searchController = UISearchController(searchResultsController: nil)
+
     
     // MARK: - SwitchableControl
     
     @IBOutlet weak var userAvailabilitySwitchableControl: SwitchableColorButton!
+    
     
     
     // MARK: - System Events
@@ -34,25 +42,51 @@ class UserNeedsTableViewController: UITableViewController {
         //user status button settings
         userAvailabilitySwitchableControl.context = self
         
+        
         //SearchController parameters
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
+        //SearchController's search bar parameters
+        searchController.searchBar.scopeButtonTitles = ["Tout", "Actifs", "Inactifs"]
+        searchController.searchBar.delegate = self
     }
+    
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadData()
+        
+        if let userID = UserInfos._id {
+            IO.r.socket.on(UserNeedsColl.tag+"/"+userID, callback: {
+                (dataArray, ackEmitter) in
+                let ctx = dataArray[1] as! JSONObject
+                let op = ctx["op"] as! Int
+                if op == 2 || op == -1 {
+                    self.loadData()
+                }
+            })
+            
+            loadData()
+        }
     }
+    
+    
+    
+    
+    
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if SearchBarManager.isFiltering(searchController) {
+            return filteredNeeds.count
+        }
+        return needs.count
+    }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return needs.count }
     
     //GET
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,8 +94,13 @@ class UserNeedsTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of" + cellId)
         }
         
-        // Fetches the appropriate meal for the data source layout.
-        let need = needs[indexPath.row]
+        let need : UserNeed
+            
+        if SearchBarManager.isFiltering(searchController) {
+            need = filteredNeeds[indexPath.row]
+        }else{
+            need = needs[indexPath.row]
+        }
         
         cell._id = need._id
         cell.titleLabel.text = need.title
@@ -77,11 +116,15 @@ class UserNeedsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-      guard let cell = tableView.cellForRow(at: indexPath) as? KeywordTableViewCell else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? UserNeedTableViewCell else { return }
         
         if editingStyle == .delete {
-            //UserNeedsColl.delete //TODO
-            
+            Reaper.delete(
+                coll: UserNeedsColl.name ,
+                _id: cell._id!,
+                meta : UserNeedSnap.meta,
+                ack: { dataArray in print(dataArray) }
+            )
         }
     }
     
@@ -115,24 +158,20 @@ class UserNeedsTableViewController: UITableViewController {
                 fatalError("The selected cell is not being displayed by the table")
             }
             
-            let selectedNeed = needs[indexPath.row]
+            let selectedNeed : UserNeed
+            
+            if SearchBarManager.isFiltering(searchController) {
+                selectedNeed = filteredNeeds[indexPath.row]
+            }else{
+                selectedNeed = needs[indexPath.row]
+            }
+            
             needDetailViewController._id =  selectedNeed._id
             
         default:return
         }
     }
     
-    
-    
-    //MARK: Search Logic
-    
-    func filterContentForSearchText(_ searchText: String) {
-        filteredNeeds = needs.filter { need in
-            return need.title.lowercased().contains(searchText.lowercased())
-        }
-        
-        tableView.reloadData()
-    }
     
     
     
@@ -143,7 +182,7 @@ class UserNeedsTableViewController: UITableViewController {
     private func dataDidLoad(dataArray : [Any])->(){
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
             if let res = res as? JSONArray {
-
+                
                 var tmp : [UserNeed] = []
                 
                 for item in res {
@@ -161,6 +200,38 @@ class UserNeedsTableViewController: UITableViewController {
     
     @IBAction func cancelFromNeed(segue:UIStoryboardSegue) {}
     
+    
+    
+    
+    
+    //MARK: Search Logic
+    
+    func filterContentFor(_ searchText: String, scope: String = "Tout") {
+        filteredNeeds = needs.filter({
+            (need : UserNeed) -> Bool in
+            
+            var doesScopeMatch = false
+            
+            if (scope == "Tout"){
+                doesScopeMatch = true
+            } else if scope == "Actifs" && need.active {
+                doesScopeMatch = true
+            } else if scope == "Inactifs" && !need.active {
+                doesScopeMatch = true
+            }
+            
+            let searchText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            if searchText.isEmpty {
+                return doesScopeMatch
+            } else {
+                return doesScopeMatch && need.title.lowercased().contains(searchText.lowercased())
+            }
+        })
+        tableView.reloadData()
+    }
+
+    
 }
 
 
@@ -168,6 +239,14 @@ class UserNeedsTableViewController: UITableViewController {
 //SearchDelegate
 extension UserNeedsTableViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentFor(searchController.searchBar.text!, scope: scope)
+    }
+}
+
+extension UserNeedsTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentFor(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
 }

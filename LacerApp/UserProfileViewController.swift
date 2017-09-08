@@ -397,10 +397,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     private func userProfileDidSave (dataArray : [Any])->(){
         enableRightBarButtonItem()
         Waiter.popNServ(context: self, dataArray: dataArray, drink: {res in
-            if let res = res as? JSONObject {
-                UserInfos._id = res["_id"] as! String
-                Alert.displayMessage(context: self, headerTitle: "Votre profil a été mis à jour", confirmable : false)
-            }
+            Alert.displayMessage(context: self, headerTitle: "Votre profil a été mis à jour", confirmable : false)
             disableRightBarButtonItem()
         })
     }
@@ -410,7 +407,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     
     private func loadData(){
-             UserProfilesColl.findUserProfile(ack: dataDidLoad)
+        UserProfilesColl.findUserProfile(ack: dataDidLoad)
     }
     
     private func dataDidLoad(dataArray : [Any])->(){
