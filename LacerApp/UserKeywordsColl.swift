@@ -27,7 +27,8 @@ class UserKeywordsColl {
                 ],
                 opt: [
                     "title": 1,
-                    "active": 1
+                    "active": 1,
+                    "sort": ["title": 1]
                 ],
                 ack: ack)
         }
@@ -47,7 +48,8 @@ class UserKeywordsColl {
                 ],
                 opt: [
                     "title": 1,
-                    "active": 1
+                    "active": 1,
+                    "sort": ["title": 1]
                 ],
                 ack: ack)
     }
