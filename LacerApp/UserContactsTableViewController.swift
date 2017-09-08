@@ -66,7 +66,20 @@ class UserContactsTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadData()
+
+        if let userID = UserInfos._id {
+            IO.r.socket.on(UserMessagesColl.tag+"/"+userID, callback: {
+                (dataArray, ackEmitter) in
+                let ctx = dataArray[1] as! JSONObject
+                let op = ctx["op"] as! Int
+                if op == 2 || op == -1 {
+                    self.loadData()
+                }
+            })
+            
+            loadData()
+        }
+
     }
     
     

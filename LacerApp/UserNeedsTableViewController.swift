@@ -104,7 +104,7 @@ class UserNeedsTableViewController: UITableViewController {
         
         cell._id = need._id
         cell.titleLabel.text = need.title
-        cell.previewLabel.text = need.searchText
+        cell.previewLabel.text = need.searchText+"TODO"
         cell.timeLabel.text = "TODO"
         cell.isActivImageView.backgroundColor = need.active ? .green : .red
         

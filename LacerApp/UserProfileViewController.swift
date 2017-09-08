@@ -98,6 +98,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     let usernameTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = " Entrez votre nom d'utilisateur"
+        textField.text=""
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.textAlignment = .left
         //border

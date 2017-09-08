@@ -56,7 +56,7 @@ class UserProfilesColl {
         IO.r.find(
             coll: name,
             query:query,
-            opt: ["limit":10],
+            opt: ["limit":5],
             ack: ack)
     }
     

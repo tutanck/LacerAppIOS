@@ -122,7 +122,7 @@ class UtherProfileViewController: ScrollViewController {
     
     let usernameTextField : UITextField = {
         let textField = UITextField()
-        textField.text = "Joan"
+        textField.text = ""
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.textAlignment = .left
         
@@ -157,7 +157,7 @@ class UtherProfileViewController: ScrollViewController {
     let resumeTextView: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 14)
-        textView.text = "Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message Sample message "
+        textView.text = ""
         textView.backgroundColor = .white
         
         //border
