@@ -33,4 +33,24 @@ class UserKeywordsColl {
         }
     }
     
+    
+    static func findUtherKeywords(
+        utherID : String,
+        ack : @escaping ([Any]) -> ()
+        ){
+             IO.r.find(
+                coll: name,
+                query: [
+                    "ownerID":utherID,
+                    "active": true,
+                    "deleted": ["$ne": true]
+                ],
+                opt: [
+                    "title": 1,
+                    "active": 1
+                ],
+                ack: ack)
+    }
+    
+
 }

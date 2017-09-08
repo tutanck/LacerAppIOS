@@ -34,11 +34,6 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
         return 84;
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.profiles.count

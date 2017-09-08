@@ -69,9 +69,6 @@ class SearchUthersTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
         super.prepare(for: segue, sender: sender)
         
         switch(segue.identifier ?? "") {
@@ -96,25 +93,6 @@ class SearchUthersTableViewController: UITableViewController {
         default:return
         }
     }
-
-        
-        //model 4 later
-        /* if segue.identifier == "segueFromSearchUthersToUtherProfil" {
-         if let indexPath = tableView.indexPathForSelectedRow {
-         
-         let user : User
-         
-         if (searchController.isActive && searchController.searchBar.text != "") {
-         user = filteredUsers[indexPath.row]
-         } else {
-         user = users[indexPath.row]
-         }
-         }
-         }
-         
-     
-         utherProfileController.user = user*/
-        
     
     
     

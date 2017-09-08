@@ -221,7 +221,7 @@ class UtherProfileViewController: ScrollViewController {
         setupManageActivityKeywordsButton()
         
         containerView.addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton)
-     }
+    }
     
     
     
@@ -230,21 +230,33 @@ class UtherProfileViewController: ScrollViewController {
     // MARK: - SEGUE
     
     func showActivityKeywords(){
-        performSegue(withIdentifier: "segueFromUtherProfileToUtherActivityKeywords", sender: self)
+        if let _id = _id {
+            performSegue(withIdentifier: "segueFromUtherProfileToUtherActivityKeywords", sender: self)
+        }
     }
     
     
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "segueFromUtherProfileToUtherActivityKeywords":
+            guard let utherActivityKeywordsController = segue.destination as? UtherActivityKeywordsTableViewController else {
+                fatalError("The segue.destination is not an instance of UtherActivityKeywordsTableViewController.")
+            }
+            
+            utherActivityKeywordsController.ownerID = _id
+            
+        default:return
+        }
+    }
+    
     
     
     
@@ -284,6 +296,6 @@ class UtherProfileViewController: ScrollViewController {
             Waiter.isConfused(self)
         }
     }
-
+    
     
 }

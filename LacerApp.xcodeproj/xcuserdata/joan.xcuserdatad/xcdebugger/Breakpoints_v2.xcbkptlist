@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LacerApp/SearchUthersTableViewController.swift"
-            timestampString = "526532927.362627"
+            timestampString = "526535000.416274"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "SearchUthersTableViewController"
             landmarkType = "4">
          </BreakpointContent>

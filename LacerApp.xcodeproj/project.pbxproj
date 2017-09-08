@@ -22,6 +22,8 @@
 		4E32D4091F5F253B00DEEC31 /* ExtendedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4081F5F253B00DEEC31 /* ExtendedString.swift */; };
 		4E32D40B1F61CD1200DEEC31 /* Reaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D40A1F61CD1200DEEC31 /* Reaper.swift */; };
 		4E32D40D1F61E04700DEEC31 /* SearchBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D40C1F61E04700DEEC31 /* SearchBarManager.swift */; };
+		4E32D40F1F6245E100DEEC31 /* UtherActivityKeywordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D40E1F6245E100DEEC31 /* UtherActivityKeywordsTableViewController.swift */; };
+		4E32D4111F624B8000DEEC31 /* UtherActivityKeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32D4101F624B8000DEEC31 /* UtherActivityKeywordTableViewCell.swift */; };
 		4E4406CB1F2955E90041668B /* UserNeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */; };
 		4E4D20B51F4B8227001AC0C4 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */; };
 		4E4D20B71F4B848A001AC0C4 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */; };
@@ -116,6 +118,8 @@
 		4E32D4081F5F253B00DEEC31 /* ExtendedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedString.swift; sourceTree = "<group>"; };
 		4E32D40A1F61CD1200DEEC31 /* Reaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reaper.swift; sourceTree = "<group>"; };
 		4E32D40C1F61E04700DEEC31 /* SearchBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarManager.swift; sourceTree = "<group>"; };
+		4E32D40E1F6245E100DEEC31 /* UtherActivityKeywordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherActivityKeywordsTableViewController.swift; sourceTree = "<group>"; };
+		4E32D4101F624B8000DEEC31 /* UtherActivityKeywordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherActivityKeywordTableViewCell.swift; sourceTree = "<group>"; };
 		4E4406CA1F2955E90041668B /* UserNeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNeedsTableViewController.swift; sourceTree = "<group>"; };
 		4E4D20B41F4B8227001AC0C4 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		4E4D20B61F4B848A001AC0C4 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 				4EB2044B1F1AF04D0096CC60 /* UthersNeedsTableViewController.swift */,
 				4EF9E9481F500F3100922E57 /* ContactsSelectionTableViewController.swift */,
 				4EF162C91F54460600D61310 /* UtherProfileViewController.swift */,
+				4E32D40E1F6245E100DEEC31 /* UtherActivityKeywordsTableViewController.swift */,
 			);
 			name = MarketPlace;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 			children = (
 				4E4D20BD1F4B9FB7001AC0C4 /* UtherNeedTableViewCell.swift */,
 				4E28FB621F522B1E00C6E5D7 /* UserContactsSelectionTableViewCell.swift */,
+				4E32D4101F624B8000DEEC31 /* UtherActivityKeywordTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -893,6 +899,7 @@
 				4EB2044A1F1ACE3F0096CC60 /* SwitchableColorButton.swift in Sources */,
 				4EF9E9471F4F735F00922E57 /* ExtendedUIScrollView.swift in Sources */,
 				4E4D20CF1F4DF08C001AC0C4 /* Message.swift in Sources */,
+				4E32D40F1F6245E100DEEC31 /* UtherActivityKeywordsTableViewController.swift in Sources */,
 				4EF85B251F5CF026001E37EE /* UserStatusSnap.swift in Sources */,
 				4E4D20D71F4E48E0001AC0C4 /* FrameEstimator.swift in Sources */,
 				4EB204661F2147350096CC60 /* SearchUthersTableViewController.swift in Sources */,
@@ -925,6 +932,7 @@
 				4EF9E9491F500F3100922E57 /* ContactsSelectionTableViewController.swift in Sources */,
 				4E4D20B91F4B859D001AC0C4 /* ExtendedUIView.swift in Sources */,
 				4EF85B231F5CA19C001E37EE /* Snapshot.swift in Sources */,
+				4E32D4111F624B8000DEEC31 /* UtherActivityKeywordTableViewCell.swift in Sources */,
 				4EF85B151F5B6E96001E37EE /* UserProfileSnap.swift in Sources */,
 				4EF85B1B1F5C21C0001E37EE /* UserNeedSnap.swift in Sources */,
 			);
