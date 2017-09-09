@@ -11,13 +11,15 @@ import UIKit
 class Waiter {
     
     static func popNServ(
-        context : UIViewController,
+        context : UIViewController?=nil,
         dataArray : [Any],
         drink : (Any)->()
         )->(){
         print("Waiter : \(dataArray)") //debug
         if !(dataArray[0] is NSNull){
-            isConfused(context)
+            if let context = context {
+                isConfused(context)
+            }
         }else{
             drink(dataArray[1])
         }

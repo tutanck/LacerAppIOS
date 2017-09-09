@@ -15,10 +15,10 @@ class UserContactsTableViewController: UITableViewController {
     
     
     var contacts : [User] = [
-        User(_id:"", type : 1, username : "Joan", status: 1),
-            User(_id:"", type : 1, username : "Jan", status: 1),
-            User(_id:"", type : 0, username : "Jon", status: 1),
-            User(_id:"", type : 1, username : "Jean", status: 1)
+        User(_id:"", type : 1, username : "Joan"),
+            User(_id:"", type : 1, username : "Jan"),
+            User(_id:"", type : 0, username : "Jon"),
+            User(_id:"", type : 1, username : "Jean")
     
         ]{
         didSet {
@@ -116,7 +116,6 @@ class UserContactsTableViewController: UITableViewController {
         cell.nameLabel.text = contact.username
         cell.messageLabel.text = "TODO"
         cell.profileImageView.image = contact.photo
-        cell.userStatusImageView.backgroundColor = StatusColor.getColor(status : contact.status)
         
         return cell
     }

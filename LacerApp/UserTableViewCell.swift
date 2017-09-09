@@ -10,6 +10,15 @@ import UIKit
 
 class UserTableViewCell: BasicTableViewCell {
     
+    
+    var _id : String?{
+        didSet{
+            if let userID = _id{
+                userStatusSpot.userID = userID
+            }
+        }
+    }
+    
     //userProfileImageView
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -47,13 +56,13 @@ class UserTableViewCell: BasicTableViewCell {
         return label
     }()
     
-    let userStatusImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 10
-        imageView.layer.masksToBounds = true
-        imageView.backgroundColor = .red
-        return imageView
+    let userStatusSpot: Spot = {
+        let spot = Spot()
+        spot.contentMode = .scaleAspectFill
+        spot.layer.cornerRadius = 10
+        spot.layer.masksToBounds = true
+        spot.backgroundColor = .white
+        return spot
     }()
     
     
@@ -61,7 +70,7 @@ class UserTableViewCell: BasicTableViewCell {
     override func setupViews() {
         setupUserProfileImageView()
         setupMetaContainerView()
-     }
+    }
     
     
     fileprivate func setupUserProfileImageView() {
@@ -69,7 +78,7 @@ class UserTableViewCell: BasicTableViewCell {
         addConstraintsWithFormat("H:|-6-[v0(68)]", views: profileImageView)
         addConstraintsWithFormat("V:[v0(68)]", views: profileImageView)
         addCenteredYConstraint(about: profileImageView, to: self)
-                
+        
     }
     
     
@@ -85,17 +94,17 @@ class UserTableViewCell: BasicTableViewCell {
         containerView.addSubview(nameLabel)
         containerView.addSubview(messageLabel)
         containerView.addSubview(timeLabel)
-        containerView.addSubview(userStatusImageView)
+        containerView.addSubview(userStatusSpot)
         
         containerView.addConstraintsWithFormat("V:|[v0(24)]", views: timeLabel)
-
+        
         containerView.addConstraintsWithFormat("H:|[v0][v1(80)]-12-|", views: nameLabel, timeLabel)
         
         containerView.addConstraintsWithFormat("V:|[v0][v1(24)]|", views: nameLabel, messageLabel)
         
-        containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, userStatusImageView)
+        containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: messageLabel, userStatusSpot)
         
-        containerView.addConstraintsWithFormat("V:[v0(20)]|", views: userStatusImageView)
+        containerView.addConstraintsWithFormat("V:[v0(20)]|", views: userStatusSpot)
     }
     
 }

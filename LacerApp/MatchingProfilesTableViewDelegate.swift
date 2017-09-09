@@ -21,8 +21,8 @@ class MatchingProfilesTableViewDelegate: NSObject, UITableViewDelegate, UITableV
     var filteredProfiles = [User]()
     
     var profiles : [User] = [
-        User(_id : "", type : 1, username : "Joan", status: 1),
-        User(_id : "", type : 1, username : "Jon", status: 1),
+        User(_id : "", type : 1, username : "Joan"),
+        User(_id : "", type : 1, username : "Jon"),
     ]
     
     

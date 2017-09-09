@@ -19,17 +19,19 @@ class SwitchableColorButton: UIButton {
         .orange : "Occupé : Vous serez toujours visible mais pas prioritaire. Vous recevrez des notifications silencieuses."
     ]
     
-    private let colorToInt : [UIColor:Int] = [
+    static let colorToInt : [UIColor:Int] = [
         .red : 0,
         .green : 1,
         .orange : 2
     ]
     
-    private let intToColor : [Int:UIColor] = [
+    static let intToColor : [Int:UIColor] = [
         0:.red,
         1:.green,
         2:.orange
     ]
+    
+    
     
     private var activated = false
     
@@ -85,13 +87,15 @@ class SwitchableColorButton: UIButton {
     //MARK: Button Action
     func switchColor(button: UIButton) {         //REMINDER : blue : imediatelly available
         
-        let nextColor : UIColor = intToColor[(colorToInt[backgroundColor!]!+1)%intToColor.count]!
+        let nextColor : UIColor = SwitchableColorButton.intToColor[
+            (SwitchableColorButton.colorToInt[backgroundColor!]!+1)%SwitchableColorButton.intToColor.count
+            ]!
         Alert.displayMessage(context: context!,
                              headerTitle :"Attention!",
                              message: messages[nextColor]!,
                              confirmAction : { _ in
                                 UserStatusSnap(
-                                    status: self.colorToInt[nextColor]!,
+                                    status: SwitchableColorButton.colorToInt[nextColor]!,
                                     ack: { dataArray in print("Snap : \(dataArray)")}
                                 ) },
                              cancellable : true)
@@ -136,8 +140,7 @@ class SwitchableColorButton: UIButton {
         if UserInfos._id == nil { return }
         
         if data.count == 1 {
-            let userStatus = data[0]
-            self.backgroundColor = self.intToColor[userStatus["status"] as! Int]
+             self.backgroundColor = SwitchableColorButton.intToColor[data[0]["status"] as! Int]
             
             if self.activated == false{
                 print("Debug : SwitchableColorButton activated")

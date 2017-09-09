@@ -14,7 +14,6 @@ class User : Snapshot {
     var type : Int
     var username : String
     var photo : UIImage
-    var status : Int
     
     
     init(
@@ -22,14 +21,12 @@ class User : Snapshot {
         
         type : Int,
         username : String,
-        photo : UIImage? = UIImage(named : "userPhoto"),
-        status: Int
+        photo : UIImage? = UIImage(named : "userPhoto")
         ){
         
         self.type = type
         self.username = username
         self.photo = photo!
-        self.status = status
         
         super.init(_id: _id)
     }
@@ -38,10 +35,9 @@ class User : Snapshot {
     init(
         snapshot: JSONObject
         ) {
-
+        
         self.type = snapshot["type"] as! Int
         self.username = snapshot["username"] as! String
-        self.status = 1//snapshot["status"] as! Int //TODO UNCOMMENT
         self.photo =  snapshot["photo"] as? UIImage ?? UIImage(named: "userPhoto")!
         
         super.init(_id: snapshot["_id"] as! String)

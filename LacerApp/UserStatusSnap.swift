@@ -47,8 +47,7 @@ class UserStatusSnap : Snap {
     public override func render()->JSONObject {
         return [
             "status" : status
-            //,"position" : position
-        ]
+         ]
     }
     
 }

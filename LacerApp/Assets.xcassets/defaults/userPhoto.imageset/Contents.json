@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "defaultPhoto-1.png",
+      "filename" : "default-pupil-profile-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "defaultPhoto.png",
+      "filename" : "default-pupil-profile.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "defaultPhoto-2.png",
+      "filename" : "default-pupil-profile-2.png",
       "scale" : "3x"
     }
   ],

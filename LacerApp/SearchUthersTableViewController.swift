@@ -55,11 +55,11 @@ class SearchUthersTableViewController: UITableViewController {
         
         let user = users[indexPath.row]
         
+        cell._id = user._id
         cell.nameLabel.text = user.username
         cell.messageLabel.text = ""
         cell.timeLabel.text = ""
         cell.profileImageView.image = user.photo
-        cell.userStatusImageView.backgroundColor = StatusColor.getColor(status : user.status)
         
         return cell
     }
