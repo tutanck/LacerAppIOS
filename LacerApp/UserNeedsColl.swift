@@ -26,7 +26,8 @@ class UserNeedsColl {
                 opt: [
                     "title": 1,
                     "searchText": 1,
-                    "active": 1
+                    "active": 1,
+                    "sort": ["active": -1]
                 ],
                 ack: ack)
         }
