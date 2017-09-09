@@ -61,7 +61,7 @@ class UserTableViewCell: BasicTableViewCell {
         spot.contentMode = .scaleAspectFill
         spot.layer.cornerRadius = 10
         spot.layer.masksToBounds = true
-        spot.backgroundColor = .white
+        spot.backgroundColor = .clear
         return spot
     }()
     

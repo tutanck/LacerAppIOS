@@ -21,6 +21,7 @@ class UserProfileSnap : Snap {
     var type : Int
     var username : String
     var resume : String
+    var rate : String
     //var photo : UIImage? //TODO
     
     
@@ -28,6 +29,7 @@ class UserProfileSnap : Snap {
         type: Int,
         username : String,
         resume : String,
+        rate : String,
         // photo : UIImage?,
         
         ack: @escaping ([Any]) -> (),
@@ -39,6 +41,7 @@ class UserProfileSnap : Snap {
         self.type = type
         self.username = username
         self.resume = resume
+        self.rate = rate
         //self.photo = photo
         
         super.init(
@@ -57,7 +60,8 @@ class UserProfileSnap : Snap {
         return [
             "type" : type,
             "username" : username,
-            "resume" : resume
+            "resume" : resume,
+            "rate" : rate
         ]
     }
     

@@ -34,20 +34,21 @@ class UtherProfileViewController: ScrollViewController {
         imageView.addConstraintsWithFormat("H:|-8-[v0]", views: ratingView)
         imageView.addConstraintsWithFormat("V:[v0]-8-|", views: ratingView)
         
-        //Inner presenceView
+        //Inner statusView
         
-        let presenceView: UIImageView = {
-            let presence = UIImageView()
-            presence.backgroundColor = .red
-            presence.contentMode = .scaleAspectFill
-            presence.layer.cornerRadius = 12
-            presence.layer.masksToBounds = true
-            presence.translatesAutoresizingMaskIntoConstraints = false
-            return presence
+        let statusView: Spot = {
+            let status = Spot()
+            status.backgroundColor = .clear
+            status.contentMode = .scaleAspectFill
+            status.layer.cornerRadius = 12
+            status.layer.masksToBounds = true
+            status.translatesAutoresizingMaskIntoConstraints = false
+            return status
         }()
-        imageView.addSubview(presenceView)
-        imageView.addConstraintsWithFormat("H:[v0(24)]-8-|", views: presenceView)
-        imageView.addConstraintsWithFormat("V:[v0(24)]-8-|", views: presenceView)
+        statusView.tag = 200
+        imageView.addSubview(statusView)
+        imageView.addConstraintsWithFormat("H:[v0(24)]-8-|", views: statusView)
+        imageView.addConstraintsWithFormat("V:[v0(24)]-8-|", views: statusView)
         
         //interraction
         imageView.isUserInteractionEnabled = false
@@ -186,6 +187,43 @@ class UtherProfileViewController: ScrollViewController {
     
     
     
+    
+    //identityContainerView
+    
+    var rateContainerView : UIView = UIView()
+    
+    let rateTextField : UITextField = {
+        let textField = UITextField()
+        textField.text = ""
+        textField.font = UIFont.systemFont(ofSize: 16)
+        textField.textAlignment = .left
+        
+        //border
+        textField.layer.borderWidth = 0.8;
+        textField.layer.cornerRadius = 5
+        textField.layer.borderColor = UIColor(white : 0.9, alpha: 1).cgColor;
+        textField.backgroundColor = .white
+        
+        //interraction
+        textField.isUserInteractionEnabled = false
+        return textField
+    }()
+    
+    fileprivate func setupRateContainerView() -> UIView{
+        return FormLabeledEntry.installEntryIn(
+            parent: containerView,
+            entry: FormLabeledEntry.composeEntry(
+                containerView: rateContainerView,
+                view: rateTextField,
+                text : "INDICATION DE TARIF PRATIQUÉ",
+                debug: false),
+            debug: false)
+    }
+
+    
+    
+    
+    
     //manageActivityKeywordsButton
     
     lazy var manageActivityKeywordsButton: UIButton = {
@@ -211,7 +249,7 @@ class UtherProfileViewController: ScrollViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.scrollView.contentSize = CGSize(width:view.bounds.size.width,height: 800)
+        self.scrollView.contentSize = CGSize(width:view.bounds.size.width,height: 832)
         containerView.backgroundColor = UIColor(white: 0.99, alpha: 1)
         
         setupUserProfileImageView()
@@ -219,9 +257,10 @@ class UtherProfileViewController: ScrollViewController {
         setupTypeContainerView()
         setupIdentityContainerView()
         setupResumeContainerView()
+        setupRateContainerView()
         setupManageActivityKeywordsButton()
         
-        containerView.addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton)
+        containerView.addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(54)]-16-[v6(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,rateContainerView,manageActivityKeywordsButton)
         
         self.standingRatingControl.context = self
     }
@@ -280,6 +319,10 @@ class UtherProfileViewController: ScrollViewController {
     private func loadData(){
         if let utherID = _id {
             UserProfilesColl.findProfile(userID : utherID, ack: dataDidLoad)
+            
+            let utherStatusSpot = self.profileImageView.viewWithTag(200) as! Spot
+
+            utherStatusSpot.userID = _id
 
             UserStarsColl.findReputation(ofID: utherID, ack: { dataArray in
                 
@@ -317,6 +360,7 @@ class UtherProfileViewController: ScrollViewController {
             self.typeSegmentedControl.selectedSegmentIndex = profile["type"] as? Int ?? 0
             self.usernameTextField.text = profile["username"] as? String ?? ""
             self.resumeTextView.text = profile["resume"] as? String ?? ""
+            self.rateTextField.text = profile["rate"] as? String ?? ""
         }else{
             Waiter.isConfused(self)
         }

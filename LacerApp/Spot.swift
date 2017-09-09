@@ -43,7 +43,7 @@ class Spot : UIImageView {
                 
                 if data.count == 1 {
                     self.backgroundColor = SwitchableColorButton.intToColor[data[0]["status"] as! Int]
-                }else{ backgroundColor = .white }
+                }else{ backgroundColor = .blue/*.clear*/ }
             
             }
         })

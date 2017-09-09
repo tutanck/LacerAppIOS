@@ -153,6 +153,39 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     
     
+    
+    //identityContainerView
+    
+    var rateContainerView : UIView = UIView()
+    
+    let rateTextField : UITextField = {
+        let textField = UITextField()
+        textField.placeholder = " Entrez une indication de tarif"
+        textField.text=""
+        textField.font = UIFont.systemFont(ofSize: 16)
+        textField.textAlignment = .left
+        //border
+        textField.layer.borderWidth = 0.8;
+        textField.layer.cornerRadius = 5
+        textField.layer.borderColor = UIColor(white : 0.9, alpha: 1).cgColor;
+        textField.backgroundColor = .white
+        return textField
+    }()
+    
+    fileprivate func setupRateContainerView() -> UIView{
+        return FormLabeledEntry.installEntryIn(
+            parent: containerView,
+            entry: FormLabeledEntry.composeEntry(
+                containerView: rateContainerView,
+                view: rateTextField,
+                text : "INDICATION DE TARIF (Optionnel)",
+                debug: false),
+            debug: false)
+    }
+
+    
+    
+    
     //manageActivityKeywordsButton
     
     lazy var manageActivityKeywordsButton: UIButton = {
@@ -198,7 +231,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.scrollView.contentSize = CGSize(width:view.bounds.size.width,height: 832)
+        self.scrollView.contentSize = CGSize(width:view.bounds.size.width,height: 888)
         containerView.backgroundColor = UIColor(white: 0.99, alpha: 1)
         
         setupUserProfileImageView()
@@ -206,10 +239,11 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
         setupTypeContainerView()
         setupIdentityContainerView()
         setupResumeContainerView()
+        setupRateContainerView()
         setupManageActivityKeywordsButton()
         setupDisconnectButton()
         
-        containerView.addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(34)]-32-[v6(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,manageActivityKeywordsButton,disconnectButton)
+        containerView.addConstraintsWithFormat("V:|[v0(200)]-16-[v1]-32-[v2(54)]-16-[v3(54)]-16-[v4(250)]-16-[v5(54)]-16-[v6(34)]-32-[v7(34)]", views: profileImageView,standingRatingControl,typeContainerView,identityContainerView,resumeContainerView,rateContainerView,manageActivityKeywordsButton,disconnectButton)
         
         
         //user status button settings
@@ -273,7 +307,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     }
     
     
-    func hideKeyboard(_ sender: AnyObject) { usernameTextField.endEditing(true); resumeTextView.endEditing(true) }
+    func hideKeyboard(_ sender: AnyObject) { usernameTextField.endEditing(true); resumeTextView.endEditing(true); rateTextField.endEditing(true) }
     
     
     func typeSegmentedControlChanged(_ sender: UISegmentedControl) { enableRightBarButtonItem() }
@@ -331,7 +365,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
     
     func textViewDidEndEditing(_ textView: UITextView) { enableRightBarButtonItem() }
     
-    private func setInputsDelegate(){ usernameTextField.delegate = self; resumeTextView.delegate = self }
+    private func setInputsDelegate(){ usernameTextField.delegate = self; resumeTextView.delegate = self; rateTextField.delegate = self }
     
     
     
@@ -384,6 +418,7 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
             type: typeSegmentedControl.selectedSegmentIndex,
             username: usernameTextField.text!,
             resume: resumeTextView.text,
+            rate : rateTextField.text!,
             ack: userProfileDidSave)
         
         disableRightBarButtonItem()
@@ -451,6 +486,8 @@ class UserProfileViewController: ScrollViewController, UIImagePickerControllerDe
             self.typeSegmentedControl.selectedSegmentIndex = profile["type"] as? Int ?? 0
             self.usernameTextField.text = profile["username"] as? String ?? ""
             self.resumeTextView.text = profile["resume"] as? String ?? ""
+            self.rateTextField.text = profile["rate"] as? String ?? ""
+
         }else{
             Waiter.isConfused(self)
         }

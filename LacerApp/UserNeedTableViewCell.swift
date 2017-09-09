@@ -39,7 +39,7 @@ class UserNeedTableViewCell: BasicTableViewCell {
     let isActivImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 10
+        imageView.layer.cornerRadius = 5
         imageView.layer.masksToBounds = true
         imageView.backgroundColor = .red
         return imageView
@@ -72,9 +72,9 @@ class UserNeedTableViewCell: BasicTableViewCell {
         
         containerView.addConstraintsWithFormat("V:|[v0][v1(24)]|", views: titleLabel, previewLabel)
         
-        containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(20)]-12-|", views: previewLabel, isActivImageView)
+        containerView.addConstraintsWithFormat("H:|[v0]-8-[v1(10)]-12-|", views: previewLabel, isActivImageView)
         
-        containerView.addConstraintsWithFormat("V:[v0(20)]|", views: isActivImageView)
+        containerView.addConstraintsWithFormat("V:[v0(10)]|", views: isActivImageView)
     }
     
 }
